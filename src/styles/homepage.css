@@ -1,5 +1,8 @@
 .wrapper {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
 }
 
 .header-container {
@@ -47,6 +50,10 @@
 
 .hero-container {
     position: relative;
+    flex-grow: 1;
+    background-image: url('https://i.postimg.cc/1zbWPc3V/Getting-ready.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
 .homepage-hero-image {
