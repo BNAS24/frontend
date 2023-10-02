@@ -1,8 +1,21 @@
 .main-container {
+    display: flex;
+    justify-content: center;
     height: 100vh;
+    width: auto;
+    border: dashed 1px yellow;
 }
 
 .login-logo {
+    position: absolute;
     height: 160px;
     width: 160px;
+    margin-top: 160px;
+}
+
+.login-title {
+    position: absolute;
+    margin-top: 348px;
+    font-size: 48px;
+    color: white;
 }
