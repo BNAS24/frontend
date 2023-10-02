@@ -1,4 +1,4 @@
-import './login_register'
+import '../styles/login_register.css'
 
 export const LoginRegister = () => {
     return (
