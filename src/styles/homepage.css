@@ -1,0 +1,79 @@
+.wrapper {
+    position: relative;
+}
+
+.header-container {
+    display: flex;
+    height: 88px;
+    width: 100%;
+    align-items: center;
+    flex-direction: row;
+    border-bottom: solid 1px var(--theme-orange);
+}
+
+.logo_name_container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 24px;
+    color: var(--theme-white);
+}
+
+.sports-fanatic-logo {
+    height: 48px;
+    width: 48px;
+}
+
+.title {
+    margin-left: 24px;
+    margin-top: 40px;
+    font-size: 32px;
+}
+
+.nav-container {
+    display: flex;
+    position: absolute;
+    right: 24px;
+    margin-top: 8px;
+    flex-direction: row;
+    gap: 21px;
+    color: white;
+}
+
+.homepage-links-hover-state:hover {
+    cursor: pointer;
+    color: var(--theme-orange);
+}
+
+.hero-container {
+    position: relative;
+}
+
+.homepage-hero-image {
+    position: relative;
+    height: auto;
+    width: 100%;
+}
+
+.hero-text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    font-size: 64px;
+    color: var(--theme-white);
+}
+
+
+.footer-container {
+    display: flex;
+    position: relative;
+    margin-top: -4px;
+    height: 88px;
+    width: 100%;
+    color: var(--theme-white);
+    border-top: solid 1px var(--theme-orange);
+    border-bottom: solid 1px var(--theme-orange);
+    /*delete this line*/
+}
