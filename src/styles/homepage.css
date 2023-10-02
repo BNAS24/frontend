@@ -44,8 +44,9 @@
 }
 
 .homepage-links-hover-state:hover {
-    cursor: pointer;
     color: var(--theme-orange);
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .hero-container {

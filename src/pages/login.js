@@ -1,9 +1,10 @@
-import '../styles/login_register.css'
+import { Link } from 'react-router-dom';
+import '../styles/login.css'
 import Button from '@mui/material/Button'
 
-export const LoginRegister = () => {
+export const Login = () => {
     return (
-            <div className='main-container'>
+            <>
                 <img src="https://i.postimg.cc/wjkpvXx7/fans.png" alt="logo" className="login-logo" />
                 <p className='login-title'>Login to continue</p>
                 <form className='login-form'>
@@ -11,8 +12,10 @@ export const LoginRegister = () => {
                     <input type='email' className='sign-in'></input>
                     <label for='password'>Password</label>
                     <input type='password' className='sign-in'></input>
-                    <Button variant="contained" className='login-button'>Login</Button>
+                    <Button variant="contained" type='submit' className='login-button'>Login</Button>
                 </form>
-            </div>
+                <p class='create-account-text'><Link to='/register'>Create an account</Link></p>
+                </>
+            
     );
 }

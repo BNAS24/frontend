@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../styles/homepage.css'
 import Button from '@mui/material/Button';
 
@@ -13,7 +14,7 @@ export const Homepage = () => {
                 <div className='nav-container'>
                     <p className='homepage-links-hover-state'>Forums</p>
                     <p className='homepage-links-hover-state'>Live Scores</p>
-                    <p className='homepage-links-hover-state'>Login</p>
+                    <Link className='homepage-links-hover-state' to='/login'>Login</Link>
                 </div>
             </nav>
             <section className='hero-container'>

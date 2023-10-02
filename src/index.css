@@ -15,3 +15,13 @@ body {
   background-color: var(--theme-blue);
   margin: 0;
 }
+
+a:-webkit-any-link {
+  color: var(--theme-white);
+  text-decoration: none;
+}
+
+a:-webkit-any-link:hover {
+  cursor: pointer;
+  color: var(--theme-orange);
+}
