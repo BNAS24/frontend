@@ -18,7 +18,7 @@ export const Homepage = () => {
             </nav>
             <section className='hero-container'>
                 <p className='hero-text-overlay'>Join The Club</p>
-                <Button style={{position: 'absolute', marginTop: '112px', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', backgroundColor: 'var(--theme-orange)', color: 'white', height: '94px', width:'243px', borderRadius: '32px', boxShadow: '0px 4px 4px 0px #00000040',
+                <Button className='C2A-Button' style={{position: 'absolute', marginTop: '112px', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', backgroundColor: 'var(--theme-orange)', color: 'white', height: '94px', width:'243px', borderRadius: '32px', boxShadow: '0px 4px 4px 0px #00000040',
  fontSize: '32px', whiteSpace: 'nowrap', zIndex: '2'}}>Get Started</Button>
             </section>
             <footer className='footer-container'>
