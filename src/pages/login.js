@@ -2,55 +2,13 @@ import * as React from 'react';
 import { Link } from 'react-router-dom';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
-import { createTheme } from '@mui/material/styles';
-import { ThemeProvider } from '@mui/material/styles';
+import { ThemeProvider } from '@mui/material/styles'; // Import ThemeProvider
+import customTheme from '../styles/context/customtheme';
 import '../styles/login.css';
-
-const theme = createTheme({
-    palette: {
-        primary: {
-            main: '#FFFFFF',
-        },
-        secondary: {
-            main: '#F26101',
-        },
-    },
-    components: {
-        MuiOutlinedInput: {
-            styleOverrides: {
-                root: {
-                    width: '400px',
-                    '& fieldset': {
-                        borderColor: '#F26101',
-                    },
-                    '&:hover fieldset': {
-                        borderColor: '#fe6f10',
-                    },
-                    '&:hover .MuiOutlinedInput-notchedOutline': {
-                        borderColor: '#fe6f10',
-                    },
-                },
-                input: {
-                    color: 'white',
-                },
-                notchedOutline: {
-                    borderColor: '#F26101',
-                },
-            },
-        },
-        MuiInputLabel: {
-            styleOverrides: {
-                root: {
-                    color: 'white',
-                },
-            },
-        },
-    },
-});
 
 export const Login = () => {
     return (
-        <ThemeProvider theme={theme}>
+        <ThemeProvider theme={customTheme}>
             <div>
                 <img src="https://i.postimg.cc/wjkpvXx7/fans.png" alt="logo" className="login-logo" />
                 <p className='login-title'>Login to continue</p>
@@ -61,7 +19,18 @@ export const Login = () => {
                         color="secondary"
                         variant="outlined"
                         InputProps={{
-                            style: { color: 'white' },
+                            sx: {
+                                color: 'white',
+                                '& fieldset': {
+                                    borderColor: '#F26101 !important',
+                                },
+                                '&:hover fieldset': {
+                                    borderColor: '#fe6f10 !important',
+                                },
+                                '&:hover .MuiOutlinedInput-notchedOutline': {
+                                    borderColor: '#fe6f10 !important',
+                                },
+                            },
                         }}
                     />
                     <TextField
@@ -72,10 +41,36 @@ export const Login = () => {
                         variant="outlined"
                         color="secondary"
                         InputProps={{
-                            style: { color: 'white' },
+                            sx: {
+                                color: 'white',
+                                '& fieldset': {
+                                    borderColor: '#F26101 !important',
+                                },
+                                '&:hover fieldset': {
+                                    borderColor: '#fe6f10 !important',
+                                },
+                                '&:hover .MuiOutlinedInput-notchedOutline': {
+                                    borderColor: '#fe6f10 !important',
+                                },
+                            },
                         }}
+                        sx={{ marginTop: '8px' }}
                     />
-                    <Button disabled variant="contained" type='submit' className='login-button'>Login</Button>
+                    <Button
+                        variant="contained"
+                        type='button'
+                        sx={{
+                            color: 'white',
+                            padding: '8px 8px',
+                            fontSize: '16px',
+                            '&:hover': {
+                                backgroundColor: '#fe6f10',
+                            },
+                        }}
+                        className='login-button'
+                    >
+                        Login
+                    </Button>
                 </form>
                 <p className='create-account-text'><Link to='/register'>Create an account</Link></p>
             </div>
