@@ -14,16 +14,18 @@ export const Homepage = () => {
                 <div className='nav-container'>
                     <p className='homepage-links-hover-state'>Forums</p>
                     <p className='homepage-links-hover-state'>Live Scores</p>
-                    <Link className='homepage-links-hover-state' to='/login'>Login</Link>
+                    <p><Link className='homepage-links-hover-state' to='/login'>Login</Link></p>
                 </div>
             </nav>
             <section className='hero-container'>
                 <p className='hero-text-overlay'>Join The Club</p>
-                <Button className='C2A-Button' style={{position: 'absolute', marginTop: '112px', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', backgroundColor: 'var(--theme-orange)', color: 'white', height: '94px', width:'243px', borderRadius: '32px', boxShadow: '0px 4px 4px 0px #00000040',
- fontSize: '32px', whiteSpace: 'nowrap', zIndex: '2'}}>Get Started</Button>
+                <Button className='C2A-Button' style={{
+                    position: 'absolute', marginTop: '112px', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', backgroundColor: 'var(--theme-orange)', color: 'white', height: '94px', width: '243px', borderRadius: '32px', boxShadow: '0px 4px 4px 0px #00000040',
+                    fontSize: '32px', fontWeight: '600', whiteSpace: 'nowrap', zIndex: '2'
+                }}>Get Started</Button>
             </section>
             <footer className='footer-container'>
-            <p className='copyright'>© 2023 Copyright  Sports Fanatic Hub</p>
+                <p className='copyright'>© 2023 Copyright  Sports Fanatic Hub</p>
                 <div className='nav-container'>
                     <p className='homepage-links-hover-state'>About Us</p>
                     <p className='homepage-links-hover-state'>Contact Us</p>

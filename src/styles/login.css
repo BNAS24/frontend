@@ -29,7 +29,7 @@
 
 .login-form {
     position: absolute;
-    top: 440px;
+    top: 460px;
     left: 50%;
     transform: translate(-50%, -50%);
     display: flex;
