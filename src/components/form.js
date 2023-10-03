@@ -14,10 +14,10 @@ export const FormPropsTextFields = () => {
         >
             <div>
                 <TextField
-                    required
                     id="outlined-required"
-                    label="Required"
+                    label="Email"
                     defaultValue="Hello World"
+                    style={{color: 'white'}}
                 />
                 <TextField
                     disabled
