@@ -27,7 +27,7 @@ export const Dashboard = () => {
                     <Grid item xs={12} sm={12} md={12} lg={12} sx={{  gridArea: '1 / 1 / 2 / 2' }}>
                         <Container sx={{ display: 'flex', flexDirection: 'row', height: '100%', alignItems: 'center', paddingLeft: '0 !important', color: 'white' }}>
                             <Avatar variant='square' alt='profile picture' src='https://i.postimg.cc/qq6K81pw/Profile-Picture-Placeholder.png' sx={{ height: '104px', width: '104px' }} />
-                            <Typography style={{ marginLeft: '8px' }} variant='h3'>Hello Brandon! {/*The name will be dynamicall rendered*/}</Typography>
+                            <Typography style={{ marginLeft: '24px' }} variant='h3'>Hello Brandon! {/*The name will be dynamicall rendered*/}</Typography>
                         </Container>
                     </Grid>
                     <Grid item xs={12} sm={12} md={12} lg={12} sx={{ gridArea: '2 / 1 / 3 / 2' }}>
