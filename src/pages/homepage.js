@@ -19,10 +19,11 @@ export const Homepage = () => {
             </nav>
             <section className='hero-container'>
                 <p className='hero-text-overlay'>Join The Club</p>
+                <Link to='/register'>
                 <Button className='C2A-Button' style={{
                     position: 'absolute', marginTop: '112px', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', backgroundColor: 'var(--theme-orange)', color: 'white', height: '88px', width: '243px', borderRadius: '24px', boxShadow: '0px 4px 4px 0px #00000040',
                     fontSize: '32px', fontWeight: '600', whiteSpace: 'nowrap', zIndex: '2'
-                }}>Get Started</Button>
+                }}>Get Started</Button></Link>
             </section>
             <footer className='footer-container'>
                 <p className='copyright'>© 2023 Copyright  Sports Fanatic Hub</p>
