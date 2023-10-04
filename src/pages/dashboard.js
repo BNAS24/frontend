@@ -32,11 +32,11 @@ export const Dashboard = () => {
                         </Container>
                     </Grid>
                     <Grid item xs={12} sm={12} md={12} lg={12} sx={{ border: 'dashed 1px red', gridArea: '2 / 1 / 3 / 2', padding: '8px' }}>
-                        <Container sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly', gap: '40px', height: '100%', color: 'white', border: 'dashed 1px lime' }}>
-                            <Container sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', height: '100%', width: '50%', border: 'dashed 1px red' }}><Typography variant='h5'>Favorite Teams</Typography>
+                        <Container sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly',paddingLeft: '0 !important', paddingRight: '0 !important', gap: '24px', height: '100%', color: 'white', border: 'dashed 1px lime' }}>
+                            <Container sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', paddingLeft: '0 !important', paddingRight: '0 !important', height: '100%', width: '100%', border: 'dashed 1px red' }}><Typography noWrap variant='h5'>Favorite Teams</Typography>
                             <Container sx={{height: '100%', width: '100%', marginTop: '24px', border: 'solid 1px white'}}></Container>
                             </Container>
-                            <Container sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', height: '100%', width: '50%', border: 'dashed 1px red' }}><Typography variant='h5'>Notifications</Typography>
+                            <Container sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', paddingLeft: '0 !important', paddingRight: '0 !important', height: '100%', width: '100%', border: 'dashed 1px red' }}><Typography noWrap variant='h5'>Notifications</Typography>
                             <Container sx={{height: '100%', width: '100%', marginTop: '24px',border: 'solid 1px white'}}></Container>
                             </Container>
                         </Container>
