@@ -1,0 +1,1 @@
+//This will be a footer component that you can reuse for your pages.
