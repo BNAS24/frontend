@@ -5,13 +5,14 @@ import TextField from '@mui/material/TextField';
 import { ThemeProvider } from '@mui/material/styles'; // Import ThemeProvider
 import customTheme from '../styles/context/customtheme';
 import '../styles/login.css';
+import { Typography } from '@mui/material';
 
 export const Login = () => {
     return (
         <ThemeProvider theme={customTheme}>
             <div>
                 <img src="https://i.postimg.cc/wjkpvXx7/fans.png" alt="logo" className="login-logo" />
-                <p className='login-title'>Login to continue</p>
+                <Typography className='login-title'>Login to continue</Typography>
                 <form className='login-form'>
                     <TextField
                         id="outlined-required"

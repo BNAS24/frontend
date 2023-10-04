@@ -4,6 +4,7 @@ import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField';
 import { ThemeProvider } from '@mui/material/styles'; // Import ThemeProvider
 import customTheme from '../styles/context/customtheme';
+import { Typography } from '@mui/material';
 
 export const Register = () => {
     return (
@@ -11,7 +12,7 @@ export const Register = () => {
             <div>
                 <Link className='login-link' to='/login'>Login</Link>
                 <img src="https://i.postimg.cc/wjkpvXx7/fans.png" alt="logo" className="logo" />
-                <p className='create-account-title'>Create an account</p>
+                <Typography className='create-account-title'>Create an account</Typography>
                 <form className='create-account-form'>
                     <TextField
                         id="outlined-required"
