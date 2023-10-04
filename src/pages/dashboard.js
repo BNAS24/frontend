@@ -6,12 +6,12 @@ import { NavBar } from '../components/authnav';
 import { Footer } from '../components/authfoot';
 import { Avatar, Grid, Typography } from '@mui/material';
 
-const fakeNotifications = ['John Doe', 'Chief Keef', 'Pex Ranger', 'Golden Glove', 'Axel Ranger', 'Free Woo', '99 Havoc', 'Jupiter15', 'iloveTheEagles', 'xasdf', '1942$hots', 'Damn Daniel', 'Moment4life', 'Gwillikers', 'Spidyman', 'JumpmanJumpman', 'What else']
+const fakeNotifications = ['John Doe', 'Chief Keef', 'Pex Ranger', 'John Doe', 'Chief Keef', 'Pex Ranger', 'John Doe', 'Chief Keef', 'Pex Ranger', 'John Doe', 'Chief Keef', 'Pex Ranger']
 
 export const Dashboard = () => {
     return (
         <ThemeProvider theme={customTheme}>
-            <Box className='wrapper' sx={{ display: 'flex', flexDirection: 'column', position: '100vh' }}>
+            <Box sx={{ display: 'flex', flexDirection: 'column', height: '100%', width: '100%', border: 'dashed 1px yellow' }}>
                 <NavBar />
                 {/*Content goes below this line*/}
                 <Grid
@@ -34,9 +34,9 @@ export const Dashboard = () => {
                         </Container>
                     </Grid>
                     {/*2nd Grid Item*/}
-                    <Grid item xs={12} sm={12} md={12} lg={12} sx={{ gridArea: '2 / 1 / 3 / 2' }}>
+                    <Grid item xs={12} sm={12} md={12} lg={12} sx={{ gridArea: '2 / 1 / 3 / 2', overflow: 'hidden' }}>
                         <Container sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly', paddingLeft: '0 !important', paddingRight: '0 !important', gap: '24px', height: '100%', color: 'white' }}>
-
+                            {/*First Box*/}
                             <Container sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', paddingLeft: '0 !important', paddingRight: '0 !important', height: '100%', width: '100%' }}>
                                 <Typography noWrap variant='h5'>Favorite Teams</Typography>
 
@@ -44,15 +44,17 @@ export const Dashboard = () => {
 
                                 </Container>
                             </Container>
-
+                            {/*Second Box*/}
                             <Container sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', paddingLeft: '0 !important', paddingRight: '0 !important', height: '100%', width: '100%' }}>
                                 <Typography noWrap variant='h5'>Notifications</Typography>
 
-                                <Container sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', height: '100%', overflowY: 'scroll', width: '100%', marginTop: '24px', border: 'solid 1px white' }}>
+                                <Container sx={{ display: 'flex', flexGrow: '0', flexDirection: 'column', alignItems: 'center', height: '100%', maxHeight: '100%', overflow: 'hidden', width: '100%', marginTop: '24px', border: 'solid 1px white' }}>
                                     {fakeNotifications.map((notification, index) =>
                                         <Typography
                                             variant='body1'
                                             noWrap
+                                            className='links-hover-state'
+                                            key={index}
                                             sx={{ marginTop: '24px' }}
                                         >{notification} liked your post</Typography>)}
                                 </Container>
