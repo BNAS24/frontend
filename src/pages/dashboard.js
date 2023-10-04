@@ -33,8 +33,8 @@ export const Dashboard = () => {
                     </Grid>
                     <Grid item xs={12} sm={12} md={12} lg={12} sx={{ border: 'dashed 1px red', gridArea: '2 / 1 / 3 / 2', padding: '8px' }}>
                         <Container sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly', gap: '40px', height: '100%', color: 'white', border: 'dashed 1px lime' }}>
-                            <Container sx={{ height: '100%', width: '50%', border: 'dashed 1px red' }}>12</Container>
-                            <Container sx={{ width: '50%', border: 'dashed 1px red' }}>11</Container>
+                            <Container sx={{ display: 'flex', justifyContent: 'center', height: '100%', width: '50%', border: 'dashed 1px red' }}><Typography>Favorite Teams</Typography></Container>
+                            <Container sx={{ display: 'flex', justifyContent: 'center', height: '100%', width: '50%', border: 'dashed 1px red' }}><Typography>Notifications</Typography></Container>
                         </Container>
                     </Grid>
                     <Grid item xs={12} sm={12} md={12} lg={12} sx={{ border: 'dashed 1px red', gridArea: '1 / 2 / 3 / 3' }}>
