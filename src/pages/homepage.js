@@ -12,9 +12,9 @@ export const Homepage = () => {
                     <div className='title'>Sports Fanatic</div>
                 </div>
                 <div className='nav-container'>
-                    <p className='homepage-links-hover-state'>Forums</p>
-                    <p className='homepage-links-hover-state'>Live Scores</p>
-                    <p><Link className='homepage-links-hover-state' to='/login'>Login</Link></p>
+                    <p className='links-hover-state'>Forums</p>
+                    <p className='links-hover-state'>Live Scores</p>
+                    <p><Link className='links-hover-state' to='/login'>Login</Link></p>
                 </div>
             </nav>
             <section className='hero-container'>
@@ -27,8 +27,8 @@ export const Homepage = () => {
             <footer className='footer-container'>
                 <p className='copyright'>© 2023 Copyright  Sports Fanatic Hub</p>
                 <div className='nav-container'>
-                    <p className='homepage-links-hover-state'>About Us</p>
-                    <p className='homepage-links-hover-state'>Contact Us</p>
+                    <p className='links-hover-state'>About Us</p>
+                    <p className='links-hover-state'>Contact Us</p>
                 </div>
             </footer>
         </div>
