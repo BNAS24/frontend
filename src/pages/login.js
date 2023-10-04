@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import { ThemeProvider } from '@mui/material/styles'; // Import ThemeProvider
@@ -57,6 +57,7 @@ export const Login = () => {
                         }}
                         sx={{ marginTop: '8px' }}
                     />
+                    <NavLink to='/dashboard'>
                     <Button
                         variant="contained"
                         type='button'
@@ -72,6 +73,7 @@ export const Login = () => {
                     >
                         Login
                     </Button>
+                    </NavLink>
                 </form>
                 <p className='create-account-text'><Link to='/register'>Create an account</Link></p>
             </div>

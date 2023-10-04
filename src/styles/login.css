@@ -22,7 +22,7 @@
     top: 300px;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 48px;
+    font-size: 48px !important;
     color: var(--theme-white);
     white-space: nowrap;
 }
@@ -42,6 +42,7 @@
 .login-button {
     margin-top: 16px !important;
     background-color: var(--theme-orange) !important;
+    min-width: 400px !important;
 }
 
 .login-button:hover {
