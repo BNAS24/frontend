@@ -37,18 +37,3 @@
 .C2A-Button:hover {
     background-color: #fe6f10 !important;
 }
-
-
-.footer-container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    height: 88px;
-    width: 100%;
-    color: var(--theme-white);
-    border-top: solid 1px var(--theme-orange);
-}
-
-.copyright {
-    margin-left: 24px;
-}

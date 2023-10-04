@@ -6,8 +6,8 @@ export const Footer = () => {
         <footer className='footer-container'>
             <p className='copyright'>© 2023 Copyright  Sports Fanatic Hub</p>
             <div className='nav-container'>
-                <p className='homepage-links-hover-state'>About Us</p>
-                <p className='homepage-links-hover-state'>Contact Us</p>
+                <p className='links-hover-state'>About Us</p>
+                <p className='links-hover-state'>Contact Us</p>
             </div>
         </footer>
     )

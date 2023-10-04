@@ -11,10 +11,10 @@ export const NavBar = () => {
                 <div className='title'>Sports Fanatic</div>
             </div>
             <div className='nav-container'>
-                <p><NavLink className='homepage-links-hover-state' to='/dashboard' style={({ isActive }) => ({ color: isActive ? customTheme.palette.secondary.main : null })}>Dashboard</NavLink></p>
-                <p><NavLink className='homepage-links-hover-state' to='/forums' style={({ isActive }) => ({ color: isActive ? customTheme.palette.secondary.main : null })}>Forums</NavLink></p>
-                <p><NavLink className='homepage-links-hover-state' to='/live-scores' style={({ isActive }) => ({ color: isActive ? customTheme.palette.secondary.main : null })}>Live Scores</NavLink></p>
-                <p><NavLink className='homepage-links-hover-state' to='/profile' style={({ isActive }) => ({ color: isActive ? customTheme.palette.secondary.main : null })}>Profile</NavLink></p>
+                <p><NavLink className='links-hover-state' to='/dashboard' style={({ isActive }) => ({ color: isActive ? customTheme.palette.secondary.main : null })}>Dashboard</NavLink></p>
+                <p><NavLink className='links-hover-state' to='/forums' style={({ isActive }) => ({ color: isActive ? customTheme.palette.secondary.main : null })}>Forums</NavLink></p>
+                <p><NavLink className='links-hover-state' to='/live-scores' style={({ isActive }) => ({ color: isActive ? customTheme.palette.secondary.main : null })}>Live Scores</NavLink></p>
+                <p><NavLink className='links-hover-state' to='/profile' style={({ isActive }) => ({ color: isActive ? customTheme.palette.secondary.main : null })}>Profile</NavLink></p>
             </div>
         </nav>
     )

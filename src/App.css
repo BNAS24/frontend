@@ -1,0 +1,5 @@
+.links-hover-state:hover {
+    color: var(--theme-orange);
+    text-decoration: none;
+    cursor: pointer;
+}
