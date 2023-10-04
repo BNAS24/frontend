@@ -54,7 +54,7 @@ export const Register = () => {
                                 },
                             },
                         }}
-                        sx={{ marginTop: '8px' }}
+                        sx={{ marginTop: '4px' }}
                     />
                     <TextField
                         id="outlined-password-input"
@@ -77,16 +77,23 @@ export const Register = () => {
                                 },
                             },
                         }}
-                        sx={{ marginTop: '8px' }}
+                        sx={{ marginTop: '4px' }}
                     />
-                    <Button variant="contained" type='submit' sx={{
-                        color: 'white',
-                        padding: '8px 8px',
-                        fontSize: '16px',
-                        '&:hover': {
-                            backgroundColor: '#fe6f10',
-                        },
-                    }} className='create-account-button'>Create</Button>
+                    <Button
+                        variant="contained"
+                        type='button'
+                        sx={{
+                            color: 'white',
+                            padding: '8px 8px',
+                            fontSize: '16px',
+                            '&:hover': {
+                                backgroundColor: '#fe6f10',
+                            },
+                        }}
+                        className='login-button'
+                    >
+                        Create
+                    </Button>
                 </form>
             </div>
         </ThemeProvider>
