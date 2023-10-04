@@ -1,5 +1,4 @@
 import '../styles/dashboard.css';
-import { NavLink } from 'react-router-dom';
 import customTheme from '../styles/context/customtheme';
 import { ThemeProvider } from '@emotion/react';
 import { Box } from '@mui/system';

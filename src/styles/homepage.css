@@ -5,49 +5,7 @@
     height: 100vh;
 }
 
-.header-container {
-    display: flex;
-    height: 88px;
-    width: 100%;
-    align-items: center;
-    flex-direction: row;
-    border-bottom: solid 1px var(--theme-orange);
-}
 
-.logo_name_container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-left: 24px;
-    color: var(--theme-white);
-}
-
-.sports-fanatic-logo {
-    height: 48px;
-    width: 48px;
-}
-
-.title {
-    margin-left: 24px;
-    margin-top: 10px;
-    font-size: 32px;
-}
-
-.nav-container {
-    display: flex;
-    position: absolute;
-    right: 24px;
-    margin-top: 8px;
-    flex-direction: row;
-    gap: 21px;
-    color: white;
-}
-
-.homepage-links-hover-state:hover {
-    color: var(--theme-orange);
-    text-decoration: none;
-    cursor: pointer;
-}
 
 .hero-container {
     position: relative;

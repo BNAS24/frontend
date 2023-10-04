@@ -1,6 +1,7 @@
 //This will be a nav component that you can reuse for your pages.
 import { NavLink } from "react-router-dom"
 import customTheme from "../styles/context/customtheme"
+import './styles/authnav.css'
 
 export const NavBar = () => {
     return (
