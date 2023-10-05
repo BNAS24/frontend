@@ -6,7 +6,10 @@ import { NavBar } from '../components/authnav';
 import { Footer } from '../components/authfoot';
 import { Avatar, Grid, Typography } from '@mui/material';
 
-const fakeNotifications = ['John Doe', 'Chief Keef', 'Pex Ranger', 'Sally', 'Jeff100', 'xrel12', '1234Hey', 'iloveFootball', 'Eaglesrule', 'SuperCoder123', 'TechExplorer24', 'StarGazer99', 'PexRanger16', 'AdventureSeeker77', 'MusicMaestro55', 'FitnessFanatic19', 'TravelEnthusiast7', 'FoodieDelight', 'GamingNinja21', 'MovieBuff123', 'StarGazer99', 'PexRanger16', 'AdventureSeeker77', 'MusicMaestro55', 'FitnessFanatic19', 'TravelEnthusiast7', 'FoodieDelight', 'GamingNinja21', 'MovieBuff123', 'StarGazer99', 'PexRanger16', 'AdventureSeeker77', 'MusicMaestro55', 'FitnessFanatic19', 'TravelEnthusiast7', 'FoodieDelight', 'GamingNinja21', 'MovieBuff123', 'StarGazer99', 'PexRanger16', 'AdventureSeeker77', 'MusicMaestro55', 'FitnessFanatic19', 'TravelEnthusiast7', 'FoodieDelight', 'GamingNinja21', 'MovieBuff123', 'StarGazer99', 'PexRanger16', 'AdventureSeeker77', 'MusicMaestro55', 'FitnessFanatic19', 'TravelEnthusiast7', 'FoodieDelight', 'GamingNinja21', 'MovieBuff123']
+
+const fakeTeams = ['Philadelphia Eagles', 'Phillies', ' 76ixers', 'Union', 'Flyers', 'Norristown Bandits', 'New York Yankees',  'Los Angeles Lakers',  'Dallas Cowboys',  'Boston Red Sox',  'Chicago Bulls',  'Green Bay Packers',  'Golden State Warriors',  'Pittsburgh Steelers',  'San Francisco Giants',  'New England Patriots']
+
+const fakeNotifications = ['John Doe', 'Chief Keef', 'Pex Ranger', 'Sally', 'Jeff100', 'xrel12', '1234Hey', 'iloveFootball', 'Eaglesrule', 'SuperCoder123', 'TechExplorer24', 'StarGazer99', 'PexRanger16', 'AdventureSeeker77', 'MusicMaestro55', 'FitnessFanatic19', 'TravelEnthusiast7', 'FoodieDelight', 'GamingNinja21', 'MovieBuff123']
 
 export const Dashboard = () => {
     return (
@@ -36,10 +39,10 @@ export const Dashboard = () => {
                     }}
                 >
                     {/*1st Grid Item*/}
+
                     <Grid item xs={12} sm={12} md={12} lg={12}
                         sx={{
                             gridArea: '1 / 1 / 2 / 2',
-                            overflow: 'hidden'
                         }}>
                         <Container
                             sx={{
@@ -70,23 +73,26 @@ export const Dashboard = () => {
                             </Typography>
                         </Container>
                     </Grid>
+
                     {/*2nd Grid Item*/}
 
                     <Grid item xs={12} sm={12} md={12} lg={12}
                         sx={{
                             gridArea: '2 / 1 / 3 / 2',
-                            overflow: 'hidden'
+                            overflowY: 'hidden',
                         }}>
 
                         <Container
                             sx={{
                                 display: 'flex',
                                 flexDirection: 'row',
-                                justifyContent: 'space-evenly',
+                                justifyContent: 'stretch',
+                                minWidth: '100%',
+                                height: '100%',
+                                maxHeight: '100%',
                                 paddingLeft: '0 !important',
                                 paddingRight: '0 !important',
                                 gap: '24px',
-                                height: '100%',
                                 color: 'white'
                             }}>
 
@@ -95,8 +101,7 @@ export const Dashboard = () => {
                             <Container
                                 sx={{
                                     display: 'flex',
-                                    flex: '1',
-                                    flexShrink: '0',
+                                    flexShrink: '1',
                                     flexDirection: 'column',
                                     alignItems: 'center',
                                     maxHeight: '100%',
@@ -105,18 +110,71 @@ export const Dashboard = () => {
                                 }}>
 
                                 <Typography
-                                    noWrap
-                                    variant='h4'>
+                                    noWrap={true}
+                                    align='center'
+                                    variant='h4'
+                                    sx={{
+                                        fontSize: {
+                                            xs: '1.5rem',
+                                            sm: '1.3rem',
+                                            md: '1.7rem',
+                                            lg: '2.5rem',
+                                            xl: ''
+                                        }
+                                    }}>
                                     Favorite Teams
                                 </Typography>
 
                                 <Container
                                     sx={{
+                                        display: 'flex',
+                                        flexWrap: 'wrap',
                                         height: '100%',
                                         width: '100%',
                                         marginTop: '24px',
+                                        overflowY: 'scroll',
                                         border: 'solid 1px #F26101'
                                     }}>
+                                    {/*Add map*/}
+                                    {fakeTeams.map((team, index) =>
+                                        <Container
+                                            sx={{
+                                                display: 'flex',
+                                                flexGrow: 0,
+                                                flexDirection: 'column',
+                                                alignItems: 'center',
+                                                justifyContent: 'flex-start',
+                                                width: '33%',
+                                                marginTop: '24px',
+                                                border: 'dashed 1px yellow'
+
+                                            }}
+                                        >
+                                            <Avatar
+                                                variant='square'
+                                                alt='team logo'
+                                                src='https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png'
+                                                sx={{
+                                                    height: '62px',
+                                                    width: '62px',
+                                                }}
+                                            >
+
+                                            </Avatar>
+                                            <Typography
+                                                variant='body1'
+                                                align='center'
+                                                className='links-hover-state'
+                                                key={index}
+                                                sx={{
+                                                    flexShrink: 2,
+                                                    fontSize: '1rem',
+                                                }}
+                                            >
+                                                {team}
+                                            </Typography>
+                                        </Container>
+                                    )}
 
                                 </Container>
                             </Container>
@@ -126,7 +184,7 @@ export const Dashboard = () => {
                             <Container
                                 sx={{
                                     display: 'flex',
-                                    flex: '1', flexShrink: '0',
+                                    flexShrink: '1',
                                     flexDirection: 'column',
                                     alignItems: 'center',
                                     maxHeight: '100%',
@@ -135,8 +193,19 @@ export const Dashboard = () => {
                                 }}>
 
                                 <Typography
-                                    noWrap
-                                    variant='h4'>
+                                    noWrap={true}
+                                    align='center'
+                                    variant='h4'
+                                    sx={{
+                                        fontSize: {
+                                            xs: '1.5rem',
+                                            sm: '1.3rem',
+                                            md: '1.7rem',
+                                            lg: '2.5rem',
+                                            xl: ''
+                                        }
+                                    }}
+                                >
                                     Notifications
                                 </Typography>
 
@@ -156,18 +225,19 @@ export const Dashboard = () => {
                                         /* WebKit-based browsers (Chrome and Safari) scrollbar styles */
                                         scrollbarWidth: 'thin',
                                         scrollbarColor: '#F26101 #ffffff',
-                                    }}
-                                >
+                                    }}>
+
                                     {/*The Typography element will actually get changed into a NavLink component for demonstration purposes of clicking on a notification and it takes you to someone's profile page, you have to build a mock profile page first*/}
 
                                     {fakeNotifications.map((notification, index) =>
                                         <Typography
                                             variant='body1'
-                                            noWrap
+                                            align='center'
                                             className='links-hover-state'
                                             key={index}
-                                            sx={{ marginTop: '24px', flexShrink: '0' }}
-                                        >
+                                            sx={{
+                                                marginTop: '24px', flexShrink: '0', fontSize: '1rem'
+                                            }}>
                                             {notification} liked your post
                                         </Typography>)}
                                 </Container>
