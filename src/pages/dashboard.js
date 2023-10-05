@@ -11,7 +11,13 @@ const fakeNotifications = ['John Doe', 'Chief Keef', 'Pex Ranger', 'Sally', 'Jef
 export const Dashboard = () => {
     return (
         <ThemeProvider theme={customTheme}>
-            <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100%', width: '100%' }}>
+            <Box
+                sx={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    minHeight: '100%',
+                    width: '100%'
+                }}>
                 <NavBar />
                 {/*Content goes below this line*/}
                 <Grid
@@ -30,7 +36,14 @@ export const Dashboard = () => {
                     {/*1st Grid Item*/}
                     <Grid item xs={12} sm={12} md={12} lg={12} sx={{ gridArea: '1 / 1 / 2 / 2', overflow: 'hidden' }}>
                         <Container sx={{ display: 'flex', flexDirection: 'row', height: '100%', alignItems: 'center', paddingLeft: '0 !important', color: 'white' }}>
-                            <Avatar variant='square' alt='profile picture' src='https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png' sx={{ height: '104px', width: '104px' }} />
+                            <Avatar
+                                variant='square'
+                                alt='profile picture'
+                                src='https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png'
+                                sx={{
+                                    height: '104px',
+                                    width: '104px'
+                                }} />
                             <Typography style={{ marginLeft: '24px' }} variant='h3'>Hello Brandon! {/*The name will be dynamicall rendered*/}</Typography>
                         </Container>
                     </Grid>
@@ -38,26 +51,78 @@ export const Dashboard = () => {
 
                     <Grid item xs={12} sm={12} md={12} lg={12} sx={{ gridArea: '2 / 1 / 3 / 2', overflow: 'hidden' }}>
 
-                        <Container sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly', paddingLeft: '0 !important', paddingRight: '0 !important', gap: '24px', height: '100%', color: 'white' }}>
+                        <Container
+                            sx={{
+                                display: 'flex',
+                                flexDirection: 'row',
+                                justifyContent: 'space-evenly',
+                                paddingLeft: '0 !important',
+                                paddingRight: '0 !important',
+                                gap: '24px',
+                                height: '100%',
+                                color: 'white'
+                            }}>
 
                             {/*First Box*/}
 
-                            <Container sx={{ display: 'flex', flex: '1', flexShrink: '0', flexDirection: 'column', alignItems: 'center', maxHeight: '100%', paddingLeft: '0 !important', paddingRight: '0 !important' }}>
+                            <Container
+                                sx={{
+                                    display: 'flex',
+                                    flex: '1',
+                                    flexShrink: '0',
+                                    flexDirection: 'column',
+                                    alignItems: 'center',
+                                    maxHeight: '100%',
+                                    paddingLeft: '0 !important',
+                                    paddingRight: '0 !important'
+                                }}>
 
                                 <Typography noWrap variant='h4'>Favorite Teams</Typography>
 
-                                <Container sx={{ height: '100%', width: '100%', marginTop: '24px', border: 'solid 1px white' }}>
+                                <Container
+                                    sx={{
+                                        height: '100%',
+                                        width: '100%',
+                                        marginTop: '24px',
+                                        border: 'solid 1px #F26101'
+                                    }}>
 
                                 </Container>
                             </Container>
 
                             {/*Second Box*/}
 
-                            <Container sx={{ display: 'flex', flex: '1', flexShrink: '0', flexDirection: 'column', alignItems: 'center', maxHeight: '100%', paddingLeft: '0 !important', paddingRight: '0 !important' }}>
+                            <Container
+                                sx={{
+                                    display: 'flex',
+                                    flex: '1', flexShrink: '0',
+                                    flexDirection: 'column',
+                                    alignItems: 'center',
+                                    maxHeight: '100%',
+                                    paddingLeft: '0 !important',
+                                    paddingRight: '0 !important'
+                                }}>
 
                                 <Typography noWrap variant='h4'>Notifications</Typography>
 
-                                <Container sx={{ display: 'flex !important', flexDirection: 'column', alignItems: 'center', height: '100%', width: '100%', marginTop: '24px', paddingBottom: '24px', overflowY: 'scroll', border: 'solid 1px white' }}>
+                                <Container
+                                    sx={{
+                                        display: 'flex !important',
+                                        flexDirection: 'column',
+                                        alignItems: 'center',
+                                        height: '100%',
+                                        width: '100%',
+                                        marginTop: '24px',
+                                        paddingBottom: '24px',
+                                        overflowY: 'scroll',
+                                        border: 'solid 1px #F26101'
+                                    }}
+                                    style={{
+                                        /* WebKit-based browsers (Chrome and Safari) scrollbar styles */
+                                        scrollbarWidth: 'thin',
+                                        scrollbarColor: '#F26101 #ffffff',
+                                    }}
+                                >
                                     {/*The Typography element will actually get changed into a NavLink component for demonstration purposes of clicking on a notification and it takes you to someone's profile page, you have to build a mock profile page first*/}
                                     {fakeNotifications.map((notification, index) =>
                                         <Typography
