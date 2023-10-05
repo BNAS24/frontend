@@ -7,7 +7,7 @@ import { Footer } from '../components/authfoot';
 import { Avatar, Grid, Typography } from '@mui/material';
 
 
-const fakeTeams = ['Philadelphia Eagles', 'Phillies', ' 76ixers', 'Union', 'Flyers', 'Norristown Bandits', 'New York Yankees',  'Los Angeles Lakers',  'Dallas Cowboys',  'Boston Red Sox',  'Chicago Bulls',  'Green Bay Packers',  'Golden State Warriors',  'Pittsburgh Steelers',  'San Francisco Giants',  'New England Patriots']
+const fakeTeams = ['Philadelphia Eagles', 'Phillies', ' 76ixers', 'Union', 'Flyers', 'Norristown Bandits', 'New York Yankees', 'Los Angeles Lakers', 'Dallas Cowboys', 'Boston Red Sox', 'Chicago Bulls', 'Green Bay Packers', 'Golden State Warriors', 'Pittsburgh Steelers', 'San Francisco Giants', 'New England Patriots']
 
 const fakeNotifications = ['John Doe', 'Chief Keef', 'Pex Ranger', 'Sally', 'Jeff100', 'xrel12', '1234Hey', 'iloveFootball', 'Eaglesrule', 'SuperCoder123', 'TechExplorer24', 'StarGazer99', 'PexRanger16', 'AdventureSeeker77', 'MusicMaestro55', 'FitnessFanatic19', 'TravelEnthusiast7', 'FoodieDelight', 'GamingNinja21', 'MovieBuff123']
 
@@ -132,6 +132,8 @@ export const Dashboard = () => {
                                         height: '100%',
                                         width: '100%',
                                         marginTop: '24px',
+                                        paddingLeft: '0 !important',
+                                        paddingRight: '0 !important',
                                         overflowY: 'scroll',
                                         border: 'solid 1px #F26101'
                                     }}>
@@ -146,14 +148,13 @@ export const Dashboard = () => {
                                                 justifyContent: 'flex-start',
                                                 width: '33%',
                                                 marginTop: '24px',
-                                                border: 'dashed 1px yellow'
 
                                             }}
                                         >
                                             <Avatar
                                                 variant='square'
                                                 alt='team logo'
-                                                src='https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png'
+                                                src='https://cdn-icons-png.flaticon.com/512/2553/2553695.png'
                                                 sx={{
                                                     height: '62px',
                                                     width: '62px',
