@@ -19,6 +19,7 @@ export const Dashboard = () => {
                     width: '100%'
                 }}>
                 <NavBar />
+
                 {/*Content goes below this line*/}
                 <Grid
                     container
@@ -52,7 +53,15 @@ export const Dashboard = () => {
                                     height: '104px',
                                     width: '104px'
                                 }} />
-                            <Typography style={{ marginLeft: '24px' }} variant='h3'>Hello Brandon! {/*The name will be dynamicall rendered*/}</Typography>
+                            <Typography
+                                style={{
+                                    marginLeft: '24px'
+                                }}
+                                variant='h3'
+                            >
+                                Hello Brandon!
+                                {/*The name will be dynamicall rendered*/}
+                            </Typography>
                         </Container>
                     </Grid>
                     {/*2nd Grid Item*/}
@@ -85,7 +94,9 @@ export const Dashboard = () => {
                                     paddingRight: '0 !important'
                                 }}>
 
-                                <Typography noWrap variant='h4'>Favorite Teams</Typography>
+                                <Typography noWrap variant='h4'>
+                                    Favorite Teams
+                                </Typography>
 
                                 <Container
                                     sx={{
@@ -111,7 +122,9 @@ export const Dashboard = () => {
                                     paddingRight: '0 !important'
                                 }}>
 
-                                <Typography noWrap variant='h4'>Notifications</Typography>
+                                <Typography noWrap variant='h4'>
+                                    Notifications
+                                </Typography>
 
                                 <Container
                                     sx={{
