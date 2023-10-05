@@ -5,11 +5,15 @@ import { Box, Container } from '@mui/system';
 import { NavBar } from '../components/authnav';
 import { Footer } from '../components/authfoot';
 import { Avatar, Grid, Typography } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 
 const fakeTeams = ['Philadelphia Eagles', 'Phillies', ' 76ixers', 'Union', 'Flyers', 'Norristown Bandits', 'New York Yankees', 'Los Angeles Lakers', 'Dallas Cowboys', 'Boston Red Sox', 'Chicago Bulls', 'Green Bay Packers', 'Golden State Warriors', 'Pittsburgh Steelers', 'San Francisco Giants', 'New England Patriots']
 
 const fakeNotifications = ['John Doe', 'Chief Keef', 'Pex Ranger', 'Sally', 'Jeff100', 'xrel12', '1234Hey', 'iloveFootball', 'Eaglesrule', 'SuperCoder123', 'TechExplorer24', 'StarGazer99', 'PexRanger16', 'AdventureSeeker77', 'MusicMaestro55', 'FitnessFanatic19', 'TravelEnthusiast7', 'FoodieDelight', 'GamingNinja21', 'MovieBuff123']
+
+
+
 
 export const Dashboard = () => {
     return (
@@ -249,6 +253,19 @@ export const Dashboard = () => {
                             gridArea: '1 / 2 / 3 / 3',
                             overflow: 'hidden'
                         }}>
+                        <Container 
+                        className='dashboard-forum-bar' 
+                        id='dashboard-forum-bar'
+                        sx={{
+                            display: 'flex',
+                            justifyContent: 'space-between',
+                            alignItems: 'center',
+                            color: 'white',
+                        }}
+                        >
+                            <Typography>Forum you follow</Typography>
+                            <Link to='forums'>Explore</Link>
+                        </Container>
                     </Grid>
                 </Grid>
 
