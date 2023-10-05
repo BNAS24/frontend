@@ -35,7 +35,15 @@ export const Dashboard = () => {
                 >
                     {/*1st Grid Item*/}
                     <Grid item xs={12} sm={12} md={12} lg={12} sx={{ gridArea: '1 / 1 / 2 / 2', overflow: 'hidden' }}>
-                        <Container sx={{ display: 'flex', flexDirection: 'row', height: '100%', alignItems: 'center', paddingLeft: '0 !important', color: 'white' }}>
+                        <Container
+                            sx={{
+                                display: 'flex',
+                                flexDirection: 'row',
+                                height: '100%',
+                                alignItems: 'center',
+                                paddingLeft: '0 !important',
+                                color: 'white'
+                            }}>
                             <Avatar
                                 variant='square'
                                 alt='profile picture'
@@ -124,6 +132,7 @@ export const Dashboard = () => {
                                     }}
                                 >
                                     {/*The Typography element will actually get changed into a NavLink component for demonstration purposes of clicking on a notification and it takes you to someone's profile page, you have to build a mock profile page first*/}
+
                                     {fakeNotifications.map((notification, index) =>
                                         <Typography
                                             variant='body1'
