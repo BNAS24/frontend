@@ -10,10 +10,20 @@ export const Register = () => {
     return (
         <ThemeProvider theme={customTheme}>
             <div>
-                <Link className='login-link' to='/login'>Login</Link>
-                <img src="https://i.postimg.cc/wjkpvXx7/fans.png" alt="logo" className="logo" />
-                <Typography className='create-account-title'>Create an account</Typography>
-                <form className='create-account-form'>
+                <Link
+                    className='login-link'
+                    to='/login'>Login
+                </Link>
+                <img
+                    src="https://i.postimg.cc/wjkpvXx7/fans.png"
+                    alt="logo"
+                    className="logo" />
+                <Typography
+                    className='create-account-title'>
+                    Create an account
+                </Typography>
+                <form
+                    className='create-account-form'>
                     <TextField
                         id="outlined-required"
                         label="Email"

@@ -59,10 +59,11 @@ export const Dashboard = () => {
                                     width: '104px'
                                 }} />
                             <Typography
+                                variant='h3'
                                 style={{
                                     marginLeft: '24px'
                                 }}
-                                variant='h3'
+
                             >
                                 Hello Brandon!
                                 {/*The name will be dynamicall rendered*/}
@@ -103,7 +104,9 @@ export const Dashboard = () => {
                                     paddingRight: '0 !important'
                                 }}>
 
-                                <Typography noWrap variant='h4'>
+                                <Typography
+                                    noWrap
+                                    variant='h4'>
                                     Favorite Teams
                                 </Typography>
 
@@ -131,7 +134,9 @@ export const Dashboard = () => {
                                     paddingRight: '0 !important'
                                 }}>
 
-                                <Typography noWrap variant='h4'>
+                                <Typography
+                                    noWrap
+                                    variant='h4'>
                                     Notifications
                                 </Typography>
 

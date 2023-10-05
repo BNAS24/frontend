@@ -11,9 +11,16 @@ export const Login = () => {
     return (
         <ThemeProvider theme={customTheme}>
             <div>
-                <img src="https://i.postimg.cc/wjkpvXx7/fans.png" alt="logo" className="login-logo" />
-                <Typography className='login-title'>Login to continue</Typography>
-                <form className='login-form'>
+                <img
+                    src="https://i.postimg.cc/wjkpvXx7/fans.png"
+                    alt="logo"
+                    className="login-logo" />
+                <Typography
+                    className='login-title'>
+                    Login to continue
+                </Typography>
+                <form
+                    className='login-form'>
                     <TextField
                         id="outlined-required"
                         label="Email"
@@ -57,25 +64,32 @@ export const Login = () => {
                         }}
                         sx={{ marginTop: '8px' }}
                     />
-                    <NavLink to='/dashboard'>
-                    <Button
-                        variant="contained"
-                        type='button'
-                        sx={{
-                            color: 'white',
-                            padding: '8px 8px',
-                            fontSize: '16px',
-                            '&:hover': {
-                                backgroundColor: '#fe6f10',
-                            },
-                        }}
-                        className='login-button'
-                    >
-                        Login
-                    </Button>
+                    <NavLink
+                        to='/dashboard'>
+                        <Button
+                            variant="contained"
+                            type='button'
+                            sx={{
+                                color: 'white',
+                                padding: '8px 8px',
+                                fontSize: '16px',
+                                '&:hover': {
+                                    backgroundColor: '#fe6f10',
+                                },
+                            }}
+                            className='login-button'
+                        >
+                            Login
+                        </Button>
                     </NavLink>
                 </form>
-                <p className='create-account-text'><Link to='/register'>Create an account</Link></p>
+                <p
+                    className='create-account-text'>
+                    <Link
+                        to='/register'>
+                        Create an account
+                    </Link>
+                </p>
             </div>
         </ThemeProvider>
     );
