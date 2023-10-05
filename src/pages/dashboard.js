@@ -28,7 +28,7 @@ export const Dashboard = () => {
                     }}
                 >
                     {/*1st Grid Item*/}
-                    <Grid item xs={12} sm={12} md={12} lg={12} sx={{ gridArea: '1 / 1 / 2 / 2', overflow: 'hidden'}}>
+                    <Grid item xs={12} sm={12} md={12} lg={12} sx={{ gridArea: '1 / 1 / 2 / 2', overflow: 'hidden' }}>
                         <Container sx={{ display: 'flex', flexDirection: 'row', height: '100%', alignItems: 'center', paddingLeft: '0 !important', color: 'white' }}>
                             <Avatar variant='square' alt='profile picture' src='https://i.postimg.cc/qq6K81pw/Profile-Picture-Placeholder.png' sx={{ height: '104px', width: '104px' }} />
                             <Typography style={{ marginLeft: '24px' }} variant='h3'>Hello Brandon! {/*The name will be dynamicall rendered*/}</Typography>
@@ -53,26 +53,27 @@ export const Dashboard = () => {
 
                             {/*Second Box*/}
 
-                            <Container sx={{ display: 'flex', flex: '1',  flexShrink: '0', flexDirection: 'column', alignItems: 'center', maxHeight: '100%', paddingLeft: '0 !important', paddingRight: '0 !important', border: 'dashed 1px red'}}>
+                            <Container sx={{ display: 'flex', flex: '1', flexShrink: '0', flexDirection: 'column', alignItems: 'center', maxHeight: '100%', paddingLeft: '0 !important', paddingRight: '0 !important', border: 'dashed 1px red' }}>
 
                                 <Typography noWrap variant='h5'>Notifications</Typography>
 
                                 <Container sx={{ display: 'flex !important', flexDirection: 'column', alignItems: 'center', height: '100%', width: '100%', marginTop: '24px', overflowY: 'scroll', border: 'solid 1px white' }}>
-                                        {fakeNotifications.map((notification, index) =>
-                                            <Typography
-                                                variant='body1'
-                                                noWrap
-                                                className='links-hover-state'
-                                                key={index}
-                                                sx={{ marginTop: '24px', flexShrink: '0'}}
-                                            >{notification} liked your post
-                                            </Typography>)}
+                                {/*The Typography element will actually get changed into a NavLink component for demonstration purposes of clicking on a notification and it takes you to someone's profile page, you have to build a mock profile page first*/}
+                                    {fakeNotifications.map((notification, index) =>
+                                        <Typography
+                                            variant='body1'
+                                            noWrap
+                                            className='links-hover-state'
+                                            key={index}
+                                            sx={{ marginTop: '24px', flexShrink: '0' }}
+                                        >{notification} liked your post
+                                        </Typography>)}
                                 </Container>
                             </Container>
                         </Container>
                     </Grid>
                     {/*3rd Grid Item*/}
-                    <Grid item xs={12} sm={12} md={12} lg={12} sx={{ background: 'linear-gradient(to bottom, #0081D4, #ffffff)', border: 'solid 1px green', gridArea: '1 / 2 / 3 / 3' , overflow: 'hidden'}}>
+                    <Grid item xs={12} sm={12} md={12} lg={12} sx={{ background: 'linear-gradient(to bottom, #0081D4, #ffffff)', border: 'solid 1px green', gridArea: '1 / 2 / 3 / 3', overflow: 'hidden' }}>
 
                     </Grid>
                 </Grid>
