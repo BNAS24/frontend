@@ -65,7 +65,7 @@ export const Dashboard = () => {
                                                 className='links-hover-state'
                                                 key={index}
                                                 sx={{ marginTop: '24px', flexShrink: '0'}}
-                                            >{notification} iked your post
+                                            >{notification} liked your post
                                             </Typography>)}
                                 </Container>
                             </Container>
