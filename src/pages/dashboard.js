@@ -21,6 +21,7 @@ export const Dashboard = () => {
                 <NavBar />
 
                 {/*Content goes below this line*/}
+
                 <Grid
                     container
                     sx={{
@@ -35,7 +36,11 @@ export const Dashboard = () => {
                     }}
                 >
                     {/*1st Grid Item*/}
-                    <Grid item xs={12} sm={12} md={12} lg={12} sx={{ gridArea: '1 / 1 / 2 / 2', overflow: 'hidden' }}>
+                    <Grid item xs={12} sm={12} md={12} lg={12}
+                        sx={{
+                            gridArea: '1 / 1 / 2 / 2',
+                            overflow: 'hidden'
+                        }}>
                         <Container
                             sx={{
                                 display: 'flex',
@@ -66,7 +71,11 @@ export const Dashboard = () => {
                     </Grid>
                     {/*2nd Grid Item*/}
 
-                    <Grid item xs={12} sm={12} md={12} lg={12} sx={{ gridArea: '2 / 1 / 3 / 2', overflow: 'hidden' }}>
+                    <Grid item xs={12} sm={12} md={12} lg={12}
+                        sx={{
+                            gridArea: '2 / 1 / 3 / 2',
+                            overflow: 'hidden'
+                        }}>
 
                         <Container
                             sx={{
@@ -153,15 +162,22 @@ export const Dashboard = () => {
                                             className='links-hover-state'
                                             key={index}
                                             sx={{ marginTop: '24px', flexShrink: '0' }}
-                                        >{notification} liked your post
+                                        >
+                                            {notification} liked your post
                                         </Typography>)}
                                 </Container>
                             </Container>
                         </Container>
+
                     </Grid>
                     {/*3rd Grid Item*/}
-                    <Grid item xs={12} sm={12} md={12} lg={12} sx={{ background: 'linear-gradient(to bottom, #0081D4, #ffffff)', border: 'solid 1px green', gridArea: '1 / 2 / 3 / 3', overflow: 'hidden' }}>
-
+                    <Grid item xs={12} sm={12} md={12} lg={12}
+                        sx={{
+                            background: 'linear-gradient(to bottom, #0081D4, #ffffff)',
+                            border: 'solid 1px green',
+                            gridArea: '1 / 2 / 3 / 3',
+                            overflow: 'hidden'
+                        }}>
                     </Grid>
                 </Grid>
 
