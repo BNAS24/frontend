@@ -57,7 +57,7 @@ export const Dashboard = () => {
 
                                 <Typography noWrap variant='h4'>Notifications</Typography>
 
-                                <Container sx={{ display: 'flex !important', flexDirection: 'column', alignItems: 'center', height: '100%', width: '100%', marginTop: '24px', overflowY: 'scroll', border: 'solid 1px white' }}>
+                                <Container sx={{ display: 'flex !important', flexDirection: 'column', alignItems: 'center', height: '100%', width: '100%', marginTop: '24px', paddingBottom: '24px', overflowY: 'scroll', border: 'solid 1px white' }}>
                                     {/*The Typography element will actually get changed into a NavLink component for demonstration purposes of clicking on a notification and it takes you to someone's profile page, you have to build a mock profile page first*/}
                                     {fakeNotifications.map((notification, index) =>
                                         <Typography
