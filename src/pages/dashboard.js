@@ -42,7 +42,7 @@ export const Dashboard = () => {
 
                             {/*First Box*/}
 
-                            <Container sx={{ display: 'flex', flex: '1', flexShrink: '0', flexDirection: 'column', alignItems: 'center', paddingLeft: '0 !important', paddingRight: '0 !important', border: 'dashed 1px red' }}>
+                            <Container sx={{ display: 'flex', flex: '1', flexShrink: '0', flexDirection: 'column', alignItems: 'center', maxHeight: '100%', paddingLeft: '0 !important', paddingRight: '0 !important', border: 'dashed 1px red' }}>
 
                                 <Typography noWrap variant='h5'>Favorite Teams</Typography>
 
