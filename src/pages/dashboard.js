@@ -134,7 +134,7 @@ export const Dashboard = () => {
                                         marginTop: '24px',
                                         paddingLeft: '0 !important',
                                         paddingRight: '0 !important',
-                                        overflowY: 'scroll',
+                                        overflowY: 'auto',
                                         border: 'solid 1px #F26101'
                                     }}>
                                     {/*Add map*/}
@@ -219,13 +219,8 @@ export const Dashboard = () => {
                                         width: '100%',
                                         marginTop: '24px',
                                         paddingBottom: '24px',
-                                        overflowY: 'scroll',
+                                        overflowY: 'auto',
                                         border: 'solid 1px #F26101'
-                                    }}
-                                    style={{
-                                        /* WebKit-based browsers (Chrome and Safari) scrollbar styles */
-                                        scrollbarWidth: 'thin',
-                                        scrollbarColor: '#F26101 #ffffff',
                                     }}>
 
                                     {/*The Typography element will actually get changed into a NavLink component for demonstration purposes of clicking on a notification and it takes you to someone's profile page, you have to build a mock profile page first*/}
