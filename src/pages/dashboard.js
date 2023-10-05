@@ -11,7 +11,7 @@ const fakeNotifications = ['John Doe', 'Chief Keef', 'Pex Ranger', 'Sally', 'Jef
 export const Dashboard = () => {
     return (
         <ThemeProvider theme={customTheme}>
-            <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100%', width: '100%', border: 'dashed 1px yellow' }}>
+            <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100%', width: '100%' }}>
                 <NavBar />
                 {/*Content goes below this line*/}
                 <Grid
@@ -38,13 +38,13 @@ export const Dashboard = () => {
 
                     <Grid item xs={12} sm={12} md={12} lg={12} sx={{ gridArea: '2 / 1 / 3 / 2', overflow: 'hidden' }}>
 
-                        <Container sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly', paddingLeft: '0 !important', paddingRight: '0 !important', gap: '24px', height: '100%', color: 'white', border: 'dashed 1px yellow' }}>
+                        <Container sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly', paddingLeft: '0 !important', paddingRight: '0 !important', gap: '24px', height: '100%', color: 'white' }}>
 
                             {/*First Box*/}
 
-                            <Container sx={{ display: 'flex', flex: '1', flexShrink: '0', flexDirection: 'column', alignItems: 'center', maxHeight: '100%', paddingLeft: '0 !important', paddingRight: '0 !important', border: 'dashed 1px red' }}>
+                            <Container sx={{ display: 'flex', flex: '1', flexShrink: '0', flexDirection: 'column', alignItems: 'center', maxHeight: '100%', paddingLeft: '0 !important', paddingRight: '0 !important' }}>
 
-                                <Typography noWrap variant='h5'>Favorite Teams</Typography>
+                                <Typography noWrap variant='h4'>Favorite Teams</Typography>
 
                                 <Container sx={{ height: '100%', width: '100%', marginTop: '24px', border: 'solid 1px white' }}>
 
@@ -53,9 +53,9 @@ export const Dashboard = () => {
 
                             {/*Second Box*/}
 
-                            <Container sx={{ display: 'flex', flex: '1', flexShrink: '0', flexDirection: 'column', alignItems: 'center', maxHeight: '100%', paddingLeft: '0 !important', paddingRight: '0 !important', border: 'dashed 1px red' }}>
+                            <Container sx={{ display: 'flex', flex: '1', flexShrink: '0', flexDirection: 'column', alignItems: 'center', maxHeight: '100%', paddingLeft: '0 !important', paddingRight: '0 !important' }}>
 
-                                <Typography noWrap variant='h5'>Notifications</Typography>
+                                <Typography noWrap variant='h4'>Notifications</Typography>
 
                                 <Container sx={{ display: 'flex !important', flexDirection: 'column', alignItems: 'center', height: '100%', width: '100%', marginTop: '24px', overflowY: 'scroll', border: 'solid 1px white' }}>
                                     {/*The Typography element will actually get changed into a NavLink component for demonstration purposes of clicking on a notification and it takes you to someone's profile page, you have to build a mock profile page first*/}
