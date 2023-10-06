@@ -8,6 +8,11 @@
     width: 100%;
     border-bottom: solid 1px var(--theme-orange);
 }
+.post-header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
 
 .post-footer {
     display: flex;

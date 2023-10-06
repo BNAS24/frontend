@@ -19,26 +19,31 @@ const fakeNotifications = ['John Doe', 'Chief Keef', 'Pex Ranger', 'Sally', 'Jef
 const postContent = {
     user1: {
         username: 'Username123',
+        timeCreated: '1 hour ago',
         postText: 'Hey everybody! I love sports and I think the Philadelphia Eagles are the best team in the NFL!',
         forumLink: '/forums'
     },
     user2: {
         username: 'JupiterSkiees0',
+        timeCreated: '1m ago',
         postText: 'New england needs to bring back Tom Brady!',
         forumLink: '/'
     },
     user3: {
         username: 'SoccerFanatic',
+        timeCreated: '2h ago',
         postText: 'I think soccer is the best sport in the world!',
         forumLink: '/forums'
     },
     user4: {
         username: 'BasketballLover',
+        timeCreated: '3h ago',
         postText: 'LeBron James is the greatest basketball player of all time!',
         forumLink: '/forums'
     },
     user5: {
         username: 'tinyFootball',
+        timeCreated: '4h ago',
         postText: 'I cant wait for the next football season to start!',
         forumLink: '/forums'
     }
@@ -294,7 +299,6 @@ export const Dashboard = () => {
                     <Grid item xs={12} sm={12} md={12} lg={12}
                         sx={{
                             background: 'linear-gradient(to bottom, #0081D4, #ffffff)',
-                            border: 'solid 1px green',
                             gridArea: '1 / 2 / 3 / 3',
                             width: '100%',
                             overflow: 'auto',
@@ -373,13 +377,44 @@ export const Dashboard = () => {
                                                 }}
 
                                             >
-                                                <Typography
-                                                    sx={{
-                                                        color: 'var(--theme-white)'
-                                                    }}
+                                                <div
+                                                    className='post-header'
                                                 >
-                                                    {postContent[key].username}
-                                                </Typography>
+                                                    <Typography
+                                                        align='center'
+                                                        noWrap
+                                                        sx={{
+                                                            fontSize: {
+                                                                xs: '0.5rem',
+                                                                sm: '0.7rem',
+                                                                md: '1rem',
+                                                                lg: '1.2rem',
+                                                                xl: ''
+                                                            },
+                                                            color: 'var(--theme-white)'
+                                                        }}
+                                                    >
+                                                        {postContent[key].username}
+                                                    </Typography>
+                                                    <Typography
+                                                        align='center'
+                                                        noWrap
+                                                        sx={{
+                                                            fontSize: {
+                                                                xs: '0.5rem',
+                                                                sm: '0.7rem',
+                                                                md: '1rem',
+                                                                lg: '1.2rem',
+                                                                xl: ''
+                                                            },
+                                                            color: 'var(--theme-white)'
+
+                                                        }}
+
+                                                    >
+                                                        {postContent[key].timeCreated}
+                                                    </Typography>
+                                                </div>
                                                 <Container
                                                     sx={{
                                                         height: '100px',
@@ -387,8 +422,6 @@ export const Dashboard = () => {
                                                         padding: '8px 8px !important',
                                                         border: 'solid 1px var(--theme-orange)',
                                                         overflowY: 'auto',
-
-
                                                     }}
                                                 >
                                                     <Typography
@@ -437,7 +470,7 @@ export const Dashboard = () => {
                                                                     color: 'red',
                                                                     '&:hover': {
                                                                         cursor: 'pointer',
-                                                                        color: '#ff441c',
+                                                                        color: '#f95149',
                                                                     }
                                                                 }} />
 
