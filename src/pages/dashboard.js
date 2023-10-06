@@ -438,11 +438,32 @@ export const Dashboard = () => {
                                                 >
                                                     <Link
                                                         sx={{
+                                                            fontSize: {
+                                                                xs: '0.5rem',
+                                                                sm: '0.7rem',
+                                                                md: '1rem',
+                                                                lg: '1.2rem',
+                                                                xl: ''
+                                                            },
                                                             color: 'var(--theme-white)'
                                                         }}
                                                         to={postContent[key].forumLink}
                                                     >
-                                                        <i>Forum Name</i>
+                                                        <Typography
+                                                        noWrap
+                                                        align='center'
+                                                        className='links-hover-state'
+                                                        sx={{
+                                                            fontSize: {
+                                                                xs: '0.5rem',
+                                                                sm: '0.7rem',
+                                                                md: '1rem',
+                                                                lg: '1.2rem',
+                                                                xl: ''
+                                                            },
+                                                            color: 'var(--theme-white)'
+                                                        }}
+                                                        >Forum Name</Typography>
                                                     </Link>
                                                     <div className='post-controls'>
                                                         <AddCommentOutlinedIcon
