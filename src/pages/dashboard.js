@@ -66,27 +66,14 @@ export const Dashboard = () => {
     };
 
 
-    const [isModalOpen, setModalOpen] = useState({});
+    const [isModalOpen, setModalOpen] = useState(false);
 
-    const handleOpenModal = (postKey) => {
-        setModalOpen((prevPostModals) => ({
-            ...prevPostModals,
-            [postKey]: true,
-        }));
+    const handleOpenModal = () => {
+        setModalOpen(true)
     };
 
-    const handleCloseModal = (postKey) => {
-        setModalOpen((prevPostModals) => ({
-            ...prevPostModals,
-            [postKey]: false,
-        }));
-    };
-
-
-    // Function to handle button click within the modal
-    const handleModalButtonClick = () => {
-        // Handle button click logic here
-        handleCloseModal();
+    const handleCloseModal = () => {
+        setModalOpen(false)
     };
 
     return (
@@ -314,7 +301,7 @@ export const Dashboard = () => {
                                             }}>
                                             {notification} liked your post
                                         </Typography>
-                                        )}
+                                    )}
                                 </Container>
                             </Container>
                         </Container>
@@ -382,6 +369,7 @@ export const Dashboard = () => {
                                             }}
                                         >
                                             <Avatar
+                                                alt='profile picture'
                                                 variant='square'
                                                 sx={{
                                                     height: '64px',
@@ -499,7 +487,7 @@ export const Dashboard = () => {
                                                                     color: '#ff8c33',
                                                                 }
                                                             }}
-                                                            onClick={() => handleOpenModal(key)}
+                                                            onClick={() => handleOpenModal()}
                                                         />
                                                         {likeButton[key] ? (
                                                             <FavoriteOutlinedIcon
@@ -523,10 +511,11 @@ export const Dashboard = () => {
 
                                                         )}
                                                         <CommentsModal
-                                                            open={isModalOpen[key]}
-                                                            onClose={() => handleCloseModal(key)}
-                                                            onClick={handleModalButtonClick}
-
+                                                            key={key}
+                                                            open={isModalOpen}
+                                                            onClose={() => handleCloseModal()}
+                                                            username={postContent[key].username}
+                                                            comment={postContent[key].postText}
                                                         />
                                                     </div>
                                                 </div>

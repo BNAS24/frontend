@@ -68,7 +68,7 @@ export const Register = () => {
                         sx={{ marginTop: '4px' }}
                     />
                     <TextField
-                        id="outlined-password-input"
+                        id="outlined-confirm-password-input"
                         label="Confirm Password"
                         type="password"
                         autoComplete="current-password"
