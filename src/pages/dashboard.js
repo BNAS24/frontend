@@ -74,13 +74,13 @@ export const Dashboard = () => {
             [postKey]: true,
         }));
     };
-    
+
     const handleCloseModal = (postKey) => {
         setModalOpen((prevPostModals) => ({
             ...prevPostModals,
             [postKey]: false,
         }));
-    };    
+    };
 
 
     // Function to handle button click within the modal
@@ -215,7 +215,7 @@ export const Dashboard = () => {
                                         border: 'solid 1px #F26101'
                                     }}>
                                     {/*Add map*/}
-                                    {fakeTeams.map((team, index) =>
+                                    {fakeTeams.map((team) =>
                                         <Container
                                             key={team}
                                             sx={{
@@ -244,7 +244,7 @@ export const Dashboard = () => {
                                                 variant='body1'
                                                 align='center'
                                                 className='links-hover-state'
-                                                key={index}
+
                                                 sx={{
                                                     flexShrink: 2,
                                                     fontSize: '1rem',
@@ -303,7 +303,7 @@ export const Dashboard = () => {
 
                                     {/*The Typography element will actually get changed into a NavLink component for demonstration purposes of clicking on a notification and it takes you to someone's profile page, you have to build a mock profile page first*/}
 
-                                    {fakeNotifications.map((notification, index) =>
+                                    {fakeNotifications.map((notification) =>
                                         <Typography
                                             key={notification}
                                             variant='body1'
@@ -313,7 +313,8 @@ export const Dashboard = () => {
                                                 marginTop: '24px', flexShrink: '0', fontSize: '1rem'
                                             }}>
                                             {notification} liked your post
-                                        </Typography>)}
+                                        </Typography>
+                                        )}
                                 </Container>
                             </Container>
                         </Container>
@@ -525,7 +526,7 @@ export const Dashboard = () => {
                                                             open={isModalOpen[key]}
                                                             onClose={() => handleCloseModal(key)}
                                                             onClick={handleModalButtonClick}
-            
+
                                                         />
                                                     </div>
                                                 </div>
@@ -540,6 +541,6 @@ export const Dashboard = () => {
                 {/*Footer Component*/}
                 <Footer />
             </Box>
-        </ThemeProvider >
+        </ThemeProvider>
     );
 }
