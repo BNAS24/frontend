@@ -24,7 +24,7 @@ const postContent = {
 
 export const Dashboard = () => {
 
-    const [likeButton, setLikeButton] = useState(true);
+    const [likeButton, setLikeButton] = useState(false);
 
     return (
         <ThemeProvider theme={customTheme}>
