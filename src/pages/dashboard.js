@@ -10,6 +10,7 @@ import { Box, Container } from '@mui/system';
 import AddCommentOutlinedIcon from '@mui/icons-material/AddCommentOutlined';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
+import { CommentsModal } from '../components/commentmd';
 
 
 const fakeTeams = ['Philadelphia Eagles', 'Phillies', ' 76ixers', 'Union', 'Flyers', 'Norristown Bandits', 'New York Yankees', 'Los Angeles Lakers', 'Dallas Cowboys', 'Boston Red Sox', 'Chicago Bulls', 'Green Bay Packers', 'Golden State Warriors', 'Pittsburgh Steelers', 'San Francisco Giants', 'New England Patriots']
@@ -64,6 +65,35 @@ export const Dashboard = () => {
         }));
     };
 
+
+    const [isModalOpen, setModalOpen] = useState({});
+
+    const handleOpenModal = (postKey) => {
+        setModalOpen((prevPostModals) => ({
+            ...prevPostModals,
+            [postKey]: true,
+        }));
+    };
+
+    const handleCloseModal = (postKey) => {
+        setModalOpen((prevPostModals) => ({
+            ...prevPostModals,
+            [postKey]: false,
+        }));
+    };
+
+
+    // Function to handle button click within the modal
+    const handleModalButtonClick = () => {
+        // Handle button click logic here
+        handleCloseModal();
+    };
+
+    // Function to handle 'Escape' key press
+    const handleEscapeKey = () => {
+        // Handle 'Escape' key press logic here
+        handleCloseModal();
+    };
 
     return (
         <ThemeProvider theme={customTheme}>
@@ -450,19 +480,19 @@ export const Dashboard = () => {
                                                         to={postContent[key].forumLink}
                                                     >
                                                         <Typography
-                                                        noWrap
-                                                        align='center'
-                                                        className='links-hover-state'
-                                                        sx={{
-                                                            fontSize: {
-                                                                xs: '0.5rem',
-                                                                sm: '0.7rem',
-                                                                md: '1rem',
-                                                                lg: '1.2rem',
-                                                                xl: ''
-                                                            },
-                                                            color: 'var(--theme-white)'
-                                                        }}
+                                                            noWrap
+                                                            align='center'
+                                                            className='links-hover-state'
+                                                            sx={{
+                                                                fontSize: {
+                                                                    xs: '0.5rem',
+                                                                    sm: '0.7rem',
+                                                                    md: '1rem',
+                                                                    lg: '1.2rem',
+                                                                    xl: ''
+                                                                },
+                                                                color: 'var(--theme-white)'
+                                                            }}
                                                         >Forum Name</Typography>
                                                     </Link>
                                                     <div className='post-controls'>
@@ -474,6 +504,7 @@ export const Dashboard = () => {
                                                                     color: '#ff8c33',
                                                                 }
                                                             }}
+                                                            onClick={() => handleOpenModal(key)}
                                                         />
                                                         {likeButton[key] ? (
                                                             <FavoriteOutlinedIcon
@@ -496,6 +527,12 @@ export const Dashboard = () => {
                                                                 }} />
 
                                                         )}
+                                                        <CommentsModal
+                                                            open={isModalOpen[key]}
+                                                            onClose={() => handleCloseModal(key)}
+                                                            onClick={handleModalButtonClick}
+            
+                                                        />
                                                     </div>
                                                 </div>
                                             </Container>

@@ -1,10 +1,11 @@
 import '../styles/profile.css'
-import { Box, Container } from '@mui/system';
 import { NavBar } from "../components/authnav"
 import { Footer } from '../components/authfoot';
 import { Grid } from '@mui/material';
+import { Box} from '@mui/system';
 
 export const Profile = () => {
+
     return (
         <Box
             sx={{

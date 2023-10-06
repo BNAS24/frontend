@@ -21,11 +21,15 @@ body {
 * {
   font-family: Roboto;
   box-sizing: border-box;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
   color: var(--theme-white);
 }
 
 a:-webkit-any-link {
   text-decoration: none;
+  color: var(--theme-white);
 }
 
 a:-webkit-any-link:hover {
