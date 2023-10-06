@@ -32,6 +32,10 @@ const postContent = {
     user4: {
         username: 'BasketballLover',
         postText: 'LeBron James is the greatest basketball player of all time!'
+    },
+    user5: {
+        username: 'BasketballLover',
+        postText: 'LeBron James is the greatest basketball player of all time!'
     }
 };
 
@@ -39,7 +43,17 @@ const postContent = {
 
 export const Dashboard = () => {
 
-    const [likeButton, setLikeButton] = useState(false);
+// Initialize an object to store like button states for each post
+const [likeButton, setLikeButtons] = useState({});
+
+// Function to toggle the like button state for a specific post
+const toggleLike = (postKey) => {
+    setLikeButtons((prevLikeButtons) => ({
+        ...prevLikeButtons,
+        [postKey]: !prevLikeButtons[postKey], // Toggle the state for the specified post
+    }));
+};
+
 
     return (
         <ThemeProvider theme={customTheme}>
@@ -301,7 +315,7 @@ export const Dashboard = () => {
                                     color: 'white',
                                 }}
                             >
-                                <Typography><i>Forum you follow</i></Typography>
+                                <Typography><strong>Forums you follow</strong></Typography>
                                 <Link to='forums'>Explore</Link>
                             </Container>
                             <Container
@@ -316,8 +330,7 @@ export const Dashboard = () => {
                                     height: '100%',
                                     marginTop: '32px',
                                     paddingLeft: '0 !important',
-                                    paddingRight: '0 !important',
-                                    border: 'dashed 1px yellow'
+                                    paddingRight: '0 !important'
                                 }}
                             >
                                 {
@@ -330,8 +343,7 @@ export const Dashboard = () => {
                                                 justifyContent: 'space-around',
                                                 gap: '16px',
                                                 paddingLeft: '32px !important',
-                                                paddingRight: '32px !important',
-                                                border: 'solid 1px red'
+                                                paddingRight: '32px !important'
                                             }}
                                         >
                                             <Avatar
@@ -394,9 +406,9 @@ export const Dashboard = () => {
                                                             }
                                                         }}
                                                     />
-                                                    {likeButton ? (
+                                                    {likeButton[key] ? (
                                                         <FavoriteOutlinedIcon
-                                                            onClick={() => setLikeButton(!likeButton)}
+                                                            onClick={() => toggleLike(key)}
                                                             sx={{
                                                                 color: 'red',
                                                                 '&:hover': {
@@ -405,7 +417,7 @@ export const Dashboard = () => {
                                                                 }
                                                             }}
                                                         />) : (<FavoriteBorderOutlinedIcon
-                                                            onClick={() => setLikeButton(!likeButton)}
+                                                            onClick={() => toggleLike(key)}
                                                             sx={{
                                                                 color: 'red',
                                                                 '&:hover': {
