@@ -8,16 +8,24 @@ import { Avatar, Grid, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
 import AddCommentOutlinedIcon from '@mui/icons-material/AddCommentOutlined';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
+import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
+import { useState } from 'react';
 
 
 const fakeTeams = ['Philadelphia Eagles', 'Phillies', ' 76ixers', 'Union', 'Flyers', 'Norristown Bandits', 'New York Yankees', 'Los Angeles Lakers', 'Dallas Cowboys', 'Boston Red Sox', 'Chicago Bulls', 'Green Bay Packers', 'Golden State Warriors', 'Pittsburgh Steelers', 'San Francisco Giants', 'New England Patriots']
 
 const fakeNotifications = ['John Doe', 'Chief Keef', 'Pex Ranger', 'Sally', 'Jeff100', 'xrel12', '1234Hey', 'iloveFootball', 'Eaglesrule', 'SuperCoder123', 'TechExplorer24', 'StarGazer99', 'PexRanger16', 'AdventureSeeker77', 'MusicMaestro55', 'FitnessFanatic19', 'TravelEnthusiast7', 'FoodieDelight', 'GamingNinja21', 'MovieBuff123']
 
-
+const postContent = {
+    username: 'Username123',
+    text: 'Proin eleifend consectetur ante, sit amet eleifend velit tincidunt vitae. Donec ultrices purus fringilla, euismod sapien quis, maximus justo. Pellentesque id fermentum felis. Donec ornare turpis elementum leo lobortis tempor. Pevllentesque ex quam, vehicula ac sodales vitae, iaculis ut leo. Aenean ut enim massa. Nam pulvinar leo metus, ut imperdiet elit convallis id.',
+}
 
 
 export const Dashboard = () => {
+
+    const [likeButton, setLikeButton] = useState(true);
+
     return (
         <ThemeProvider theme={customTheme}>
             <Box
@@ -319,8 +327,11 @@ export const Dashboard = () => {
                                             sx={{
                                                 display: 'flex',
                                                 flexDirection: 'column',
-                                                justifyContent: 'start',
+                                                justifyContent: 'space-between',
+                                                alignItems: 'start',
+                                                gap: '8px',
                                                 height: '168px',
+                                                padding: '8px',
                                                 backgroundColor: 'var(--theme-blue)',
                                             }}
 
@@ -330,30 +341,58 @@ export const Dashboard = () => {
                                                     color: 'var(--theme-white)'
                                                 }}
                                             >
-                                                [Username]
+                                                {postContent.username}
                                             </Typography>
                                             <Container
                                                 sx={{
                                                     height: '100px',
                                                     width: '100%',
-                                                    border: 'solid 1px var(--theme-orange)'
+                                                    padding: '8px 8px !important',
+                                                    border: 'solid 1px var(--theme-orange)',
+                                                    overflowY: 'auto',
+                                                
+                                        
                                                 }}
                                             >
-
+                                                <Typography
+                                                    variant='body1'
+                                                    sx={{
+                                                        color: 'var(--theme-white)'
+                                                    }}
+                                                >
+                                                    {postContent.text}
+                                                </Typography>
                                             </Container>
                                             <div
                                                 className='post-footer'
                                             >
                                                 <AddCommentOutlinedIcon
                                                     sx={{
-                                                        color: 'var(--theme-orange)'
+                                                        color: 'var(--theme-orange)',
+                                                        '&:hover': {
+                                                            cursor: 'pointer',
+                                                            color: '#ff8c33',
+                                                        }
                                                     }}
                                                 />
-                                                <FavoriteBorderOutlinedIcon
+                                                {likeButton ? <FavoriteOutlinedIcon
+                                                    onClick={() => setLikeButton(!likeButton)}
                                                     sx={{
-                                                        color: 'red'
+                                                        color: 'red',
+                                                        '&:hover': {
+                                                            cursor: 'pointer',
+                                                            // color: '#ff8c33',
+                                                        }
                                                     }}
-                                                />
+                                                /> : <FavoriteBorderOutlinedIcon
+                                                    onClick={() => setLikeButton(!likeButton)}
+                                                    sx={{
+                                                        color: 'red',
+                                                        '&:hover': {
+                                                            cursor: 'pointer',
+                                                            // color: '#ff8c33',
+                                                        }
+                                                    }} />}
                                             </div>
                                         </Container>
                                     </Container>
