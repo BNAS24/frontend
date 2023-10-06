@@ -1,10 +1,11 @@
 import { Modal, Box, Typography, Button } from '@mui/material';
 
-export const CommentsModal = ({ open, onClose, onClick }) => {
+export const CommentsModal = ({ open, onClose }) => {
 
 
     return (
         <Modal
+        
             open={open}
             onClose={onClose}
         >
@@ -17,30 +18,36 @@ export const CommentsModal = ({ open, onClose, onClick }) => {
                     bgcolor: 'var(--theme-blue)',
                     border: 'solid 2px var(--theme-orange)',
                     p: 2,
-                    minWidth: 300, // adjust to your modal's desired width
+                    width: '50%',
+                    minWidth: '300px',
+                    height: '50%',
                 }}
             >
                 <Typography
                     variant="h6"
-                    sx={{
-                        color: 'white'
-                    }}
                 >
                     Modal Title
                 </Typography>
                 <Typography
                     variant="body2"
-                    sx={{
-                        color: 'white'
-                    }}
                 >
                     Modal content goes here.
                 </Typography>
                 <Button
+                    variant='outlined'
                     onClick={onClose}
+                    sx={{
+                        color: 'var(--theme-orange)',
+
+                        '&:hover': {
+                            border: '1px solid var(--theme-orange)',
+                            color: 'var(--theme-orange)',
+                        },
+                    }}
                 >
                     Close
                 </Button>
+
             </Box>
         </Modal>
     )

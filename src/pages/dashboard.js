@@ -74,24 +74,18 @@ export const Dashboard = () => {
             [postKey]: true,
         }));
     };
-
+    
     const handleCloseModal = (postKey) => {
         setModalOpen((prevPostModals) => ({
             ...prevPostModals,
             [postKey]: false,
         }));
-    };
+    };    
 
 
     // Function to handle button click within the modal
     const handleModalButtonClick = () => {
         // Handle button click logic here
-        handleCloseModal();
-    };
-
-    // Function to handle 'Escape' key press
-    const handleEscapeKey = () => {
-        // Handle 'Escape' key press logic here
         handleCloseModal();
     };
 
