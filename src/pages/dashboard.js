@@ -78,7 +78,7 @@ export const Dashboard = () => {
                     sx={{
                         display: 'grid',
                         gridTemplateColumns: 'repeat(2, 1fr)',
-                        gridTemplateRows: '1fr 3fr',
+                        gridTemplateRows: '1fr 5fr',
                         gridGap: '8px',
                         columnGap: '56px',
                         padding: '24px 24px',
