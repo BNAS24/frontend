@@ -412,36 +412,36 @@ export const Dashboard = () => {
                                                         <i>Forum Name</i>
                                                     </Link>
                                                     <div className='post-controls'>
-                                                    <AddCommentOutlinedIcon
-                                                        sx={{
-                                                            color: 'var(--theme-orange)',
-                                                            '&:hover': {
-                                                                cursor: 'pointer',
-                                                                color: '#ff8c33',
-                                                            }
-                                                        }}
-                                                    />
-                                                    {likeButton[key] ? (
-                                                        <FavoriteOutlinedIcon
-                                                            onClick={() => toggleLike(key)}
+                                                        <AddCommentOutlinedIcon
                                                             sx={{
-                                                                color: 'red',
+                                                                color: 'var(--theme-orange)',
                                                                 '&:hover': {
                                                                     cursor: 'pointer',
-                                                                    // color: '#ff8c33',
+                                                                    color: '#ff8c33',
                                                                 }
                                                             }}
-                                                        />) : (<FavoriteBorderOutlinedIcon
-                                                            onClick={() => toggleLike(key)}
-                                                            sx={{
-                                                                color: 'red',
-                                                                '&:hover': {
-                                                                    cursor: 'pointer',
-                                                                    color: '#ff441c',
-                                                                }
-                                                            }} />
-                                                            
-                                                    )}
+                                                        />
+                                                        {likeButton[key] ? (
+                                                            <FavoriteOutlinedIcon
+                                                                onClick={() => toggleLike(key)}
+                                                                sx={{
+                                                                    color: 'red',
+                                                                    '&:hover': {
+                                                                        cursor: 'pointer',
+                                                                        // color: '#ff8c33',
+                                                                    }
+                                                                }}
+                                                            />) : (<FavoriteBorderOutlinedIcon
+                                                                onClick={() => toggleLike(key)}
+                                                                sx={{
+                                                                    color: 'red',
+                                                                    '&:hover': {
+                                                                        cursor: 'pointer',
+                                                                        color: '#ff441c',
+                                                                    }
+                                                                }} />
+
+                                                        )}
                                                     </div>
                                                 </div>
                                             </Container>
