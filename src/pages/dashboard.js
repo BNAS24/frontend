@@ -18,23 +18,23 @@ const fakeNotifications = ['John Doe', 'Chief Keef', 'Pex Ranger', 'Sally', 'Jef
 
 const postContent = {
     user1: {
-      username: 'Username123',
-      postText: 'Hey everybody! I love sports and I think the Philadelphia Eagles are the best team in the NFL!'
+        username: 'Username123',
+        postText: 'Hey everybody! I love sports and I think the Philadelphia Eagles are the best team in the NFL!'
     },
     user2: {
-      username: 'JupiterSkiees0',
-      postText: 'New england needs to bring back Tom Brady!'
+        username: 'JupiterSkiees0',
+        postText: 'New england needs to bring back Tom Brady!'
     },
     user3: {
-      username: 'SoccerFanatic',
-      postText: 'I think soccer is the best sport in the world!'
+        username: 'SoccerFanatic',
+        postText: 'I think soccer is the best sport in the world!'
     },
     user4: {
-      username: 'BasketballLover',
-      postText: 'LeBron James is the greatest basketball player of all time!'
+        username: 'BasketballLover',
+        postText: 'LeBron James is the greatest basketball player of all time!'
     }
-  };
-  
+};
+
 
 
 export const Dashboard = () => {
@@ -277,7 +277,7 @@ export const Dashboard = () => {
                             border: 'solid 1px green',
                             gridArea: '1 / 2 / 3 / 3',
                             width: '100%',
-                            overflow: 'hidden',
+                            overflow: 'auto',
                         }}>
                         <Container
                             sx={{
@@ -310,108 +310,114 @@ export const Dashboard = () => {
                                     flexDirection: 'column',
                                     justifyContent: 'center',
                                     flexGrow: 1,
+                                    flexShrink: 0,
+                                    gap: '16px',
                                     width: '100%',
                                     height: '100%',
+                                    marginTop: '32px',
                                     paddingLeft: '0 !important',
                                     paddingRight: '0 !important',
-                                    marginTop: '32px',
                                     border: 'dashed 1px yellow'
                                 }}
                             >
                                 {
-                                    <Container
-                                        sx={{
-                                            display: 'flex',
-                                            flexDirection: 'row',
-                                            justifyContent: 'space-around',
-                                            gap: '16px',
-                                            paddingLeft: '32px !important',
-                                            paddingRight: '32px !important',
-                                            border: 'solid 1px red'
-                                        }}
-                                    >
-                                        <Avatar
-                                            variant='square'
-                                            sx={{
-                                                height: '64px',
-                                                width: '64px',
-                                            }}
-                                        >
-                                        </Avatar>
+                                    Object.keys(postContent).map((key) =>
                                         <Container
+                                            key={key}
                                             sx={{
                                                 display: 'flex',
-                                                flexDirection: 'column',
-                                                justifyContent: 'space-between',
-                                                alignItems: 'start',
-                                                gap: '8px',
-                                                height: '168px',
-                                                padding: '8px',
-                                                backgroundColor: 'var(--theme-blue)',
+                                                flexDirection: 'row',
+                                                justifyContent: 'space-around',
+                                                gap: '16px',
+                                                paddingLeft: '32px !important',
+                                                paddingRight: '32px !important',
+                                                border: 'solid 1px red'
                                             }}
-
                                         >
-                                            <Typography
+                                            <Avatar
+                                                variant='square'
                                                 sx={{
-                                                    color: 'var(--theme-white)'
+                                                    height: '64px',
+                                                    width: '64px',
                                                 }}
                                             >
-                                                {postContent.username}
-                                            </Typography>
+                                            </Avatar>
                                             <Container
                                                 sx={{
-                                                    height: '100px',
-                                                    width: '100%',
-                                                    padding: '8px 8px !important',
-                                                    border: 'solid 1px var(--theme-orange)',
-                                                    overflowY: 'auto',
-                                                
-                                        
+                                                    display: 'flex',
+                                                    flexDirection: 'column',
+                                                    justifyContent: 'space-between',
+                                                    alignItems: 'start',
+                                                    gap: '8px',
+                                                    height: '168px',
+                                                    padding: '8px',
+                                                    backgroundColor: 'var(--theme-blue)',
                                                 }}
+
                                             >
                                                 <Typography
-                                                    variant='body1'
                                                     sx={{
                                                         color: 'var(--theme-white)'
                                                     }}
                                                 >
-                                                    {postContent.text}
+                                                    {postContent[key].username}
                                                 </Typography>
+                                                <Container
+                                                    sx={{
+                                                        height: '100px',
+                                                        width: '100%',
+                                                        padding: '8px 8px !important',
+                                                        border: 'solid 1px var(--theme-orange)',
+                                                        overflowY: 'auto',
+
+
+                                                    }}
+                                                >
+                                                    <Typography
+                                                        variant='body1'
+                                                        sx={{
+                                                            color: 'var(--theme-white)'
+                                                        }}
+                                                    >
+                                                        {postContent[key].postText}
+                                                    </Typography>
+                                                </Container>
+                                                <div
+                                                    className='post-footer'
+                                                >
+                                                    <AddCommentOutlinedIcon
+                                                        sx={{
+                                                            color: 'var(--theme-orange)',
+                                                            '&:hover': {
+                                                                cursor: 'pointer',
+                                                                color: '#ff8c33',
+                                                            }
+                                                        }}
+                                                    />
+                                                    {likeButton ? (
+                                                        <FavoriteOutlinedIcon
+                                                            onClick={() => setLikeButton(!likeButton)}
+                                                            sx={{
+                                                                color: 'red',
+                                                                '&:hover': {
+                                                                    cursor: 'pointer',
+                                                                    // color: '#ff8c33',
+                                                                }
+                                                            }}
+                                                        />) : (<FavoriteBorderOutlinedIcon
+                                                            onClick={() => setLikeButton(!likeButton)}
+                                                            sx={{
+                                                                color: 'red',
+                                                                '&:hover': {
+                                                                    cursor: 'pointer',
+                                                                    // color: '#ff8c33',
+                                                                }
+                                                            }} />
+                                                    )}
+                                                </div>
                                             </Container>
-                                            <div
-                                                className='post-footer'
-                                            >
-                                                <AddCommentOutlinedIcon
-                                                    sx={{
-                                                        color: 'var(--theme-orange)',
-                                                        '&:hover': {
-                                                            cursor: 'pointer',
-                                                            color: '#ff8c33',
-                                                        }
-                                                    }}
-                                                />
-                                                {likeButton ? <FavoriteOutlinedIcon
-                                                    onClick={() => setLikeButton(!likeButton)}
-                                                    sx={{
-                                                        color: 'red',
-                                                        '&:hover': {
-                                                            cursor: 'pointer',
-                                                            // color: '#ff8c33',
-                                                        }
-                                                    }}
-                                                /> : <FavoriteBorderOutlinedIcon
-                                                    onClick={() => setLikeButton(!likeButton)}
-                                                    sx={{
-                                                        color: 'red',
-                                                        '&:hover': {
-                                                            cursor: 'pointer',
-                                                            // color: '#ff8c33',
-                                                        }
-                                                    }} />}
-                                            </div>
                                         </Container>
-                                    </Container>
-                                }
+                                )}
                             </Container>
                         </Container>
                     </Grid>
