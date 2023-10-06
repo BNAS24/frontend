@@ -11,7 +11,12 @@
 
 .post-footer {
     display: flex;
-    justify-content: flex-end;
-    gap: 16px;
+    justify-content: space-between;
     width: 100%;
+}
+
+.post-controls {
+    display: flex;
+    align-items: center;
+    gap: 16px;
 }

@@ -19,23 +19,28 @@ const fakeNotifications = ['John Doe', 'Chief Keef', 'Pex Ranger', 'Sally', 'Jef
 const postContent = {
     user1: {
         username: 'Username123',
-        postText: 'Hey everybody! I love sports and I think the Philadelphia Eagles are the best team in the NFL!'
+        postText: 'Hey everybody! I love sports and I think the Philadelphia Eagles are the best team in the NFL!',
+        forumLink: '/forums'
     },
     user2: {
         username: 'JupiterSkiees0',
-        postText: 'New england needs to bring back Tom Brady!'
+        postText: 'New england needs to bring back Tom Brady!',
+        forumLink: '/'
     },
     user3: {
         username: 'SoccerFanatic',
-        postText: 'I think soccer is the best sport in the world!'
+        postText: 'I think soccer is the best sport in the world!',
+        forumLink: '/forums'
     },
     user4: {
         username: 'BasketballLover',
-        postText: 'LeBron James is the greatest basketball player of all time!'
+        postText: 'LeBron James is the greatest basketball player of all time!',
+        forumLink: '/forums'
     },
     user5: {
-        username: 'BasketballLover',
-        postText: 'LeBron James is the greatest basketball player of all time!'
+        username: 'tinyFootball',
+        postText: 'I cant wait for the next football season to start!',
+        forumLink: '/forums'
     }
 };
 
@@ -43,16 +48,16 @@ const postContent = {
 
 export const Dashboard = () => {
 
-// Initialize an object to store like button states for each post
-const [likeButton, setLikeButtons] = useState({});
+    // Initialize an object to store like button states for each post
+    const [likeButton, setLikeButtons] = useState({});
 
-// Function to toggle the like button state for a specific post
-const toggleLike = (postKey) => {
-    setLikeButtons((prevLikeButtons) => ({
-        ...prevLikeButtons,
-        [postKey]: !prevLikeButtons[postKey], // Toggle the state for the specified post
-    }));
-};
+    // Function to toggle the like button state for a specific post
+    const toggleLike = (postKey) => {
+        setLikeButtons((prevLikeButtons) => ({
+            ...prevLikeButtons,
+            [postKey]: !prevLikeButtons[postKey], // Toggle the state for the specified post
+        }));
+    };
 
 
     return (
@@ -92,7 +97,7 @@ const toggleLike = (postKey) => {
                                 display: 'flex',
                                 flexDirection: 'row',
                                 height: '100%',
-                                alignItems: 'center',
+                                alignItems: 'start',
                                 paddingLeft: '0 !important',
                                 color: 'white'
                             }}>
@@ -183,6 +188,7 @@ const toggleLike = (postKey) => {
                                     {/*Add map*/}
                                     {fakeTeams.map((team, index) =>
                                         <Container
+                                            key={team}
                                             sx={{
                                                 display: 'flex',
                                                 flexGrow: 0,
@@ -270,10 +276,10 @@ const toggleLike = (postKey) => {
 
                                     {fakeNotifications.map((notification, index) =>
                                         <Typography
+                                            key={notification}
                                             variant='body1'
                                             align='center'
                                             className='links-hover-state'
-                                            key={index}
                                             sx={{
                                                 marginTop: '24px', flexShrink: '0', fontSize: '1rem'
                                             }}>
@@ -397,6 +403,15 @@ const toggleLike = (postKey) => {
                                                 <div
                                                     className='post-footer'
                                                 >
+                                                    <Link
+                                                        sx={{
+                                                            color: 'var(--theme-white)'
+                                                        }}
+                                                        to={postContent[key].forumLink}
+                                                    >
+                                                        <i>Forum Name</i>
+                                                    </Link>
+                                                    <div className='post-controls'>
                                                     <AddCommentOutlinedIcon
                                                         sx={{
                                                             color: 'var(--theme-orange)',
@@ -422,14 +437,16 @@ const toggleLike = (postKey) => {
                                                                 color: 'red',
                                                                 '&:hover': {
                                                                     cursor: 'pointer',
-                                                                    // color: '#ff8c33',
+                                                                    color: '#ff441c',
                                                                 }
                                                             }} />
+                                                            
                                                     )}
+                                                    </div>
                                                 </div>
                                             </Container>
                                         </Container>
-                                )}
+                                    )}
                             </Container>
                         </Container>
                     </Grid>
