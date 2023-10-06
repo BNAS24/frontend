@@ -21,10 +21,10 @@ body {
 * {
   font-family: Roboto;
   box-sizing: border-box;
+  color: var(--theme-white);
 }
 
 a:-webkit-any-link {
-  color: var(--theme-white);
   text-decoration: none;
 }
 

@@ -1,15 +1,15 @@
 import '../styles/dashboard.css';
-import customTheme from '../styles/context/customtheme';
-import { ThemeProvider } from '@emotion/react';
-import { Box, Container } from '@mui/system';
 import { NavBar } from '../components/authnav';
 import { Footer } from '../components/authfoot';
 import { Avatar, Grid, Typography } from '@mui/material';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import customTheme from '../styles/context/customtheme';
+import { ThemeProvider } from '@emotion/react';
+import { Box, Container } from '@mui/system';
 import AddCommentOutlinedIcon from '@mui/icons-material/AddCommentOutlined';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
-import { useState } from 'react';
 
 
 const fakeTeams = ['Philadelphia Eagles', 'Phillies', ' 76ixers', 'Union', 'Flyers', 'Norristown Bandits', 'New York Yankees', 'Los Angeles Lakers', 'Dallas Cowboys', 'Boston Red Sox', 'Chicago Bulls', 'Green Bay Packers', 'Golden State Warriors', 'Pittsburgh Steelers', 'San Francisco Giants', 'New England Patriots']
