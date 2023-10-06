@@ -18,14 +18,23 @@ const fakeNotifications = ['John Doe', 'Chief Keef', 'Pex Ranger', 'Sally', 'Jef
 
 const postContent = {
     user1: {
-        username:'Username123',
-        postText: 'Hey everybody! I love sports and I think the Philadelphia Eagles are the best team in the NFL!' 
+      username: 'Username123',
+      postText: 'Hey everybody! I love sports and I think the Philadelphia Eagles are the best team in the NFL!'
     },
     user2: {
-        username:'JupiterSkiees0',
-        postText: 'New england needs to bring back Tom Brady!'
+      username: 'JupiterSkiees0',
+      postText: 'New england needs to bring back Tom Brady!'
+    },
+    user3: {
+      username: 'SoccerFanatic',
+      postText: 'I think soccer is the best sport in the world!'
+    },
+    user4: {
+      username: 'BasketballLover',
+      postText: 'LeBron James is the greatest basketball player of all time!'
     }
-}
+  };
+  
 
 
 export const Dashboard = () => {
