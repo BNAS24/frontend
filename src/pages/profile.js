@@ -258,6 +258,7 @@ export const Profile = () => {
                                 settingSelected={isModalOpen}
                                 open={isModalOpen !== null}
                                 onClose={() => handleCloseModal()}
+                                onClick={handleCloseModal}
                                 title={settings[isModalOpen]?.title}
                             />
                         </Container>

@@ -1,8 +1,8 @@
 import { Modal, Box, Typography } from '@mui/material';
+import { useState } from 'react';
 import CloseIcon from '@mui/icons-material/Close';
 
-export const SettingsModal = ({ open, onClose, settingSelected, title }) => {
-
+export const SettingsModal = ({ open, onClose, onClick, settingSelected, title }) => {
 
     return (
         <Modal
@@ -27,11 +27,12 @@ export const SettingsModal = ({ open, onClose, settingSelected, title }) => {
                 }}
             >
             <CloseIcon
+            onClick={onClick}
             sx={{
                 position: 'absolute',
                 top: '24px',
                 right: '24px',
-                color: 'var(--theme-orange)',
+                color: 'var(--theme-orange)'
             }}
             />
                 {
