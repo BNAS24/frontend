@@ -166,6 +166,7 @@ export const Profile = () => {
                 {/*Third Grid Item*/}
                 <Grid
                     item
+                    container
                     xs={12} sm={12} md={12} lg={12}
                     sx={{
                         gridArea: '1 / 2 / 3 / 3',

@@ -140,10 +140,10 @@ export const Dashboard = () => {
 
                     {/*2nd Grid Item*/}
 
-                    <Grid 
-                    item 
-                    container
-                    xs={12} sm={12} md={12} lg={12}
+                    <Grid
+                        item
+                        container
+                        xs={12} sm={12} md={12} lg={12}
                         sx={{
                             gridArea: '2 / 1 / 3 / 2',
                             overflowY: 'hidden',
@@ -154,9 +154,7 @@ export const Dashboard = () => {
                                 display: 'flex',
                                 flexDirection: 'row',
                                 justifyContent: 'stretch',
-                                minWidth: '100%',
                                 height: '100%',
-                                maxHeight: '100%',
                                 paddingLeft: '0 !important',
                                 paddingRight: '0 !important',
                                 gap: '24px',
@@ -210,6 +208,7 @@ export const Dashboard = () => {
                                             key={team}
                                             sx={{
                                                 display: 'flex',
+                                                flexShrink: 1,
                                                 flexGrow: 0,
                                                 flexDirection: 'column',
                                                 alignItems: 'center',
@@ -254,6 +253,7 @@ export const Dashboard = () => {
                                 sx={{
                                     display: 'flex',
                                     flexShrink: '1',
+                                    flexGrow: '1',
                                     flexDirection: 'column',
                                     alignItems: 'center',
                                     maxHeight: '100%',
@@ -280,7 +280,7 @@ export const Dashboard = () => {
 
                                 <Container
                                     sx={{
-                                        display: 'flex !important',
+                                        display: 'flex',
                                         flexDirection: 'column',
                                         alignItems: 'center',
                                         height: '100%',
@@ -300,7 +300,10 @@ export const Dashboard = () => {
                                             align='center'
                                             className='links-hover-state'
                                             sx={{
-                                                marginTop: '24px', flexShrink: '0', fontSize: '1rem'
+                                                marginTop: '24px',
+                                                flexShrink: '0',
+                                                flexGrow: '0',
+                                                fontSize: '1rem'
                                             }}>
                                             {notification} liked your post
                                         </Typography>
@@ -311,7 +314,10 @@ export const Dashboard = () => {
 
                     </Grid>
                     {/*3rd Grid Item*/}
-                    <Grid item xs={12} sm={12} md={12} lg={12}
+                    <Grid
+                        container
+                        item
+                        xs={12} sm={12} md={12} lg={12}
                         sx={{
                             gridArea: '1 / 2 / 3 / 3',
                             width: '100%',
