@@ -168,7 +168,7 @@ export const Profile = () => {
                                 >
                                     <Avatar
                                         variant='square'
-                                        alt='badges'
+                                        alt={badge}
                                         src='https://i.postimg.cc/wB1wQD2r/award.png'
                                         sx={{
                                             height: '62px',
