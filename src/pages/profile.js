@@ -1,8 +1,10 @@
 import '../styles/profile.css'
 import { NavBar } from "../components/authnav"
 import { Footer } from '../components/authfoot';
-import { Grid, Typography, Avatar, Modal } from '@mui/material';
+import { useState } from 'react';
+import { Grid, Typography, Avatar } from '@mui/material';
 import { Box, Container } from '@mui/system';
+import { SettingsModal } from '../components/settingsmd';
 
 const badges = ['Bronze', 'Silver', 'Gold', 'Platinum', 'Diamond', 'Master', 'Grandmaster'];
 
@@ -25,6 +27,17 @@ const settings = {
 }
 
 export const Profile = () => {
+
+    const [isModalOpen, setModalOpen] = useState(null);
+
+    const handleOpenModal = (postKey) => {
+        setModalOpen(postKey)
+    };
+
+    const handleCloseModal = () => {
+        setModalOpen(null)
+    };
+
 
     return (
         <Box
@@ -236,11 +249,17 @@ export const Profile = () => {
                                     align='center'
                                     noWrap
                                     className='links-hover-state'
+                                    onClick={() => handleOpenModal(key)}
                                 >
                                     {settings[key].title}
                                 </Typography>
                             )}
-                            {/* <Modal> */}
+                            <SettingsModal
+                                settingSelected={isModalOpen}
+                                open={isModalOpen !== null}
+                                onClose={() => handleCloseModal()}
+                                title={settings[isModalOpen]?.title}
+                            />
                         </Container>
                     </Container>
                 </Grid>

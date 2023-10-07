@@ -1,6 +1,6 @@
-import { Modal, Box, Typography, Button } from '@mui/material';
+import { Modal, Box, Typography } from '@mui/material';
 
-export const CommentsModal = ({ open, onClose, username, comment }) => {
+export const SettingsModal = ({ open, onClose, settingSelected, title }) => {
 
 
     return (
@@ -25,33 +25,14 @@ export const CommentsModal = ({ open, onClose, username, comment }) => {
                     height: '50%',
                 }}
             >
-                <Typography
-                    variant="h6"
-                >
-                    {username}
-                </Typography>
-                <Typography
-                    variant="body2"
-                >
-                    {comment}
-                </Typography>
-                <Button
-                    variant='outlined'
-                    onClick={onClose}
-                    sx={{
-                        color: 'var(--theme-orange)',
-                        flexGrow: '0',
-                        maxWidth: '64px',
-                        alignSelf: 'flex-end',
-                        '&:hover': {
-                            border: '1px solid var(--theme-orange)',
-                            color: 'var(--theme-orange)',
-                        },
-                    }}
-                >
-                    Close
-                </Button>
-
+                {
+                    settingSelected={settingSelected} ?
+                    <Typography
+                        variant="h5"
+                        >
+                        {title}
+                    </Typography> : null
+                }
             </Box>
         </Modal>
     )
