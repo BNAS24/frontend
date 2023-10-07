@@ -66,14 +66,14 @@ export const Dashboard = () => {
     };
 
 
-    const [isModalOpen, setModalOpen] = useState(false);
+    const [isModalOpen, setModalOpen] = useState(null);
 
-    const handleOpenModal = () => {
-        setModalOpen(true)
+    const handleOpenModal = (postKey) => {
+        setModalOpen(postKey)
     };
 
     const handleCloseModal = () => {
-        setModalOpen(false)
+        setModalOpen(null)
     };
 
     return (
@@ -369,7 +369,7 @@ export const Dashboard = () => {
                                             }}
                                         >
                                             <Avatar
-                                            key={key}
+                                                key={key}
                                                 alt='profile picture'
                                                 variant='square'
                                                 sx={{
@@ -512,17 +512,17 @@ export const Dashboard = () => {
                                                                 }} />
 
                                                         )}
-                                                        <CommentsModal
-                                                            open={isModalOpen}
-                                                            onClose={() => handleCloseModal()}
-                                                            username={postContent[key].username}
-                                                            comment={postContent[key].postText}
-                                                        />
                                                     </div>
                                                 </div>
                                             </Container>
                                         </Container>
                                     )}
+                                <CommentsModal
+                                    open={isModalOpen !== null}
+                                    onClose={() => handleCloseModal()}
+                                    username={postContent[isModalOpen]?.username}
+                                    comment={postContent[isModalOpen]?.postText}
+                                />
                             </Container>
                         </Container>
                     </Grid>

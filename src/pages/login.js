@@ -12,7 +12,7 @@ export const Login = () => {
         <ThemeProvider theme={customTheme}>
             <div>
                 <img
-                    src="https://i.postimg.cc/wjkpvXx7/fans.png"
+                    src="https://i.postimg.cc/wjkpvXx7/fans.png?"
                     alt="logo"
                     className="login-logo" />
                 <Typography
