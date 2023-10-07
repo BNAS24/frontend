@@ -196,8 +196,8 @@ export const Dashboard = () => {
                                         height: '100%',
                                         width: '100%',
                                         marginTop: '24px',
-                                        paddingLeft: '0 !important',
-                                        paddingRight: '0 !important',
+                                        paddingLeft: '16px !important',
+                                        paddingRight: '16px !important',
                                         overflowY: 'auto',
                                         border: 'solid 1px #F26101'
                                     }}>
