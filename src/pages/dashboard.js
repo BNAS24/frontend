@@ -311,6 +311,7 @@ export const Dashboard = () => {
                     <Grid item xs={12} sm={12} md={12} lg={12}
                         sx={{
                             background: 'linear-gradient(to bottom, #0081D4, #ffffff)',
+                            border: 'solid 1px var(--theme-orange)',
                             gridArea: '1 / 2 / 3 / 3',
                             width: '100%',
                             overflow: 'auto',
@@ -335,6 +336,11 @@ export const Dashboard = () => {
                                     flexGrow: '0',
                                     flexShrink: '0',
                                     color: 'white',
+                                    position: 'sticky',
+                                    WebkitPosition: 'sticky',
+                                    top: '0',
+                                    background: 'linear-gradient(to bottom, #0081D4, #229cff)',
+                                    zIndex: '1',
                                 }}
                             >
                                 <Typography><strong>Forums you follow</strong></Typography>
