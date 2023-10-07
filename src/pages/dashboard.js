@@ -350,6 +350,7 @@ export const Dashboard = () => {
                                     WebkitPosition: 'sticky',
                                     top: '0',
                                     background: 'linear-gradient(to bottom, #0081D4, #229cff)',
+                                    boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.85)',
                                     zIndex: '1',
                                 }}
                             >
