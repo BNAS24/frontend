@@ -1,8 +1,8 @@
 import '../styles/profile.css'
 import { NavBar } from "../components/authnav"
 import { Footer } from '../components/authfoot';
-import { Grid } from '@mui/material';
-import { Box} from '@mui/system';
+import { Grid, Typography, Avatar } from '@mui/material';
+import { Box, Container } from '@mui/system';
 
 export const Profile = () => {
 
@@ -37,8 +37,34 @@ export const Profile = () => {
                         gridArea: '1 / 1 / 2 / 2',
                         border: 'dashed 1px yellow'
                     }}>
-                
-                    1
+                    <Container
+                        sx={{
+                            display: 'flex',
+                            flexDirection: 'row',
+                            height: '100%',
+                            alignItems: 'start',
+                            paddingLeft: '0 !important',
+                            color: 'white'
+                        }}>
+                        <Avatar
+                            variant='square'
+                            alt='profile picture'
+                            src='https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png'
+                            sx={{
+                                height: '104px',
+                                width: '104px'
+                            }} />
+                        <Typography
+                            variant='h3'
+                            style={{
+                                marginLeft: '24px'
+                            }}
+
+                        >
+                            Brandon
+                            {/*The name will be dynamicall rendered*/}
+                        </Typography>
+                    </Container>
                 </Grid>
                 {/*Second Grid Item*/}
                 <Grid
