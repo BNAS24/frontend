@@ -140,7 +140,10 @@ export const Dashboard = () => {
 
                     {/*2nd Grid Item*/}
 
-                    <Grid item xs={12} sm={12} md={12} lg={12}
+                    <Grid 
+                    item 
+                    container
+                    xs={12} sm={12} md={12} lg={12}
                         sx={{
                             gridArea: '2 / 1 / 3 / 2',
                             overflowY: 'hidden',

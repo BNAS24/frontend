@@ -71,6 +71,7 @@ export const Profile = () => {
                 {/*Second Grid Item*/}
                 <Grid
                     item
+                    container
                     xs={12} sm={12} md={12} lg={12}
                     sx={{
                         gridArea: '2 / 1 / 3 / 2',
@@ -110,7 +111,6 @@ export const Profile = () => {
                                 display: 'flex',
                                 flexGrow: '1',
                                 flexWrap: 'wrap',
-                                minHeight: '100%',
                                 height: '100%',
                                 width: '100%',
                                 marginTop: '24px',
@@ -125,7 +125,7 @@ export const Profile = () => {
                                     key={badge}
                                     sx={{
                                         display: 'flex',
-                                        flexGrow: 0,
+                                        flexGrow: 1,
                                         flexDirection: 'column',
                                         alignItems: 'center',
                                         justifyContent: 'flex-start',
