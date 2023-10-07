@@ -4,6 +4,8 @@ import { Footer } from '../components/authfoot';
 import { Grid, Typography, Avatar } from '@mui/material';
 import { Box, Container } from '@mui/system';
 
+const badges = ['Bronze', 'Silver', 'Gold', 'Platinum', 'Diamond', 'Master', 'Grandmaster'];
+
 export const Profile = () => {
 
     return (
@@ -74,8 +76,92 @@ export const Profile = () => {
                         gridArea: '2 / 1 / 3 / 2',
                         border: 'dashed 1px yellow'
                     }}>
+                    <Container
+                        sx={{
+                            display: 'flex',
+                            flexShrink: '0',
+                            flexDirection: 'column',
+                            alignItems: 'center',
+                            maxHeight: '100%',
+                            paddingLeft: '0 !important',
+                            paddingRight: '0 !important'
+                        }}>
 
-                    2
+                        <Typography
+                            noWrap
+                            align='center'
+                            variant='h4'
+                            sx={{
+                                flexShrink: '0',
+                                flexGrow: '1',
+                                fontSize: {
+                                    xs: '1.5rem',
+                                    sm: '1.3rem',
+                                    md: '1.7rem',
+                                    lg: '2.5rem',
+                                    xl: ''
+                                }
+                            }}>
+                            Badges
+                        </Typography>
+
+                        <Container
+                            sx={{
+                                display: 'flex',
+                                flexGrow: '1',
+                                flexWrap: 'wrap',
+                                minHeight: '100%',
+                                height: '100%',
+                                width: '100%',
+                                marginTop: '24px',
+                                paddingLeft: '16px !important',
+                                paddingRight: '16px !important',
+                                overflowY: 'auto',
+                                border: 'solid 1px #F26101'
+                            }}>
+                            {/*Add map*/}
+                            {badges.map((badge) =>
+                                <Container
+                                    key={badge}
+                                    sx={{
+                                        display: 'flex',
+                                        flexGrow: 0,
+                                        flexDirection: 'column',
+                                        alignItems: 'center',
+                                        justifyContent: 'flex-start',
+                                        width: '33%',
+                                        marginTop: '24px',
+
+                                    }}
+                                >
+                                    <Avatar
+                                        variant='square'
+                                        alt='team logo'
+                                        src='https://cdn-icons-png.flaticon.com/512/2553/2553695.png'
+                                        sx={{
+                                            height: '62px',
+                                            width: '62px',
+                                        }}
+                                    >
+
+                                    </Avatar>
+                                    <Typography
+                                        variant='body1'
+                                        align='center'
+                                        className='links-hover-state'
+
+                                        sx={{
+                                            flexShrink: 2,
+                                            fontSize: '1rem',
+                                        }}
+                                    >
+                                        {badge}
+                                    </Typography>
+                                </Container>
+                            )}
+
+                        </Container>
+                    </Container>
                 </Grid>
                 {/*Third Grid Item*/}
                 <Grid
