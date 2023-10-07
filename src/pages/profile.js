@@ -268,6 +268,7 @@ export const Profile = () => {
                                 onClose={() => handleCloseModal()}
                                 onClick={handleCloseModal}
                                 title={settings[isModalOpen]?.title}
+                                settings={settings}
                             />
                         </Container>
                     </Container>

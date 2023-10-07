@@ -1,7 +1,8 @@
 import { Modal, Box, Typography } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
+import { Fragment } from 'react';
 
-export const SettingsModal = ({ open, onClose, onClick, settingSelected, title }) => {
+export const SettingsModal = ({ open, onClose, onClick, settingSelected, title, settings }) => {
     const selectedSetting = settings[settingSelected];
     return (
         <Modal
@@ -40,7 +41,7 @@ export const SettingsModal = ({ open, onClose, onClick, settingSelected, title }
                     }}
                 />
                 {selectedSetting && (
-                    <>
+                    <Fragment>
                         <Typography variant="h5">{selectedSetting.title}</Typography>
                         {/* Display other data for the selected setting */}
                         {settingSelected === 'changeEmailAddress' && (
@@ -64,7 +65,7 @@ export const SettingsModal = ({ open, onClose, onClick, settingSelected, title }
                             </>
                         )}
                         {/* Add conditions for other settings */}
-                    </>
+                    </Fragment>
                 )}
             </Box>
         </Modal>
