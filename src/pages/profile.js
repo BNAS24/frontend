@@ -168,8 +168,8 @@ export const Profile = () => {
                                 >
                                     <Avatar
                                         variant='square'
-                                        alt='team logo'
-                                        src='https://cdn-icons-png.flaticon.com/512/2553/2553695.png'
+                                        alt='badges'
+                                        src='https://i.postimg.cc/wB1wQD2r/award.png'
                                         sx={{
                                             height: '62px',
                                             width: '62px',
