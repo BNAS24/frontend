@@ -1,4 +1,5 @@
 import { Modal, Box, Typography } from '@mui/material';
+import CloseIcon from '@mui/icons-material/Close';
 
 export const SettingsModal = ({ open, onClose, settingSelected, title }) => {
 
@@ -25,6 +26,14 @@ export const SettingsModal = ({ open, onClose, settingSelected, title }) => {
                     height: '50%',
                 }}
             >
+            <CloseIcon
+            sx={{
+                position: 'absolute',
+                top: '24px',
+                right: '24px',
+                color: 'var(--theme-orange)',
+            }}
+            />
                 {
                     settingSelected={settingSelected} ?
                     <Typography

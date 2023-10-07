@@ -2,7 +2,7 @@ import '../styles/profile.css'
 import { NavBar } from "../components/authnav"
 import { Footer } from '../components/authfoot';
 import { useState } from 'react';
-import { Grid, Typography, Avatar } from '@mui/material';
+import { Grid, Typography, Avatar} from '@mui/material';
 import { Box, Container } from '@mui/system';
 import { SettingsModal } from '../components/settingsmd';
 
