@@ -26,26 +26,26 @@ export const SettingsModal = ({ open, onClose, onClick, settingSelected, title }
                     height: '50%',
                 }}
             >
-            <CloseIcon
-            onClick={onClick}
-            sx={{
-                position: 'absolute',
-                top: '24px',
-                right: '24px',
-                color: 'var(--theme-orange)',
-                '&:hover': {
-                    cursor: 'pointer',
-                    color: '#f95149',
-                }
-            }}
-            />
+                <CloseIcon
+                    onClick={onClick}
+                    sx={{
+                        position: 'absolute',
+                        top: '24px',
+                        right: '24px',
+                        color: 'var(--theme-orange)',
+                        '&:hover': {
+                            cursor: 'pointer',
+                            color: '#f95149',
+                        }
+                    }}
+                />
                 {
-                    settingSelected={settingSelected} ?
-                    <Typography
-                        variant="h5"
+                    settingSelected = { settingSelected } ?
+                        <Typography
+                            variant="h5"
                         >
-                        {title}
-                    </Typography> : null
+                            {title}
+                        </Typography> : null
                 }
             </Box>
         </Modal>
