@@ -6,6 +6,24 @@ import { Box, Container } from '@mui/system';
 
 const badges = ['Bronze', 'Silver', 'Gold', 'Platinum', 'Diamond', 'Master', 'Grandmaster'];
 
+const settings = {
+    changeEmailAddress: {
+        title: 'Change Email Address',
+    },
+    changePassword: {
+        title: 'Change Password',
+    },
+    updateProfilePicter: {
+        title: 'Update Profile Picture',
+    },
+    userStats: {
+        title: 'User Stats',
+    },
+    logout: {
+        title: 'Logout',
+    }
+}
+
 export const Profile = () => {
 
     return (
@@ -15,7 +33,8 @@ export const Profile = () => {
                 flexDirection: 'column',
                 minHeight: '100%',
                 width: '100%',
-                border: 'dashed 1px yellow'
+                border: 'dashed 1px yellow',
+                overflow: 'hidden',
             }}>
             <NavBar />
             <Grid
@@ -170,10 +189,36 @@ export const Profile = () => {
                     xs={12} sm={12} md={12} lg={12}
                     sx={{
                         gridArea: '1 / 2 / 3 / 3',
-                        border: 'dashed 1px yellow'
+                        border: 'solid 1px var(--theme-orange)',
                     }}
                 >
-                    3
+                    <Container
+                    sx={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                        border: 'solid 1px var(--theme-orange)',
+                    }}
+                    >
+                        <Typography
+                        noWrap
+                        variant='h3'
+                        align='center'
+                        sx={{
+                            marginTop: '24px',
+                            fontSize: {
+                                            xs: '1.5rem',
+                                            sm: '2rem',
+                                            md: '2.3rem',
+                                            lg: '3rem',
+                                            xl: ''
+                                        },
+                            textDecoration: 'underline',
+                        }}
+                        >
+                        Account Settings
+                        </Typography>
+                    </Container>
                 </Grid>
             </Grid>
             <Footer />
