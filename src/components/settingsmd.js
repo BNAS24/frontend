@@ -32,7 +32,11 @@ export const SettingsModal = ({ open, onClose, onClick, settingSelected, title }
                 position: 'absolute',
                 top: '24px',
                 right: '24px',
-                color: 'var(--theme-orange)'
+                color: 'var(--theme-orange)',
+                '&:hover': {
+                    cursor: 'pointer',
+                    color: '#f95149',
+                }
             }}
             />
                 {
