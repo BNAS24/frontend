@@ -1,7 +1,7 @@
 import '../styles/profile.css'
 import { NavBar } from "../components/authnav"
 import { Footer } from '../components/authfoot';
-import { Grid, Typography, Avatar } from '@mui/material';
+import { Grid, Typography, Avatar, Modal } from '@mui/material';
 import { Box, Container } from '@mui/system';
 
 const badges = ['Bronze', 'Silver', 'Gold', 'Platinum', 'Diamond', 'Master', 'Grandmaster'];
@@ -112,8 +112,8 @@ export const Profile = () => {
                             align='center'
                             variant='h4'
                             sx={{
-                                flexShrink: '0',
-                                flexGrow: '1',
+                                flexShrink: 0,
+                                flexGrow: 1,
                                 fontSize: {
                                     xs: '1.5rem',
                                     sm: '1.3rem',
@@ -193,31 +193,55 @@ export const Profile = () => {
                     }}
                 >
                     <Container
-                    sx={{
-                        display: 'flex',
-                        flexDirection: 'column',
-                        alignItems: 'center',
-                        border: 'solid 1px var(--theme-orange)',
-                    }}
+                        sx={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                            alignItems: 'center',
+                            border: 'solid 1px var(--theme-orange)',
+                        }}
                     >
                         <Typography
-                        noWrap
-                        variant='h3'
-                        align='center'
-                        sx={{
-                            marginTop: '24px',
-                            fontSize: {
-                                            xs: '1.5rem',
-                                            sm: '2rem',
-                                            md: '2.3rem',
-                                            lg: '3rem',
-                                            xl: ''
-                                        },
-                            textDecoration: 'underline',
-                        }}
+                            noWrap
+                            variant='h3'
+                            align='center'
+                            sx={{
+                                marginTop: '24px',
+                                fontSize: {
+                                    xs: '1.5rem',
+                                    sm: '2rem',
+                                    md: '2.3rem',
+                                    lg: '3rem',
+                                    xl: ''
+                                },
+                                textDecoration: 'underline',
+                            }}
                         >
-                        Account Settings
+                            Account Settings
                         </Typography>
+                        <Container
+                            sx={{
+                                display: 'flex',
+                                flexDirection: 'column',
+                                alignItems: 'center',
+                                justifyContent: 'space-around',
+                                width: '100%',
+                                border: '1px dashed yellow',
+                                height: '100%'
+                            }}
+                        >
+                            {Object.keys(settings).map((key) =>
+                                <Typography
+                                    key={key}
+                                    variant='h5'
+                                    align='center'
+                                    noWrap
+                                    className='links-hover-state'
+                                >
+                                    {settings[key].title}
+                                </Typography>
+                            )}
+                            {/* <Modal> */}
+                        </Container>
                     </Container>
                 </Grid>
             </Grid>
