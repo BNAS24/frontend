@@ -2,7 +2,7 @@ import '../styles/profile.css'
 import { NavBar } from "../components/authnav"
 import { Footer } from '../components/authfoot';
 import { useState } from 'react';
-import { Grid, Typography, Avatar} from '@mui/material';
+import { Grid, Typography, Avatar } from '@mui/material';
 import { Box, Container } from '@mui/system';
 import { SettingsModal } from '../components/settingsmd';
 
@@ -11,12 +11,20 @@ const badges = ['Bronze', 'Silver', 'Gold', 'Platinum', 'Diamond', 'Master', 'Gr
 const settings = {
     changeEmailAddress: {
         title: 'Change Email Address',
+        oldEmailPrompt: 'Old Email',
+        newEmailPrompt: 'New Email Address',
+        confirmEmailPrompt: 'Confirm New Email Address',
     },
     changePassword: {
         title: 'Change Password',
+        oldPasswordPrompt: 'Old Password',
+        newPasswordPrompt: 'New Password',
+        confirmPasswordPrompt: 'Confirm New Password',
     },
     updateProfilePicter: {
         title: 'Update Profile Picture',
+        currentProfilePicFile: 'profile.png',
+        imgPrompt: 'Upload Image'
     },
     userStats: {
         title: 'User Stats',

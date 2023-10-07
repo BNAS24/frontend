@@ -1,9 +1,8 @@
 import { Modal, Box, Typography } from '@mui/material';
-import { useState } from 'react';
 import CloseIcon from '@mui/icons-material/Close';
 
 export const SettingsModal = ({ open, onClose, onClick, settingSelected, title }) => {
-
+    const selectedSetting = settings[settingSelected];
     return (
         <Modal
             open={open}
@@ -33,20 +32,40 @@ export const SettingsModal = ({ open, onClose, onClick, settingSelected, title }
                         top: '24px',
                         right: '24px',
                         color: 'var(--theme-orange)',
+                        zIndex: 2,
                         '&:hover': {
                             cursor: 'pointer',
-                            color: '#f95149',
+                            color: '#f95149'
                         }
                     }}
                 />
-                {
-                    settingSelected = { settingSelected } ?
-                        <Typography
-                            variant="h5"
-                        >
-                            {title}
-                        </Typography> : null
-                }
+                {selectedSetting && (
+                    <>
+                        <Typography variant="h5">{selectedSetting.title}</Typography>
+                        {/* Display other data for the selected setting */}
+                        {settingSelected === 'changeEmailAddress' && (
+                            <>
+                                <Typography>{selectedSetting.oldEmailPrompt}</Typography>
+                                <Typography>{selectedSetting.newEmailPrompt}</Typography>
+                                <Typography>{selectedSetting.confirmEmailPrompt}</Typography>
+                            </>
+                        )}
+                        {settingSelected === 'changePassword' && (
+                            <>
+                                <Typography>{selectedSetting.oldPasswordPrompt}</Typography>
+                                <Typography>{selectedSetting.newPasswordPrompt}</Typography>
+                                <Typography>{selectedSetting.confirmPasswordPrompt}</Typography>
+                            </>
+                        )}
+                        {settingSelected === 'updateProfilePicter' && (
+                            <>
+                                <Typography>{selectedSetting.currentProfilePicFile}</Typography>
+                                <Typography>{selectedSetting.imgPrompt}</Typography>
+                            </>
+                        )}
+                        {/* Add conditions for other settings */}
+                    </>
+                )}
             </Box>
         </Modal>
     )
