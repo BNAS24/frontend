@@ -310,10 +310,11 @@ export const Dashboard = () => {
                     {/*3rd Grid Item*/}
                     <Grid item xs={12} sm={12} md={12} lg={12}
                         sx={{
-                            background: 'linear-gradient(to bottom, #0081D4, #ffffff)',
-                            border: 'solid 1px var(--theme-orange)',
                             gridArea: '1 / 2 / 3 / 3',
                             width: '100%',
+                            paddingBottom: '24px !important',
+                            background: 'linear-gradient(to bottom, #0081D4, #ffffff)',
+                            border: 'solid 1px var(--theme-orange)',
                             overflow: 'auto',
                         }}>
                         <Container

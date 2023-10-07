@@ -10,6 +10,9 @@ export const CommentsModal = ({ open, onClose, username, comment }) => {
         >
             <Box
                 sx={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'space-between',
                     position: 'absolute',
                     top: '50%',
                     left: '50%',
@@ -37,7 +40,9 @@ export const CommentsModal = ({ open, onClose, username, comment }) => {
                     onClick={onClose}
                     sx={{
                         color: 'var(--theme-orange)',
-
+                        flexGrow: '0',
+                        maxWidth: '64px',
+                        alignSelf: 'flex-end',
                         '&:hover': {
                             border: '1px solid var(--theme-orange)',
                             color: 'var(--theme-orange)',
