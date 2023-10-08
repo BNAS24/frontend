@@ -72,8 +72,11 @@ export const SettingsModal = ({ open, onClose, onClick, settingSelected, title, 
                                         label={selectedSetting.newEmailPrompt}
                                         variant="outlined"
                                     />
-                                    <Typography>{selectedSetting.}</Typography>
-                                    <Typography>{selectedSetting.confirmEmailPrompt}</Typography>
+                                    <TextField
+                                        id="confirm-new-email-input"
+                                        label={selectedSetting.confirmEmailPrompt}
+                                        variant="outlined"
+                                    />
                                 </FormGroup>
                             )}
                             {settingSelected === 'changePassword' && (
