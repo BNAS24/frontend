@@ -20,7 +20,8 @@ export const Login = () => {
                     Login to continue
                 </Typography>
                 <form
-                    className='login-form'>
+                    className='login-form'
+                >
                     <TextField
                         id="outlined-required"
                         label="Email"

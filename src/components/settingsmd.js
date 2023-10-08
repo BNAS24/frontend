@@ -1,6 +1,7 @@
-import { Modal, Box, Typography } from '@mui/material';
+import { Modal, Box, Typography, FormGroup, TextField } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import { Fragment } from 'react';
+import { Container } from '@mui/system';
 
 export const SettingsModal = ({ open, onClose, onClick, settingSelected, title, settings }) => {
     const selectedSetting = settings[settingSelected];
@@ -42,29 +43,54 @@ export const SettingsModal = ({ open, onClose, onClick, settingSelected, title, 
                 />
                 {selectedSetting && (
                     <Fragment>
-                        <Typography variant="h5">{selectedSetting.title}</Typography>
-                        {/* Display other data for the selected setting */}
-                        {settingSelected === 'changeEmailAddress' && (
-                            <>
-                                <Typography>{selectedSetting.oldEmailPrompt}</Typography>
-                                <Typography>{selectedSetting.newEmailPrompt}</Typography>
-                                <Typography>{selectedSetting.confirmEmailPrompt}</Typography>
-                            </>
-                        )}
-                        {settingSelected === 'changePassword' && (
-                            <>
-                                <Typography>{selectedSetting.oldPasswordPrompt}</Typography>
-                                <Typography>{selectedSetting.newPasswordPrompt}</Typography>
-                                <Typography>{selectedSetting.confirmPasswordPrompt}</Typography>
-                            </>
-                        )}
-                        {settingSelected === 'updateProfilePicter' && (
-                            <>
-                                <Typography>{selectedSetting.currentProfilePicFile}</Typography>
-                                <Typography>{selectedSetting.imgPrompt}</Typography>
-                            </>
-                        )}
-                        {/* Add conditions for other settings */}
+                        <Container
+                            sx={{
+                                display: 'flex',
+                                flexDirection: 'column',
+                                alignItems: 'center',
+                                justifyContent: 'space-around',
+                                height: '100%',
+                                width: '100%',
+                                border: 'dashed 2px yellow',
+                            }}
+                        >
+                            <Typography variant="h5">{selectedSetting.title}</Typography>
+                            {/* Display other data for the selected setting */}
+                            {settingSelected === 'changeEmailAddress' && (
+                                <FormGroup
+                                    sx={{
+                                        border: 'dashed 2px var(--theme-orange)',
+                                    }}
+                                >
+                                    <TextField
+                                        id="old-email-input"
+                                        label={selectedSetting.oldEmailPrompt}
+                                        variant="outlined"
+                                    />
+                                    <TextField
+                                        id="new-email-input"
+                                        label={selectedSetting.newEmailPrompt}
+                                        variant="outlined"
+                                    />
+                                    <Typography>{selectedSetting.}</Typography>
+                                    <Typography>{selectedSetting.confirmEmailPrompt}</Typography>
+                                </FormGroup>
+                            )}
+                            {settingSelected === 'changePassword' && (
+                                <>
+                                    <Typography>{selectedSetting.oldPasswordPrompt}</Typography>
+                                    <Typography>{selectedSetting.newPasswordPrompt}</Typography>
+                                    <Typography>{selectedSetting.confirmPasswordPrompt}</Typography>
+                                </>
+                            )}
+                            {settingSelected === 'updateProfilePicter' && (
+                                <>
+                                    <Typography>{selectedSetting.currentProfilePicFile}</Typography>
+                                    <Typography>{selectedSetting.imgPrompt}</Typography>
+                                </>
+                            )}
+                            {/* Add conditions for other settings */}
+                        </Container>
                     </Fragment>
                 )}
             </Box>
