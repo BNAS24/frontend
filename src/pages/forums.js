@@ -28,12 +28,13 @@ export const Forums = () => {
             >
                 <TextField
                     id="searchBar"
-                    label='Search'
+                    label='Search Forums'
                     variant="outlined"
                     type='search'
                     sx={{
                         width: '100%',
                         maxWidth: '400px',
+                        marginTop: '64px',
                         '& .MuiOutlinedInput-root': {
                             width: '100%',
                             maxWidth: '600px',
@@ -62,7 +63,7 @@ export const Forums = () => {
                     InputProps={{
                         endAdornment: (
                             <InputAdornment position="end">
-                                <SearchOutlinedIcon 
+                                <SearchOutlinedIcon
                                     sx={{
                                         color: 'white'
                                     }}
