@@ -12,8 +12,8 @@ const settings = {
     changeEmailAddress: {
         title: 'Change Email Address',
         oldEmailPrompt: 'Old Email',
-        newEmailPrompt: 'New Email Address',
-        confirmEmailPrompt: 'Confirm New Email Address',
+        newEmailPrompt: 'New Email',
+        confirmEmailPrompt: 'Confirm New Email',
     },
     changePassword: {
         title: 'Change Password',

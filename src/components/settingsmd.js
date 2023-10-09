@@ -111,7 +111,7 @@ export const SettingsModal = ({ open, onClose, onClick, settingSelected, title, 
                                             }}
                                         />
                                         <TextField
-                                            id="old-email-input"
+                                            id="new-email-input"
                                             label={selectedSetting.newEmailPrompt}
                                             variant="outlined"
                                             margin='normal'
@@ -148,33 +148,21 @@ export const SettingsModal = ({ open, onClose, onClick, settingSelected, title, 
                                             variant="contained"
                                             type='button'
                                             sx={{
-                                                color: 'white',
+                                                width: 'auto',
+                                                maxWidth: '400px',
                                                 padding: '8px 8px',
+                                                marginTop: '16px',
+                                                color: 'white',
+                                                backgroundColor: 'var(--theme-orange)',
                                                 fontSize: '16px',
                                                 '&:hover': {
                                                     backgroundColor: '#fe6f10',
                                                 },
                                             }}
-                                            className='login-button'
+                                            
                                         >
                                             {selectedSetting.confirmEmailPrompt}
                                         </Button>
-                                        {/* <TextField
-                                            id="new-email-input"
-                                            label={selectedSetting.newEmailPrompt}
-                                            variant="outlined"
-                                            sx={{
-                                                '& fieldset': {
-                                                    width: '50%',
-                                                    borderColor: '#F26101'
-                                                }
-                                            }}
-                                        />
-                                        <TextField
-                                            id="confirm-new-email-input"
-                                            label={selectedSetting.confirmEmailPrompt}
-                                            variant="outlined"
-                                        /> */}
                                     </FormGroup>
                                 )}
                                 {settingSelected === 'changePassword' && (
