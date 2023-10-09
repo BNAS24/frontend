@@ -100,6 +100,7 @@ export const Dashboard = () => {
                         padding: '24px 24px',
                         flex: '1',
                         maxHeight: '100vh',
+                        overflow: 'auto',
                     }}
                 >
                     {/*1st Grid Item*/}
@@ -202,7 +203,7 @@ export const Dashboard = () => {
                                         overflowY: 'auto',
                                         border: 'solid 1px #F26101'
                                     }}>
-                                    {/*Add map*/}
+                                    
                                     {fakeTeams.map((team) =>
                                         <Container
                                             key={team}
@@ -321,6 +322,7 @@ export const Dashboard = () => {
                         sx={{
                             gridArea: '1 / 2 / 3 / 3',
                             width: '100%',
+                            minWidth: '278px',
                             paddingBottom: '24px !important',
                             background: 'linear-gradient(to bottom, #0081D4, #ffffff)',
                             border: 'solid 1px var(--theme-orange)',
