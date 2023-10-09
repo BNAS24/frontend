@@ -503,7 +503,6 @@ export const SettingsModal = ({ open, onClose, onClick, settingSelected, setting
                                                     color: 'red',
                                                 },
                                             }}
-
                                         >
                                             {selectedSetting.buttonText}
                                         </Button>
