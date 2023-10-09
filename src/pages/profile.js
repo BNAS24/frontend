@@ -13,7 +13,8 @@ const settings = {
         title: 'Change Email Address',
         oldEmailPrompt: 'Old Email',
         newEmailPrompt: 'New Email',
-        confirmEmailPrompt: 'Confirm New Email',
+        confirmNewEmailPrompt: 'Confirm New Email',
+        confirmEmailPrompt: 'Confirm',
     },
     changePassword: {
         title: 'Change Password',

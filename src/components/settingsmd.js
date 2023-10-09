@@ -18,7 +18,7 @@ export const SettingsModal = ({ open, onClose, onClick, settingSelected, setting
                     sx={{
                         display: 'flex',
                         flexDirection: 'column',
-                        justifyContent: 'space-between',
+                        justifyContent: 'center',
                         position: 'absolute',
                         top: '50%',
                         left: '50%',
@@ -52,8 +52,8 @@ export const SettingsModal = ({ open, onClose, onClick, settingSelected, setting
                                     display: 'flex',
                                     flexDirection: 'column',
                                     alignItems: 'center',
-                                    justifyContent: 'space-around',
-                                    height: '100%',
+                                    justifyContent: 'space-evenly',
+                                    height: 'auto',
                                     width: '100%',
                                     maxWidth: '100%',
                                     border: 'dashed 2px yellow',
@@ -74,12 +74,13 @@ export const SettingsModal = ({ open, onClose, onClick, settingSelected, setting
                                             justifyContent: 'center',
                                             border: 'dashed 0.5px lime',
                                             width: '100%',
-                                            height: '85%',
+                                            height: 'auto',
+                                            marginTop: '32px',
                                         }}
                                     >
                                         <TextField
                                             id="old-email-input"
-                                            label={selectedSetting.oldEmailPrompt}
+                                            label={selectedSetting.newEmailPrompt}
                                             variant="outlined"
                                             margin='normal'
                                             sx={{
@@ -112,7 +113,7 @@ export const SettingsModal = ({ open, onClose, onClick, settingSelected, setting
                                         />
                                         <TextField
                                             id="new-email-input"
-                                            label={selectedSetting.newEmailPrompt}
+                                            label={selectedSetting.confirmNewEmailPrompt}
                                             variant="outlined"
                                             margin='normal'
                                             sx={{
@@ -148,7 +149,7 @@ export const SettingsModal = ({ open, onClose, onClick, settingSelected, setting
                                             variant="contained"
                                             type='button'
                                             sx={{
-                                                width: 'auto',
+                                                minWidth: '104px',
                                                 maxWidth: '400px',
                                                 padding: '8px 8px',
                                                 marginTop: '16px',
