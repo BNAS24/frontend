@@ -62,7 +62,7 @@ export const SettingsModal = ({ open, onClose, onClick, settingSelected, setting
                                     noWrap
                                     variant="h5"
                                 >
-                                    {selectedSetting.title}
+                                    {selectedSetting.title !== 'Logout' && selectedSetting.title}
                                 </Typography>
                                 {/* Display other data for the selected setting */}
                                 {settingSelected === 'changeEmailAddress' && (
@@ -343,7 +343,9 @@ export const SettingsModal = ({ open, onClose, onClick, settingSelected, setting
                                             display: 'flex',
                                             flexDirection: 'column',
                                             alignItems: 'center',
-                                            justifyContent: 'space-evenly',
+                                            justifyContent: 'space-around',
+                                            gap: '32px',
+                                            
                                         }}
                                     >
                                         <Typography
@@ -357,12 +359,12 @@ export const SettingsModal = ({ open, onClose, onClick, settingSelected, setting
                                             variant="outlined"
                                             type='button'
                                             sx={{
-                                                color: 'var(--theme-orange)',
+                                                color: 'var(--theme-white)',
                                                 flexGrow: '0',
                                                 maxWidth: '64px',
                                                 '&:hover': {
-                                                    border: '1px solid var(--theme-orange)',
-                                                    color: 'var(--theme-orange)',
+                                                    
+                                                    color: 'red',
                                                 },
                                             }}
 

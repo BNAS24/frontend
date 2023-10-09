@@ -99,7 +99,8 @@ export const Profile = () => {
                             sx={{
                                 height: '104px',
                                 width: '104px'
-                            }} />
+                            }}
+                        />
                         <Typography
                             variant='h3'
                             style={{
