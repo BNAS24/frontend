@@ -81,6 +81,7 @@ export const SettingsModal = ({ open, onClose, onClick, settingSelected, setting
                                             label={selectedSetting.newEmailPrompt}
                                             variant="outlined"
                                             margin='dense'
+                                            type='email'
                                             sx={{
                                                 width: '100%',
                                                 maxWidth: '400px',
@@ -114,6 +115,7 @@ export const SettingsModal = ({ open, onClose, onClick, settingSelected, setting
                                             label={selectedSetting.confirmNewEmailPrompt}
                                             variant="outlined"
                                             margin='dense'
+                                            type='email'
                                             sx={{
                                                 width: '100%',
                                                 maxWidth: '400px',
@@ -181,6 +183,7 @@ export const SettingsModal = ({ open, onClose, onClick, settingSelected, setting
                                                 label={selectedSetting.oldPasswordPrompt}
                                                 variant="outlined"
                                                 margin='dense'
+                                                type='password'
                                                 sx={{
                                                     width: '100%',
                                                     maxWidth: '400px',
@@ -214,6 +217,7 @@ export const SettingsModal = ({ open, onClose, onClick, settingSelected, setting
                                                 label={selectedSetting.newPasswordPrompt}
                                                 variant="outlined"
                                                 margin='dense'
+                                                type='password'
                                                 sx={{
                                                     width: '100%',
                                                     maxWidth: '400px',
@@ -247,6 +251,7 @@ export const SettingsModal = ({ open, onClose, onClick, settingSelected, setting
                                                 label={selectedSetting.confirmPasswordPrompt}
                                                 variant="outlined"
                                                 margin='dense'
+                                                type='password'
                                                 sx={{
                                                     width: '100%',
                                                     maxWidth: '400px',
@@ -337,6 +342,131 @@ export const SettingsModal = ({ open, onClose, onClick, settingSelected, setting
                                         </Button>
                                     </Container>
                                 )}
+                                {settingSelected === 'userStats' && (
+                                    <Container
+                                        sx={{
+                                            display: 'flex',
+                                            flexDirection: 'row',
+                                            justifyContent: 'space-between',
+                                            alignItems: 'center',
+                                            minWidth: '100px',
+                                            maxWidth: '400px !important',
+                                            marginTop: '32px',
+                                            paddingLeft: '0 !important',
+                                            paddingRight: '0 !important'
+                                        }}
+                                    >
+                                        <Container
+                                            sx={{
+                                                display: 'flex',
+                                                flexDirection: 'column',
+                                                alignItems: 'flex-start',
+                                                width: 'auto',
+                                                margin: '0',
+                                                gap: '48px',
+                                                paddingLeft: '0 !important',
+                                                paddingRight: '0 !important',
+                                            }}
+                                        >
+                                            <Typography
+                                                sx={{
+                                                    fontSize: {
+                                                        xs: '',
+                                                        sm: '20px',
+                                                        md: '24px',
+                                                        lg: '24px',
+                                                        xl: '24px'
+                                                    }
+                                                }}
+                                            >
+                                                {selectedSetting.followers.title}
+                                            </Typography>
+                                            <Typography
+                                                sx={{
+                                                    fontSize: {
+                                                        xs: '',
+                                                        sm: '20px',
+                                                        md: '24px',
+                                                        lg: '24px',
+                                                        xl: '24px'
+                                                    }
+                                                }}
+                                            >
+                                                {selectedSetting.following.title}
+                                            </Typography>
+                                            <Typography
+                                                noWrap
+                                                sx={{
+                                                    fontSize: {
+                                                        xs: '',
+                                                        sm: '20px',
+                                                        md: '24px',
+                                                        lg: '24px',
+                                                        xl: '24px'
+                                                    }
+                                                }}
+                                            >
+                                                {selectedSetting.numberOfPosts.title}
+                                            </Typography>
+                                        </Container>
+                                        <Container
+                                            sx={{
+                                                display: 'flex',
+                                                flexDirection: 'column',
+                                                alignItems: 'center',
+                                                width: 'auto',
+                                                margin: '0',
+                                                gap: '48px',
+                                                paddingLeft: '0 !important',
+                                                paddingRight: '0 !important'
+
+                                            }}
+                                        >
+                                            <Typography
+                                                sx={{
+                                                    color: 'var(--theme-orange)',
+                                                    fontSize: {
+                                                        xs: '',
+                                                        sm: '20px',
+                                                        md: '24px',
+                                                        lg: '24px',
+                                                        xl: '24px'
+                                                    }
+                                                }}
+                                            >
+                                                {selectedSetting.followers.count}
+                                            </Typography>
+                                            <Typography
+                                                sx={{
+                                                    color: 'var(--theme-orange)',
+                                                    fontSize: {
+                                                        xs: '',
+                                                        sm: '20px',
+                                                        md: '24px',
+                                                        lg: '24px',
+                                                        xl: '24px'
+                                                    }
+                                                }}
+                                            >
+                                                {selectedSetting.following.count}
+                                            </Typography>
+                                            <Typography
+                                                sx={{
+                                                    color: 'var(--theme-orange)',
+                                                    fontSize: {
+                                                        xs: '',
+                                                        sm: '20px',
+                                                        md: '24px',
+                                                        lg: '24px',
+                                                        xl: '24px'
+                                                    }
+                                                }}
+                                            >
+                                                {selectedSetting.numberOfPosts.count}
+                                            </Typography>
+                                        </Container>
+                                    </Container>
+                                )}
                                 {settingSelected === 'logout' && (
                                     <Container
                                         sx={{
@@ -344,8 +474,7 @@ export const SettingsModal = ({ open, onClose, onClick, settingSelected, setting
                                             flexDirection: 'column',
                                             alignItems: 'center',
                                             justifyContent: 'space-around',
-                                            gap: '32px',
-                                            
+                                            gap: '32px'
                                         }}
                                     >
                                         <Typography
@@ -363,7 +492,6 @@ export const SettingsModal = ({ open, onClose, onClick, settingSelected, setting
                                                 flexGrow: '0',
                                                 maxWidth: '64px',
                                                 '&:hover': {
-                                                    
                                                     color: 'red',
                                                 },
                                             }}
@@ -380,6 +508,6 @@ export const SettingsModal = ({ open, onClose, onClick, settingSelected, setting
                     )}
                 </Box>
             </Modal>
-        </ThemeProvider>
+        </ThemeProvider >
     )
 }
