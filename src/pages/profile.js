@@ -237,6 +237,7 @@ export const Profile = () => {
                                     xl: ''
                                 },
                                 textDecoration: 'underline',
+                                overflow: 'visible'
                             }}
                         >
                             Account Settings
@@ -248,7 +249,6 @@ export const Profile = () => {
                                 alignItems: 'center',
                                 justifyContent: 'space-around',
                                 width: '100%',
-                                border: '1px dashed yellow',
                                 height: '100%'
                             }}
                         >

@@ -80,7 +80,7 @@ export const SettingsModal = ({ open, onClose, onClick, settingSelected, setting
                                             id="old-email-input"
                                             label={selectedSetting.newEmailPrompt}
                                             variant="outlined"
-                                            margin='normal'
+                                            margin='dense'
                                             sx={{
                                                 width: '100%',
                                                 maxWidth: '400px',
@@ -113,7 +113,7 @@ export const SettingsModal = ({ open, onClose, onClick, settingSelected, setting
                                             id="new-email-input"
                                             label={selectedSetting.confirmNewEmailPrompt}
                                             variant="outlined"
-                                            margin='normal'
+                                            margin='dense'
                                             sx={{
                                                 width: '100%',
                                                 maxWidth: '400px',
@@ -180,7 +180,7 @@ export const SettingsModal = ({ open, onClose, onClick, settingSelected, setting
                                                 id="old-password-input"
                                                 label={selectedSetting.oldPasswordPrompt}
                                                 variant="outlined"
-                                                margin='normal'
+                                                margin='dense'
                                                 sx={{
                                                     width: '100%',
                                                     maxWidth: '400px',
@@ -213,7 +213,7 @@ export const SettingsModal = ({ open, onClose, onClick, settingSelected, setting
                                                 id="new-password-input"
                                                 label={selectedSetting.newPasswordPrompt}
                                                 variant="outlined"
-                                                margin='normal'
+                                                margin='dense'
                                                 sx={{
                                                     width: '100%',
                                                     maxWidth: '400px',
@@ -246,7 +246,7 @@ export const SettingsModal = ({ open, onClose, onClick, settingSelected, setting
                                                 id="confirm-new-password-input"
                                                 label={selectedSetting.confirmPasswordPrompt}
                                                 variant="outlined"
-                                                margin='normal'
+                                                margin='dense'
                                                 sx={{
                                                     width: '100%',
                                                     maxWidth: '400px',
