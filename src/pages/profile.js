@@ -33,6 +33,8 @@ const settings = {
     },
     logout: {
         title: 'Logout',
+        logoutWarning: 'Are you sure you want to logout?',
+        buttonText: 'Logout'
     }
 }
 

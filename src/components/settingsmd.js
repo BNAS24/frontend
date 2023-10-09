@@ -337,6 +337,44 @@ export const SettingsModal = ({ open, onClose, onClick, settingSelected, setting
                                         </Button>
                                     </Container>
                                 )}
+                                {settingSelected === 'logout' && (
+                                    <Container
+                                    sx={{
+                                        display: 'flex',
+                                        flexDirection: 'column',
+                                        alignItems: 'center',
+                                        justifyContent: 'space-evenly',
+                                    }}
+                                    >
+                                        <Typography
+                                            variant='h5'
+                                            color='red'
+                                            align='center'
+                                        >
+                                            {selectedSetting.logoutWarning}
+                                        </Typography>
+                                        <Button
+                                                variant="contained"
+                                                type='button'
+                                                sx={{
+                                                    minWidth: '104px',
+                                                    maxWidth: '400px',
+                                                    padding: '8px 8px',
+                                                    marginTop: '16px',
+                                                    color: 'white',
+                                                    backgroundColor: 'var(--theme-orange)',
+                                                    fontSize: '16px',
+                                                    '&:hover': {
+                                                        backgroundColor: '#fe6f10',
+                                                    },
+                                                }}
+
+                                            >
+                                                {selectedSetting.buttonText}
+                                            </Button>
+                                    </Container>
+
+                                )}
                                 {/* Add conditions for other settings */}
                             </Container>
                         </Fragment>
