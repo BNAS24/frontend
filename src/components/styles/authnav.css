@@ -6,6 +6,7 @@
     align-items: center;
     flex-direction: row;
     border-bottom: solid 1px var(--theme-orange);
+    overflow: auto;
 }
 
 .logo_name_container {

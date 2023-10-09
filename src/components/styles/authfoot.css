@@ -9,6 +9,7 @@
     color: var(--theme-white);
     border-top: solid 1px var(--theme-orange);
     border-bottom: solid 1px var(--theme-orange);
+    overflow: auto;
 }
 
 
