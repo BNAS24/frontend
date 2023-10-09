@@ -6,7 +6,7 @@ import { ThemeProvider } from '@mui/material/styles';
 import Button from '@mui/material/Button';
 import customTheme from '../styles/context/customtheme';
 
-export const SettingsModal = ({ open, onClose, onClick, settingSelected, title, settings }) => {
+export const SettingsModal = ({ open, onClose, onClick, settingSelected, settings }) => {
     const selectedSetting = settings[settingSelected];
     return (
         <ThemeProvider theme={customTheme}>
