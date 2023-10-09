@@ -4,7 +4,16 @@ import { Container } from '@mui/material'
 
 export const Forums = () => {
     return (
-        <Container>
+        <Container
+            maxWidth='xlg'
+            sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                minHeight: '100%',
+                width: '100%',
+                border: '1px dashed yellow',
+            }}>
+        >
             <NavBar />
             <Footer />
         </Container>
