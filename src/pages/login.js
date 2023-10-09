@@ -25,6 +25,7 @@ export const Login = () => {
                     <TextField
                         id="outlined-required"
                         label="Email"
+                        type='email'
                         color="secondary"
                         variant="outlined"
                         InputProps={{
