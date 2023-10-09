@@ -92,8 +92,7 @@ export const Profile = () => {
                     item
                     xs={12} sm={12} md={12} lg={12}
                     sx={{
-                        gridArea: '1 / 1 / 2 / 2',
-                        border: 'dashed 1px yellow'
+                        gridArea: '1 / 1 / 2 / 2'
                     }}>
                     <Container
                         sx={{
@@ -131,8 +130,7 @@ export const Profile = () => {
                     container
                     xs={12} sm={12} md={12} lg={12}
                     sx={{
-                        gridArea: '2 / 1 / 3 / 2',
-                        border: 'dashed 1px yellow'
+                        gridArea: '2 / 1 / 3 / 2'
                     }}>
                     <Container
                         sx={{
