@@ -160,7 +160,7 @@ export const SettingsModal = ({ open, onClose, onClick, settingSelected, setting
                                                     backgroundColor: '#fe6f10',
                                                 },
                                             }}
-                                            
+
                                         >
                                             {selectedSetting.confirmEmailPrompt}
                                         </Button>
@@ -168,6 +168,137 @@ export const SettingsModal = ({ open, onClose, onClick, settingSelected, setting
                                 )}
                                 {settingSelected === 'changePassword' && (
                                     <>
+                                        <FormGroup
+                                            sx={{
+                                                display: 'flex',
+                                                alignItems: 'center',
+                                                justifyContent: 'center',
+                                                border: 'dashed 0.5px lime',
+                                                width: '100%',
+                                                height: 'auto',
+                                                marginTop: '32px',
+                                            }}
+                                        >
+                                            <TextField
+                                                id="old-email-input"
+                                                label={selectedSetting.oldPasswordPrompt}
+                                                variant="outlined"
+                                                margin='normal'
+                                                sx={{
+                                                    width: '100%',
+                                                    maxWidth: '400px',
+                                                    '& .MuiOutlinedInput-root': {
+                                                        width: '100%',
+                                                        maxWidth: '600px',
+                                                        '& fieldset': {
+
+                                                            borderColor: 'var(--theme-orange)'
+                                                        },
+                                                        '&:hover fieldset': {
+                                                            borderColor: '#fe6f10',
+                                                        },
+                                                        '&.Mui-focused fieldset': {
+                                                            borderColor: 'var(--theme-orange)',
+                                                        },
+                                                        '& .MuiInputBase-input': {
+                                                            color: 'white',
+                                                        },
+                                                        cursor: 'text',
+                                                    },
+                                                    '& .MuiInputLabel-root': {
+                                                        '&.Mui-focused': {
+                                                            color: 'var(--theme-orange)',
+                                                        },
+                                                    },
+                                                }}
+                                            />
+                                            <TextField
+                                                id="new-email-input"
+                                                label={selectedSetting.confirmNewEmailPrompt}
+                                                variant="outlined"
+                                                margin='normal'
+                                                sx={{
+                                                    width: '100%',
+                                                    maxWidth: '400px',
+                                                    '& .MuiOutlinedInput-root': {
+                                                        width: '100%',
+                                                        maxWidth: '600px',
+                                                        '& fieldset': {
+
+                                                            borderColor: 'var(--theme-orange)'
+                                                        },
+                                                        '&:hover fieldset': {
+                                                            borderColor: '#fe6f10',
+                                                        },
+                                                        '&.Mui-focused fieldset': {
+                                                            borderColor: 'var(--theme-orange)',
+                                                        },
+                                                        '& .MuiInputBase-input': {
+                                                            color: 'white',
+                                                        },
+                                                        cursor: 'text',
+                                                    },
+                                                    '& .MuiInputLabel-root': {
+                                                        '&.Mui-focused': {
+                                                            color: 'var(--theme-orange)',
+                                                        },
+                                                    },
+                                                }}
+                                            />
+                                            <TextField
+                                                id="new-email-input"
+                                                label={selectedSetting.confirmNewEmailPrompt}
+                                                variant="outlined"
+                                                margin='normal'
+                                                sx={{
+                                                    width: '100%',
+                                                    maxWidth: '400px',
+                                                    '& .MuiOutlinedInput-root': {
+                                                        width: '100%',
+                                                        maxWidth: '600px',
+                                                        '& fieldset': {
+
+                                                            borderColor: 'var(--theme-orange)'
+                                                        },
+                                                        '&:hover fieldset': {
+                                                            borderColor: '#fe6f10',
+                                                        },
+                                                        '&.Mui-focused fieldset': {
+                                                            borderColor: 'var(--theme-orange)',
+                                                        },
+                                                        '& .MuiInputBase-input': {
+                                                            color: 'white',
+                                                        },
+                                                        cursor: 'text',
+                                                    },
+                                                    '& .MuiInputLabel-root': {
+                                                        '&.Mui-focused': {
+                                                            color: 'var(--theme-orange)',
+                                                        },
+                                                    },
+                                                }}
+                                            />
+
+                                            <Button
+                                                variant="contained"
+                                                type='button'
+                                                sx={{
+                                                    minWidth: '104px',
+                                                    maxWidth: '400px',
+                                                    padding: '8px 8px',
+                                                    marginTop: '16px',
+                                                    color: 'white',
+                                                    backgroundColor: 'var(--theme-orange)',
+                                                    fontSize: '16px',
+                                                    '&:hover': {
+                                                        backgroundColor: '#fe6f10',
+                                                    },
+                                                }}
+
+                                            >
+                                                {selectedSetting.confirmEmailPrompt}
+                                            </Button>
+                                        </FormGroup>
                                         <Typography>{selectedSetting.oldPasswordPrompt}</Typography>
                                         <Typography>{selectedSetting.newPasswordPrompt}</Typography>
                                         <Typography>{selectedSetting.confirmPasswordPrompt}</Typography>
