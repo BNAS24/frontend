@@ -1,4 +1,4 @@
-import { Modal, Box, Typography, FormGroup, TextField, Avatar } from '@mui/material';
+import { Modal, Box, Typography, FormGroup, TextField, Input, Avatar } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import { Fragment } from 'react';
 import { Container } from '@mui/system';
@@ -321,25 +321,33 @@ export const SettingsModal = ({ open, onClose, onClick, settingSelected, setting
                                                 height: '152px',
                                                 width: '152px'
                                             }} />
-                                        <Button
-                                            variant="contained"
-                                            type='button'
-                                            sx={{
-                                                minWidth: '104px',
-                                                maxWidth: '400px',
-                                                padding: '8px 8px',
-                                                marginTop: '16px',
-                                                color: 'white',
-                                                backgroundColor: 'var(--theme-orange)',
-                                                fontSize: '16px',
-                                                '&:hover': {
-                                                    backgroundColor: '#fe6f10',
-                                                },
-                                            }}
+                                        <label htmlFor="profilePicInput">
+                                            <Button
+                                                variant="contained"
+                                                type='button'
+                                                component='span' // This makes the button act as a file input trigger
+                                                sx={{
+                                                    minWidth: '104px',
+                                                    maxWidth: '400px',
+                                                    padding: '8px 8px',
+                                                    marginTop: '16px',
+                                                    color: 'white',
+                                                    backgroundColor: 'var(--theme-orange)',
+                                                    fontSize: '16px',
+                                                    '&:hover': {
+                                                        backgroundColor: '#fe6f10',
+                                                    },
+                                                }}
 
-                                        >
-                                            {selectedSetting.buttonText}
-                                        </Button>
+                                            >
+                                                {selectedSetting.buttonText}
+                                            </Button>
+                                        </label>
+                                        <Input
+                                            type='file'
+                                            id="profilePicInput"
+                                            style={{ display: 'none' }}
+                                        />
                                     </Container>
                                 )}
                                 {settingSelected === 'userStats' && (
