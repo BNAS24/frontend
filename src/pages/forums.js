@@ -12,7 +12,7 @@ export const Forums = () => {
                 minHeight: '100%',
                 width: '100%',
                 border: '1px dashed yellow',
-            }}>
+            }}
         >
             <NavBar />
             <Footer />
