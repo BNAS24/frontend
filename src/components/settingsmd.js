@@ -339,12 +339,12 @@ export const SettingsModal = ({ open, onClose, onClick, settingSelected, setting
                                 )}
                                 {settingSelected === 'logout' && (
                                     <Container
-                                    sx={{
-                                        display: 'flex',
-                                        flexDirection: 'column',
-                                        alignItems: 'center',
-                                        justifyContent: 'space-evenly',
-                                    }}
+                                        sx={{
+                                            display: 'flex',
+                                            flexDirection: 'column',
+                                            alignItems: 'center',
+                                            justifyContent: 'space-evenly',
+                                        }}
                                     >
                                         <Typography
                                             variant='h5'
@@ -354,24 +354,21 @@ export const SettingsModal = ({ open, onClose, onClick, settingSelected, setting
                                             {selectedSetting.logoutWarning}
                                         </Typography>
                                         <Button
-                                                variant="contained"
-                                                type='button'
-                                                sx={{
-                                                    minWidth: '104px',
-                                                    maxWidth: '400px',
-                                                    padding: '8px 8px',
-                                                    marginTop: '16px',
-                                                    color: 'white',
-                                                    backgroundColor: 'var(--theme-orange)',
-                                                    fontSize: '16px',
-                                                    '&:hover': {
-                                                        backgroundColor: '#fe6f10',
-                                                    },
-                                                }}
+                                            variant="outlined"
+                                            type='button'
+                                            sx={{
+                                                color: 'var(--theme-orange)',
+                                                flexGrow: '0',
+                                                maxWidth: '64px',
+                                                '&:hover': {
+                                                    border: '1px solid var(--theme-orange)',
+                                                    color: 'var(--theme-orange)',
+                                                },
+                                            }}
 
-                                            >
-                                                {selectedSetting.buttonText}
-                                            </Button>
+                                        >
+                                            {selectedSetting.buttonText}
+                                        </Button>
                                     </Container>
 
                                 )}
