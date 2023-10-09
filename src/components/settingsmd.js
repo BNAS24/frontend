@@ -1,4 +1,4 @@
-import { Modal, Box, Typography, FormGroup, TextField } from '@mui/material';
+import { Modal, Box, Typography, FormGroup, TextField, Avatar } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import { Fragment } from 'react';
 import { Container } from '@mui/system';
@@ -55,8 +55,7 @@ export const SettingsModal = ({ open, onClose, onClick, settingSelected, setting
                                     justifyContent: 'space-evenly',
                                     height: 'auto',
                                     width: '100%',
-                                    maxWidth: '100%',
-                                    border: 'dashed 2px yellow',
+                                    maxWidth: '100%'
                                 }}
                             >
                                 <Typography
@@ -72,7 +71,6 @@ export const SettingsModal = ({ open, onClose, onClick, settingSelected, setting
                                             display: 'flex',
                                             alignItems: 'center',
                                             justifyContent: 'center',
-                                            border: 'dashed 0.5px lime',
                                             width: '100%',
                                             height: 'auto',
                                             marginTop: '32px',
@@ -173,14 +171,13 @@ export const SettingsModal = ({ open, onClose, onClick, settingSelected, setting
                                                 display: 'flex',
                                                 alignItems: 'center',
                                                 justifyContent: 'center',
-                                                border: 'dashed 0.5px lime',
                                                 width: '100%',
                                                 height: 'auto',
                                                 marginTop: '32px',
                                             }}
                                         >
                                             <TextField
-                                                id="old-email-input"
+                                                id="old-password-input"
                                                 label={selectedSetting.oldPasswordPrompt}
                                                 variant="outlined"
                                                 margin='normal'
@@ -213,8 +210,8 @@ export const SettingsModal = ({ open, onClose, onClick, settingSelected, setting
                                                 }}
                                             />
                                             <TextField
-                                                id="new-email-input"
-                                                label={selectedSetting.confirmNewEmailPrompt}
+                                                id="new-password-input"
+                                                label={selectedSetting.newPasswordPrompt}
                                                 variant="outlined"
                                                 margin='normal'
                                                 sx={{
@@ -246,8 +243,8 @@ export const SettingsModal = ({ open, onClose, onClick, settingSelected, setting
                                                 }}
                                             />
                                             <TextField
-                                                id="new-email-input"
-                                                label={selectedSetting.confirmNewEmailPrompt}
+                                                id="confirm-new-password-input"
+                                                label={selectedSetting.confirmPasswordPrompt}
                                                 variant="outlined"
                                                 margin='normal'
                                                 sx={{
@@ -296,16 +293,21 @@ export const SettingsModal = ({ open, onClose, onClick, settingSelected, setting
                                                 }}
 
                                             >
-                                                {selectedSetting.confirmEmailPrompt}
+                                                {selectedSetting.buttonText}
                                             </Button>
                                         </FormGroup>
-                                        <Typography>{selectedSetting.oldPasswordPrompt}</Typography>
-                                        <Typography>{selectedSetting.newPasswordPrompt}</Typography>
-                                        <Typography>{selectedSetting.confirmPasswordPrompt}</Typography>
                                     </>
                                 )}
                                 {settingSelected === 'updateProfilePicter' && (
                                     <>
+                                        <Avatar
+                                            variant='square'
+                                            alt='profile picture'
+                                            src='https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png'
+                                            sx={{
+                                                height: '104px',
+                                                width: '104px'
+                                            }} />
                                         <Typography>{selectedSetting.currentProfilePicFile}</Typography>
                                         <Typography>{selectedSetting.imgPrompt}</Typography>
                                     </>

@@ -21,6 +21,7 @@ const settings = {
         oldPasswordPrompt: 'Old Password',
         newPasswordPrompt: 'New Password',
         confirmPasswordPrompt: 'Confirm New Password',
+        buttonText: 'Update'
     },
     updateProfilePicter: {
         title: 'Update Profile Picture',
