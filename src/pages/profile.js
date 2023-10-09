@@ -30,6 +30,18 @@ const settings = {
     },
     userStats: {
         title: 'User Stats',
+        followers: {
+            title: 'Followers',
+            count: 2045
+        },
+        following: {
+            title: 'Following',
+            count: 235
+        },
+        numberOfPosts: {
+            title: 'Number of Posts',
+            count: 756
+        }
     },
     logout: {
         title: 'Logout',
