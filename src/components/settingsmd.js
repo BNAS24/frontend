@@ -299,18 +299,43 @@ export const SettingsModal = ({ open, onClose, onClick, settingSelected, setting
                                     </>
                                 )}
                                 {settingSelected === 'updateProfilePicter' && (
-                                    <>
+                                    <Container
+                                        sx={{
+                                            display: 'flex',
+                                            flexDirection: 'column',
+                                            alignItems: 'center',
+                                            justifyContent: 'space-evenly',
+                                            marginTop: '32px',
+                                        }}
+                                    >
                                         <Avatar
                                             variant='square'
                                             alt='profile picture'
-                                            src='https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png'
+                                            src={selectedSetting.currentProfilePicFile}
                                             sx={{
-                                                height: '104px',
-                                                width: '104px'
+                                                height: '152px',
+                                                width: '152px'
                                             }} />
-                                        <Typography>{selectedSetting.currentProfilePicFile}</Typography>
-                                        <Typography>{selectedSetting.imgPrompt}</Typography>
-                                    </>
+                                        <Button
+                                            variant="contained"
+                                            type='button'
+                                            sx={{
+                                                minWidth: '104px',
+                                                maxWidth: '400px',
+                                                padding: '8px 8px',
+                                                marginTop: '16px',
+                                                color: 'white',
+                                                backgroundColor: 'var(--theme-orange)',
+                                                fontSize: '16px',
+                                                '&:hover': {
+                                                    backgroundColor: '#fe6f10',
+                                                },
+                                            }}
+
+                                        >
+                                            {selectedSetting.buttonText}
+                                        </Button>
+                                    </Container>
                                 )}
                                 {/* Add conditions for other settings */}
                             </Container>
