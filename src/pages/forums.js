@@ -1,6 +1,8 @@
 import { NavBar } from '../components/authnav'
 import { Footer } from '../components/authfoot'
 import { Container, TextField } from '@mui/material'
+import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
+import InputAdornment from '@mui/material/InputAdornment';
 
 export const Forums = () => {
     return (
@@ -25,12 +27,53 @@ export const Forums = () => {
                 }}
             >
                 <TextField
-                type='search'
-                >
+                    id="searchBar"
+                    label='Search'
+                    variant="outlined"
+                    type='search'
+                    sx={{
+                        width: '100%',
+                        maxWidth: '400px',
+                        '& .MuiOutlinedInput-root': {
+                            width: '100%',
+                            maxWidth: '600px',
+                            '& fieldset': {
+                                borderColor: 'var(--theme-orange)'
+                            },
+                            '&:hover fieldset': {
+                                borderColor: '#fe6f10',
+                            },
+                            '&.Mui-focused fieldset': {
+                                borderColor: 'var(--theme-orange)',
+                            },
+                            '& .MuiInputBase-input': {
+                                color: 'white',
+                            },
+                            cursor: 'text',
+                        },
+                        '& .MuiInputLabel-root': {
+                            color: 'white',
+                            '&.Mui-focused': {
+                                color: 'var(--theme-orange)',
+                            },
+                        },
 
-                </TextField>
+                    }}
+                    InputProps={{
+                        endAdornment: (
+                            <InputAdornment position="end">
+                                <SearchOutlinedIcon 
+                                    sx={{
+                                        color: 'white'
+                                    }}
+                                />
+                            </InputAdornment>
+                        )
+                    }}
+
+                />
             </Container>
             <Footer />
-        </Container >
+        </Container>
     )
 }
