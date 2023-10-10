@@ -6,6 +6,7 @@ import { Register } from './pages/register';
 import { Dashboard } from './pages/dashboard';
 import { Profile } from './pages/profile';
 import { Forums } from './pages/forums';
+import { LiveScores } from './pages/livescores';
 import './App.css';
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
       <Route path='/dashboard' element={<Dashboard />} />
       <Route path='/profile' element={<Profile />} />
       <Route path='/forums' element={<Forums />} />
+      <Route path='/live-scores' element={<LiveScores />} />
     </Routes>
   );
 }
