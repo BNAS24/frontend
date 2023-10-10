@@ -89,8 +89,6 @@ export const LiveScores = () => {
                 >
                     <Container>
                         1
-                        {sportSelected ? leagues[sportSelected] && console.log(leagues[sportSelected]) : console.log(leagues[sportSelected])}
-
                     </Container>
                     <Container>2</Container>
                 </Container>
@@ -99,5 +97,3 @@ export const LiveScores = () => {
         </Container>
     )
 }
-
-console.log(leagues)
