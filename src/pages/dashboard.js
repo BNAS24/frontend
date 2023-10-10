@@ -203,7 +203,7 @@ export const Dashboard = () => {
                                         overflowY: 'auto',
                                         border: 'solid 1px #F26101'
                                     }}>
-                                    
+
                                     {fakeTeams.map((team) =>
                                         <Container
                                             key={team}
@@ -356,8 +356,12 @@ export const Dashboard = () => {
                                     zIndex: '1',
                                 }}
                             >
-                                <Typography><strong>Forums you follow</strong></Typography>
-                                <Link to='forums'>Explore</Link>
+                                <Typography><strong>
+                                    Forums you follow
+                                </strong></Typography>
+                                <Link to='/forums'>
+                                    Explore
+                                </Link>
                             </Container>
                             <Container
                                 sx={{
