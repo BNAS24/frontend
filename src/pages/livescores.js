@@ -13,7 +13,7 @@ export const LiveScores = () => {
 
     return (
         <Container
-            maxWidth='xlg'
+            maxWidth='xl'
             sx={{
                 display: 'flex',
                 flexDirection: 'column',
@@ -26,6 +26,7 @@ export const LiveScores = () => {
         >
             <NavBar />
             <Container
+            maxWidth='xl'
                 sx={{
                     flex: '1',
                     display: 'flex',
@@ -33,10 +34,12 @@ export const LiveScores = () => {
                     justifyContent: 'center',
                     gap: '96px',
                     height: '100%',
+                    width: '100%',
                     border: 'solid 1px red'
                 }}
             >
                 <Container
+                
                     sx={{
                         display: 'flex',
                         flexDirection: 'column',
