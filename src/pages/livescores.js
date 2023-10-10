@@ -4,8 +4,7 @@ import { Footer } from '../components/authfoot'
 import { useState } from 'react'
 import { Container } from '@mui/system'
 import { Typography } from '@mui/material'
-
-const sports = ['NFL', 'NBA', 'NHL', 'MLB', 'Soccer']
+import leagues from '../datastore/leagues'
 
 export const LiveScores = () => {
 
@@ -26,7 +25,7 @@ export const LiveScores = () => {
         >
             <NavBar />
             <Container
-            maxWidth='xl'
+                maxWidth='xl'
                 sx={{
                     flex: '1',
                     display: 'flex',
@@ -39,7 +38,7 @@ export const LiveScores = () => {
                 }}
             >
                 <Container
-                
+
                     sx={{
                         display: 'flex',
                         flexDirection: 'column',
@@ -67,17 +66,17 @@ export const LiveScores = () => {
                         }}
                     >
                         {
-                            Object.keys(sports).map((key) =>
+                            Object.keys(leagues).map((key) => (
                                 <Typography
                                     key={key}
-                                    onClick={() => { setSportSelected(key) }}
+                                    onClick={() => { setSportSelected(key) && console.log(sportSelected)}}
                                     className={sportSelected === key ? 'links-hover-state sport-selected-active-state' : 'links-hover-state'}
-                                // className='links-hover-state'
                                 >
-                                    {sports[key]}
+                                    {leagues[key].title}
                                 </Typography>
-                            )
+                            ))
                         }
+
                     </Container>
                 </Container>
                 <Container
@@ -88,10 +87,17 @@ export const LiveScores = () => {
                         border: 'dashed 1px yellow'
                     }}
                 >
-                    2
+                    <Container>
+                        1
+                        {sportSelected ? leagues[sportSelected] && console.log(leagues[sportSelected]) : console.log(leagues[sportSelected])}
+
+                    </Container>
+                    <Container>2</Container>
                 </Container>
             </Container>
             <Footer />
         </Container>
     )
 }
+
+console.log(leagues)
