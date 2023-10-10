@@ -19,12 +19,14 @@ export const LiveScores = () => {
             <NavBar />
             <Container
                 sx={{
-                    display: 'flex',
                     flex: '1',
+                    display: 'flex',
+                    flexDirection: 'row',
                     justifyContent: 'center'
                 }}
             >
-                
+                <Container>1</Container>
+                <Container>2</Container>
             </Container>
             <Footer />
         </Container>
