@@ -85,6 +85,7 @@ export const Profile = () => {
                     padding: '24px 24px',
                     flex: '1',
                     maxHeight: '100vh',
+                    overflow: 'auto',
                 }}
             >
                 {/*First Grid Item*/}
@@ -225,6 +226,7 @@ export const Profile = () => {
                     xs={12} sm={12} md={12} lg={12}
                     sx={{
                         gridArea: '1 / 2 / 3 / 3',
+                        minWidth: '289px',
                         border: 'solid 1px var(--theme-orange)',
                     }}
                 >
