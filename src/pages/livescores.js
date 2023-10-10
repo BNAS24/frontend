@@ -31,6 +31,7 @@ export const LiveScores = () => {
                     display: 'flex',
                     flexDirection: 'row',
                     justifyContent: 'center',
+                    gap: '96px',
                     height: '100%',
                     border: 'solid 1px red'
                 }}
@@ -60,7 +61,6 @@ export const LiveScores = () => {
                             alignItems: 'center',
                             justifyContent: 'space-evenly',
                             height: '100%',
-                            border: 'dashed 1px yellow'
                         }}
                     >
                         {
