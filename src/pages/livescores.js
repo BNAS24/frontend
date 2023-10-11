@@ -41,6 +41,7 @@ export const LiveScores = () => {
 
                     sx={{
                         display: 'flex',
+                        flexShrink: '1',
                         flexDirection: 'column',
                         alignItems: 'center',
                         justifyContent: 'flex-start',
@@ -69,7 +70,9 @@ export const LiveScores = () => {
                             Object.keys(leagues).map((key) => (
                                 <Typography
                                     key={key}
-                                    onClick={() => { setSportSelected(key) && console.log(sportSelected)}}
+                                    onClick={() => {
+                                        setSportSelected(key);
+                                    }}
                                     className={sportSelected === key ? 'links-hover-state sport-selected-active-state' : 'links-hover-state'}
                                 >
                                     {leagues[key].title}
@@ -77,20 +80,40 @@ export const LiveScores = () => {
                             ))
                         }
 
+
+
                     </Container>
                 </Container>
                 <Container
                     sx={{
                         display: 'flex',
+                        flexShrink: '1',
                         color: 'white',
                         justifyContent: 'center',
-                        border: 'dashed 1px yellow'
+                        border: 'dashed 1px yellow',
+                        overflow: 'auto',
                     }}
                 >
-                    <Container>
-                        1
+                    <Container
+                    sx={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                        justifyContent: 'space-evenly',
+                    }}
+                    >
+                        {leagues[sportSelected] ? Object.keys(leagues[sportSelected].teams).map((key) => (
+                            <Typography
+                                key={key}
+                                noWrap
+                                align='center'
+                                className={sportSelected === key ? 'links-hover-state sport-selected-active-state' : 'links-hover-state'}
+                            >
+                                {leagues[sportSelected].teams[key]}
+                            </Typography>
+                        ))
+                        : null}
                     </Container>
-                    <Container>2</Container>
                 </Container>
             </Container>
             <Footer />
