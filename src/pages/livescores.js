@@ -34,7 +34,9 @@ export const LiveScores = () => {
                     gap: '96px',
                     height: '100%',
                     width: '100%',
-                    border: 'solid 1px red'
+                    border: 'solid 1px red',
+                    paddingLeft: '0 !important',
+                paddingRight: '0 !important',
                 }}
             >
                 <Container
@@ -45,7 +47,9 @@ export const LiveScores = () => {
                         flexDirection: 'column',
                         alignItems: 'center',
                         justifyContent: 'flex-start',
-                        border: 'dashed 1px yellow'
+                        border: 'dashed 1px yellow',
+                        paddingLeft: '0 !important',
+                paddingRight: '0 !important',
                     }}
                 >
                     <Typography
@@ -85,6 +89,7 @@ export const LiveScores = () => {
                     </Container>
                 </Container>
                 <Container
+                maxWidth='xl'
                     sx={{
                         display: 'flex',
                         flexShrink: '1',
