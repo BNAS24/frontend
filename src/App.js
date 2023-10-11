@@ -20,7 +20,7 @@ function App() {
       <Route path='/profile' element={<Profile />} />
       <Route path='/forums' element={<Forums />} />
       <Route path='/live-scores' element={<LiveScores />} />
-      <Route path='/live-scores' element={<AboutUs />} />
+      <Route path='/about-us' element={<AboutUs />} />
     </Routes>
   );
 }

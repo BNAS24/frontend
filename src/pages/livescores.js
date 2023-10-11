@@ -14,17 +14,16 @@ export const LiveScores = () => {
     return (
         <Container
             /* Wrapper */
+            maxWidth='100%'
             sx={{
                 display: 'flex',
                 flexDirection: 'column',
                 minHeight: '100%',
-                maxWidth: '100vw !important',
                 width: '100%',
                 border: '1px dashed yellow',
                 paddingLeft: '0 !important',
                 paddingRight: '0 !important',
                 overflow: 'hidden',
-                flexGrow: 1,
             }}
         >
             <NavBar />
