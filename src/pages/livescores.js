@@ -1,3 +1,4 @@
+import React from 'react'
 import '../styles/livescores.css'
 import { NavBar } from '../components/authnav'
 import { Footer } from '../components/authfoot'
@@ -12,20 +13,24 @@ export const LiveScores = () => {
 
     return (
         <Container
-            maxWidth='xl'
+            /* Wrapper */
             sx={{
                 display: 'flex',
                 flexDirection: 'column',
                 minHeight: '100%',
+                maxWidth: '100vw !important',
                 width: '100%',
                 border: '1px dashed yellow',
                 paddingLeft: '0 !important',
                 paddingRight: '0 !important',
+                overflow: 'hidden',
+                flexGrow: 1,
             }}
         >
             <NavBar />
+
             <Container
-                maxWidth='xl'
+
                 sx={{
                     flex: '1',
                     display: 'flex',
@@ -36,7 +41,7 @@ export const LiveScores = () => {
                     width: '100%',
                     border: 'solid 1px red',
                     paddingLeft: '0 !important',
-                paddingRight: '0 !important',
+                    paddingRight: '0 !important',
                 }}
             >
                 <Container
@@ -49,7 +54,7 @@ export const LiveScores = () => {
                         justifyContent: 'flex-start',
                         border: 'dashed 1px yellow',
                         paddingLeft: '0 !important',
-                paddingRight: '0 !important',
+                        paddingRight: '0 !important',
                     }}
                 >
                     <Typography
@@ -67,7 +72,7 @@ export const LiveScores = () => {
                             flexDirection: 'column',
                             alignItems: 'center',
                             justifyContent: 'space-evenly',
-                            height: '100%',
+                            height: '100%'
                         }}
                     >
                         {
@@ -83,45 +88,59 @@ export const LiveScores = () => {
                                 </Typography>
                             ))
                         }
-
-
-
                     </Container>
                 </Container>
                 <Container
-                maxWidth='xl'
                     sx={{
                         display: 'flex',
-                        flexShrink: '1',
+                        flexShrink: '',
+                        height: 'auto',
                         color: 'white',
                         justifyContent: 'center',
-                        border: 'dashed 1px yellow',
-                        overflow: 'auto',
+                        paddingLeft: '0 !important',
+                        paddingRight: '0 !important',
+                        border: 'dashed 1px green',
+                        overflow: 'auto'
+
                     }}
                 >
-                    <Container
-                    sx={{
-                        display: 'flex',
-                        flexDirection: 'column',
-                        alignItems: 'center',
-                        justifyContent: 'space-evenly',
-                    }}
-                    >
-                        {leagues[sportSelected] ? Object.keys(leagues[sportSelected].teams).map((key) => (
-                            <Typography
-                                key={key}
-                                noWrap
-                                align='center'
-                                className={sportSelected === key ? 'links-hover-state sport-selected-active-state' : 'links-hover-state'}
-                            >
-                                {leagues[sportSelected].teams[key]}
-                            </Typography>
-                        ))
-                        : null}
-                    </Container>
+                    {leagues[sportSelected] ? (
+                        <ul
+                            style={{
+
+                                display: 'flex',
+                                flexWrap: 'wrap',
+                                justifyContent: 'center',
+                                alignItems: 'center',
+                                height: '100%',
+                                listStyleType: 'none',
+                                padding: '0',
+                                margin: '0',
+                                WebkitColumnCount: 2,
+                                MozColumnCount: 2,
+                                columnCount: 2,
+                                border: 'dashed 1px purple',
+                                
+                            }}
+                        >
+                            {Object.keys(leagues[sportSelected].teams).map((key) => (
+                                <li
+                                    key={key}
+                                    align='center'
+                                    style={{
+                                        flex: '0 0 auto',
+                                        margin: '8px'
+                                    }}
+                                    className={sportSelected === key ? 'links-hover-state sport-selected-active-state' : 'links-hover-state'}
+                                >
+                                    {leagues[sportSelected].teams[key]}
+                                </li>
+                            ))}
+                        </ul>
+                    ) : null}
                 </Container>
             </Container>
             <Footer />
-        </Container>
+        </Container >
     )
 }
