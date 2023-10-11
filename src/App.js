@@ -7,6 +7,7 @@ import { Dashboard } from './pages/dashboard';
 import { Profile } from './pages/profile';
 import { Forums } from './pages/forums';
 import { LiveScores } from './pages/livescores';
+import { AboutUs } from './pages/aboutus';
 import './App.css';
 
 function App() {
@@ -19,7 +20,7 @@ function App() {
       <Route path='/profile' element={<Profile />} />
       <Route path='/forums' element={<Forums />} />
       <Route path='/live-scores' element={<LiveScores />} />
-      <Route path='/live-scores' element={<AboutUS />} />
+      <Route path='/live-scores' element={<AboutUs />} />
     </Routes>
   );
 }
