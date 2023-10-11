@@ -1,4 +1,4 @@
-export const aboutUs = {
+const aboutUs = {
     aboutUs: {
         title: 'About Us',
         body: `Welcome to Sports Fanatic Hub, where passion for sports meets the power of community. We're more than just a website; we're a gathering place for fans from all corners of the sports universe. Our journey began with a simple idea: to create a space where sports enthusiasts could come together to celebrate their love for the game.`
@@ -20,3 +20,5 @@ export const aboutUs = {
         body: `So, if you're ready to dive into the heart of sports, connect with fellow fans, and share your perspectives, there's no better time to join Sports Fanatic Hub. Together, we'll celebrate victories, analyze defeats, and revel in the excitement of the game we all adore.`
     }
 }
+
+export default aboutUs;

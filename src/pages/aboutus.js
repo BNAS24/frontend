@@ -2,7 +2,8 @@ import React from 'react'
 import { NavBar } from '../components/authnav'
 import { Footer } from '../components/authfoot'
 import { Container } from '@mui/system'
-import { aboutUs } from '../datastore/aboutus'
+import { Typography } from '@mui/material'
+import aboutUs from '../datastore/aboutus'
 
 export const AboutUs = () => {
     return (
@@ -36,16 +37,61 @@ export const AboutUs = () => {
                 }}
             >
                 <Container
-                maxWidth='100%'
+                    maxWidth='100%'
                     sx={{
+                        display: 'flex',
+                        flexDirection: 'column',
                         color: 'white',
                         border: 'dashed 1px yellow'
                     }}
                 >
-                    1
+                    <Typography
+                        variant='h3'
+                    >
+                        {aboutUs.aboutUs.title}
+                    </Typography>
+                    <Typography
+                    >
+                        Body1
+                    </Typography>
+                    <Typography
+                        variant='h3'
+                    >
+                        {aboutUs.ourMission.title}
+                    </Typography>
+                    <Typography
+                    >Body2
+                    </Typography>
+                    <Typography
+                        variant='h3'
+                    >
+                        {aboutUs.setsUsApart.title}
+                    </Typography>
+                    <Typography
+                    >
+                        Body3
+                    </Typography>
+                    <Typography
+                        variant='h3'
+                    >
+                        {aboutUs.communityDriven.title}
+                    </Typography>
+                    <Typography
+                    >
+                        Body4
+                    </Typography>
+                    <Typography
+                        variant='h3'
+                    >
+                        {aboutUs.joinUsToday.title}
+                    </Typography>
+                    <Typography
+                    >
+                        Body5
+                    </Typography>
                 </Container>
                 <Container
-                maxWidth='100%'
+                    maxWidth='100%'
                     sx={{
                         color: 'white',
                         border: 'dashed 1px yellow',
