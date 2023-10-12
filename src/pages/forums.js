@@ -7,7 +7,7 @@ import InputAdornment from '@mui/material/InputAdornment';
 export const Forums = () => {
     return (
         <Container
-            maxWidth='xlg'
+            maxWidth='xl'
             sx={{
                 display: 'flex',
                 flexDirection: 'column',
