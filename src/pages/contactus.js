@@ -3,7 +3,7 @@ import { NavBar } from '../components/authnav'
 import { Footer } from '../components/authfoot'
 import { Container } from '@mui/system'
 import { Typography } from '@mui/material'
-import { contactUs } from '../datastore/contactus'
+import contactUs from '../datastore/contactus';
 
 export const ContactUS = () => {
     return (
@@ -59,11 +59,13 @@ export const ContactUS = () => {
                     }}
                 >
                     <Typography
+                        variant='h3'
                         align='center'
                     >
                         {contactUs.title}
                     </Typography>
                     <Typography
+                        variant='body'
                         align='center'
                     >
                         {contactUs.body}
