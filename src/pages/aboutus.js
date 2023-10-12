@@ -41,53 +41,68 @@ export const AboutUs = () => {
                     sx={{
                         display: 'flex',
                         flexDirection: 'column',
+                        alignItems: 'center',
+                        justifyContent: 'space-around',
+                        gap: '16px',
+                        padding: '16px 62px',
                         color: 'white',
                         border: 'dashed 1px yellow'
                     }}
                 >
                     <Typography
-                        variant='h3'
+                        variant='h4'
+                        align='center'
                     >
                         {aboutUs.aboutUs.title}
                     </Typography>
                     <Typography
+                    align='center'
                     >
-                        Body1
+                        {aboutUs.aboutUs.body}
                     </Typography>
                     <Typography
-                        variant='h3'
+                        variant='h4'
+                        align='center'
                     >
                         {aboutUs.ourMission.title}
                     </Typography>
                     <Typography
-                    >Body2
+                    align='center'
+                    >
+                        {aboutUs.ourMission.body}
                     </Typography>
                     <Typography
-                        variant='h3'
+                        variant='h4'
+                        align='center'
                     >
                         {aboutUs.setsUsApart.title}
                     </Typography>
                     <Typography
+                    align='center'
                     >
-                        Body3
+                        {aboutUs.setsUsApart.body}
                     </Typography>
                     <Typography
-                        variant='h3'
+                        variant='h4'
+                        align='center'
                     >
                         {aboutUs.communityDriven.title}
                     </Typography>
                     <Typography
+                    align='center'
                     >
-                        Body4
+                        {aboutUs.communityDriven.body}
                     </Typography>
                     <Typography
-                        variant='h3'
+                        variant='h4'
+                        align='center'
                     >
                         {aboutUs.joinUsToday.title}
                     </Typography>
                     <Typography
+                    align='center'
                     >
-                        Body5
+                        {aboutUs.joinUsToday.body}
                     </Typography>
                 </Container>
                 <Container
@@ -97,7 +112,7 @@ export const AboutUs = () => {
                         border: 'dashed 1px yellow',
                         backgroundImage: 'url(https://i.postimg.cc/wvjXZ8Tg/Basketball-Action-Shot.jpg)',
                         backgroundRepeat: 'no-repeat',
-                        backgroundSize: 'contain',
+                        backgroundSize: 'cover',
                         backgroundPosition: 'center',
                     }}
                 >
