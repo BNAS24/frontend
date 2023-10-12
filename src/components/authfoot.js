@@ -9,7 +9,7 @@ export const Footer = () => {
             <p className='copyright'>© 2023 Copyright  Sports Fanatic Hub</p>
             <div className='nav-container'>
                 <p><NavLink className='links-hover-state' to='/about-us' style={({ isActive }) => ({ color: isActive ? customTheme.palette.secondary.main : null })}>About Us</NavLink></p>
-                <p><NavLink className='links-hover-state' to='/dashboard' style={({ isActive }) => ({ color: isActive ? customTheme.palette.secondary.main : null })}>Contact Us</NavLink></p>
+                <p><NavLink className='links-hover-state' to='/contact-us' style={({ isActive }) => ({ color: isActive ? customTheme.palette.secondary.main : null })}>Contact Us</NavLink></p>
             </div>
         </footer>
     )
