@@ -49,7 +49,8 @@ export const LiveScores = () => {
                         flexDirection: 'column',
                         alignItems: 'center',
                         justifyContent: 'flex-start',
-                        border: 'dashed 1px green',
+                        borderLeft: 'solid 1px var(--theme-orange)',
+                        borderRight: 'solid 1px var(--theme-orange)',
                         paddingLeft: '0 !important',
                         paddingRight: '0 !important',
                     }}
@@ -96,7 +97,7 @@ export const LiveScores = () => {
                         justifyContent: 'center',
                         paddingLeft: '0 !important',
                         paddingRight: '0 !important',
-                        border: 'dashed 1px green',
+                        // border: 'dashed 1px green',
                         overflow: 'auto'
 
                     }}
