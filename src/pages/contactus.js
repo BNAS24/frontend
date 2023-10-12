@@ -3,8 +3,7 @@ import { NavBar } from '../components/authnav'
 import { Footer } from '../components/authfoot'
 import { Container } from '@mui/system'
 import { Typography } from '@mui/material'
-import { Link } from 'react-router-dom'
-import contactUs from '../datastore/contactus'
+import { contactUs } from '../datastore/contactus'
 
 export const ContactUS = () => {
     return (
