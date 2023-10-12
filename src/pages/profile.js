@@ -174,46 +174,46 @@ export const Profile = () => {
                                 overflowY: 'auto',
                                 border: 'solid 1px #F26101'
                             }}>
-                            {/*Add map*/}
-                            {badges.map((badge) =>
-                                <Container
-                                    key={badge}
-                                    sx={{
-                                        display: 'flex',
-                                        flexGrow: 1,
-                                        flexDirection: 'column',
-                                        alignItems: 'center',
-                                        justifyContent: 'flex-start',
-                                        width: '33%',
-                                        marginTop: '24px',
-
-                                    }}
-                                >
-                                    <Avatar
-                                        variant='square'
-                                        alt={badge}
-                                        src='https://i.postimg.cc/wB1wQD2r/award.png'
+                            {
+                                badges.map((badge) =>
+                                    <Container
+                                        key={badge}
                                         sx={{
-                                            height: '62px',
-                                            width: '62px',
+                                            display: 'flex',
+                                            flexGrow: 1,
+                                            flexDirection: 'column',
+                                            alignItems: 'center',
+                                            justifyContent: 'flex-start',
+                                            width: '33%',
+                                            marginTop: '24px',
+
                                         }}
                                     >
+                                        <Avatar
+                                            variant='square'
+                                            alt={badge}
+                                            src='https://i.postimg.cc/wB1wQD2r/award.png'
+                                            sx={{
+                                                height: '62px',
+                                                width: '62px',
+                                            }}
+                                        >
 
-                                    </Avatar>
-                                    <Typography
-                                        variant='body1'
-                                        align='center'
-                                        className='links-hover-state'
+                                        </Avatar>
+                                        <Typography
+                                            variant='body1'
+                                            align='center'
+                                            className='links-hover-state'
 
-                                        sx={{
-                                            flexShrink: 2,
-                                            fontSize: '1rem',
-                                        }}
-                                    >
-                                        {badge}
-                                    </Typography>
-                                </Container>
-                            )}
+                                            sx={{
+                                                flexShrink: 2,
+                                                fontSize: '1rem',
+                                            }}
+                                        >
+                                            {badge}
+                                        </Typography>
+                                    </Container>
+                                )}
 
                         </Container>
                     </Container>

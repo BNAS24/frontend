@@ -97,7 +97,6 @@ export const LiveScores = () => {
                         justifyContent: 'center',
                         paddingLeft: '0 !important',
                         paddingRight: '0 !important',
-                        // border: 'dashed 1px green',
                         overflow: 'auto'
 
                     }}
@@ -118,7 +117,7 @@ export const LiveScores = () => {
                                 MozColumnCount: 2,
                                 columnCount: 2,
                                 border: 'dashed 1px purple',
-                                
+
                             }}
                         >
                             {Object.keys(leagues[sportSelected].teams).map((key) => (

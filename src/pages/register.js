@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import '../styles/register.css'
 import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField';
-import { ThemeProvider } from '@mui/material/styles'; // Import ThemeProvider
+import { ThemeProvider } from '@mui/material/styles';
 import customTheme from '../styles/context/customtheme';
 import { Typography } from '@mui/material';
 

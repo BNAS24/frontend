@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
-import { ThemeProvider } from '@mui/material/styles'; // Import ThemeProvider
+import { ThemeProvider } from '@mui/material/styles';
 import customTheme from '../styles/context/customtheme';
 import '../styles/login.css';
 import { Typography } from '@mui/material';

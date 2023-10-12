@@ -64,7 +64,7 @@ export const SettingsModal = ({ open, onClose, onClick, settingSelected, setting
                                 >
                                     {selectedSetting.title !== 'Logout' && selectedSetting.title}
                                 </Typography>
-                                {/* Display other data for the selected setting */}
+
                                 {settingSelected === 'changeEmailAddress' && (
                                     <FormGroup
                                         sx={{
@@ -510,7 +510,7 @@ export const SettingsModal = ({ open, onClose, onClick, settingSelected, setting
                                     </Container>
 
                                 )}
-                                {/* Add conditions for other settings */}
+
                             </Container>
                         </Fragment>
                     )}

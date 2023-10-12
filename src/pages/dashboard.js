@@ -521,7 +521,6 @@ export const Dashboard = () => {
                                                                     color: 'red',
                                                                     '&:hover': {
                                                                         cursor: 'pointer',
-                                                                        // color: '#ff8c33',
                                                                     }
                                                                 }}
                                                             />) : (<FavoriteBorderOutlinedIcon
