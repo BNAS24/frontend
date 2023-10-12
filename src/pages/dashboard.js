@@ -324,7 +324,7 @@ export const Dashboard = () => {
                             width: '100%',
                             minWidth: '278px',
                             paddingBottom: '24px !important',
-                            background: 'linear-gradient(to bottom, #0081D4, #ffffff)',
+                            background: 'linear-gradient(to bottom, #0081D4, #000000)',
                             border: 'solid 1px var(--theme-orange)',
                             overflow: 'auto',
                         }}>
