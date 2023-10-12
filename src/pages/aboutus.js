@@ -14,7 +14,6 @@ export const AboutUs = () => {
                 flexDirection: 'column',
                 minHeight: '100%',
                 width: '100%',
-                border: '1px dashed yellow',
                 paddingLeft: '0 !important',
                 paddingRight: '0 !important',
                 overflow: 'hidden',
@@ -32,8 +31,7 @@ export const AboutUs = () => {
                     height: '100%',
                     width: '100%',
                     paddingLeft: '0 !important',
-                    paddingRight: '0 !important',
-                    border: 'solid 1px red'
+                    paddingRight: '0 !important'
                 }}
             >
                 <Container
@@ -46,7 +44,6 @@ export const AboutUs = () => {
                         gap: '16px',
                         padding: '16px 62px',
                         color: 'white',
-                        border: 'dashed 1px yellow'
                     }}
                 >
                     <Typography
@@ -120,7 +117,6 @@ export const AboutUs = () => {
                     maxWidth='100%'
                     sx={{
                         color: 'white',
-                        border: 'dashed 1px yellow',
                         backgroundImage: 'url(https://i.postimg.cc/wvjXZ8Tg/Basketball-Action-Shot.jpg)',
                         backgroundRepeat: 'no-repeat',
                         backgroundSize: 'cover',
