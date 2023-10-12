@@ -3,6 +3,7 @@ import { NavBar } from '../components/authnav'
 import { Footer } from '../components/authfoot'
 import { Container } from '@mui/system'
 import { Typography } from '@mui/material'
+import contactUs from '../datastore/contactus'
 
 export const ContactUS = () => {
     return (
@@ -57,8 +58,16 @@ export const ContactUS = () => {
                         color: 'white',
                     }}
                 >
-                    <Typography>Title</Typography>
-                    <Typography>Body</Typography>
+                    <Typography
+                        align='center'
+                    >
+                        {contactUs.title}
+                    </Typography>
+                    <Typography
+                        align='center'
+                    >
+                        {contactUs.body}
+                    </Typography>
                 </Container>
             </Container>
             <Footer />
