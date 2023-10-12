@@ -36,28 +36,29 @@ export const ContactUS = () => {
                 <Container
                     maxWidth='100%'
                     sx={{
-                        display: 'flex',
-                        flexDirection: 'column',
-                        alignItems: 'center',
-                        justifyContent: 'space-around',
-                        gap: '16px',
-                        padding: '16px 62px',
                         color: 'white',
-                    }}
-                >
-
-                </Container>
-                <Container
-                    maxWidth='100%'
-                    sx={{
-                        color: 'white',
-                        backgroundImage: 'url(https://i.postimg.cc/wvjXZ8Tg/Basketball-Action-Shot.jpg)',
+                        backgroundImage: 'url(https://i.postimg.cc/WpCGbLhy/Hockey-Shot.jpg)',
                         backgroundRepeat: 'no-repeat',
                         backgroundSize: 'cover',
                         backgroundPosition: 'center',
                     }}
                 >
-                <Typography></Typography>
+                    <Typography></Typography>
+                </Container>
+                <Container
+                    maxWidth='100%'
+                    sx={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        gap: '16px',
+                        padding: '16px 62px',
+                        color: 'white',
+                    }}
+                >
+                    <Typography>Title</Typography>
+                    <Typography>Body</Typography>
                 </Container>
             </Container>
             <Footer />

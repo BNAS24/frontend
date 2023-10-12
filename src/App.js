@@ -8,7 +8,7 @@ import { Profile } from './pages/profile';
 import { Forums } from './pages/forums';
 import { LiveScores } from './pages/livescores';
 import { AboutUs } from './pages/aboutus';
-import { ContactUs } from './pages/contactus';
+import { ContactUS } from './pages/contactus';
 import './App.css';
 
 function App() {
@@ -22,7 +22,7 @@ function App() {
       <Route path='/forums' element={<Forums />} />
       <Route path='/live-scores' element={<LiveScores />} />
       <Route path='/about-us' element={<AboutUs />} />
-      <Route path='/contact-us' element={<ContactUs />} />
+      <Route path='/contact-us' element={<ContactUS />} />
     </Routes>
   );
 }
