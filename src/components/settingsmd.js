@@ -148,6 +148,7 @@ export const SettingsModal = ({ open, onClose, onClick, settingSelected, setting
                                         <Button
                                             variant="contained"
                                             type='button'
+                                            fullWidth
                                             sx={{
                                                 minWidth: '104px',
                                                 maxWidth: '400px',
@@ -284,6 +285,7 @@ export const SettingsModal = ({ open, onClose, onClick, settingSelected, setting
                                             <Button
                                                 variant="contained"
                                                 type='button'
+                                                fullWidth
                                                 sx={{
                                                     minWidth: '104px',
                                                     maxWidth: '400px',
@@ -328,7 +330,8 @@ export const SettingsModal = ({ open, onClose, onClick, settingSelected, setting
                                                 component='span' // This makes the button act as a file input trigger
                                                 sx={{
                                                     minWidth: '104px',
-                                                    maxWidth: '400px',
+                                                    width: '152px',
+                                                    maxWidth: '152px',
                                                     padding: '8px 8px',
                                                     marginTop: '16px',
                                                     color: 'white',
