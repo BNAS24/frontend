@@ -70,7 +70,6 @@ export const Profile = () => {
                 flexDirection: 'column',
                 minHeight: '100%',
                 width: '100%',
-                border: 'dashed 1px yellow',
                 overflow: 'hidden',
             }}>
             <NavBar />

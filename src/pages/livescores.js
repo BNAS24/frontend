@@ -20,7 +20,6 @@ export const LiveScores = () => {
                 flexDirection: 'column',
                 minHeight: '100%',
                 width: '100%',
-                border: '1px dashed yellow',
                 paddingLeft: '0 !important',
                 paddingRight: '0 !important',
                 overflow: 'hidden',
@@ -38,7 +37,6 @@ export const LiveScores = () => {
                     gap: '96px',
                     height: '100%',
                     width: '100%',
-                    border: 'solid 1px red',
                     paddingLeft: '0 !important',
                     paddingRight: '0 !important',
                 }}
@@ -51,7 +49,7 @@ export const LiveScores = () => {
                         flexDirection: 'column',
                         alignItems: 'center',
                         justifyContent: 'flex-start',
-                        border: 'dashed 1px yellow',
+                        border: 'dashed 1px green',
                         paddingLeft: '0 !important',
                         paddingRight: '0 !important',
                     }}

@@ -13,7 +13,6 @@ export const Forums = () => {
                 flexDirection: 'column',
                 minHeight: '100%',
                 width: '100%',
-                border: '1px dashed yellow',
                 paddingLeft: '0 !important',
                 paddingRight: '0 !important',
             }}
