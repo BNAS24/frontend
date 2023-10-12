@@ -1,11 +1,11 @@
 const aboutUs = {
     aboutUs: {
         title: 'About Us',
-        body: `Welcome to Sports Fanatic Hub, where passion for sports meets the power of community. We're more than just a website; we're a gathering place for fans from all corners of the sports universe. Our journey began with a simple idea: to create a space where sports enthusiasts could come together to celebrate their love for the game.`
+        body: `Welcome to Sports Fanatic Hub, where passion for sports meets the power of community. We're more than just a website, we're a gathering place for fans from all corners of the sports universe. Our journey began with a simple idea: to create a space where sports enthusiasts could come together to celebrate their love for the game.`
     },
     ourMission: {
         title: 'Our Mission',
-        body: `At Sports Fanatic Hub, our mission is clear—to connect fans, ignite discussions, and elevate the sports experience for all. We believe that sports have the unique ability to transcend boundaries, unite people, and inspire greatness. Our platform is built on the belief that every fan deserves a voice and a vibrant community to share their passion.`
+        body: `At Sports Fanatic Hub, our mission is clear: to connect fans, ignite discussions, and elevate the sports experience for all. We believe that sports have the unique ability to transcend boundaries, unite people, and inspire greatness. Our platform is built on the belief that every fan deserves a voice and a vibrant community to share their passion.`
     },
     setsUsApart: {
         title: 'What Sets Us Apart',
@@ -18,6 +18,9 @@ const aboutUs = {
     joinUsToday: {
         title: 'Join Us Today',
         body: `So, if you're ready to dive into the heart of sports, connect with fellow fans, and share your perspectives, there's no better time to join Sports Fanatic Hub. Together, we'll celebrate victories, analyze defeats, and revel in the excitement of the game we all adore.`
+    },
+    endingQuote: {
+        body: `Let's Fuel the Passion.. Together.`
     }
 }
 

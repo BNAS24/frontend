@@ -104,6 +104,17 @@ export const AboutUs = () => {
                     >
                         {aboutUs.joinUsToday.body}
                     </Typography>
+
+                    <Typography
+                    variant='body2'
+                    align='center'
+                    sx={{
+                        color: 'var(--theme-orange)',
+                        fontWeight: 700
+                    }}
+                    >
+                    {aboutUs.endingQuote.body}
+                    </Typography>
                 </Container>
                 <Container
                     maxWidth='100%'
@@ -116,7 +127,7 @@ export const AboutUs = () => {
                         backgroundPosition: 'center',
                     }}
                 >
-                    2
+                    
                 </Container>
             </Container>
             <Footer />
