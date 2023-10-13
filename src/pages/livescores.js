@@ -28,7 +28,7 @@ export const LiveScores = () => {
             <NavBar />
 
             <Container
-
+ 
                 sx={{
                     flex: '1',
                     display: 'flex',

@@ -76,14 +76,14 @@ export const Profile = () => {
             <Grid
                 container
                 sx={{
+                    flex: '1',
                     display: 'grid',
                     gridTemplateColumns: 'repeat(2, 1fr)',
                     gridTemplateRows: '1fr 5fr',
                     gridGap: '8px',
                     columnGap: '56px',
-                    padding: '24px 24px',
-                    flex: '1',
                     maxHeight: '100vh',
+                    padding: '24px 24px',
                     overflow: 'auto',
                 }}
             >
