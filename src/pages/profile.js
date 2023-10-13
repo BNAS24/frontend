@@ -14,14 +14,14 @@ const settings = {
         oldEmailPrompt: 'Old Email',
         newEmailPrompt: 'New Email',
         confirmNewEmailPrompt: 'Confirm New Email',
-        confirmEmailPrompt: 'Confirm',
+        confirmEmailPrompt: 'Confirm Email',
     },
     changePassword: {
         title: 'Change Password',
         oldPasswordPrompt: 'Old Password',
         newPasswordPrompt: 'New Password',
         confirmPasswordPrompt: 'Confirm New Password',
-        buttonText: 'Update'
+        buttonText: 'Update Password'
     },
     updateProfilePicter: {
         title: 'Update Profile Picture',

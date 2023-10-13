@@ -116,7 +116,7 @@ export const LiveScores = () => {
                                 WebkitColumnCount: 2,
                                 MozColumnCount: 2,
                                 columnCount: 2,
-                                border: 'dashed 1px purple',
+                                border: 'solid 1px var(--theme-orange)',
 
                             }}
                         >
