@@ -7,7 +7,7 @@
     height: 88px;
     width: 100%;
     border-top: solid 1px var(--theme-orange);
-    overflow: auto;
+    overflow: hidden;
 }
 
 .footer-nav-container {
