@@ -82,6 +82,7 @@ export const Dashboard = () => {
                 sx={{
                     display: 'flex',
                     flexDirection: 'column',
+                    height: '100%',
                     minHeight: '100%',
                     width: '100%'
                 }}>

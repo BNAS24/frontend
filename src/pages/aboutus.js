@@ -12,11 +12,11 @@ export const AboutUs = () => {
             sx={{
                 display: 'flex',
                 flexDirection: 'column',
+                height: '100%',
                 minHeight: '100%',
                 width: '100%',
                 paddingLeft: '0 !important',
                 paddingRight: '0 !important',
-                overflow: 'hidden',
             }}
         >
             <NavBar />
@@ -31,7 +31,8 @@ export const AboutUs = () => {
                     height: '100%',
                     width: '100%',
                     paddingLeft: '0 !important',
-                    paddingRight: '0 !important'
+                    paddingRight: '0 !important',
+                    overflow: 'auto'
                 }}
             >
                 <Container
@@ -53,7 +54,7 @@ export const AboutUs = () => {
                         {aboutUs.aboutUs.title}
                     </Typography>
                     <Typography
-                    align='center'
+                        align='center'
                     >
                         {aboutUs.aboutUs.body}
                     </Typography>
@@ -64,7 +65,7 @@ export const AboutUs = () => {
                         {aboutUs.ourMission.title}
                     </Typography>
                     <Typography
-                    align='center'
+                        align='center'
                     >
                         {aboutUs.ourMission.body}
                     </Typography>
@@ -75,7 +76,7 @@ export const AboutUs = () => {
                         {aboutUs.setsUsApart.title}
                     </Typography>
                     <Typography
-                    align='center'
+                        align='center'
                     >
                         {aboutUs.setsUsApart.body}
                     </Typography>
@@ -86,7 +87,7 @@ export const AboutUs = () => {
                         {aboutUs.communityDriven.title}
                     </Typography>
                     <Typography
-                    align='center'
+                        align='center'
                     >
                         {aboutUs.communityDriven.body}
                     </Typography>
@@ -97,20 +98,20 @@ export const AboutUs = () => {
                         {aboutUs.joinUsToday.title}
                     </Typography>
                     <Typography
-                    align='center'
+                        align='center'
                     >
                         {aboutUs.joinUsToday.body}
                     </Typography>
 
                     <Typography
-                    variant='body2'
-                    align='center'
-                    sx={{
-                        color: 'var(--theme-orange)',
-                        fontWeight: 700
-                    }}
+                        variant='body2'
+                        align='center'
+                        sx={{
+                            color: 'var(--theme-orange)',
+                            fontWeight: 700
+                        }}
                     >
-                    {aboutUs.endingQuote.body}
+                        {aboutUs.endingQuote.body}
                     </Typography>
                 </Container>
                 <Container
@@ -123,7 +124,7 @@ export const AboutUs = () => {
                         backgroundPosition: 'center',
                     }}
                 >
-                    
+
                 </Container>
             </Container>
             <Footer />
