@@ -22,7 +22,6 @@ export const LiveScores = () => {
                 width: '100%',
                 paddingLeft: '0 !important',
                 paddingRight: '0 !important',
-                overflow: 'hidden',
             }}
         >
             <NavBar />
@@ -36,6 +35,7 @@ export const LiveScores = () => {
                     justifyContent: 'center',
                     gap: '96px',
                     height: '100%',
+                    maxHeight: '100vh',
                     width: '100%',
                     paddingLeft: '0 !important',
                     paddingRight: '0 !important',
@@ -45,10 +45,10 @@ export const LiveScores = () => {
 
                     sx={{
                         display: 'flex',
-                        flexShrink: '1',
                         flexDirection: 'column',
                         alignItems: 'center',
                         justifyContent: 'flex-start',
+                        width: '100%',
                         borderLeft: 'solid 1px var(--theme-orange)',
                         borderRight: 'solid 1px var(--theme-orange)',
                         paddingLeft: '0 !important',
@@ -70,7 +70,8 @@ export const LiveScores = () => {
                             flexDirection: 'column',
                             alignItems: 'center',
                             justifyContent: 'space-evenly',
-                            height: '100%'
+                            height: '100%',
+                            width: '100%'
                         }}
                     >
                         {
@@ -91,14 +92,12 @@ export const LiveScores = () => {
                 <Container
                     sx={{
                         display: 'flex',
-                        flexShrink: '',
-                        height: 'auto',
-                        color: 'white',
+                        width: '100%',
                         justifyContent: 'center',
                         paddingLeft: '0 !important',
                         paddingRight: '0 !important',
+                        color: 'white',
                         overflow: 'auto'
-
                     }}
                 >
                     {leagues[sportSelected] ? (
@@ -106,17 +105,19 @@ export const LiveScores = () => {
                             style={{
 
                                 display: 'flex',
-                                flexWrap: 'wrap',
-                                justifyContent: 'center',
+                                flexDirection: 'column',
+                                justifyContent: 'space-evenly',
                                 alignItems: 'center',
-                                height: '100%',
-                                listStyleType: 'none',
                                 padding: '0',
                                 margin: '0',
+                                height: '100%',
+                                width: '100%',
+                                listStyleType: 'none',
                                 WebkitColumnCount: 2,
                                 MozColumnCount: 2,
                                 columnCount: 2,
                                 border: 'solid 1px var(--theme-orange)',
+                                
 
                             }}
                         >
@@ -125,8 +126,7 @@ export const LiveScores = () => {
                                     key={key}
                                     align='center'
                                     style={{
-                                        flex: '0 0 auto',
-                                        margin: '8px'
+                                        margin: '0px'
                                     }}
                                     className={sportSelected === key ? 'links-hover-state sport-selected-active-state' : 'links-hover-state'}
                                 >

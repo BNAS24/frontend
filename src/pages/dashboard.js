@@ -118,7 +118,8 @@ export const Dashboard = () => {
                                 alignItems: 'start',
                                 paddingLeft: '0 !important',
                                 color: 'white'
-                            }}>
+                            }}
+                            >
                             <Avatar
                                 variant='square'
                                 alt='profile picture'
