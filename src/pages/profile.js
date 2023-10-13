@@ -69,6 +69,7 @@ export const Profile = () => {
                 display: 'flex',
                 flexDirection: 'column',
                 minHeight: '100%',
+                height: '100%',
                 width: '100%',
                 overflow: 'hidden',
             }}>
@@ -84,7 +85,8 @@ export const Profile = () => {
                     columnGap: '56px',
                     maxHeight: '100vh',
                     padding: '24px 24px',
-                    overflow: 'auto',
+                    overflowX: 'auto',
+                    overflowY: 'hidden'
                 }}
             >
                 {/*First Grid Item*/}
