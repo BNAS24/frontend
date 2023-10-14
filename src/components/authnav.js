@@ -1,4 +1,3 @@
-// hello world
 import './styles/authnav.css'
 import { NavLink } from "react-router-dom"
 import customTheme from "../styles/context/customtheme"
