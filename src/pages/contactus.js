@@ -1,9 +1,9 @@
-import React from 'react'
-import { NavBar } from '../components/authnav'
-import { Footer } from '../components/authfoot'
-import { Container } from '@mui/system'
 import { Typography } from '@mui/material'
-import contactUs from '../datastore/contactus';
+import { Container } from '@mui/system'
+import React from 'react'
+import { Footer } from '../components/authfoot'
+import { NavBar } from '../components/authnav'
+import contactUs from '../datastore/contactus'
 
 export const ContactUS = () => {
     return (

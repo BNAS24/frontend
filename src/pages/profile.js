@@ -1,10 +1,10 @@
-import '../styles/profile.css'
-import { NavBar } from "../components/authnav"
-import { Footer } from '../components/authfoot';
-import { useState } from 'react';
-import { Grid, Typography, Avatar } from '@mui/material';
+import { Avatar, Grid, Typography } from '@mui/material';
 import { Box, Container } from '@mui/system';
+import { useState } from 'react';
+import { Footer } from '../components/authfoot';
+import { NavBar } from "../components/authnav";
 import { SettingsModal } from '../components/settingsmd';
+import '../styles/profile.css';
 
 const badges = ['Bronze', 'Silver', 'Gold', 'Platinum', 'Diamond', 'Master', 'Grandmaster'];
 

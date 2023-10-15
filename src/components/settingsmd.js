@@ -1,9 +1,9 @@
-import { Modal, Box, Typography, FormGroup, TextField, Input, Avatar } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
-import { Fragment } from 'react';
-import { Container } from '@mui/system';
-import { ThemeProvider } from '@mui/material/styles';
+import { Avatar, Box, FormGroup, Input, Modal, TextField, Typography } from '@mui/material';
 import Button from '@mui/material/Button';
+import { ThemeProvider } from '@mui/material/styles';
+import { Container } from '@mui/system';
+import { Fragment } from 'react';
 import customTheme from '../styles/context/customtheme';
 
 export const SettingsModal = ({ open, onClose, onClick, settingSelected, settings }) => {

@@ -1,11 +1,10 @@
-import React from 'react'
-import '../styles/livescores.css'
-import { NavBar } from '../components/authnav'
-import { Footer } from '../components/authfoot'
-import { useState } from 'react'
-import { Container } from '@mui/system'
 import { Typography } from '@mui/material'
+import { Container } from '@mui/system'
+import React, { useState } from 'react'
+import { Footer } from '../components/authfoot'
+import { NavBar } from '../components/authnav'
 import leagues from '../datastore/leagues'
+import '../styles/livescores.css'
 
 export const LiveScores = () => {
 

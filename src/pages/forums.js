@@ -1,8 +1,8 @@
-import { NavBar } from '../components/authnav'
-import { Footer } from '../components/authfoot'
-import { Container, TextField } from '@mui/material'
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
+import { Container, TextField } from '@mui/material';
 import InputAdornment from '@mui/material/InputAdornment';
+import { Footer } from '../components/authfoot';
+import { NavBar } from '../components/authnav';
 
 export const Forums = () => {
     return (

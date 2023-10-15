@@ -1,16 +1,16 @@
-import '../styles/dashboard.css';
-import { NavBar } from '../components/authnav';
-import { Footer } from '../components/authfoot';
-import { Avatar, Grid, Typography } from '@mui/material';
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import customTheme from '../styles/context/customtheme';
 import { ThemeProvider } from '@emotion/react';
-import { Box, Container } from '@mui/system';
 import AddCommentOutlinedIcon from '@mui/icons-material/AddCommentOutlined';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
+import { Avatar, Grid, Typography } from '@mui/material';
+import { Box, Container } from '@mui/system';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { Footer } from '../components/authfoot';
+import { NavBar } from '../components/authnav';
 import { CommentsModal } from '../components/commentmd';
+import customTheme from '../styles/context/customtheme';
+import '../styles/dashboard.css';
 
 
 const fakeTeams = ['Philadelphia Eagles', 'Phillies', ' 76ixers', 'Union', 'Flyers', 'Norristown Bandits', 'New York Yankees', 'Los Angeles Lakers', 'Dallas Cowboys', 'Boston Red Sox', 'Chicago Bulls', 'Green Bay Packers', 'Golden State Warriors', 'Pittsburgh Steelers', 'San Francisco Giants', 'New England Patriots']

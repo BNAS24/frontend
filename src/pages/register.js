@@ -1,10 +1,10 @@
-import { Link } from 'react-router-dom';
-import '../styles/register.css'
-import Button from '@mui/material/Button'
+import { Typography } from '@mui/material';
+import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import { ThemeProvider } from '@mui/material/styles';
+import { Link } from 'react-router-dom';
 import customTheme from '../styles/context/customtheme';
-import { Typography } from '@mui/material';
+import '../styles/register.css';
 
 export const Register = () => {
     return (

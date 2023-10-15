@@ -1,7 +1,7 @@
+import Button from '@mui/material/Button';
 import * as React from 'react';
 import { Link } from 'react-router-dom';
-import '../styles/homepage.css'
-import Button from '@mui/material/Button';
+import '../styles/homepage.css';
 
 export const Homepage = () => {
     return (
