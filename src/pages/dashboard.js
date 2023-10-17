@@ -94,10 +94,25 @@ export const Dashboard = () => {
                     container
                     sx={{
                         display: 'grid',
-                        gridTemplateColumns: 'repeat(2, 1fr)',
-                        gridTemplateRows: '1fr 5fr',
+                        gridTemplateColumns: {
+                            xs: '1fr 2fr',
+                            sm: 'repeat(2, 1fr)',
+                            md: 'repeat(2, 1fr)',
+                            lg: 'repeat(2, 1fr)'
+                        },
+                        gridTemplateRows: {
+                            xs: '1fr 4fr',
+                            sm: '1fr 5fr',
+                            md: '1fr 5fr',
+                            lg: '1fr 5fr'
+                        },
                         gridGap: '8px',
-                        columnGap: '56px',
+                        columnGap: {
+                            xs: '8px',
+                            sm: '56px',
+                            md: '56px',
+                            lg: '56px'
+                        },
                         padding: '24px 24px',
                         flex: '1',
                         maxHeight: '100vh',
@@ -108,7 +123,12 @@ export const Dashboard = () => {
 
                     <Grid item xs={12} sm={12} md={12} lg={12}
                         sx={{
-                            gridArea: '1 / 1 / 2 / 2',
+                            gridArea: {
+                                xs: '1 / 1 / 2 / 3',
+                                sm: '1 / 1 / 2 / 2',
+                                md: '1 / 1 / 2 / 2',
+                                lg: '1 / 1 / 2 / 2'
+                            },
                         }}>
                         <Container
                             sx={{
@@ -119,15 +139,23 @@ export const Dashboard = () => {
                                 paddingLeft: '0 !important',
                                 color: 'white'
                             }}
-                            >
+                        >
                             <Avatar
                                 variant='square'
                                 alt='profile picture'
                                 src='https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png'
                                 sx={{
-                                    height: '104px',
-                                    width: '104px'
-                                }} />
+                                    height: {
+                                        xs: '88px',
+
+                                        lg: '104px'
+                                    },
+                                    width: {
+                                        xs: '88px',
+                                        lg: '104px'
+                                    }
+                                }}
+                            />
                             <Typography
                                 variant='h3'
                                 style={{
@@ -148,9 +176,16 @@ export const Dashboard = () => {
                         container
                         xs={12} sm={12} md={12} lg={12}
                         sx={{
-                            gridArea: '2 / 1 / 3 / 2',
+                            gridArea: {
+                                xs: '2 / 1 / 3 / 2',
+                                sm: '2 / 1 / 3 / 2',
+                                md: '2 / 1 / 3 / 2',
+                                lg: '2 / 1 / 3 / 2'
+                            },
                             overflowY: 'hidden',
-                        }}>
+                            border: 'dashed 0.5px yellow'
+                        }}
+                    >
 
                         <Container
                             sx={{
@@ -168,7 +203,12 @@ export const Dashboard = () => {
 
                             <Container
                                 sx={{
-                                    display: 'flex',
+                                    display: {
+                                        xs: 'none',
+                                        sm: 'flex',
+                                        md: 'flex',
+                                        lg: 'flex'
+                                    },
                                     flexShrink: '1',
                                     flexDirection: 'column',
                                     alignItems: 'center',
@@ -250,11 +290,49 @@ export const Dashboard = () => {
                                 </Container>
                             </Container>
 
+                            {/*Displayed When Screen is Small*/}
+                            <Container
+                                sx={{
+                                    display: {
+                                        xs: 'flex',
+                                        sm: 'none',
+                                        md: 'none',
+                                        ld: 'none',
+                                    },
+                                    flexDirection: 'column',
+                                    alignItems: 'center',
+                                }}
+                            >
+                                <img
+                                    src='https://i.postimg.cc/d0s4fX3v/Notifications.png'
+                                    alt='notifications'
+                                    style={{
+                                        width: '72px',
+                                        height: 'auto'
+                                    }}
+                                >
+                                </img>
+                                <img
+                                    src='https://i.postimg.cc/Xq7jGs18/Badge-icon.png'
+                                    alt='badges icon'
+                                    style={{
+                                        width: '80px',
+                                        height: 'auto'
+                                    }}
+                                >
+                                </img>
+                            </Container>
+
                             {/*Second Box*/}
 
                             <Container
                                 sx={{
-                                    display: 'flex',
+                                    display: {
+                                        xs: 'none',
+                                        sm: 'flex',
+                                        md: 'flex',
+                                        lg: 'flex'
+                                    },
                                     flexShrink: '1',
                                     flexGrow: '1',
                                     flexDirection: 'column',
@@ -322,9 +400,14 @@ export const Dashboard = () => {
                         item
                         xs={12} sm={12} md={12} lg={12}
                         sx={{
-                            gridArea: '1 / 2 / 3 / 3',
+                            gridArea: {
+                                xs: '2 / 2 / 3 / 3',
+                                sm: '1 / 2 / 3 / 3',
+                                md: '1 / 2 / 3 / 3',
+                                lg: '1 / 2 / 3 / 3'
+                            },
                             width: '100%',
-                            minWidth: '278px',
+                            // minWidth: '278px',
                             paddingBottom: '24px !important',
                             background: 'linear-gradient(to bottom, #0081D4, #000000)',
                             border: 'solid 1px var(--theme-orange)',
@@ -398,8 +481,18 @@ export const Dashboard = () => {
                                                 alt='profile picture'
                                                 variant='square'
                                                 sx={{
-                                                    height: '64px',
-                                                    width: '64px',
+                                                    height: {
+                                                        xs: '16px',
+                                                        sm: '64px',
+                                                        md: '64px',
+                                                        lg: '64px',
+                                                    },
+                                                    width: {
+                                                        xs: '16px',
+                                                        sm: '64px',
+                                                        md: '64px',
+                                                        lg: '64px',
+                                                    }
                                                 }}
                                             >
                                             </Avatar>
@@ -410,9 +503,14 @@ export const Dashboard = () => {
                                                     justifyContent: 'space-between',
                                                     alignItems: 'start',
                                                     gap: '8px',
-                                                    height: '168px',
+                                                    height: {
+                                                        xs: '56px',
+                                                        sm: '168px',
+                                                        md: '168px',
+                                                        lg: '168px'
+                                                        },
                                                     padding: '8px',
-                                                    backgroundColor: 'var(--theme-blue)',
+                                                    backgroundColor: 'var(--theme-blue)'
                                                 }}
 
                                             >
@@ -461,6 +559,12 @@ export const Dashboard = () => {
                                                         padding: '8px 8px !important',
                                                         border: 'solid 1px var(--theme-orange)',
                                                         overflowY: 'auto',
+                                                        overflowX: {
+                                                            xs: 'hidden',
+                                                            sm: 'auto',
+                                                            md: 'auto',
+                                                            lg: 'auto'
+                                                        }
                                                     }}
                                                 >
                                                     <Typography
