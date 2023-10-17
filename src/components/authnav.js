@@ -1,6 +1,8 @@
 import { NavLink } from "react-router-dom"
 import customTheme from "../styles/context/customtheme"
 import './styles/authnav.css'
+import { IconButton } from "@mui/material"
+import MenuIcon from '@mui/icons-material/Menu';
 
 export const NavBar = () => {
     return (
@@ -15,6 +17,28 @@ export const NavBar = () => {
                 <p><NavLink className='links-hover-state' to='/live-scores' style={({ isActive }) => ({ color: isActive ? customTheme.palette.secondary.main : null })}>Live Scores</NavLink></p>
                 <p><NavLink className='links-hover-state' to='/profile' style={({ isActive }) => ({ color: isActive ? customTheme.palette.secondary.main : null })}>Profile</NavLink></p>
             </div>
+            <IconButton
+                sx={{
+                    position: 'absolute',
+                    display: {
+                        xs: 'flex',
+                        sm: 'none',
+                        md: 'none',
+                        lg: 'none',
+                    },
+                    right: '24px',
+                    marginTop: '8px',
+                    height: '24px',
+                    width: '24px',
+                }}
+            >
+                <MenuIcon
+                    sx={{
+
+                        color: 'var(--theme-orange)'
+                    }}
+                />
+            </IconButton>
         </nav>
     )
 }
