@@ -113,7 +113,12 @@ export const Dashboard = () => {
                             md: '56px',
                             lg: '56px'
                         },
-                        padding: '24px 24px',
+                        padding: {
+                            xs: '16px 8px !important',
+                            sm: '24px 24px !important',
+                            md: '24px 24px !important',
+                            lg: '24px 24px !important'
+                            },
                         flex: '1',
                         maxHeight: '100vh',
                         overflow: 'auto',
@@ -199,7 +204,6 @@ export const Dashboard = () => {
                                 lg: 'auto'
                             },
                             minWidth: '40px',
-                            border: 'dashed 0.5px yellow'
                         }}
                     >
 
@@ -309,7 +313,7 @@ export const Dashboard = () => {
                                 </Container>
                             </Container>
 
-                            {/*Displayed When Screen is Small*/}
+                            {/*Displayed When Screen is extra small*/}
                             <Container
                                 sx={{
                                     display: {
@@ -322,9 +326,10 @@ export const Dashboard = () => {
                                     alignItems: 'center',
                                     justifyContent: 'start',
                                     gap: '24px',
-                                    marginTop: '24px',
-                                    padding: '0 0'
-
+                                    width: '100%',
+                                    height: '136px',
+                                    padding: '0 16px',
+                                    border: 'solid 1px red'
                                 }}
                             >
                                 <img
@@ -332,12 +337,13 @@ export const Dashboard = () => {
                                     alt='notifications'
                                     style={{
                                         width: '40px',
-                                        height: 'auto'
+                                        height: 'auto',
+                                        marginTop: '8px',
                                     }}
                                 >
                                 </img>
                                 <img
-                                    src='https://i.postimg.cc/Xq7jGs18/Badge-icon.png'
+                                    src='https://i.postimg.cc/0QvrZCrT/Favorite-Teams.png'
                                     alt='badges icon'
                                     style={{
                                         width: '48px',
@@ -394,6 +400,7 @@ export const Dashboard = () => {
                                         marginTop: '24px',
                                         paddingBottom: '24px',
                                         overflowY: 'auto',
+                                        overflowX: 'hidden',
                                         border: 'solid 1px #F26101'
                                     }}>
 

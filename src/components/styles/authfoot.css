@@ -29,6 +29,12 @@
     .footer-container {
         height: 48px;
     }
+    .copyright {
+        font-size:xx-small;
+    }
+    .footer-nav-container {
+        font-size: xx-small;
+    }
 }
 @media (min-width: 600px) {
     /* Styles for small screens (sm) and above */
