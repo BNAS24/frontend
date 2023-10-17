@@ -95,13 +95,13 @@ export const Dashboard = () => {
                     sx={{
                         display: 'grid',
                         gridTemplateColumns: {
-                            xs: '1fr 2fr',
+                            xs: '1fr 5fr',
                             sm: 'repeat(2, 1fr)',
                             md: 'repeat(2, 1fr)',
                             lg: 'repeat(2, 1fr)'
                         },
                         gridTemplateRows: {
-                            xs: '1fr 4fr',
+                            xs: '1fr 8fr',
                             sm: '1fr 5fr',
                             md: '1fr 5fr',
                             lg: '1fr 5fr'
@@ -146,19 +146,29 @@ export const Dashboard = () => {
                                 src='https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png'
                                 sx={{
                                     height: {
-                                        xs: '88px',
-
+                                        xs: '48px',
+                                        sm: '70px',
+                                        md: '80px',
                                         lg: '104px'
                                     },
                                     width: {
-                                        xs: '88px',
+                                        xs: '48px',
+                                        sm: '70px',
+                                        md: '80px',
                                         lg: '104px'
                                     }
                                 }}
                             />
                             <Typography
                                 variant='h3'
-                                style={{
+                                noWrap
+                                sx={{
+                                    fontSize: {
+                                        xs: '1.6rem',
+                                        sm: '2.5rem',
+                                        md: 'false',
+                                        lg: '3rem',
+                                    },
                                     marginLeft: '24px'
                                 }}
 
@@ -301,13 +311,17 @@ export const Dashboard = () => {
                                     },
                                     flexDirection: 'column',
                                     alignItems: 'center',
+                                    justifyContent: 'start',
+                                    gap: '24px',
+                                    marginTop: '24px'
+
                                 }}
                             >
                                 <img
                                     src='https://i.postimg.cc/d0s4fX3v/Notifications.png'
                                     alt='notifications'
                                     style={{
-                                        width: '72px',
+                                        width: '40px',
                                         height: 'auto'
                                     }}
                                 >
@@ -316,7 +330,7 @@ export const Dashboard = () => {
                                     src='https://i.postimg.cc/Xq7jGs18/Badge-icon.png'
                                     alt='badges icon'
                                     style={{
-                                        width: '80px',
+                                        width: '48px',
                                         height: 'auto'
                                     }}
                                 >
@@ -441,10 +455,24 @@ export const Dashboard = () => {
                                     zIndex: '1',
                                 }}
                             >
-                                <Typography><strong>
-                                    Forums you follow
-                                </strong></Typography>
-                                <Link to='/forums'>
+                                <Typography
+                                    noWrap
+                                    sx={{
+                                        fontSize: {
+                                            xs: '0.7rem',
+                                            sm: '1rem',
+                                            md: '1rem',
+                                            lg: '1rem',
+                                        }
+                                    }}
+                                >
+                                    <strong>
+                                        Forums you follow
+                                    </strong>
+                                </Typography>
+                                <Link
+                                    to='/forums'
+                                >
                                     Explore
                                 </Link>
                             </Container>
@@ -471,9 +499,18 @@ export const Dashboard = () => {
                                                 display: 'flex',
                                                 flexDirection: 'row',
                                                 justifyContent: 'space-around',
-                                                gap: '16px',
-                                                paddingLeft: '32px !important',
-                                                paddingRight: '32px !important'
+                                                gap: {
+                                                    xs: '8px',
+                                                    sm: '16px',
+                                                    md: '16px',
+                                                    lg: '16px'
+                                                },
+                                                padding: {
+                                                    xs: '0 8px',
+                                                    sm: '0 32px',
+                                                    md: '0 32px',
+                                                    lg: '0 32px'
+                                                },
                                             }}
                                         >
                                             <Avatar
@@ -504,11 +541,11 @@ export const Dashboard = () => {
                                                     alignItems: 'start',
                                                     gap: '8px',
                                                     height: {
-                                                        xs: '56px',
+                                                        xs: '140px',
                                                         sm: '168px',
                                                         md: '168px',
                                                         lg: '168px'
-                                                        },
+                                                    },
                                                     padding: '8px',
                                                     backgroundColor: 'var(--theme-blue)'
                                                 }}
@@ -568,8 +605,14 @@ export const Dashboard = () => {
                                                     }}
                                                 >
                                                     <Typography
-                                                        variant='body1'
+                                                        // variant='body1'
                                                         sx={{
+                                                            fontSize: {
+                                                                xs: '0.5rem',
+                                                                sm: '0.7rem',
+                                                                md: '0.9rem',
+                                                                lg: '1rem'
+                                                            },
                                                             color: 'var(--theme-white)'
                                                         }}
                                                     >
@@ -606,12 +649,20 @@ export const Dashboard = () => {
                                                                 },
                                                                 color: 'var(--theme-white)'
                                                             }}
-                                                        >Forum Name</Typography>
+                                                        >
+                                                            Forum Name
+                                                        </Typography>
                                                     </Link>
                                                     <div className='post-controls'>
                                                         <AddCommentOutlinedIcon
                                                             key={key}
                                                             sx={{
+                                                                height: {
+                                                                    xs: '16px',
+                                                                    sm: '16px',
+                                                                    md: '32px',
+                                                                    lg: 'false'
+                                                                },
                                                                 color: 'var(--theme-orange)',
                                                                 '&:hover': {
                                                                     cursor: 'pointer',
@@ -624,6 +675,12 @@ export const Dashboard = () => {
                                                             <FavoriteOutlinedIcon
                                                                 onClick={() => toggleLike(key)}
                                                                 sx={{
+                                                                    height: {
+                                                                        xs: '16px',
+                                                                        sm: '16px',
+                                                                        md: '32px',
+                                                                        lg: 'false'
+                                                                    },
                                                                     color: 'red',
                                                                     '&:hover': {
                                                                         cursor: 'pointer',
@@ -632,6 +689,12 @@ export const Dashboard = () => {
                                                             />) : (<FavoriteBorderOutlinedIcon
                                                                 onClick={() => toggleLike(key)}
                                                                 sx={{
+                                                                    height: {
+                                                                        xs: '16px',
+                                                                        sm: '16px',
+                                                                        md: '32px',
+                                                                        lg: 'false'
+                                                                    },
                                                                     color: 'red',
                                                                     '&:hover': {
                                                                         cursor: 'pointer',
