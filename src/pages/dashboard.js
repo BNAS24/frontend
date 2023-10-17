@@ -489,6 +489,7 @@ export const Dashboard = () => {
                                 </Typography>
                                 <Link
                                     to='/forums'
+                                    className='explore-button'
                                 >
                                     Explore
                                 </Link>
