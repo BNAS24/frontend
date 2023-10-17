@@ -1,0 +1,57 @@
+.db-profile-pc {
+    height: 104px;
+    width: 104px;
+}
+
+.dashboard-forum-navbar {
+    height: 56px;
+    width: 100%;
+    border-bottom: solid 1px var(--theme-orange);
+}
+
+.post-header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.post-footer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.post-controls {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.explore-button {
+    font-size: 1rem;
+}
+
+/* Media Queries */
+
+@media (min-width: 600px) {
+/*Small Devices*/
+}
+
+@media (min-width: 900px) {
+/*Medium Devices*/
+}
+
+@media (min-width: 1200px) {
+    /*Large Devices*/
+    .explore-button {
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 1536px) {
+/*Extra Large Devices*/
+    
+    .explore-button {
+        /* Update styles for extra-large screens */
+    }
+}
