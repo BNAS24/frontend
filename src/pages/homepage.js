@@ -3,6 +3,8 @@ import * as React from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/homepage.css';
 
+//Hello Component
+
 export const Homepage = () => {
     return (
         <div className='wrapper'>
