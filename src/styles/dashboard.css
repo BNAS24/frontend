@@ -41,7 +41,7 @@
         width: 100%;
         border-bottom: solid 1px var(--theme-orange);
     }
-    
+
     .explore-button {
         /* Update styles for extra-small screens only */
         font-size: 0.6rem;
@@ -88,9 +88,6 @@
 @media (min-width: 1536px) {
     /*Extra Large Devices*/
 
-    .explore-button {
-        /* Update styles for extra-large screens */
-    }
     .post-controls {
         gap: 16px;
     }

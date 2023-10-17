@@ -2,8 +2,8 @@ import { ThemeProvider } from '@emotion/react';
 import AddCommentOutlinedIcon from '@mui/icons-material/AddCommentOutlined';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
-import { Avatar, Grid, Typography } from '@mui/material';
-import { Box, Container } from '@mui/system';
+import { Avatar, Grid, Typography, Container } from '@mui/material';
+import { Box } from '@mui/system';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Footer } from '../components/authfoot';
@@ -121,15 +121,16 @@ export const Dashboard = () => {
                         },
                         flex: '1',
                         maxHeight: '100vh',
-                        overflow: 'auto',
+                        overflow: 'hidden',
                     }}
                 >
                     {/*1st Grid Item*/}
 
-                    <Grid item xs={12} sm={12} md={12} lg={12}
+                    <Grid
+                        item xs={12} sm={12} md={12} lg={12}
                         sx={{
                             gridArea: {
-                                xs: '1 / 1 / 2 / 3',
+                                xs: '1 / 1 / 2 / 2',
                                 sm: '1 / 1 / 2 / 2',
                                 md: '1 / 1 / 2 / 2',
                                 lg: '1 / 1 / 2 / 2'
@@ -139,10 +140,13 @@ export const Dashboard = () => {
                             sx={{
                                 display: 'flex',
                                 flexDirection: 'row',
+                                width: '100%',
                                 height: '100%',
                                 alignItems: 'start',
                                 paddingLeft: '0 !important',
-                                color: 'white'
+                                paddingRight: '0 !important',
+                                color: 'white',
+
                             }}
                         >
                             <Avatar
@@ -151,16 +155,22 @@ export const Dashboard = () => {
                                 src='https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png'
                                 sx={{
                                     height: {
-                                        xs: '48px',
+                                        xs: 'auto',
                                         sm: '70px',
                                         md: '80px',
                                         lg: '104px'
                                     },
                                     width: {
-                                        xs: '48px',
+                                        xs: '100%',
                                         sm: '70px',
                                         md: '80px',
                                         lg: '104px'
+                                    },
+                                    padding: {
+                                        xs: '0 0 !important',
+                                        sm: 'false',
+                                        md: 'false',
+                                        lg: 'false',
                                     }
                                 }}
                             />
@@ -168,8 +178,15 @@ export const Dashboard = () => {
                                 variant='h3'
                                 noWrap
                                 sx={{
+                                    display: {
+                                        xs: 'none',
+                                        sm: 'flex',
+                                        md: 'flex',
+                                        lg: 'flex',
+
+                                    },
                                     fontSize: {
-                                        xs: '1.6rem',
+                                        xs: 'false',
                                         sm: '2.5rem',
                                         md: 'false',
                                         lg: '3rem',
@@ -184,11 +201,35 @@ export const Dashboard = () => {
                         </Container>
                     </Grid>
 
+                    {/*Displays only on xs sreens*/}
+                    <Grid
+                        item
+                        maxWidth="xs"
+                        sx={{
+                            display: {
+                                xs: 'flex',
+                                sm: 'none',
+                                md: 'none',
+                                lg: 'none',
+                            },
+                            gridArea: '1 / 2 / 2 / 3',
+                            color: 'white',
+                        }}
+                    >
+                        <Typography
+                            sx={{
+                                fontSize: '2rem'
+                            }}
+                        >
+                            Hello Brandon!
+                        </Typography>
+                    </Grid>
+
                     {/*2nd Grid Item*/}
 
                     <Grid
                         item
-                        container
+                        
                         xs={12} sm={12} md={12} lg={12}
                         sx={{
                             gridArea: {
