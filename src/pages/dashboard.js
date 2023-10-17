@@ -229,6 +229,7 @@ export const Dashboard = () => {
                                     flexDirection: 'column',
                                     alignItems: 'center',
                                     maxHeight: '100%',
+                                    width: '50%',
                                     paddingLeft: '0 !important',
                                     paddingRight: '0 !important'
                                 }}>
@@ -360,6 +361,7 @@ export const Dashboard = () => {
                                     flexGrow: '1',
                                     flexDirection: 'column',
                                     alignItems: 'center',
+                                    width: '50%',
                                     maxHeight: '100%',
                                     paddingLeft: '0 !important',
                                     paddingRight: '0 !important'
