@@ -20,7 +20,7 @@ const fakeNotifications = ['John Doe', 'Chief Keef', 'Pex Ranger', 'Sally', 'Jef
 const postContent = {
     user1: {
         username: 'Username123',
-        timeCreated: '1 hour ago',
+        timeCreated: '1hr ago',
         postText: 'Hey everybody! I love sports and I think the Philadelphia Eagles are the best team in the NFL!',
         forumLink: '/forums'
     },
@@ -577,11 +577,11 @@ export const Dashboard = () => {
                                                         noWrap
                                                         sx={{
                                                             fontSize: {
-                                                                xs: '0.5rem',
+                                                                xs: '0.68rem',
                                                                 sm: '0.7rem',
                                                                 md: '1rem',
                                                                 lg: '1.2rem',
-                                                                xl: ''
+                                                                xl: 'false'
                                                             },
                                                             color: 'var(--theme-white)'
                                                         }}
@@ -593,7 +593,7 @@ export const Dashboard = () => {
                                                         noWrap
                                                         sx={{
                                                             fontSize: {
-                                                                xs: '0.5rem',
+                                                                xs: '0.68rem',
                                                                 sm: '0.7rem',
                                                                 md: '1rem',
                                                                 lg: '1.2rem',
@@ -626,7 +626,7 @@ export const Dashboard = () => {
                                                         // variant='body1'
                                                         sx={{
                                                             fontSize: {
-                                                                xs: '0.5rem',
+                                                                xs: '0.68rem',
                                                                 sm: '0.7rem',
                                                                 md: '0.9rem',
                                                                 lg: '1rem'
@@ -641,16 +641,6 @@ export const Dashboard = () => {
                                                     className='post-footer'
                                                 >
                                                     <Link
-                                                        sx={{
-                                                            fontSize: {
-                                                                xs: '0.5rem',
-                                                                sm: '0.7rem',
-                                                                md: '1rem',
-                                                                lg: '1.2rem',
-                                                                xl: ''
-                                                            },
-                                                            color: 'var(--theme-white)'
-                                                        }}
                                                         to={postContent[key].forumLink}
                                                     >
                                                         <Typography
@@ -659,7 +649,7 @@ export const Dashboard = () => {
                                                             className='links-hover-state'
                                                             sx={{
                                                                 fontSize: {
-                                                                    xs: '0.5rem',
+                                                                    xs: '0.68rem',
                                                                     sm: '0.7rem',
                                                                     md: '1rem',
                                                                     lg: '1.2rem',

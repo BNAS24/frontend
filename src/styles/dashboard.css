@@ -40,12 +40,18 @@
         /* Update styles for extra-small screens only */
         font-size: 0.6rem;
     }
+    .post-controls {
+        gap: 0px;
+    }
 }
 
 @media (min-width: 600px) {
     /*Small Devices*/
     .explore-button {
         font-size: 1rem;
+    }
+    .post-controls {
+        gap: 0px;
     }
 }
 
@@ -55,6 +61,10 @@
     .explore-button {
         font-size: 1rem;
     }
+    .post-controls {
+        gap: 8px;
+    }
+
 }
 
 @media (min-width: 1200px) {
@@ -63,6 +73,9 @@
     .explore-button {
         font-size: 1rem;
     }
+    .post-controls {
+        gap: 16px;
+    }
 }
 
 @media (min-width: 1536px) {
@@ -70,5 +83,8 @@
 
     .explore-button {
         /* Update styles for extra-large screens */
+    }
+    .post-controls {
+        gap: 16px;
     }
 }
