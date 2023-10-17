@@ -109,7 +109,7 @@ export const Dashboard = () => {
                         gridGap: '8px',
                         columnGap: {
                             xs: '8px',
-                            sm: '56px',
+                            sm: '24px',
                             md: '56px',
                             lg: '56px'
                         },
@@ -192,7 +192,13 @@ export const Dashboard = () => {
                                 md: '2 / 1 / 3 / 2',
                                 lg: '2 / 1 / 3 / 2'
                             },
-                            overflowY: 'hidden',
+                            overflow: {
+                                xs: 'hidden',
+                                sm: 'auto',
+                                md: 'auto',
+                                lg: 'auto'
+                            },
+                            minWidth: '40px',
                             border: 'dashed 0.5px yellow'
                         }}
                     >
@@ -267,7 +273,9 @@ export const Dashboard = () => {
                                                 alignItems: 'center',
                                                 justifyContent: 'flex-start',
                                                 width: '33%',
+                                                minWidth: '73px',
                                                 marginTop: '24px',
+                                                padding: '0 0 !important'
 
                                             }}
                                         >
@@ -313,7 +321,8 @@ export const Dashboard = () => {
                                     alignItems: 'center',
                                     justifyContent: 'start',
                                     gap: '24px',
-                                    marginTop: '24px'
+                                    marginTop: '24px',
+                                    padding: '0 0'
 
                                 }}
                             >
@@ -421,7 +430,13 @@ export const Dashboard = () => {
                                 lg: '1 / 2 / 3 / 3'
                             },
                             width: '100%',
-                            // minWidth: '278px',
+
+                            minWidth: {
+                                xs: '201px',
+                                sm: '278px',
+                                md: '278px',
+                                lg: '278px'
+                            },
                             paddingBottom: '24px !important',
                             background: 'linear-gradient(to bottom, #0081D4, #000000)',
                             border: 'solid 1px var(--theme-orange)',
