@@ -33,15 +33,32 @@
 
 /* Media Queries */
 
+
+@media (max-width: 600px) {
+    /* Styles for extra-small screens (xs) only */
+    .explore-button {
+        /* Update styles for extra-small screens only */
+        font-size: 0.6rem;
+    }
+}
+
 @media (min-width: 600px) {
-/*Small Devices*/
+    /*Small Devices*/
+    .explore-button {
+        font-size: 1rem;
+    }
 }
 
 @media (min-width: 900px) {
-/*Medium Devices*/
+
+    /*Medium Devices*/
+    .explore-button {
+        font-size: 1rem;
+    }
 }
 
 @media (min-width: 1200px) {
+
     /*Large Devices*/
     .explore-button {
         font-size: 1rem;
@@ -49,8 +66,8 @@
 }
 
 @media (min-width: 1536px) {
-/*Extra Large Devices*/
-    
+    /*Extra Large Devices*/
+
     .explore-button {
         /* Update styles for extra-large screens */
     }

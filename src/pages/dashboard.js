@@ -476,7 +476,7 @@ export const Dashboard = () => {
                                     noWrap
                                     sx={{
                                         fontSize: {
-                                            xs: '0.7rem',
+                                            xs: '0.6rem',
                                             sm: '1rem',
                                             md: '1rem',
                                             lg: '1rem',
