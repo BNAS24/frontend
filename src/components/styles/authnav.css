@@ -43,6 +43,26 @@
 @media (max-width: 600px) {
 
     /* Styles for extra-small screens (xs) only */
+    .header-container {
+        height: 48px;
+        align-items: center ;
+    }
+
+    .logo_name_container {
+       margin-left: 16px;
+    }
+
+    .sports-fanatic-logo {
+        height: 24px;
+        width: 24px;
+    }
+
+    .title {
+        font-size: 1rem;
+        margin-top: 8px;
+        margin-left: 8px;
+    }
+
     .nav-container {
         display: none;
     }

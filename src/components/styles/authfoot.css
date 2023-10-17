@@ -22,3 +22,23 @@
 .copyright {
     margin-left: 24px;
 }
+
+/* Media Queries */
+@media (max-width: 600px) {
+    /* Styles for extra-small screens (xs) only */
+    .footer-container {
+        height: 48px;
+    }
+}
+@media (min-width: 600px) {
+    /* Styles for small screens (sm) and above */
+}
+@media (min-width: 900px) {
+    /* Styles for medium screens (md) and above */
+}
+@media (min-width: 1200px) {
+    /* Styles for large screens (lg) and above */
+}
+@media (min-width: 1536px) {
+    /* Styles for extra-large screen…[omitted] */
+}

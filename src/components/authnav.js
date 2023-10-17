@@ -27,7 +27,7 @@ export const NavBar = () => {
                         lg: 'none',
                     },
                     right: '24px',
-                    marginTop: '8px',
+                    marginTop: '0',
                     height: '24px',
                     width: '24px',
                 }}
