@@ -118,7 +118,7 @@ export const Dashboard = () => {
                             sm: '24px 24px !important',
                             md: '24px 24px !important',
                             lg: '24px 24px !important'
-                            },
+                        },
                         flex: '1',
                         maxHeight: '100vh',
                         overflow: 'auto',
@@ -511,7 +511,12 @@ export const Dashboard = () => {
                                     gap: '16px',
                                     width: '100%',
                                     height: '100%',
-                                    marginTop: '32px',
+                                    marginTop: {
+                                        xs: '16px',
+                                        sm: '32px',
+                                        md: '32px',
+                                        lg: '32px'
+                                    },
                                     paddingLeft: '0 !important',
                                     paddingRight: '0 !important'
                                 }}
@@ -526,15 +531,15 @@ export const Dashboard = () => {
                                                 justifyContent: 'space-around',
                                                 gap: {
                                                     xs: '8px',
-                                                    sm: '16px',
+                                                    sm: '8px',
                                                     md: '16px',
                                                     lg: '16px'
                                                 },
                                                 padding: {
                                                     xs: '0 8px',
-                                                    sm: '0 32px',
-                                                    md: '0 32px',
-                                                    lg: '0 32px'
+                                                    sm: '0 8px',
+                                                    md: '0 16px',
+                                                    lg: '0 16px'
                                                 },
                                             }}
                                         >
