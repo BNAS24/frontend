@@ -5,6 +5,8 @@ import { Footer } from '../components/authfoot';
 import { NavBar } from "../components/authnav";
 import { SettingsModal } from '../components/settingsmd';
 import '../styles/profile.css';
+import { useSidebar } from '../context/mobilenav';
+import { SideBarNav } from '../components/helpers/sidebarnav';
 
 const badges = ['Bronze', 'Silver', 'Gold', 'Platinum', 'Diamond', 'Master', 'Grandmaster'];
 
@@ -52,6 +54,8 @@ const settings = {
 
 export const Profile = () => {
 
+    const { isSidebarOpen } = useSidebar();
+
     const [isModalOpen, setModalOpen] = useState(null);
 
     const handleOpenModal = (postKey) => {
@@ -78,6 +82,7 @@ export const Profile = () => {
                 container
                 sx={{
                     flex: '1',
+                    position: 'relative',
                     display: 'grid',
                     gridTemplateColumns: 'repeat(2, 1fr)',
                     gridTemplateRows: '1fr 5fr',
@@ -291,6 +296,9 @@ export const Profile = () => {
                         </Container>
                     </Container>
                 </Grid>
+                {isSidebarOpen  && (
+                    <SideBarNav />
+                )}
             </Grid>
             <Footer />
         </Box>

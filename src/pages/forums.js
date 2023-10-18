@@ -25,6 +25,7 @@ export const Forums = () => {
             <NavBar />
             <Container
                 sx={{
+                    position: 'relative',
                     display: 'flex',
                     flex: '1',
                     justifyContent: 'center'

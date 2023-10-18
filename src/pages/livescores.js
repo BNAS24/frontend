@@ -5,10 +5,14 @@ import { Footer } from '../components/authfoot'
 import { NavBar } from '../components/authnav'
 import leagues from '../datastore/leagues'
 import '../styles/livescores.css'
+import { useSidebar } from '../context/mobilenav';
+import { SideBarNav } from '../components/helpers/sidebarnav';
 
 export const LiveScores = () => {
 
     const [sportSelected, setSportSelected] = useState(null)
+
+    const { isSidebarOpen } = useSidebar();
 
     return (
         <Container
@@ -27,9 +31,10 @@ export const LiveScores = () => {
             <NavBar />
 
             <Container
- 
+
                 sx={{
                     flex: '1',
+                    position: 'relative',
                     display: 'flex',
                     flexDirection: 'row',
                     justifyContent: 'center',
@@ -145,6 +150,9 @@ export const LiveScores = () => {
                         </ul>
                     ) : null}
                 </Container>
+                {isSidebarOpen && (
+                    <SideBarNav />
+                )}
             </Container>
             <Footer />
         </Container >
