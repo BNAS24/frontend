@@ -13,6 +13,7 @@ import customTheme from '../styles/context/customtheme';
 import '../styles/dashboard.css';
 import { fakeTeams, fakeNotifications, postContent } from '../datastore/dashboard';
 
+
 export const Dashboard = () => {
 
     // Initialize an object to store like button states for each post
@@ -162,7 +163,7 @@ export const Dashboard = () => {
                         </Container>
                     </Grid>
 
-                    {/*Displays only on xs sreens*/}
+                    {/*Displays only on xs sreens only*/}
                     <Grid
                         item
                         maxWidth="xs"
@@ -190,7 +191,7 @@ export const Dashboard = () => {
 
                     <Grid
                         item
-                        
+
                         xs={12} sm={12} md={12} lg={12}
                         sx={{
                             gridArea: {
@@ -315,7 +316,8 @@ export const Dashboard = () => {
                                 </Container>
                             </Container>
 
-                            {/*Displayed When Screen is extra small*/}
+                            {/*Displays on extra small screens only*/}
+                            
                             <Container
                                 sx={{
                                     display: {
@@ -637,7 +639,6 @@ export const Dashboard = () => {
                                                     }}
                                                 >
                                                     <Typography
-                                                        // variant='body1'
                                                         sx={{
                                                             fontSize: {
                                                                 xs: '0.68rem',
@@ -723,7 +724,6 @@ export const Dashboard = () => {
                                                                         color: '#f95149',
                                                                     }
                                                                 }} />
-
                                                         )}
                                                     </div>
                                                 </div>

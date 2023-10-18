@@ -34,7 +34,6 @@ export const NavBar = () => {
             >
                 <MenuIcon
                     sx={{
-
                         color: 'var(--theme-orange)'
                     }}
                 />
