@@ -27,7 +27,6 @@ export const Dashboard = () => {
         }));
     };
 
-
     const [isModalOpen, setModalOpen] = useState(null);
 
     const handleOpenModal = (postKey) => {
@@ -317,7 +316,7 @@ export const Dashboard = () => {
                             </Container>
 
                             {/*Displays on extra small screens only*/}
-                            
+
                             <Container
                                 sx={{
                                     display: {
@@ -739,6 +738,34 @@ export const Dashboard = () => {
                             </Container>
                         </Container>
                     </Grid>
+                    {navOpen ? (
+                        <>
+                            <div
+                                style={{
+                                    position: 'absolute',
+                                    right: '0',
+                                    top: '48px',
+                                    height: '100%',
+                                    width: '75%',
+                                    backgroundColor: 'var(--theme-blue)',
+                                    zIndex: 100
+                                }}
+                            >
+                            </div>
+                            <div
+                                style={{
+                                    position: 'absolute',
+                                    left: '0',
+                                    top: '48px',
+                                    height: '100%',
+                                    width: '25%',
+                                    backgroundColor: 'var(--modal-dropback)',
+                                    zIndex: 100
+                                }}
+                            >
+                            </div>
+                        </>
+                    ) : null}
                 </Grid>
 
                 {/*Footer Component*/}

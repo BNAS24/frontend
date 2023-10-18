@@ -2,6 +2,7 @@
   --theme-blue: #000F19;
   --theme-orange: #F26101;
   --theme-white: #FFFFFF;
+  --modal-dropback: rgba(0, 0, 0, 0.5);
 }
 
 html,
