@@ -3,8 +3,13 @@ import { Container, TextField } from '@mui/material';
 import InputAdornment from '@mui/material/InputAdornment';
 import { Footer } from '../components/authfoot';
 import { NavBar } from '../components/authnav';
+import { useSidebar } from '../context/mobilenav';
+import { SideBarNav } from '../components/helpers/sidebarnav';
 
 export const Forums = () => {
+
+    const { isSidebarOpen } = useSidebar();
+
     return (
         <Container
             maxWidth='xl'
@@ -72,6 +77,9 @@ export const Forums = () => {
                     }}
 
                 />
+                {isSidebarOpen  && (
+                    <SideBarNav />
+                )}
             </Container>
             <Footer />
         </Container>

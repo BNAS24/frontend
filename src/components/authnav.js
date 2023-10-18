@@ -1,14 +1,12 @@
-import { NavLink } from "react-router-dom"
-import customTheme from "../styles/context/customtheme"
-import './styles/authnav.css'
-import { IconButton } from "@mui/material"
 import MenuIcon from '@mui/icons-material/Menu';
-import { Fragment, useState } from "react";
+import { IconButton } from "@mui/material";
+import { Fragment } from "react";
+import { NavLink } from "react-router-dom";
 import { useSidebar } from "../context/mobilenav";
+import customTheme from "../styles/context/customtheme";
+import './styles/authnav.css';
 
 export const NavBar = () => {
-
-    const [navState, setNavState] = useState(false);
 
     const { handleNav } = useSidebar();
 

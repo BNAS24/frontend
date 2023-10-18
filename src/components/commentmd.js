@@ -51,7 +51,6 @@ export const CommentsModal = ({ open, onClose, username, comment }) => {
                 >
                     Close
                 </Button>
-
             </Box>
         </Modal>
     )
