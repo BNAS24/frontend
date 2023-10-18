@@ -4,14 +4,13 @@ import './styles/authnav.css'
 import { IconButton } from "@mui/material"
 import MenuIcon from '@mui/icons-material/Menu';
 import { Fragment, useState } from "react";
+import { useSidebar } from "../context/mobilenav";
 
 export const NavBar = () => {
 
     const [navState, setNavState] = useState(false);
 
-    const handleNav = () => {
-        setNavState(!navState);
-    }
+    const { handleNav } = useSidebar();
 
     return (
         <Fragment>

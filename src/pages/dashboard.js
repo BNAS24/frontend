@@ -12,7 +12,7 @@ import { CommentsModal } from '../components/commentmd';
 import customTheme from '../styles/context/customtheme';
 import '../styles/dashboard.css';
 import { fakeTeams, fakeNotifications, postContent } from '../datastore/dashboard';
-
+import { useSidebar } from '../context/mobilenav';
 
 export const Dashboard = () => {
 
@@ -37,6 +37,8 @@ export const Dashboard = () => {
         setModalOpen(null)
     };
 
+    const { isSidebarOpen } = useSidebar();
+
     return (
         <ThemeProvider theme={customTheme}>
             <Box
@@ -54,6 +56,7 @@ export const Dashboard = () => {
                 <Grid
                     container
                     sx={{
+                        position: 'relative',
                         display: 'grid',
                         gridTemplateColumns: {
                             xs: '1fr 5fr',
@@ -738,13 +741,12 @@ export const Dashboard = () => {
                             </Container>
                         </Container>
                     </Grid>
-                    {navOpen ? (
+                    {isSidebarOpen ? (
                         <>
                             <div
                                 style={{
                                     position: 'absolute',
                                     right: '0',
-                                    top: '48px',
                                     height: '100%',
                                     width: '75%',
                                     backgroundColor: 'var(--theme-blue)',
@@ -756,7 +758,6 @@ export const Dashboard = () => {
                                 style={{
                                     position: 'absolute',
                                     left: '0',
-                                    top: '48px',
                                     height: '100%',
                                     width: '25%',
                                     backgroundColor: 'var(--modal-dropback)',

@@ -10,12 +10,12 @@ export function useSidebar() {
 export function SidebarProvider({ children }) {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
 
-  const toggleSidebar = () => {
+  const handleNav = () => {
     setSidebarOpen(!isSidebarOpen);
   };
 
   return (
-    <Sidebar.Provider value={{ isSidebarOpen, toggleSidebar }}>
+    <Sidebar.Provider value={{ isSidebarOpen, handleNav }}>
       {children}
     </Sidebar.Provider>
   );

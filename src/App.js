@@ -10,20 +10,23 @@ import { LiveScores } from './pages/livescores';
 import { AboutUs } from './pages/aboutus';
 import { ContactUS } from './pages/contactus';
 import './App.css';
+import { SidebarProvider } from './context/mobilenav';
 
 function App() {
   return (
-    <Routes>
-      <Route path='/' element={<Homepage />} />
-      <Route path='/login' element={<Login />} />
-      <Route path='/register' element={<Register />} />
-      <Route path='/dashboard' element={<Dashboard />} />
-      <Route path='/profile' element={<Profile />} />
-      <Route path='/forums' element={<Forums />} />
-      <Route path='/live-scores' element={<LiveScores />} />
-      <Route path='/about-us' element={<AboutUs />} />
-      <Route path='/contact-us' element={<ContactUS />} />
-    </Routes>
+    <SidebarProvider>
+      <Routes>
+        <Route path='/' element={<Homepage />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/register' element={<Register />} />
+        <Route path='/dashboard' element={<Dashboard />} />
+        <Route path='/profile' element={<Profile />} />
+        <Route path='/forums' element={<Forums />} />
+        <Route path='/live-scores' element={<LiveScores />} />
+        <Route path='/about-us' element={<AboutUs />} />
+        <Route path='/contact-us' element={<ContactUS />} />
+      </Routes>
+    </SidebarProvider>
   );
 }
 
