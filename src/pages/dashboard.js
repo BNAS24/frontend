@@ -2,18 +2,18 @@ import { ThemeProvider } from '@emotion/react';
 import AddCommentOutlinedIcon from '@mui/icons-material/AddCommentOutlined';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
-import { Avatar, Grid, Typography, Container } from '@mui/material';
+import { Avatar, Container, Grid, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Footer } from '../components/authfoot';
 import { NavBar } from '../components/authnav';
 import { CommentsModal } from '../components/commentmd';
+import { SideBarNav } from '../components/helpers/sidebarnav';
+import { useSidebar } from '../context/mobilenav';
+import { fakeNotifications, fakeTeams, postContent } from '../datastore/dashboard';
 import customTheme from '../styles/context/customtheme';
 import '../styles/dashboard.css';
-import { fakeTeams, fakeNotifications, postContent } from '../datastore/dashboard';
-import { useSidebar } from '../context/mobilenav';
-import { SideBarNav } from '../components/helpers/sidebarnav';
 
 export const Dashboard = () => {
 
