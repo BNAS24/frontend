@@ -38,11 +38,17 @@ export const LiveScores = () => {
                     display: 'flex',
                     flexDirection: 'row',
                     justifyContent: 'center',
-                    gap: '40px',
+                    gap: {
+                        xs: '16px',
+                        sm: '40px',
+                        md: '40px',
+                        lg: '40px',
+
+                    },
                     height: '100%',
                     maxHeight: '100vh',
                     width: '100%',
-                    minWidth: '100vw',
+                    minWidth: '286',
                     paddingLeft: '0 !important',
                     paddingRight: '0 !important',
                     overflowY: 'hidden',
@@ -57,7 +63,7 @@ export const LiveScores = () => {
                         justifyContent: 'flex-start',
                         flexShrink: '1',
                         width: '50%',
-                        minWidth: '240px',
+                        minWidth: '142px',
                         borderLeft: 'solid 1px var(--theme-orange)',
                         borderRight: 'solid 1px var(--theme-orange)',
                         paddingLeft: '0 !important',
@@ -69,7 +75,19 @@ export const LiveScores = () => {
                         variant='h3'
                         align='center'
                         sx={{
-                            marginTop: '24px'
+                            marginTop: '24px',
+                            fontSize: {
+                                xs: '1.5rem',
+                                sm: '3rem',
+                                md: '3rem',
+                                lg: '3rem',
+                            },
+                            paddingRight: {
+                            xs: '8px !important',
+                            sm: '0 ',
+                            md: '0 ',
+                            lg: '0 ',
+                            },
                         }}
                     >
                         Sports Categories
