@@ -4,7 +4,7 @@ import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlin
 import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
 import { Avatar, Container, Grid, Typography } from '@mui/material';
 import { Box } from '@mui/system';
-import { useState } from 'react';
+import { Fragment, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Footer } from '../components/authfoot';
 import { NavBar } from '../components/authnav';
@@ -20,6 +20,12 @@ export const Dashboard = () => {
     // Initialize an object to store like button states for each post
     const [likeButton, setLikeButtons] = useState({});
 
+    const [isModalOpen, setModalOpen] = useState(null);
+
+    const [isTeamsDisplayed, setTeamsDisplayed] = useState(false);
+
+    const { isSidebarOpen } = useSidebar();
+
     // Function to toggle the like button state for a specific post
     const toggleLike = (postKey) => {
         setLikeButtons((prevLikeButtons) => ({
@@ -27,8 +33,6 @@ export const Dashboard = () => {
             [postKey]: !prevLikeButtons[postKey], // Toggle the state for the specified post
         }));
     };
-
-    const [isModalOpen, setModalOpen] = useState(null);
 
     const handleOpenModal = (postKey) => {
         setModalOpen(postKey)
@@ -38,7 +42,9 @@ export const Dashboard = () => {
         setModalOpen(null)
     };
 
-    const { isSidebarOpen } = useSidebar();
+    const handleTeamsDisplayed = () => {
+        setTeamsDisplayed(!isTeamsDisplayed)
+    };
 
     return (
         <ThemeProvider theme={customTheme}>
@@ -179,6 +185,7 @@ export const Dashboard = () => {
                             },
                             gridArea: '1 / 2 / 2 / 3',
                             color: 'white',
+                            justifyContent: 'center',
                         }}
                     >
                         <Typography
@@ -350,6 +357,7 @@ export const Dashboard = () => {
                                 >
                                 </img>
                                 <img
+                                    onClick={handleTeamsDisplayed}
                                     src='https://i.postimg.cc/0QvrZCrT/Favorite-Teams.png'
                                     alt='badges icon'
                                     style={{
@@ -742,9 +750,26 @@ export const Dashboard = () => {
                             </Container>
                         </Container>
                     </Grid>
-                    {isSidebarOpen  && (
-                    <SideBarNav />
-                )}
+                    {isSidebarOpen && (
+                        <SideBarNav />
+                    )}
+                    {isTeamsDisplayed && (
+                        <Fragment>
+                            <Container
+                                sx={{
+                                    position: 'absolute',
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    alignItems: 'center',
+                                    height: '100%',
+                                    backgroundColor: 'var(--theme-blue)',
+                                    zIndex: 100
+                                }}
+                            >
+                            <p>Hello World</p>
+                            </Container>
+                        </Fragment>
+                    )}
                 </Grid>
 
                 {/*Footer Component*/}
