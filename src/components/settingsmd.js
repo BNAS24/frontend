@@ -7,7 +7,9 @@ import { Fragment } from 'react';
 import customTheme from '../styles/context/customtheme';
 
 export const SettingsModal = ({ open, onClose, onClick, settingSelected, settings }) => {
+
     const selectedSetting = settings[settingSelected];
+    
     return (
         <ThemeProvider theme={customTheme}>
             <Modal
@@ -16,27 +18,28 @@ export const SettingsModal = ({ open, onClose, onClick, settingSelected, setting
             >
                 <Box
                     sx={{
+                        position: 'absolute',
                         display: 'flex',
                         flexDirection: 'column',
                         justifyContent: 'center',
-                        position: 'absolute',
+                        border: 'solid 2px var(--theme-orange)',
+                        width: '50%',
+                        minWidth: '300px',
+                        height: 'auto',
+                        paddingBottom: '40px',
                         top: '50%',
                         left: '50%',
                         transform: 'translate(-50%, -50%)',
                         bgcolor: 'var(--theme-blue)',
-                        border: 'solid 2px var(--theme-orange)',
-                        p: 2,
-                        width: '50%',
-                        minWidth: '300px',
-                        height: '50%',
                     }}
                 >
                     <CloseIcon
                         onClick={onClick}
                         sx={{
-                            position: 'absolute',
-                            top: '24px',
-                            right: '24px',
+                            display: 'flex',
+                            alignSelf: 'flex-end',
+                            marginTop: '8px',
+                            marginRight: '8px',
                             color: 'var(--theme-orange)',
                             zIndex: 2,
                             '&:hover': {
@@ -53,7 +56,7 @@ export const SettingsModal = ({ open, onClose, onClick, settingSelected, setting
                                     flexDirection: 'column',
                                     alignItems: 'center',
                                     justifyContent: 'space-evenly',
-                                    height: 'auto',
+                                    height: '100%',
                                     width: '100%',
                                     maxWidth: '100%'
                                 }}
@@ -61,6 +64,9 @@ export const SettingsModal = ({ open, onClose, onClick, settingSelected, setting
                                 <Typography
                                     noWrap
                                     variant="h5"
+                                    sx={{
+                                        marginTop: '8px',
+                                    }}
                                 >
                                     {selectedSetting.title !== 'Logout' && selectedSetting.title}
                                 </Typography>
@@ -72,8 +78,8 @@ export const SettingsModal = ({ open, onClose, onClick, settingSelected, setting
                                             alignItems: 'center',
                                             justifyContent: 'center',
                                             width: '100%',
-                                            height: 'auto',
-                                            marginTop: '32px',
+                                            height: '100%',
+                                            paddingTop: '16px'
                                         }}
                                     >
                                         <TextField
@@ -175,8 +181,8 @@ export const SettingsModal = ({ open, onClose, onClick, settingSelected, setting
                                                 alignItems: 'center',
                                                 justifyContent: 'center',
                                                 width: '100%',
-                                                height: 'auto',
-                                                marginTop: '32px',
+                                                height: '100%',
+                                                paddingTop: '16px'
                                             }}
                                         >
                                             <TextField
@@ -312,7 +318,7 @@ export const SettingsModal = ({ open, onClose, onClick, settingSelected, setting
                                             flexDirection: 'column',
                                             alignItems: 'center',
                                             justifyContent: 'space-evenly',
-                                            marginTop: '32px',
+                                            paddingTop: '16px'
                                         }}
                                     >
                                         <Avatar
@@ -362,9 +368,9 @@ export const SettingsModal = ({ open, onClose, onClick, settingSelected, setting
                                             alignItems: 'center',
                                             minWidth: '100px',
                                             maxWidth: '400px !important',
-                                            marginTop: '32px',
                                             paddingLeft: '0 !important',
-                                            paddingRight: '0 !important'
+                                            paddingRight: '0 !important',
+                                            paddingTop: '16px'
                                         }}
                                     >
                                         <Container

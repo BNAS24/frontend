@@ -63,6 +63,10 @@ export const Forums = () => {
                                 color: 'var(--theme-orange)',
                             },
                         },
+                        '& input:-webkit-autofill': {
+                            backgroundColor: 'transparent !important',
+                        },
+
 
                     }}
                     InputProps={{
