@@ -39,7 +39,10 @@ export const SideBarNav = () => {
                             fontSize: '2rem',
                         }}
                     >
-                        <NavLink className='links-hover-state' to='/dashboard' style={({ isActive }) => ({ color: isActive ? customTheme.palette.secondary.main : null })}>
+                        <NavLink
+                            className='links-hover-state'
+                            to='/dashboard'
+                            style={({ isActive }) => ({ color: isActive ? customTheme.palette.secondary.main : null })}>
                             Dashboard
                         </NavLink>
                     </p>
@@ -54,7 +57,10 @@ export const SideBarNav = () => {
                             fontSize: '2rem',
                         }}
                     >
-                        <NavLink className='links-hover-state' to='/forums' style={({ isActive }) => ({ color: isActive ? customTheme.palette.secondary.main : null })}>
+                        <NavLink
+                            className='links-hover-state'
+                            to='/forums'
+                            style={({ isActive }) => ({ color: isActive ? customTheme.palette.secondary.main : null })}>
                             Forums
                         </NavLink>
                     </p>
@@ -69,7 +75,10 @@ export const SideBarNav = () => {
                             fontSize: '2rem',
                         }}
                     >
-                        <NavLink className='links-hover-state' to='/live-scores' style={({ isActive }) => ({ color: isActive ? customTheme.palette.secondary.main : null })}>
+                        <NavLink
+                            className='links-hover-state'
+                            to='/live-scores'
+                            style={({ isActive }) => ({ color: isActive ? customTheme.palette.secondary.main : null })}>
                             Live Scores
                         </NavLink>
                     </p>
@@ -84,7 +93,10 @@ export const SideBarNav = () => {
                             fontSize: '2rem',
                         }}
                     >
-                        <NavLink className='links-hover-state' to='/profile' style={({ isActive }) => ({ color: isActive ? customTheme.palette.secondary.main : null })}>
+                        <NavLink
+                            className='links-hover-state'
+                            to='/profile'
+                            style={({ isActive }) => ({ color: isActive ? customTheme.palette.secondary.main : null })}>
                             Profile
                         </NavLink>
                     </p>

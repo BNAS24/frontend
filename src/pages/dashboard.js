@@ -2,7 +2,7 @@ import { ThemeProvider } from '@emotion/react';
 import AddCommentOutlinedIcon from '@mui/icons-material/AddCommentOutlined';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
-import { Avatar, Container, Grid, Typography } from '@mui/material';
+import { Avatar, Button, Container, Grid, IconButton, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import { Fragment, useState } from 'react';
 import { Link } from 'react-router-dom';
@@ -14,6 +14,7 @@ import { useSidebar } from '../context/mobilenav';
 import { fakeNotifications, fakeTeams, postContent } from '../datastore/dashboard';
 import customTheme from '../styles/context/customtheme';
 import '../styles/dashboard.css';
+import ArrowBackIosNewOutlinedIcon from '@mui/icons-material/ArrowBackIosNewOutlined';
 
 export const Dashboard = () => {
 
@@ -766,7 +767,78 @@ export const Dashboard = () => {
                                     zIndex: 100
                                 }}
                             >
-                            <p>Hello World</p>
+                                <IconButton
+                                onClick={handleTeamsDisplayed}
+                                sx={{
+                                    position: 'absolute',
+                                    display: 'flex',
+                                    left: '8px',
+                                    top: '8px',
+                                }}
+                                >
+                                    <ArrowBackIosNewOutlinedIcon 
+                                        sx={{
+                                            color: 'var(--theme-orange)'
+                                        }}
+                                    />
+                                </IconButton>
+                                <Container
+                                    sx={{
+                                        display: 'flex',
+                                        flexWrap: 'wrap',
+                                        height: '88%',
+                                        width: '100%',
+                                        marginTop: '56px',
+                                        paddingLeft: '16px !important',
+                                        paddingRight: '16px !important',
+                                        overflowY: 'auto',
+                                        border: 'solid 1px #F26101'
+                                    }}>
+
+                                    {fakeTeams.map((team) =>
+                                        <Container
+                                            key={team}
+                                            sx={{
+                                                display: 'flex',
+                                                flexShrink: 1,
+                                                flexGrow: 0,
+                                                flexDirection: 'column',
+                                                alignItems: 'center',
+                                                justifyContent: 'flex-start',
+                                                width: '33%',
+                                                minWidth: '73px',
+                                                marginTop: '24px',
+                                                padding: '0 0 !important'
+
+                                            }}
+                                        >
+                                            <Avatar
+                                                variant='square'
+                                                alt='team logo'
+                                                src='https://cdn-icons-png.flaticon.com/512/2553/2553695.png'
+                                                sx={{
+                                                    height: '62px',
+                                                    width: '62px',
+                                                }}
+                                            >
+
+                                            </Avatar>
+                                            <Typography
+                                                variant='body1'
+                                                align='center'
+                                                className='links-hover-state'
+
+                                                sx={{
+                                                    flexShrink: 2,
+                                                    fontSize: '1rem',
+                                                }}
+                                            >
+                                                {team}
+                                            </Typography>
+                                        </Container>
+                                    )}
+
+                                </Container>
                             </Container>
                         </Fragment>
                     )}
