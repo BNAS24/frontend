@@ -1,8 +1,9 @@
 import { ThemeProvider } from '@emotion/react';
 import AddCommentOutlinedIcon from '@mui/icons-material/AddCommentOutlined';
+import ArrowBackIosNewOutlinedIcon from '@mui/icons-material/ArrowBackIosNewOutlined';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
-import { Avatar, Button, Container, Grid, IconButton, Typography } from '@mui/material';
+import { Avatar, Container, Grid, IconButton, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import { Fragment, useState } from 'react';
 import { Link } from 'react-router-dom';
@@ -14,7 +15,6 @@ import { useSidebar } from '../context/mobilenav';
 import { fakeNotifications, fakeTeams, postContent } from '../datastore/dashboard';
 import customTheme from '../styles/context/customtheme';
 import '../styles/dashboard.css';
-import ArrowBackIosNewOutlinedIcon from '@mui/icons-material/ArrowBackIosNewOutlined';
 
 export const Dashboard = () => {
 
@@ -24,6 +24,8 @@ export const Dashboard = () => {
     const [isModalOpen, setModalOpen] = useState(null);
 
     const [isTeamsDisplayed, setTeamsDisplayed] = useState(false);
+
+    const [isNotificationsDisplayed, setNotificationsDisplayed] = useState(false);
 
     const { isSidebarOpen } = useSidebar();
 
@@ -45,6 +47,10 @@ export const Dashboard = () => {
 
     const handleTeamsDisplayed = () => {
         setTeamsDisplayed(!isTeamsDisplayed)
+    };
+
+    const handleNotificaitions = () => {
+        setNotificationsDisplayed(!isNotificationsDisplayed)
     };
 
     return (
@@ -202,7 +208,6 @@ export const Dashboard = () => {
 
                     <Grid
                         item
-
                         xs={12} sm={12} md={12} lg={12}
                         sx={{
                             gridArea: {
@@ -348,6 +353,8 @@ export const Dashboard = () => {
                                 }}
                             >
                                 <img
+                                    className='side-controls'
+                                    onClick={handleNotificaitions}
                                     src='https://i.postimg.cc/d0s4fX3v/Notifications.png'
                                     alt='notifications'
                                     style={{
@@ -358,6 +365,7 @@ export const Dashboard = () => {
                                 >
                                 </img>
                                 <img
+                                    className='side-controls'
                                     onClick={handleTeamsDisplayed}
                                     src='https://i.postimg.cc/0QvrZCrT/Favorite-Teams.png'
                                     alt='badges icon'
@@ -688,7 +696,9 @@ export const Dashboard = () => {
                                                             Forum Name
                                                         </Typography>
                                                     </Link>
-                                                    <div className='post-controls'>
+                                                    <div
+                                                        className='post-controls'
+                                                    >
                                                         <AddCommentOutlinedIcon
                                                             key={key}
                                                             sx={{
@@ -768,20 +778,30 @@ export const Dashboard = () => {
                                 }}
                             >
                                 <IconButton
-                                onClick={handleTeamsDisplayed}
-                                sx={{
-                                    position: 'absolute',
-                                    display: 'flex',
-                                    left: '8px',
-                                    top: '8px',
-                                }}
+                                    onClick={handleTeamsDisplayed}
+                                    sx={{
+                                        position: 'absolute',
+                                        display: 'flex',
+                                        left: '8px',
+                                        top: '8px',
+                                    }}
                                 >
-                                    <ArrowBackIosNewOutlinedIcon 
+                                    <ArrowBackIosNewOutlinedIcon
                                         sx={{
                                             color: 'var(--theme-orange)'
                                         }}
                                     />
                                 </IconButton>
+                                <Typography
+                                    align='center'
+                                    sx={{
+                                        position: 'absolute',
+                                        top: '8px',
+                                        fontSize: '1.5rem',
+                                    }}
+                                >
+                                    Favorite Teams
+                                </Typography>
                                 <Container
                                     sx={{
                                         display: 'flex',
@@ -841,6 +861,76 @@ export const Dashboard = () => {
                                 </Container>
                             </Container>
                         </Fragment>
+                    )}
+                    {isNotificationsDisplayed && (
+                        <Container
+                            sx={{
+                                position: 'absolute',
+                                display: 'flex',
+                                flexDirection: 'column',
+                                alignItems: 'center',
+                                height: '100%',
+                                backgroundColor: 'var(--theme-blue)',
+                                zIndex: 100
+                            }}
+                        >
+                            <IconButton
+                                onClick={handleNotificaitions}
+                                sx={{
+                                    position: 'absolute',
+                                    display: 'flex',
+                                    left: '8px',
+                                    top: '8px',
+                                }}
+                            >
+                                <ArrowBackIosNewOutlinedIcon
+                                    sx={{
+                                        color: 'var(--theme-orange)'
+                                    }}
+                                />
+                            </IconButton>
+                            <Typography
+                                    align='center'
+                                    sx={{
+                                        position: 'absolute',
+                                        top: '8px',
+                                        fontSize: '1.5rem',
+                                    }}
+                                >
+                                    Notifications
+                                </Typography>
+                            <Container
+                                sx={{
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    alignItems: 'center',
+                                    height: '88%',
+                                    width: '100%',
+                                    marginTop: '56px',
+                                    paddingBottom: '24px',
+                                    overflowY: 'auto',
+                                    border: 'solid 1px #F26101'
+                                }}>
+
+                                {/*The Typography element will actually get changed into a NavLink component for demonstration purposes of clicking on a notification and it takes you to someone's profile page, you have to build a mock profile page first*/}
+
+                                {fakeNotifications.map((notification) =>
+                                    <Typography
+                                        key={notification}
+                                        variant='body1'
+                                        align='center'
+                                        className='links-hover-state'
+                                        sx={{
+                                            marginTop: '24px',
+                                            flexShrink: '0',
+                                            flexGrow: '0',
+                                            fontSize: '1rem'
+                                        }}>
+                                        {notification} liked your post
+                                    </Typography>
+                                )}
+                            </Container>
+                        </Container>
                     )}
                 </Grid>
 
