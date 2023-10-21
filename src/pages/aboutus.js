@@ -13,7 +13,6 @@ export const AboutUs = () => {
                 display: 'flex',
                 flexDirection: 'column',
                 height: '100%',
-                minHeight: '100%',
                 width: '100%',
                 paddingLeft: '0 !important',
                 paddingRight: '0 !important',
@@ -26,13 +25,11 @@ export const AboutUs = () => {
                     flex: '1',
                     display: 'flex',
                     flexDirection: 'row',
-                    justifyContent: 'center',
-                    gap: '40px',
-                    height: '100%',
+                    justifyContent: 'flex-start',
+                    height: 'auto',
                     width: '100%',
                     paddingLeft: '0 !important',
                     paddingRight: '0 !important',
-                    overflow: 'auto'
                 }}
             >
                 <Container
@@ -42,8 +39,10 @@ export const AboutUs = () => {
                         flexDirection: 'column',
                         alignItems: 'center',
                         justifyContent: 'space-around',
-                        gap: '16px',
-                        padding: '16px 62px',
+                        gap: '8px',
+                        width: '50%',
+                        height: 'auto',
+                        padding: '24px 16px !important',
                         color: 'white',
                     }}
                 >
@@ -54,6 +53,7 @@ export const AboutUs = () => {
                         {aboutUs.aboutUs.title}
                     </Typography>
                     <Typography
+                        variant='body2'
                         align='center'
                     >
                         {aboutUs.aboutUs.body}
@@ -65,6 +65,7 @@ export const AboutUs = () => {
                         {aboutUs.ourMission.title}
                     </Typography>
                     <Typography
+                        variant='body2'
                         align='center'
                     >
                         {aboutUs.ourMission.body}
@@ -76,6 +77,7 @@ export const AboutUs = () => {
                         {aboutUs.setsUsApart.title}
                     </Typography>
                     <Typography
+                        variant='body2'
                         align='center'
                     >
                         {aboutUs.setsUsApart.body}
@@ -87,6 +89,7 @@ export const AboutUs = () => {
                         {aboutUs.communityDriven.title}
                     </Typography>
                     <Typography
+                        variant='body2'
                         align='center'
                     >
                         {aboutUs.communityDriven.body}
@@ -98,6 +101,7 @@ export const AboutUs = () => {
                         {aboutUs.joinUsToday.title}
                     </Typography>
                     <Typography
+                        variant='body2'
                         align='center'
                     >
                         {aboutUs.joinUsToday.body}
@@ -117,14 +121,16 @@ export const AboutUs = () => {
                 <Container
                     maxWidth='100%'
                     sx={{
-                        color: 'white',
+
+                        display: 'flex',
+                        height: 'auto',
+                        width: '50%',
                         backgroundImage: 'url(https://i.postimg.cc/wvjXZ8Tg/Basketball-Action-Shot.jpg)',
                         backgroundRepeat: 'no-repeat',
-                        backgroundSize: 'cover',
+                        backgroundSize: 'auto 100%',
                         backgroundPosition: 'center',
                     }}
                 >
-
                 </Container>
             </Container>
             <Footer />

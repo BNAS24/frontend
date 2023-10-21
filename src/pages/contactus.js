@@ -35,8 +35,8 @@ export const ContactUS = () => {
                 }}
             >
                 <Container
-                    maxWidth='100%'
                     sx={{
+                        width: '50%',
                         color: 'white',
                         backgroundImage: 'url(https://i.postimg.cc/WpCGbLhy/Hockey-Shot.jpg)',
                         backgroundRepeat: 'no-repeat',
@@ -44,28 +44,27 @@ export const ContactUS = () => {
                         backgroundPosition: 'center',
                     }}
                 >
-                    <Typography></Typography>
                 </Container>
                 <Container
-                    maxWidth='100%'
                     sx={{
                         display: 'flex',
                         flexDirection: 'column',
                         alignItems: 'center',
                         justifyContent: 'center',
+                        width: '50%',
                         gap: '16px',
                         padding: '16px 62px',
                         color: 'white',
                     }}
                 >
                     <Typography
-                        variant='h3'
+                        variant='h5'
                         align='center'
                     >
                         {contactUs.title}
                     </Typography>
                     <Typography
-                        variant='body'
+                        variant='body2'
                         align='center'
                     >
                         {contactUs.body}
