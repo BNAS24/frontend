@@ -4,8 +4,13 @@ import React from 'react'
 import { Footer } from '../components/authfoot'
 import { NavBar } from '../components/authnav'
 import contactUs from '../datastore/contactus'
+import { useSidebar } from '../context/mobilenav';
+import { SideBarNav } from '../components/helpers/sidebarnav';
 
 export const ContactUS = () => {
+
+    const { isSidebarOpen } = useSidebar();
+    
     return (
         <Container
             maxWidth='100%'
@@ -23,6 +28,7 @@ export const ContactUS = () => {
             <Container
                 maxWidth='100%'
                 sx={{
+                    position: 'relative',
                     flex: '1',
                     display: 'flex',
                     flexDirection: 'row',
@@ -90,6 +96,9 @@ export const ContactUS = () => {
                         {contactUs.body}
                     </Typography>
                 </Container>
+                {isSidebarOpen  && (
+                    <SideBarNav />
+                )}
             </Container>
             <Footer />
         </Container>
