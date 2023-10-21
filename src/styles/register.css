@@ -1,24 +1,4 @@
-.login-link {
-    position: absolute;
-    top: 24px;
-    right: 24px;
-}
-
-.main-container {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    height: 100vh;
-    width: 100%;
-    padding-bottom: 126px;
-    border: dashed 1px yellow;
-}
-
 .logo {
-    position: absolute;
-    top: 168px;
-    left: 50%;
-    transform: translate(-50%, -50%);
     height: 160px;
     width: 160px;
 }
@@ -54,8 +34,3 @@
     background-color: #fe6f10 !important
 }
 
-
-.sign-in {
-    height: 40px;
-    width: 400px;
-}

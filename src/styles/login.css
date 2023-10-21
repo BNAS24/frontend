@@ -1,65 +1,21 @@
 .main-container {
     position: relative;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    height: 100vh;
+    align-items: center;
+    height: 100%;
     width: 100%;
-    padding-bottom: 126px;
-    border: dashed 1px yellow;
+    overflow: hidden;
 }
 
 .login-logo {
-    position: absolute;
-    top: 168px;
-    left: 50%;
-    transform: translate(-50%, -50%);
     height: 160px;
     width: 160px;
 }
 
-.login-title {
-    position: absolute;
-    top: 300px;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 48px !important;
-    color: var(--theme-white);
-    white-space: nowrap;
-}
-
-.login-form {
-    position: absolute;
-    top: 460px;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    position: absolute;
-    color: var(--theme-white);
-}
-
-.login-button {
-    margin-top: 16px !important;
-    background-color: var(--theme-orange) !important;
-    min-width: 400px !important;
-}
-
-.login-button:hover {
-    background-color: #fe6f10 !important
-}
-
-
-.sign-in {
-    height: 40px;
-    width: 400px;
-}
 
 .create-account-text {
-    position: absolute;
-    top: 580px;
-    left: 50%;
-    transform: translate(-50%, -50%);
     color: var(--theme-white);
 }
 

@@ -1,4 +1,4 @@
-import { Typography } from '@mui/material';
+import { Typography, FormGroup } from '@mui/material';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import { ThemeProvider } from '@mui/material/styles';
@@ -10,35 +10,70 @@ import '../styles/login.css';
 export const Login = () => {
     return (
         <ThemeProvider theme={customTheme}>
-            <div>
+            <div
+                className='main-container'
+            >
                 <img
                     src="https://i.postimg.cc/wjkpvXx7/fans.png?"
                     alt="logo"
                     className="login-logo" />
                 <Typography
-                    className='login-title'>
+                    align='center'
+                    noWrap
+                    sx={{
+                        marginTop: '24px',
+                        fontSize: {
+                            xs: '2rem',
+                            sm: '2.5rem',
+                            md: '3rem',
+                            lg: '3.2rem',
+                        }
+                    }}
+                >
                     Login to continue
                 </Typography>
-                <form
+                <FormGroup
                     className='login-form'
+                    sx={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        width: '100%',
+                        maxWidth: '600px',
+                        height: 'auto',
+                        paddingTop: '16px'
+                    }}
                 >
                     <TextField
                         id="outlined-required"
                         label="Email"
                         type='email'
-                        color="secondary"
                         variant="outlined"
-                        InputProps={{
-                            sx: {
-                                color: 'white',
+                        margin='dense'
+                        sx={{
+                            width: '80%',
+                            maxWidth: '400px',
+                            '& .MuiOutlinedInput-root': {
+                                width: '100%',
+                                maxWidth: '600px',
                                 '& fieldset': {
-                                    borderColor: '#F26101 !important',
+
+                                    borderColor: 'var(--theme-orange)'
                                 },
                                 '&:hover fieldset': {
-                                    borderColor: '#fe6f10 !important',
+                                    borderColor: '#fe6f10',
                                 },
-                                '&:hover .MuiOutlinedInput-notchedOutline': {
-                                    borderColor: '#fe6f10 !important',
+                                '&.Mui-focused fieldset': {
+                                    borderColor: 'var(--theme-orange)',
+                                },
+                                '& .MuiInputBase-input': {
+                                    color: 'white',
+                                },
+                                cursor: 'text',
+                            },
+                            '& .MuiInputLabel-root': {
+                                '&.Mui-focused': {
+                                    color: 'var(--theme-orange)',
                                 },
                             },
                         }}
@@ -49,46 +84,72 @@ export const Login = () => {
                         type="password"
                         autoComplete="current-password"
                         variant="outlined"
-                        color="secondary"
-                        InputProps={{
-                            sx: {
-                                color: 'white',
+                        margin='dense'
+                        sx={{
+                            width: '80%',
+                            maxWidth: '400px',
+                            '& .MuiOutlinedInput-root': {
+                                width: '100%',
+                                maxWidth: '600px',
                                 '& fieldset': {
-                                    borderColor: '#F26101 !important',
+
+                                    borderColor: 'var(--theme-orange)'
                                 },
                                 '&:hover fieldset': {
-                                    borderColor: '#fe6f10 !important',
+                                    borderColor: '#fe6f10',
                                 },
-                                '&:hover .MuiOutlinedInput-notchedOutline': {
-                                    borderColor: '#fe6f10 !important',
+                                '&.Mui-focused fieldset': {
+                                    borderColor: 'var(--theme-orange)',
+                                },
+                                '& .MuiInputBase-input': {
+                                    color: 'white',
+                                },
+                                cursor: 'text',
+                            },
+                            '& .MuiInputLabel-root': {
+                                '&.Mui-focused': {
+                                    color: 'var(--theme-orange)',
                                 },
                             },
                         }}
-                        sx={{ marginTop: '8px' }}
                     />
-                    <NavLink
-                        to='/dashboard'>
-                        <Button
-                            variant="contained"
-                            type='button'
+                    <Button
+                        variant="contained"
+                        type='button'
+                        sx={{
+                            width: '80%',
+                            minWidth: '104px',
+                            maxWidth: '400px',
+                            padding: '8px 8px',
+                            marginTop: '16px',
+                            color: 'white',
+                            backgroundColor: 'var(--theme-orange)',
+                            fontSize: '16px',
+                            '&:hover': {
+                                backgroundColor: '#fe6f10'
+                            },
+                        }}
+                        className='login-button'
+                    >
+                        <NavLink
+                            to='/dashboard'
                             sx={{
-                                color: 'white',
-                                padding: '8px 8px',
-                                fontSize: '16px',
                                 '&:hover': {
-                                    backgroundColor: '#fe6f10',
-                                },
+                                    color: 'var(--theme-white) !important'
+                                }
                             }}
-                            className='login-button'
                         >
                             Login
-                        </Button>
-                    </NavLink>
-                </form>
+                        </NavLink>
+                    </Button>
+
+                </FormGroup>
                 <p
                     className='create-account-text'>
                     <Link
-                        to='/register'>
+                        to='/register'
+
+                    >
                         Create an account
                     </Link>
                 </p>
