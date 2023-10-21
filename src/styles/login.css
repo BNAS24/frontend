@@ -23,10 +23,6 @@
     max-width: 400px;
 }
 
-.login-hovered:hover {
-    color: var(--theme-white) !important;
-}
-
 .create-account-text {
     color: var(--theme-white);
 }
