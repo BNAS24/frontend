@@ -14,6 +14,18 @@
     width: 160px;
 }
 
+.link-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: 'center';
+    width: 80%;
+    min-width: 104px;
+    max-width: 400px;
+}
+
+.login-hovered:hover {
+    color: var(--theme-white) !important;
+}
 
 .create-account-text {
     color: var(--theme-white);

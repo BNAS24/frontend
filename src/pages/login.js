@@ -113,42 +113,36 @@ export const Login = () => {
                             },
                         }}
                     />
-                    <Button
-                        variant="contained"
-                        type='button'
-                        sx={{
-                            width: '80%',
-                            minWidth: '104px',
-                            maxWidth: '400px',
-                            padding: '8px 8px',
-                            marginTop: '16px',
-                            color: 'white',
-                            backgroundColor: 'var(--theme-orange)',
-                            fontSize: '16px',
-                            '&:hover': {
-                                backgroundColor: '#fe6f10'
-                            },
-                        }}
-                        className='login-button'
+                    <NavLink
+                        to='/dashboard'
+                        className='link-wrapper'
                     >
-                        <NavLink
-                            to='/dashboard'
+                        <Button
+                            fullWidth
+                            variant="contained"
+                            type='button'
                             sx={{
+                                minWidth: '104px',
+                                maxWidth: '400px',
+                                padding: '8px 8px',
+                                marginTop: '16px',
+                                color: 'white',
+                                backgroundColor: 'var(--theme-orange)',
+                                fontSize: '16px',
                                 '&:hover': {
-                                    color: 'var(--theme-white) !important'
-                                }
+                                    backgroundColor: '#fe6f10'
+                                },
                             }}
+                            className='login-button'
                         >
                             Login
-                        </NavLink>
-                    </Button>
-
+                        </Button>
+                    </NavLink>
                 </FormGroup>
                 <p
                     className='create-account-text'>
                     <Link
                         to='/register'
-
                     >
                         Create an account
                     </Link>
