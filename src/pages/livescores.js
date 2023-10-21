@@ -3,10 +3,10 @@ import { Container } from '@mui/system'
 import React, { useState } from 'react'
 import { Footer } from '../components/authfoot'
 import { NavBar } from '../components/authnav'
+import { SideBarNav } from '../components/helpers/sidebarnav'
+import { useSidebar } from '../context/mobilenav'
 import leagues from '../datastore/leagues'
 import '../styles/livescores.css'
-import { useSidebar } from '../context/mobilenav';
-import { SideBarNav } from '../components/helpers/sidebarnav';
 
 export const LiveScores = () => {
 
@@ -83,10 +83,10 @@ export const LiveScores = () => {
                                 lg: '3rem',
                             },
                             paddingRight: {
-                            xs: '8px !important',
-                            sm: '0 ',
-                            md: '0 ',
-                            lg: '0 ',
+                                xs: '8px !important',
+                                sm: '0 ',
+                                md: '0 ',
+                                lg: '0 ',
                             },
                         }}
                     >

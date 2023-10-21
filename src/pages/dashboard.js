@@ -890,15 +890,15 @@ export const Dashboard = () => {
                                 />
                             </IconButton>
                             <Typography
-                                    align='center'
-                                    sx={{
-                                        position: 'absolute',
-                                        top: '8px',
-                                        fontSize: '1.5rem',
-                                    }}
-                                >
-                                    Notifications
-                                </Typography>
+                                align='center'
+                                sx={{
+                                    position: 'absolute',
+                                    top: '8px',
+                                    fontSize: '1.5rem',
+                                }}
+                            >
+                                Notifications
+                            </Typography>
                             <Container
                                 sx={{
                                     display: 'flex',

@@ -3,8 +3,8 @@ import { Container, TextField } from '@mui/material';
 import InputAdornment from '@mui/material/InputAdornment';
 import { Footer } from '../components/authfoot';
 import { NavBar } from '../components/authnav';
-import { useSidebar } from '../context/mobilenav';
 import { SideBarNav } from '../components/helpers/sidebarnav';
+import { useSidebar } from '../context/mobilenav';
 
 export const Forums = () => {
 
@@ -82,7 +82,7 @@ export const Forums = () => {
                     }}
 
                 />
-                {isSidebarOpen  && (
+                {isSidebarOpen && (
                     <SideBarNav />
                 )}
             </Container>

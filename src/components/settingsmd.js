@@ -9,7 +9,7 @@ import customTheme from '../styles/context/customtheme';
 export const SettingsModal = ({ open, onClose, onClick, settingSelected, settings }) => {
 
     const selectedSetting = settings[settingSelected];
-    
+
     return (
         <ThemeProvider theme={customTheme}>
             <Modal
@@ -329,7 +329,9 @@ export const SettingsModal = ({ open, onClose, onClick, settingSelected, setting
                                                 height: '152px',
                                                 width: '152px'
                                             }} />
-                                        <label htmlFor="profilePicInput">
+                                        <label
+                                            htmlFor="profilePicInput"
+                                        >
                                             <Button
                                                 variant="contained"
                                                 type='button'

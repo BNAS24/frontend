@@ -3,9 +3,9 @@ import { Container } from '@mui/system'
 import React from 'react'
 import { Footer } from '../components/authfoot'
 import { NavBar } from '../components/authnav'
+import { SideBarNav } from '../components/helpers/sidebarnav'
+import { useSidebar } from '../context/mobilenav'
 import aboutUs from '../datastore/aboutus'
-import { useSidebar } from '../context/mobilenav';
-import { SideBarNav } from '../components/helpers/sidebarnav';
 
 export const AboutUs = () => {
 
@@ -139,7 +139,7 @@ export const AboutUs = () => {
                             sm: 'auto 100%',
                             md: 'cover',
                             lg: 'cover'
-                            },
+                        },
                         backgroundPosition: 'center',
                     }}
                 >

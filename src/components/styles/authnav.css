@@ -45,11 +45,11 @@
     /* Styles for extra-small screens (xs) only */
     .header-container {
         height: 48px;
-        align-items: center ;
+        align-items: center;
     }
 
     .logo_name_container {
-       margin-left: 16px;
+        margin-left: 16px;
     }
 
     .sports-fanatic-logo {
@@ -94,6 +94,7 @@
     .nav-container {
         display: flex;
     }
+
     .title {
         font-size: 32px;
     }

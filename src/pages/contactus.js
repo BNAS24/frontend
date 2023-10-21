@@ -3,14 +3,14 @@ import { Container } from '@mui/system'
 import React from 'react'
 import { Footer } from '../components/authfoot'
 import { NavBar } from '../components/authnav'
+import { SideBarNav } from '../components/helpers/sidebarnav'
+import { useSidebar } from '../context/mobilenav'
 import contactUs from '../datastore/contactus'
-import { useSidebar } from '../context/mobilenav';
-import { SideBarNav } from '../components/helpers/sidebarnav';
 
 export const ContactUS = () => {
 
     const { isSidebarOpen } = useSidebar();
-    
+
     return (
         <Container
             maxWidth='100%'
@@ -75,7 +75,7 @@ export const ContactUS = () => {
                                 md: '3rem',
                                 lg: '3rem',
 
-                                },
+                            },
                         }}
                     >
                         {contactUs.title}
@@ -90,13 +90,13 @@ export const ContactUS = () => {
                                 md: '1.2rem',
                                 lg: '1.3rem',
 
-                                },
+                            },
                         }}
                     >
                         {contactUs.body}
                     </Typography>
                 </Container>
-                {isSidebarOpen  && (
+                {isSidebarOpen && (
                     <SideBarNav />
                 )}
             </Container>
