@@ -27,15 +27,16 @@ export const ContactUS = () => {
                     display: 'flex',
                     flexDirection: 'row',
                     justifyContent: 'center',
-                    gap: '40px',
+                    gap: '16px',
                     height: '100%',
                     width: '100%',
                     paddingLeft: '0 !important',
-                    paddingRight: '0 !important'
+                    paddingRight: '16px !important'
                 }}
             >
                 <Container
                     sx={{
+                        flex: '1',
                         width: '50%',
                         color: 'white',
                         backgroundImage: 'url(https://i.postimg.cc/WpCGbLhy/Hockey-Shot.jpg)',
@@ -47,25 +48,44 @@ export const ContactUS = () => {
                 </Container>
                 <Container
                     sx={{
+                        flex: '1',
                         display: 'flex',
                         flexDirection: 'column',
                         alignItems: 'center',
                         justifyContent: 'center',
                         width: '50%',
                         gap: '16px',
-                        padding: '16px 62px',
                         color: 'white',
                     }}
                 >
                     <Typography
-                        variant='h5'
+                        // variant='h5'
                         align='center'
+                        noWrap
+                        sx={{
+                            fontSize: {
+                                xs: '1.5rem',
+                                sm: '2.5rem',
+                                md: '3rem',
+                                lg: '3rem',
+
+                                },
+                        }}
                     >
                         {contactUs.title}
                     </Typography>
                     <Typography
-                        variant='body2'
+                        // variant='body2'
                         align='center'
+                        sx={{
+                            fontSize: {
+                                xs: '0.6rem',
+                                sm: '1rem',
+                                md: '1.2rem',
+                                lg: '1.3rem',
+
+                                },
+                        }}
                     >
                         {contactUs.body}
                     </Typography>
