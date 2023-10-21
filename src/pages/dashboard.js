@@ -349,7 +349,7 @@ export const Dashboard = () => {
                                     width: '100%',
                                     height: '136px',
                                     padding: '0 16px',
-                                    border: 'solid 1px red'
+                                    border: 'solid 1px var(--theme-orange)'
                                 }}
                             >
                                 <img

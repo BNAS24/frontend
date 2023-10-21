@@ -41,12 +41,32 @@ export const Profile = () => {
                     flex: '1',
                     position: 'relative',
                     display: 'grid',
-                    gridTemplateColumns: 'repeat(2, 1fr)',
-                    gridTemplateRows: '1fr 5fr',
+                    gridTemplateColumns: {
+                        xs: '1fr 5fr',
+                        sm: 'repeat(2, 1fr)',
+                        md: 'repeat(2, 1fr)',
+                        lg: 'repeat(2, 1fr)'
+                    },
+                    gridTemplateRows: {
+                        xs: '1fr 8fr',
+                        sm: '1fr 5fr',
+                        md: '1fr 5fr',
+                        lg: '1fr 5fr'
+                    },
                     gridGap: '8px',
-                    columnGap: '56px',
+                    columnGap: {
+                        xs: '8px',
+                        sm: '24px',
+                        md: '56px',
+                        lg: '56px'
+                    },
+                    padding: {
+                        xs: '16px 8px !important',
+                        sm: '24px 24px !important',
+                        md: '24px 24px !important',
+                        lg: '24px 24px !important'
+                    },
                     maxHeight: '100vh',
-                    padding: '24px 24px',
                     overflowX: 'auto',
                     overflowY: 'hidden'
                 }}
@@ -56,7 +76,12 @@ export const Profile = () => {
                     item
                     xs={12} sm={12} md={12} lg={12}
                     sx={{
-                        gridArea: '1 / 1 / 2 / 2'
+                        gridArea: {
+                            xs: '1 / 1 / 2 / 2',
+                            sm: '1 / 1 / 2 / 2',
+                            md: '1 / 1 / 2 / 2',
+                            lg: '1 / 1 / 2 / 2'
+                        },
                     }}>
                     <Container
                         sx={{
@@ -65,6 +90,7 @@ export const Profile = () => {
                             height: '100%',
                             alignItems: 'start',
                             paddingLeft: '0 !important',
+                            paddingRight: '0 !important',
                             color: 'white'
                         }}>
                         <Avatar
@@ -72,29 +98,97 @@ export const Profile = () => {
                             alt='profile picture'
                             src='https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png'
                             sx={{
-                                height: '104px',
-                                width: '104px'
+                                height: {
+                                    xs: 'auto',
+                                    sm: '70px',
+                                    md: '80px',
+                                    lg: '104px'
+                                },
+                                width: {
+                                    xs: '100%',
+                                    sm: '70px',
+                                    md: '80px',
+                                    lg: '104px'
+                                },
+                                padding: {
+                                    xs: '0 0 !important',
+                                    sm: 'false',
+                                    md: 'false',
+                                    lg: 'false',
+                                }
                             }}
                         />
                         <Typography
                             variant='h3'
-                            style={{
+                            noWrap
+                            sx={{
+                                display: {
+                                    xs: 'none',
+                                    sm: 'flex',
+                                    md: 'flex',
+                                    lg: 'flex',
+
+                                },
+                                fontSize: {
+                                    xs: 'false',
+                                    sm: '2.5rem',
+                                    md: 'false',
+                                    lg: '3rem',
+                                },
                                 marginLeft: '24px'
                             }}
-
                         >
                             Brandon
                             {/*The name will be dynamicall rendered*/}
                         </Typography>
                     </Container>
                 </Grid>
+
+                {/*Displays only on xs sreens only*/}
+                <Grid
+                    item
+                    maxWidth="xs"
+                    sx={{
+                        display: {
+                            xs: 'flex',
+                            sm: 'none',
+                            md: 'none',
+                            lg: 'none',
+                        },
+                        gridArea: '1 / 2 / 2 / 3',
+                        color: 'white',
+                        justifyContent: 'center',
+                    }}
+                >
+                    <Typography
+                        sx={{
+                            fontSize: '2rem'
+                        }}
+                    >
+                        Brandon
+                    </Typography>
+                </Grid>
+
                 {/*Second Grid Item*/}
+
                 <Grid
                     item
                     container
                     xs={12} sm={12} md={12} lg={12}
                     sx={{
-                        gridArea: '2 / 1 / 3 / 2'
+                        gridArea: {
+                            xs: '2 / 1 / 3 / 2',
+                            sm: '2 / 1 / 3 / 2',
+                            md: '2 / 1 / 3 / 2',
+                            lg: '2 / 1 / 3 / 2'
+                        },
+                        overflow: {
+                            xs: 'hidden',
+                            sm: 'auto',
+                            md: 'auto',
+                            lg: 'auto'
+                        },
+                        minWidth: '40px',
                     }}>
                     <Container
                         sx={{
@@ -112,6 +206,12 @@ export const Profile = () => {
                             align='center'
                             variant='h4'
                             sx={{
+                                display: {
+                                        xs: 'none',
+                                        sm: 'flex',
+                                        md: 'flex',
+                                        lg: 'flex'
+                                    },
                                 flexShrink: 0,
                                 flexGrow: 1,
                                 fontSize: {
@@ -127,7 +227,12 @@ export const Profile = () => {
 
                         <Container
                             sx={{
-                                display: 'flex',
+                                display: {
+                                        xs: 'none',
+                                        sm: 'flex',
+                                        md: 'flex',
+                                        lg: 'flex'
+                                    },
                                 flexGrow: '1',
                                 flexWrap: 'wrap',
                                 height: '100%',
@@ -180,6 +285,40 @@ export const Profile = () => {
                                 )}
 
                         </Container>
+
+                        {/*Displays on extra small screens only*/}
+
+                        <Container
+                            sx={{
+                                display: {
+                                    xs: 'flex',
+                                    sm: 'none',
+                                    md: 'none',
+                                    lg: 'none',
+                                },
+                                flexDirection: 'column',
+                                alignItems: 'center',
+                                justifyContent: 'start',
+                                gap: '24px',
+                                width: '100%',
+                                height: '64px',
+                                padding: '0 16px',
+                                border: 'solid 1px var(--theme-orange)'
+                            }}
+                        >
+                            <img
+                                // className='side-controls'
+                                // onClick={handleNotificaitions}
+                                src='https://i.postimg.cc/g2VJs4YD/Badge-icon.png'
+                                alt='badges'
+                                style={{
+                                    width: '40px',
+                                    height: 'auto',
+                                    marginTop: '8px',
+                                }}
+                            >
+                            </img>
+                        </Container>
                     </Container>
                 </Grid>
                 {/*Third Grid Item*/}
@@ -188,9 +327,22 @@ export const Profile = () => {
                     container
                     xs={12} sm={12} md={12} lg={12}
                     sx={{
-                        gridArea: '1 / 2 / 3 / 3',
-                        minWidth: '289px',
-                        border: 'solid 1px var(--theme-orange)',
+                        gridArea: {
+                            xs: '2 / 2 / 3 / 3',
+                            sm: '1 / 2 / 3 / 3',
+                            md: '1 / 2 / 3 / 3',
+                            lg: '1 / 2 / 3 / 3'
+                        },
+                        width: '100%',
+
+                        minWidth: {
+                            xs: '201px',
+                            sm: '278px',
+                            md: '278px',
+                            lg: '278px'
+                        },
+                        paddingBottom: '24px !important',
+                        overflow: 'auto',
                     }}
                 >
                     <Container
@@ -253,7 +405,7 @@ export const Profile = () => {
                         </Container>
                     </Container>
                 </Grid>
-                {isSidebarOpen  && (
+                {isSidebarOpen && (
                     <SideBarNav />
                 )}
             </Grid>
