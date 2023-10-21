@@ -134,7 +134,12 @@ export const AboutUs = () => {
                         width: '50%',
                         backgroundImage: 'url(https://i.postimg.cc/wvjXZ8Tg/Basketball-Action-Shot.jpg)',
                         backgroundRepeat: 'no-repeat',
-                        backgroundSize: 'auto 100%',
+                        backgroundSize: {
+                            xs: 'auto 100%',
+                            sm: 'auto 100%',
+                            md: 'cover',
+                            lg: 'cover'
+                            },
                         backgroundPosition: 'center',
                     }}
                 >

@@ -1,19 +1,22 @@
-import { Avatar, Grid, Typography } from '@mui/material';
+import ArrowBackIosNewOutlinedIcon from '@mui/icons-material/ArrowBackIosNewOutlined';
+import { Avatar, Grid, IconButton, Typography } from '@mui/material';
 import { Box, Container } from '@mui/system';
-import { useState } from 'react';
+import { Fragment, useState } from 'react';
 import { Footer } from '../components/authfoot';
 import { NavBar } from "../components/authnav";
-import { SettingsModal } from '../components/settingsmd';
-import '../styles/profile.css';
-import { useSidebar } from '../context/mobilenav';
 import { SideBarNav } from '../components/helpers/sidebarnav';
+import { SettingsModal } from '../components/settingsmd';
+import { useSidebar } from '../context/mobilenav';
 import { badges, settings } from '../datastore/profile';
+import '../styles/profile.css';
 
 export const Profile = () => {
 
     const { isSidebarOpen } = useSidebar();
 
     const [isModalOpen, setModalOpen] = useState(null);
+
+    const [isBadgesOpen, setBadgesOpen] = useState(false);
 
     const handleOpenModal = (postKey) => {
         setModalOpen(postKey)
@@ -23,6 +26,9 @@ export const Profile = () => {
         setModalOpen(null)
     };
 
+    const handleBadges = () => {
+        setBadgesOpen(!isBadgesOpen)
+    };
 
     return (
         <Box
@@ -207,11 +213,11 @@ export const Profile = () => {
                             variant='h4'
                             sx={{
                                 display: {
-                                        xs: 'none',
-                                        sm: 'flex',
-                                        md: 'flex',
-                                        lg: 'flex'
-                                    },
+                                    xs: 'none',
+                                    sm: 'flex',
+                                    md: 'flex',
+                                    lg: 'flex'
+                                },
                                 flexShrink: 0,
                                 flexGrow: 1,
                                 fontSize: {
@@ -228,11 +234,11 @@ export const Profile = () => {
                         <Container
                             sx={{
                                 display: {
-                                        xs: 'none',
-                                        sm: 'flex',
-                                        md: 'flex',
-                                        lg: 'flex'
-                                    },
+                                    xs: 'none',
+                                    sm: 'flex',
+                                    md: 'flex',
+                                    lg: 'flex'
+                                },
                                 flexGrow: '1',
                                 flexWrap: 'wrap',
                                 height: '100%',
@@ -283,7 +289,6 @@ export const Profile = () => {
                                         </Typography>
                                     </Container>
                                 )}
-
                         </Container>
 
                         {/*Displays on extra small screens only*/}
@@ -307,8 +312,8 @@ export const Profile = () => {
                             }}
                         >
                             <img
-                                // className='side-controls'
-                                // onClick={handleNotificaitions}
+                                className='side-controls'
+                                onClick={handleBadges}
                                 src='https://i.postimg.cc/g2VJs4YD/Badge-icon.png'
                                 alt='badges'
                                 style={{
@@ -334,14 +339,12 @@ export const Profile = () => {
                             lg: '1 / 2 / 3 / 3'
                         },
                         width: '100%',
-
                         minWidth: {
                             xs: '201px',
                             sm: '278px',
                             md: '278px',
                             lg: '278px'
                         },
-                        paddingBottom: '24px !important',
                         overflow: 'auto',
                     }}
                 >
@@ -407,6 +410,102 @@ export const Profile = () => {
                 </Grid>
                 {isSidebarOpen && (
                     <SideBarNav />
+                )}
+                {isBadgesOpen && (
+                    <Fragment>
+                        <Container
+                            sx={{
+                                position: 'absolute',
+                                display: 'flex',
+                                flexDirection: 'column',
+                                alignItems: 'center',
+                                height: '100%',
+                                backgroundColor: 'var(--theme-blue)',
+                                zIndex: 100
+                            }}
+                        >
+
+                            <IconButton
+                                onClick={handleBadges}
+                                sx={{
+                                    position: 'absolute',
+                                    display: 'flex',
+                                    left: '8px',
+                                    top: '8px',
+                                }}
+                            >
+                                <ArrowBackIosNewOutlinedIcon
+                                    sx={{
+                                        color: 'var(--theme-orange)'
+                                    }}
+                                />
+                            </IconButton>
+                            <Typography
+                                align='center'
+                                sx={{
+                                    position: 'absolute',
+                                    top: '8px',
+                                    fontSize: '1.5rem',
+                                }}
+                            >
+                                Badges
+                            </Typography>
+                            <Container
+                                sx={{
+                                    display: 'flex',
+                                    flexWrap: 'wrap',
+                                    alignItems: 'center',
+                                    height: '88%',
+                                    width: '100%',
+                                    marginTop: '56px',
+                                    paddingLeft: '16px !important',
+                                    paddingRight: '16px !important',
+                                    overflowY: 'auto',
+                                    border: 'solid 1px #F26101'
+                                }}>
+                                {
+                                    badges.map((badge) =>
+                                        <Container
+                                            key={badge}
+                                            sx={{
+                                                display: 'flex',
+                                                flexGrow: 1,
+                                                flexDirection: 'column',
+                                                alignItems: 'center',
+                                                justifyContent: 'flex-start',
+                                                width: '33%',
+                                                marginTop: '24px',
+
+                                            }}
+                                        >
+                                            <Avatar
+                                                variant='square'
+                                                alt={badge}
+                                                src='https://i.postimg.cc/wB1wQD2r/award.png'
+                                                sx={{
+                                                    height: '62px',
+                                                    width: '62px',
+                                                }}
+                                            >
+
+                                            </Avatar>
+                                            <Typography
+                                                variant='body1'
+                                                align='center'
+                                                className='links-hover-state'
+
+                                                sx={{
+                                                    flexShrink: 2,
+                                                    fontSize: '1rem',
+                                                }}
+                                            >
+                                                {badge}
+                                            </Typography>
+                                        </Container>
+                                    )}
+                            </Container>
+                        </Container>
+                    </Fragment>
                 )}
             </Grid>
             <Footer />
