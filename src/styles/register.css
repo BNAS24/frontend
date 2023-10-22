@@ -1,3 +1,10 @@
+.login-link {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    padding: 8px 8px;
+}
+
 .logo {
     height: 160px;
     width: 160px;

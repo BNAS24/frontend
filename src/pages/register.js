@@ -1,4 +1,4 @@
-import { Typography } from '@mui/material';
+import { Typography, FormGroup } from '@mui/material';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import { ThemeProvider } from '@mui/material/styles';
@@ -9,37 +9,76 @@ import '../styles/register.css';
 export const Register = () => {
     return (
         <ThemeProvider theme={customTheme}>
-            <div>
+            <div
+                className='main-container'
+            >
                 <Link
                     className='login-link'
-                    to='/login'>Login
+                    to='/login'
+                >
+                    Login
                 </Link>
                 <img
                     src="https://i.postimg.cc/wjkpvXx7/fans.png"
                     alt="logo"
-                    className="logo" />
+                    className="logo"
+                />
                 <Typography
-                    className='create-account-title'>
+                    align='center'
+                    noWrap
+                    sx={{
+                        marginTop: '24px',
+                        fontSize: {
+                            xs: '2rem',
+                            sm: '2.5rem',
+                            md: '3rem',
+                            lg: '3.2rem',
+                        }
+                    }}
+                >
                     Create an account
                 </Typography>
-                <form
-                    className='create-account-form'>
+                <FormGroup
+                    sx={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        width: '100%',
+                        maxWidth: '600px',
+                        height: 'auto',
+                        paddingTop: '16px'
+                    }}
+                >
                     <TextField
                         id="outlined-required"
                         label="Email"
-                        color="secondary"
+                        type='email'
                         variant="outlined"
-                        InputProps={{
-                            sx: {
-                                color: 'white',
+                        margin='dense'
+                        sx={{
+                            width: '80%',
+                            maxWidth: '400px',
+                            '& .MuiOutlinedInput-root': {
+                                width: '100%',
+                                maxWidth: '600px',
                                 '& fieldset': {
-                                    borderColor: '#F26101 !important',
+
+                                    borderColor: 'var(--theme-orange)'
                                 },
                                 '&:hover fieldset': {
-                                    borderColor: '#fe6f10 !important',
+                                    borderColor: '#fe6f10',
                                 },
-                                '&:hover .MuiOutlinedInput-notchedOutline': {
-                                    borderColor: '#fe6f10 !important',
+                                '&.Mui-focused fieldset': {
+                                    borderColor: 'var(--theme-orange)',
+                                },
+                                '& .MuiInputBase-input': {
+                                    color: 'white',
+                                },
+                                cursor: 'text',
+                            },
+                            '& .MuiInputLabel-root': {
+                                '&.Mui-focused': {
+                                    color: 'var(--theme-orange)',
                                 },
                             },
                         }}
@@ -50,22 +89,34 @@ export const Register = () => {
                         type="password"
                         autoComplete="current-password"
                         variant="outlined"
-                        color="secondary"
-                        InputProps={{
-                            sx: {
-                                color: 'white',
+                        margin='dense'
+                        sx={{
+                            width: '80%',
+                            maxWidth: '400px',
+                            '& .MuiOutlinedInput-root': {
+                                width: '100%',
+                                maxWidth: '600px',
                                 '& fieldset': {
-                                    borderColor: '#F26101 !important',
+
+                                    borderColor: 'var(--theme-orange)'
                                 },
                                 '&:hover fieldset': {
-                                    borderColor: '#fe6f10 !important',
+                                    borderColor: '#fe6f10',
                                 },
-                                '&:hover .MuiOutlinedInput-notchedOutline': {
-                                    borderColor: '#fe6f10 !important',
+                                '&.Mui-focused fieldset': {
+                                    borderColor: 'var(--theme-orange)',
+                                },
+                                '& .MuiInputBase-input': {
+                                    color: 'white',
+                                },
+                                cursor: 'text',
+                            },
+                            '& .MuiInputLabel-root': {
+                                '&.Mui-focused': {
+                                    color: 'var(--theme-orange)',
                                 },
                             },
                         }}
-                        sx={{ marginTop: '4px' }}
                     />
                     <TextField
                         id="outlined-confirm-password-input"
@@ -73,39 +124,56 @@ export const Register = () => {
                         type="password"
                         autoComplete="current-password"
                         variant="outlined"
-                        color="secondary"
-                        InputProps={{
-                            sx: {
-                                color: 'white',
+                        margin='dense'
+                        sx={{
+                            width: '80%',
+                            maxWidth: '400px',
+                            '& .MuiOutlinedInput-root': {
+                                width: '100%',
+                                maxWidth: '600px',
                                 '& fieldset': {
-                                    borderColor: '#F26101 !important',
+
+                                    borderColor: 'var(--theme-orange)'
                                 },
                                 '&:hover fieldset': {
-                                    borderColor: '#fe6f10 !important',
+                                    borderColor: '#fe6f10',
                                 },
-                                '&:hover .MuiOutlinedInput-notchedOutline': {
-                                    borderColor: '#fe6f10 !important',
+                                '&.Mui-focused fieldset': {
+                                    borderColor: 'var(--theme-orange)',
+                                },
+                                '& .MuiInputBase-input': {
+                                    color: 'white',
+                                },
+                                cursor: 'text',
+                            },
+                            '& .MuiInputLabel-root': {
+                                '&.Mui-focused': {
+                                    color: 'var(--theme-orange)',
                                 },
                             },
                         }}
-                        sx={{ marginTop: '4px' }}
                     />
                     <Button
+                        fullWidth
                         variant="contained"
                         type='button'
                         sx={{
-                            color: 'white',
+                            width: '80%',
+                            minWidth: '104px',
+                            maxWidth: '400px',
                             padding: '8px 8px',
+                            marginTop: '16px',
+                            color: 'white',
+                            backgroundColor: 'var(--theme-orange)',
                             fontSize: '16px',
                             '&:hover': {
-                                backgroundColor: '#fe6f10',
+                                backgroundColor: '#fe6f10'
                             },
                         }}
-                        className='login-button'
                     >
                         Create
                     </Button>
-                </form>
+                </FormGroup>
             </div>
         </ThemeProvider>
 

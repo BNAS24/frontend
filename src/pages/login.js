@@ -33,7 +33,6 @@ export const Login = () => {
                     Login to continue
                 </Typography>
                 <FormGroup
-                    className='login-form'
                     sx={{
                         display: 'flex',
                         alignItems: 'center',
@@ -133,7 +132,6 @@ export const Login = () => {
                                     backgroundColor: '#fe6f10'
                                 },
                             }}
-                            className='login-button'
                         >
                             Login
                         </Button>
