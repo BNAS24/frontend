@@ -53,6 +53,7 @@ export const Login = () => {
                     Login to continue
                 </Typography>
                 <FormGroup
+                    onSubmit={onSubmit}
                     sx={{
                         display: 'flex',
                         alignItems: 'center',
