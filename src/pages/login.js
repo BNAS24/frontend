@@ -6,8 +6,28 @@ import * as React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import customTheme from '../styles/context/customtheme';
 import '../styles/login.css';
+import { useState, useEffect } from 'react'
 
 export const Login = () => {
+
+    const [formData, setFormData] = useState({
+        email: '',
+        password: '',
+    })
+
+    const { email, password } = formData
+
+    const onChange = (e) => {
+        setFormData((prevState) => ({
+            ...prevState,
+            [e.target.name]: e.target.value
+        }))
+    }
+
+    const onSubmit = (e) => {
+        e.preventDefault()
+    }
+
     return (
         <ThemeProvider theme={customTheme}>
             <div
@@ -44,9 +64,11 @@ export const Login = () => {
                     }}
                 >
                     <TextField
-                        id="outlined-required"
+                        id="login-email"
                         label="Email"
                         type='email'
+                        name='email'
+                        onChange={onChange}
                         variant="outlined"
                         margin='dense'
                         sx={{
@@ -78,9 +100,11 @@ export const Login = () => {
                         }}
                     />
                     <TextField
-                        id="outlined-password-input"
+                        id="login-password"
                         label="Password"
                         type="password"
+                        name='password'
+                        onChange={onChange}
                         autoComplete="current-password"
                         variant="outlined"
                         margin='dense'

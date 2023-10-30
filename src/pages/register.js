@@ -18,8 +18,15 @@ export const Register = () => {
 
     const { username, email, password, confirmPassword } = formData
 
-    const onChange = () => {
+    const onChange = (e) => {
+        setFormData((prevState) => ({
+            ...prevState,
+            [e.target.name]: e.target.value
+        }))
+    }
 
+    const onSubmit = (e) => {
+        e.preventDefault()
     }
 
     return (
@@ -54,6 +61,7 @@ export const Register = () => {
                     Create an account
                 </Typography>
                 <FormGroup
+                onSubmit={onSubmit}
                     sx={{
                         display: 'flex',
                         alignItems: 'center',
@@ -68,6 +76,7 @@ export const Register = () => {
                         id="outlined-username-input"
                         label="Username"
                         type='text'
+                        name='username'
                         value={username}
                         onChange={onChange}
                         variant="outlined"
@@ -104,6 +113,7 @@ export const Register = () => {
                         id="outlined-email-input"
                         label="Email"
                         type='email'
+                        name='email'
                         value={email}
                         onChange={onChange}
                         variant="outlined"
@@ -140,6 +150,7 @@ export const Register = () => {
                         id="outlined-password-input"
                         label="Password"
                         type="password"
+                        name='password'
                         value={password}
                         onChange={onChange}
                         variant="outlined"
@@ -176,6 +187,7 @@ export const Register = () => {
                         id="outlined-confirm-password-input"
                         label="Confirm Password"
                         type="password"
+                        name='confirmPassword'
                         value={confirmPassword}
                         onChange={onChange}
                         variant="outlined"
@@ -212,7 +224,6 @@ export const Register = () => {
                         fullWidth
                         variant="contained"
                         type='submit'
-                        onSubmit={onSubmit}
                         sx={{
                             width: '80%',
                             minWidth: '104px',
