@@ -5,8 +5,23 @@ import { ThemeProvider } from '@mui/material/styles';
 import { Link } from 'react-router-dom';
 import customTheme from '../styles/context/customtheme';
 import '../styles/register.css';
+import { useState, useEffect } from 'react'
 
 export const Register = () => {
+
+    const [formData, setFormData] = useState({
+        username: '',
+        email: '',
+        password: '',
+        confirmPassword: '',
+    })
+
+    const { username, email, password, confirmPassword } = formData
+
+    const onChange = () => {
+
+    }
+
     return (
         <ThemeProvider theme={customTheme}>
             <div
@@ -50,9 +65,47 @@ export const Register = () => {
                     }}
                 >
                     <TextField
-                        id="outlined-required"
+                        id="outlined-username-input"
+                        label="Username"
+                        type='text'
+                        value={username}
+                        onChange={onChange}
+                        variant="outlined"
+                        margin='dense'
+                        sx={{
+                            width: '80%',
+                            maxWidth: '400px',
+                            '& .MuiOutlinedInput-root': {
+                                width: '100%',
+                                maxWidth: '600px',
+                                '& fieldset': {
+
+                                    borderColor: 'var(--theme-orange)'
+                                },
+                                '&:hover fieldset': {
+                                    borderColor: '#fe6f10',
+                                },
+                                '&.Mui-focused fieldset': {
+                                    borderColor: 'var(--theme-orange)',
+                                },
+                                '& .MuiInputBase-input': {
+                                    color: 'white',
+                                },
+                                cursor: 'text',
+                            },
+                            '& .MuiInputLabel-root': {
+                                '&.Mui-focused': {
+                                    color: 'var(--theme-orange)',
+                                },
+                            },
+                        }}
+                    />
+                    <TextField
+                        id="outlined-email-input"
                         label="Email"
                         type='email'
+                        value={email}
+                        onChange={onChange}
                         variant="outlined"
                         margin='dense'
                         sx={{
@@ -87,7 +140,8 @@ export const Register = () => {
                         id="outlined-password-input"
                         label="Password"
                         type="password"
-                        autoComplete="current-password"
+                        value={password}
+                        onChange={onChange}
                         variant="outlined"
                         margin='dense'
                         sx={{
@@ -122,7 +176,8 @@ export const Register = () => {
                         id="outlined-confirm-password-input"
                         label="Confirm Password"
                         type="password"
-                        autoComplete="current-password"
+                        value={confirmPassword}
+                        onChange={onChange}
                         variant="outlined"
                         margin='dense'
                         sx={{
@@ -156,7 +211,8 @@ export const Register = () => {
                     <Button
                         fullWidth
                         variant="contained"
-                        type='button'
+                        type='submit'
+                        onSubmit={onSubmit}
                         sx={{
                             width: '80%',
                             minWidth: '104px',
