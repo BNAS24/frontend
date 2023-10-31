@@ -159,8 +159,7 @@ export const Profile = () => {
                                 marginLeft: '24px'
                             }}
                         >
-                            Brandon
-                            {/*The name will be dynamicall rendered*/}
+                            {user && user.username}
                         </Typography>
                     </Container>
                 </Grid>

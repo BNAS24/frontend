@@ -186,8 +186,7 @@ export const Dashboard = () => {
                                 }}
 
                             >
-                                Hello Brandon!
-                                {/*The name will be dynamicall rendered*/}
+                                Hello {user && user.username}!
                             </Typography>
                         </Container>
                     </Grid>
@@ -213,7 +212,7 @@ export const Dashboard = () => {
                                 fontSize: '2rem'
                             }}
                         >
-                            Hello Brandon!
+                            Hello {user && user.username}!
                         </Typography>
                     </Grid>
 
