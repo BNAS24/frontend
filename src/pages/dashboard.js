@@ -15,8 +15,21 @@ import { useSidebar } from '../context/mobilenav';
 import { fakeNotifications, fakeTeams, postContent } from '../datastore/dashboard';
 import customTheme from '../styles/context/customtheme';
 import '../styles/dashboard.css';
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../context/authSlice';
 
 export const Dashboard = () => {
+    
+    const { user } = useAuth();
+
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if(!user) {
+            navigate('/login');
+        }
+    }, [user, navigate]);
 
     // Initialize an object to store like button states for each post
     const [likeButton, setLikeButtons] = useState({});

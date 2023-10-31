@@ -9,10 +9,23 @@ import { SettingsModal } from '../components/settingsmd';
 import { useSidebar } from '../context/mobilenav';
 import { badges, settings } from '../datastore/profile';
 import '../styles/profile.css';
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../context/authSlice';
 
 
 
 export const Profile = () => {
+
+    const { user } = useAuth();
+
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if(!user) {
+            navigate('/login');
+        }
+    }, [user, navigate]);
 
     const { isSidebarOpen } = useSidebar();
 
