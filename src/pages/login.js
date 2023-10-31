@@ -6,9 +6,25 @@ import * as React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import customTheme from '../styles/context/customtheme';
 import '../styles/login.css';
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../context/authSlice';
 
 export const Login = () => {
+
+    const { login, user, isError, isSuccess, message } = useAuth();
+
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if (isError) {
+            console.error(message)
+        }
+
+        if (isSuccess || user) {
+            navigate('/dashboard')
+        }
+    }, [user, navigate, message, isError, isSuccess, login]);
 
     const [formData, setFormData] = useState({
         email: '',
@@ -26,6 +42,12 @@ export const Login = () => {
 
     const onSubmit = (e) => {
         e.preventDefault()
+
+        const userData = {
+            email,
+            password,
+        }
+        login(userData)
     }
 
     return (
@@ -138,7 +160,7 @@ export const Login = () => {
                         }}
                     />
                     <NavLink
-                        to='/dashboard'
+                        onClick={onSubmit}
                         className='link-wrapper'
                     >
                         <Button

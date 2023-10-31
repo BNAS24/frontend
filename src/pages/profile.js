@@ -10,6 +10,8 @@ import { useSidebar } from '../context/mobilenav';
 import { badges, settings } from '../datastore/profile';
 import '../styles/profile.css';
 
+
+
 export const Profile = () => {
 
     const { isSidebarOpen } = useSidebar();

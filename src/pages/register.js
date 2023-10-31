@@ -2,12 +2,27 @@ import { FormGroup, Typography } from '@mui/material';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import { ThemeProvider } from '@mui/material/styles';
-import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { useAuth } from '../context/authSlice';
 import customTheme from '../styles/context/customtheme';
 import '../styles/register.css';
-import { useState, useEffect } from 'react'
 
 export const Register = () => {
+
+    const { register, user, isError, isSuccess, message } = useAuth();
+
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if (isError) {
+            console.error(message)
+        }
+
+        if (isSuccess || user) {
+            navigate('/dashboard')
+        }
+    }, [user, navigate, message, isError, isSuccess, register]);
 
     const [formData, setFormData] = useState({
         username: '',
@@ -27,6 +42,19 @@ export const Register = () => {
 
     const onSubmit = (e) => {
         e.preventDefault()
+
+        if (password !== confirmPassword) {
+            // Console.log error message
+            console.error("Password and Confirm Password don't match");
+        } else {
+            const userData = {
+                username,
+                email,
+                password,
+            }
+            console.log(userData)
+            register(userData)
+        }
     }
 
     return (
@@ -61,7 +89,6 @@ export const Register = () => {
                     Create an account
                 </Typography>
                 <FormGroup
-                onSubmit={onSubmit}
                     sx={{
                         display: 'flex',
                         alignItems: 'center',
@@ -223,7 +250,7 @@ export const Register = () => {
                     <Button
                         fullWidth
                         variant="contained"
-                        type='submit'
+                        onClick={onSubmit}
                         sx={{
                             width: '80%',
                             minWidth: '104px',

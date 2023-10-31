@@ -4,11 +4,22 @@ import Button from '@mui/material/Button';
 import { ThemeProvider } from '@mui/material/styles';
 import { Container } from '@mui/system';
 import { Fragment } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../context/authSlice';
 import customTheme from '../styles/context/customtheme';
 
 export const SettingsModal = ({ open, onClose, onClick, settingSelected, settings }) => {
 
     const selectedSetting = settings[settingSelected];
+
+    const { logout } = useAuth();
+
+    const navigate = useNavigate();
+
+    const onLogout = () => {
+        logout()
+        navigate('/login');
+    }
 
     return (
         <ThemeProvider theme={customTheme}>
@@ -504,6 +515,7 @@ export const SettingsModal = ({ open, onClose, onClick, settingSelected, setting
                                             {selectedSetting.logoutWarning}
                                         </Typography>
                                         <Button
+                                            onClick={onLogout}
                                             variant="outlined"
                                             type='button'
                                             sx={{
