@@ -52,7 +52,6 @@ export const Register = () => {
                 email,
                 password,
             }
-            console.log(userData)
             register(userData)
         }
     }

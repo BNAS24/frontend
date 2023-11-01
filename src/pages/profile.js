@@ -185,7 +185,7 @@ export const Profile = () => {
                             fontSize: '2rem'
                         }}
                     >
-                        Brandon
+                        {user && user.username}
                     </Typography>
                 </Grid>
 
