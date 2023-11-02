@@ -12,24 +12,27 @@ import { useAuth } from '../context/authSlice';
 
 export const Login = () => {
 
-    const { login, user, isError, isSuccess, message } = useAuth();
+    const { login, user, isError, isSuccess, messageTwo } = useAuth();
 
     const navigate = useNavigate();
 
     useEffect(() => {
         if (isError) {
-            console.error(message)
+            console.error(messageTwo)
+            setLoginMessage(messageTwo);
         }
 
         if (isSuccess || user) {
             navigate('/dashboard')
         }
-    }, [user, navigate, message, isError, isSuccess, login]);
+    }, [user, navigate, messageTwo, isError, isSuccess, login]);
 
     const [formData, setFormData] = useState({
         email: '',
         password: '',
     })
+
+    const [loginMessage, setLoginMessage] = useState('')
 
     const { email, password } = formData
 
@@ -47,6 +50,7 @@ export const Login = () => {
             email,
             password,
         }
+
         login(userData)
     }
 
@@ -183,6 +187,17 @@ export const Login = () => {
                             Login
                         </Button>
                     </NavLink>
+                    {loginMessage && (
+                        <Typography
+                            align='center'
+                            sx={{
+                                color: isError ? 'red' : 'green',
+                                marginTop: '16px',
+                            }}
+                        >
+                            {loginMessage}
+                        </Typography>
+                    )}
                 </FormGroup>
                 <p
                     className='create-account-text'>

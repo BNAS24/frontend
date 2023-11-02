@@ -12,7 +12,8 @@ export function AuthProvider({ children }) {
     const [user, setUser] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
     const [isError, setIsError] = useState(false);
-    const [message, setMessage] = useState('');
+    const [messageOne, setMessageOne] = useState('');
+    const [messageTwo, setMessageTwo] = useState('');
 
     const register = async (userData) => {
         setIsLoading(true);
@@ -23,7 +24,7 @@ export function AuthProvider({ children }) {
         } catch (error) {
             setIsLoading(false);
             setIsError(true);
-            setMessage(error.message || error.toString());
+            setMessageOne(error.message || error.toString());
         }
     }
     
@@ -36,17 +37,19 @@ export function AuthProvider({ children }) {
         } catch (error) {
             setIsLoading(false);
             setIsError(true);
-            setMessage(error.message || error.toString());
+            setMessageTwo(error.message || error.toString());
         }
     }
 
     const logout = () => {
         authService.logout();
         setUser(null);
+        setMessageOne(null);
+        setMessageTwo(null);
     }
 
     return (
-        <AuthContext.Provider value={{ user, isLoading, isError, message, login, register, logout }}>
+        <AuthContext.Provider value={{ user, isLoading, isError, messageOne, messageTwo, login, register, logout }}>
             {children}
         </AuthContext.Provider>
     );

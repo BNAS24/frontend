@@ -15,8 +15,8 @@ import { AuthProvider } from './context/authSlice';
 
 function App() {
   return (
-    <SidebarProvider>
-      <AuthProvider>
+    <AuthProvider>
+      <SidebarProvider>
         <Routes>
           <Route path='/' element={<Homepage />} />
           <Route path='/login' element={<Login />} />
@@ -28,8 +28,8 @@ function App() {
           <Route path='/about-us' element={<AboutUs />} />
           <Route path='/contact-us' element={<ContactUS />} />
         </Routes>
-      </AuthProvider>
-    </SidebarProvider>
+      </SidebarProvider>
+    </AuthProvider>
   );
 }
 

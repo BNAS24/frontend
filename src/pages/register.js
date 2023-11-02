@@ -10,19 +10,20 @@ import '../styles/register.css';
 
 export const Register = () => {
 
-    const { register, user, isError, isSuccess, message } = useAuth();
+    const { register, user, isError, isSuccess, messageOne } = useAuth();
 
     const navigate = useNavigate();
 
     useEffect(() => {
         if (isError) {
-            console.error(message)
+            console.error(messageOne)
+            setRegMessage(messageOne);
         }
 
         if (isSuccess || user) {
             navigate('/dashboard')
         }
-    }, [user, navigate, message, isError, isSuccess, register]);
+    }, [user, navigate, messageOne, isError, isSuccess, register]);
 
     const [formData, setFormData] = useState({
         username: '',
@@ -30,6 +31,8 @@ export const Register = () => {
         password: '',
         confirmPassword: '',
     })
+
+    const [regMessage, setRegMessage] = useState('')
 
     const { username, email, password, confirmPassword } = formData
 
@@ -46,12 +49,15 @@ export const Register = () => {
         if (password !== confirmPassword) {
             // Console.log error message
             console.error("Password and Confirm Password don't match");
+            setRegMessage("Passwords don't match");
         } else {
+
             const userData = {
                 username,
                 email,
                 password,
             }
+
             register(userData)
         }
     }
@@ -266,6 +272,17 @@ export const Register = () => {
                     >
                         Create
                     </Button>
+                    {regMessage && (
+                        <Typography
+                            align='center'
+                            sx={{
+                                color: isError ? 'red' : 'green',
+                                marginTop: '16px',
+                            }}
+                        >
+                            {regMessage}
+                        </Typography>
+                    )}
                 </FormGroup>
             </div>
         </ThemeProvider>
