@@ -11,7 +11,7 @@ import { AboutUs } from './pages/aboutus';
 import { ContactUS } from './pages/contactus';
 import './App.css';
 import { SidebarProvider } from './context/mobilenav';
-import { AuthProvider } from './context/authSlice';
+import { AuthProvider } from './context/auth/authSlice';
 
 function App() {
   return (

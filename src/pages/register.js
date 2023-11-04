@@ -4,7 +4,7 @@ import TextField from '@mui/material/TextField';
 import { ThemeProvider } from '@mui/material/styles';
 import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useAuth } from '../context/authSlice';
+import { useAuth } from '../context/auth/authSlice';
 import customTheme from '../styles/context/customtheme';
 import '../styles/register.css';
 

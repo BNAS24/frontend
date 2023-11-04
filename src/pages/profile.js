@@ -11,7 +11,7 @@ import { badges, settings } from '../datastore/profile';
 import '../styles/profile.css';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../context/authSlice';
+import { useAuth } from '../context/auth/authSlice';
 
 
 

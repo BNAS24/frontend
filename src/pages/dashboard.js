@@ -17,7 +17,7 @@ import customTheme from '../styles/context/customtheme';
 import '../styles/dashboard.css';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../context/authSlice';
+import { useAuth } from '../context/auth/authSlice';
 
 export const Dashboard = () => {
     

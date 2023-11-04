@@ -1,6 +1,6 @@
 // AuthContext.js
 import { createContext, useContext, useState } from 'react';
-import authService from '../context/contextHelpers/authServices';
+import authService from '../auth/authServices'
 
 const AuthContext = createContext();
 

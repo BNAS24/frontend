@@ -8,7 +8,7 @@ import customTheme from '../styles/context/customtheme';
 import '../styles/login.css';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../context/authSlice';
+import { useAuth } from '../context/auth/authSlice';
 
 export const Login = () => {
 
