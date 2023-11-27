@@ -1,4 +1,4 @@
-import { Typography } from '@mui/material'
+import { Typography, IconButton } from '@mui/material'
 import { Container } from '@mui/system'
 import React, { useState } from 'react'
 import { Footer } from '../components/authfoot'
@@ -7,21 +7,28 @@ import { SideBarNav } from '../components/helpers/sidebarnav'
 import { useSidebar } from '../context/mobilenav'
 import leagues from '../datastore/leagues'
 import '../styles/livescores.css'
+import ArrowBackIosNewOutlinedIcon from '@mui/icons-material/ArrowBackIosNewOutlined';
+
 
 export const LiveScores = () => {
 
     const [sportSelected, setSportSelected] = useState(null)
 
-    const [teamSelected, setTeamSelected] = useState(null)
+    const [teamSelected, setTeamSelected] = useState(false)
 
     const [teamData, setTeamData] = useState(null)
 
     const { isSidebarOpen } = useSidebar();
 
     const handleTeamData = (index) => {
-        setTeamSelected(prevState => !prevState)
-        setTeamData(leagues[sportSelected].teams[index]);
-        console.log(index) //Delete
+        if (index !== undefined) {
+            setTeamSelected(true);
+            setTeamData(leagues[sportSelected].teams[index]);
+        } else {
+            // No team selected, reset state
+            setTeamSelected(false);
+            setTeamData(null);
+        }
     }
 
     return (
@@ -117,7 +124,8 @@ export const LiveScores = () => {
                                 <Typography
                                     key={key}
                                     onClick={() => {
-                                        setSportSelected(key);
+                                        setSportSelected(key)
+                                        handleTeamData()
                                     }}
                                     className={sportSelected === key ? 'links-hover-state sport-selected-active-state' : 'links-hover-state'}
                                 >
@@ -182,19 +190,86 @@ export const LiveScores = () => {
                     {teamSelected ? (
                         <Container
                             sx={{
+                                display: 'flex',
+                                flexDirection: 'column',
+                                alignItems: 'center',
                                 height: '100%',
                                 width: '100%',
                                 position: 'absolute',
                                 backgroundColor: 'var(--theme-blue)',
                                 borderLeft: 'solid 1px var(--theme-orange)',
-                                borderRight: 'solid 1px var(--theme-orange)', 
+                                borderRight: 'solid 1px var(--theme-orange)',
                                 zIndex: '100',
                             }}
                         >
                             <Typography
+                                sx={{
+                                    marginTop: '32px'
+                                }}
                             >
                                 {teamData}
                             </Typography>
+                            <Container
+                                sx={{
+                                    display: 'flex',
+                                    flexDirection: 'row',
+                                    alignContent: 'center',
+                                    gap: '24px',
+                                    marginTop: '32px',
+                                    border: '1px solid var(--theme-orange)',
+                                }}
+                            >
+                                <IconButton>
+                                    <ArrowBackIosNewOutlinedIcon
+                                        sx={{
+                                            color: 'var(--theme-orange)'
+                                        }}
+                                    />
+                                </IconButton>
+
+                                {/*Turn this the code below into a map of typography instead */}
+                                <Typography
+                                    sx={{
+                                        display: 'flex',
+                                        justifyContent: 'center',
+                                        alignItems: 'center',
+                                    }}
+                                    className='links-hover-state'
+                                >
+                                    Week 1
+                                </Typography>
+                                <Typography
+                                    sx={{
+                                        display: 'flex',
+                                        justifyContent: 'center',
+                                        alignItems: 'center',
+                                    }}
+                                    className='links-hover-state'
+
+                                >
+                                    Week 2
+                                </Typography>
+                                <Typography
+                                    sx={{
+                                        display: 'flex',
+                                        justifyContent: 'center',
+                                        alignItems: 'center',
+                                    }}
+                                    className='links-hover-state'
+                                >
+                                    Week 3
+                                </Typography>
+                                <Typography
+                                    sx={{
+                                        display: 'flex',
+                                        justifyContent: 'center',
+                                        alignItems: 'center',
+                                    }}
+                                    className='links-hover-state'
+                                >
+                                    Week 4
+                                </Typography>
+                            </Container>
                         </Container>
                     ) : null}
                 </Container>
