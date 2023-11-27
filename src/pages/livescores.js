@@ -12,7 +12,17 @@ export const LiveScores = () => {
 
     const [sportSelected, setSportSelected] = useState(null)
 
+    const [teamSelected, setTeamSelected] = useState(null)
+
+    const [teamData, setTeamData] = useState(null)
+
     const { isSidebarOpen } = useSidebar();
+
+    const handleTeamData = (index) => {
+        setTeamSelected(prevState => !prevState)
+        setTeamData(leagues[sportSelected].teams[index]);
+        console.log(index) //Delete
+    }
 
     return (
         <Container
@@ -120,6 +130,7 @@ export const LiveScores = () => {
                 <Container
                     sx={{
                         display: 'flex',
+                        position: 'relative',
                         flexShrink: '1',
                         width: '50%',
                         minWidth: '144px',
@@ -152,7 +163,7 @@ export const LiveScores = () => {
                                 overflow: 'auto'
                             }}
                         >
-                            {Object.keys(leagues[sportSelected].teams).map((key) => (
+                            {Object.keys(leagues[sportSelected].teams).map((key, index) => (
                                 <li
                                     key={key}
                                     align='center'
@@ -161,11 +172,30 @@ export const LiveScores = () => {
                                         height: '100%',
                                     }}
                                     className={sportSelected === key ? 'links-hover-state sport-selected-active-state' : 'links-hover-state'}
+                                    onClick={() => handleTeamData(index)}
                                 >
                                     {leagues[sportSelected].teams[key]}
                                 </li>
                             ))}
                         </ul>
+                    ) : null}
+                    {teamSelected ? (
+                        <Container
+                            sx={{
+                                height: '100%',
+                                width: '100%',
+                                position: 'absolute',
+                                backgroundColor: 'var(--theme-blue)',
+                                borderLeft: 'solid 1px var(--theme-orange)',
+                                borderRight: 'solid 1px var(--theme-orange)', 
+                                zIndex: '100',
+                            }}
+                        >
+                            <Typography
+                            >
+                                {teamData}
+                            </Typography>
+                        </Container>
                     ) : null}
                 </Container>
                 {isSidebarOpen && (
@@ -173,6 +203,6 @@ export const LiveScores = () => {
                 )}
             </Container>
             <Footer />
-        </Container >
+        </Container>
     )
 }
