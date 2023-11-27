@@ -217,6 +217,8 @@ export const LiveScores = () => {
                                     gap: '24px',
                                     marginTop: '32px',
                                     border: '1px solid var(--theme-orange)',
+                                    overflowX: 'auto',
+                                    overflowY: 'hidden',
                                 }}
                             >
                                 <IconButton>
@@ -270,17 +272,43 @@ export const LiveScores = () => {
                                     Week 4
                                 </Typography>
                             </Container>
-                                <Container
+                            <Container
                                 sx={{
                                     display: 'flex',
+                                    flexDirection: 'column',
+                                    justifyContent: 'space-around',
                                     height: '75%',
                                     width: '100%',
                                     marginTop: '32px',
                                     border: '1px solid var(--theme-orange)'
                                 }}
+                            >
+                                <Container
+                                    sx={{
+                                        display: 'flex',
+                                        justifyContent: 'center',
+                                        alignItems: 'center',
+                                        height: '45%',
+                                        width: '100%',
+                                        border: '1px solid var(--theme-orange)',
+                                    }}
                                 >
-
+                                    1
                                 </Container>
+                                <Container
+                                    sx={{
+                                        display: 'flex',
+                                        justifyContent: 'center',
+                                        alignItems: 'center',
+                                        height: '45%',
+                                        width: '100%',
+                                        border: '1px solid var(--theme-orange)',
+
+                                    }}
+                                >
+                                    2
+                                </Container>
+                            </Container>
                         </Container>
                     ) : null}
                 </Container>
