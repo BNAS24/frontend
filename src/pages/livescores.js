@@ -270,6 +270,17 @@ export const LiveScores = () => {
                                     Week 4
                                 </Typography>
                             </Container>
+                                <Container
+                                sx={{
+                                    display: 'flex',
+                                    height: '75%',
+                                    width: '100%',
+                                    marginTop: '32px',
+                                    border: '1px solid var(--theme-orange)'
+                                }}
+                                >
+
+                                </Container>
                         </Container>
                     ) : null}
                 </Container>
