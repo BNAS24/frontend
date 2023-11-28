@@ -387,6 +387,7 @@ export const LiveScores = () => {
                                                 <Typography
                                                     align='center'
                                                 >
+                                                    {/*Coditionally render the results of this text*/}
                                                     Final
                                                 </Typography>
                                             </Grid>
@@ -401,8 +402,12 @@ export const LiveScores = () => {
                                             >
                                                 <Typography
                                                     align='center'
+                                                    sx={{
+                                                        color: 'red',
+                                                    }}
                                                 >
-                                                    Q
+                                                    {/*Coditionally render the results of this text*/}
+                                                    Live
                                                 </Typography>
                                             </Grid>
                                             <Grid
