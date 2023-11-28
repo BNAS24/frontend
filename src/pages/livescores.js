@@ -1,13 +1,14 @@
-import ArrowBackIosNewOutlinedIcon from '@mui/icons-material/ArrowBackIosNewOutlined'
-import { Avatar, Grid, IconButton, Typography } from '@mui/material'
-import { Container } from '@mui/system'
-import React, { useState } from 'react'
-import { Footer } from '../components/authfoot'
-import { NavBar } from '../components/authnav'
-import { SideBarNav } from '../components/helpers/sidebarnav'
-import { useSidebar } from '../context/mobilenav'
-import leagues from '../datastore/leagues'
-import '../styles/livescores.css'
+import ArrowBackIosNewOutlinedIcon from '@mui/icons-material/ArrowBackIosNewOutlined';
+import { Avatar, Grid, IconButton, Typography } from '@mui/material';
+import { Container } from '@mui/system';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { Footer } from '../components/authfoot';
+import { NavBar } from '../components/authnav';
+import { SideBarNav } from '../components/helpers/sidebarnav';
+import { useSidebar } from '../context/mobilenav';
+import leagues from '../datastore/leagues';
+import '../styles/livescores.css';
 
 
 export const LiveScores = () => {
@@ -596,7 +597,7 @@ export const LiveScores = () => {
 
                                                 align='center'
                                             >
-                                                Another Team
+                                                Other Team
                                             </Typography>
                                             <Typography
                                                 sx={{
@@ -611,16 +612,35 @@ export const LiveScores = () => {
                                 <Container
                                     sx={{
                                         display: 'flex',
-                                        justifyContent: 'center',
+                                        flexDirection: 'column',
+                                        justifyContent: 'space-around',
                                         alignItems: 'center',
                                         height: '50%',
                                         width: '100%',
-                                        border: '1px solid var(--theme-orange)',
                                         paddingLeft: '0 !important',
                                         paddingRight: '0 !important',
                                     }}
                                 >
-                                    2
+                                    <Link
+                                        to='/forums'
+                                    >
+                                        Team Forums
+                                    </Link>
+                                    <Link
+                                        to='/live-scores'
+                                    >
+                                        Fixtures
+                                    </Link>
+                                    <Link
+                                        to='/live-scores'
+                                    >
+                                        Team News
+                                    </Link>
+                                    <Link
+                                        to='/live-scores'
+                                    >
+                                        League Standings
+                                    </Link>
                                 </Container>
                             </Container>
                         </Container>
