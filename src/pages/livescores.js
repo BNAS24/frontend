@@ -1,4 +1,5 @@
-import { Typography, IconButton, Avatar } from '@mui/material'
+import ArrowBackIosNewOutlinedIcon from '@mui/icons-material/ArrowBackIosNewOutlined'
+import { Avatar, Grid, IconButton, Typography } from '@mui/material'
 import { Container } from '@mui/system'
 import React, { useState } from 'react'
 import { Footer } from '../components/authfoot'
@@ -7,7 +8,6 @@ import { SideBarNav } from '../components/helpers/sidebarnav'
 import { useSidebar } from '../context/mobilenav'
 import leagues from '../datastore/leagues'
 import '../styles/livescores.css'
-import ArrowBackIosNewOutlinedIcon from '@mui/icons-material/ArrowBackIosNewOutlined';
 
 
 export const LiveScores = () => {
@@ -298,10 +298,12 @@ export const LiveScores = () => {
                                     display: 'flex',
                                     flexDirection: 'column',
                                     justifyContent: 'space-around',
-                                    height: '75%',
+                                    height: '70%',
                                     width: '100%',
                                     marginTop: '32px',
-                                    border: '1px solid var(--theme-orange)'
+                                    border: '1px solid var(--theme-orange)',
+                                    paddingLeft: '0 !important',
+                                    paddingRight: '0 !important',
                                 }}
                             >
                                 <Container
@@ -309,23 +311,20 @@ export const LiveScores = () => {
                                         display: 'flex',
                                         flexDirection: 'row',
                                         justifyContent: 'center',
-                                        alignItems: 'stretch',
-                                        alignContent: 'normal',
-                                        height: '45%',
+                                        height: '50%',
                                         width: '100%',
-                                        border: '1px solid var(--theme-orange)',
                                         paddingLeft: '0 !important',
                                         paddingRight: '0 !important',
                                     }}
                                 >
                                     <Container
                                         sx={{
+                                            flexShrink: '1',
                                             display: 'flex',
                                             flexDirection: 'column',
                                             justifyContent: 'space-evenly',
                                             alignItems: 'center',
                                             height: '100%',
-                                            border: '1px solid var(--theme-orange)',
                                             paddingLeft: '0 !important',
                                             paddingRight: '0 !important',
                                         }}
@@ -360,23 +359,209 @@ export const LiveScores = () => {
                                             display: 'flex',
                                             flexDirection: 'column',
                                             justifyContent: 'center',
-                                            flexGrow: '3',
                                             height: '100%',
-                                            border: '1px solid var(--theme-orange)',
                                             paddingLeft: '0 !important',
                                             paddingRight: '0 !important',
                                         }}
                                     >
-                                        <Container></Container>
+                                        <Grid
+                                            container
+                                            sx={{
+                                                flexGrow: '0',
+                                                display: 'grid',
+                                                gridTemplateColumns: 'repeat(5, 1fr)',
+                                                gridTemplateRows: 'repeat(5, 1fr)',
+                                                columnGap: '8px',
+                                                width: '100%',
+                                                paddingLeft: '0 !important',
+                                                paddingRight: '0 !important',
+                                            }}
+                                        >
+                                            <Grid
+                                                item
+                                                align='center'
+                                                sx={{
+                                                    gridArea: '1/1/2/6',
+                                                }}
+                                            >
+                                                <Typography
+                                                    align='center'
+                                                >
+                                                    Final
+                                                </Typography>
+                                            </Grid>
+                                            <Grid
+                                                item
+                                                align='center'
+                                                sx={{
+                                                    gridArea: '2/1/3/2',
+                                                    paddingTop: '4px',
+
+                                                }}
+                                            >
+                                                <Typography
+                                                    align='center'
+                                                >
+                                                    Q
+                                                </Typography>
+                                            </Grid>
+                                            <Grid
+                                                item
+                                                sx={{
+                                                    gridArea: '2/2/3/5',
+                                                    display: 'flex',
+                                                    flexDirection: 'row',
+                                                    justifyContent: 'center',
+                                                    gap: '8px',
+                                                    paddingTop: '4px',
+                                                }}
+                                            >
+                                                <Typography
+                                                    align='center'
+                                                >
+                                                    1
+                                                </Typography>
+                                                <Typography
+                                                    align='center'
+                                                >
+                                                    2
+                                                </Typography>
+                                                <Typography
+                                                    align='center'
+                                                >
+                                                    3
+                                                </Typography>
+                                                <Typography
+                                                    align='center'
+                                                >
+                                                    4
+                                                </Typography>
+                                            </Grid>
+                                            <Typography
+                                                align='center'
+                                                sx={{
+                                                    gridArea: '2/5/3/6',
+                                                    paddingTop: '4px',
+                                                }}
+                                            >
+                                                T
+                                            </Typography>
+                                            <Typography
+                                                align='center'
+                                                sx={{
+                                                    gridArea: '3/1/4/6',
+                                                }}
+                                            >
+                                                <hr></hr>
+                                            </Typography>
+                                            <Grid
+                                                align='center'
+                                                sx={{
+                                                    gridArea: '4/1/5/2',
+                                                }}
+                                            >
+                                                <Typography>
+                                                    HOME
+                                                </Typography>
+                                            </Grid>
+                                            <Grid
+                                                item
+                                                sx={{
+                                                    gridArea: '4/2/5/5',
+                                                    display: 'flex',
+                                                    flexDirection: 'row',
+                                                    justifyContent: 'center',
+                                                    gap: '8px',
+                                                }}
+                                            >
+                                                <Typography
+                                                    align='center'
+                                                >
+                                                    0
+                                                </Typography>
+                                                <Typography
+                                                    align='center'
+                                                >
+                                                    0
+                                                </Typography>
+                                                <Typography
+                                                    align='center'
+                                                >
+                                                    23
+                                                </Typography>
+                                                <Typography
+                                                    align='center'
+                                                >
+                                                    0
+                                                </Typography>
+                                            </Grid>
+                                            <Typography
+                                                align='center'
+                                                sx={{
+                                                    gridArea: '4/5/5/6',
+                                                    color: 'var(--theme-orange)'
+                                                }}
+                                            >
+                                                23
+                                            </Typography>
+                                            <Grid
+                                                item
+                                                align='center'
+                                                sx={{
+                                                    gridArea: '5/1/6/2',
+                                                }}
+                                            >
+                                                AWAY
+                                            </Grid>
+                                            <Grid
+                                                item
+                                                align='center'
+                                                sx={{
+                                                    gridArea: '5/2/6/5',
+                                                    display: 'flex',
+                                                    flexDirection: 'row',
+                                                    justifyContent: 'center',
+                                                    gap: '8px',
+                                                }}
+                                            >
+                                                <Typography
+                                                    align='center'
+                                                >
+                                                    06
+                                                </Typography>
+                                                <Typography
+                                                    align='center'
+                                                >
+                                                    0
+                                                </Typography>
+                                                <Typography
+                                                    align='center'
+                                                >
+                                                    0
+                                                </Typography>
+                                                <Typography
+                                                    align='center'
+                                                >
+                                                    0
+                                                </Typography>
+                                            </Grid>
+                                            <Grid
+                                                align='center'
+                                                sx={{
+                                                    gridArea: '5/5/6/6',
+                                                }}
+                                            >
+                                                6
+                                            </Grid>
+                                        </Grid>
                                     </Container>
                                     <Container
                                         sx={{
+                                            flexShrink: '1',
                                             display: 'flex',
                                             flexDirection: 'column',
                                             justifyContent: 'center',
-                                            flexGrow: '1',
                                             height: '100%',
-                                            border: '1px solid var(--theme-orange)',
                                             paddingLeft: '0 !important',
                                             paddingRight: '0 !important',
                                         }}
@@ -388,7 +573,6 @@ export const LiveScores = () => {
                                                 justifyContent: 'space-evenly',
                                                 alignItems: 'center',
                                                 height: '100%',
-                                                border: '1px solid var(--theme-orange)',
                                                 paddingLeft: '0 !important',
                                                 paddingRight: '0 !important',
                                             }}
@@ -424,7 +608,7 @@ export const LiveScores = () => {
                                         display: 'flex',
                                         justifyContent: 'center',
                                         alignItems: 'center',
-                                        height: '45%',
+                                        height: '50%',
                                         width: '100%',
                                         border: '1px solid var(--theme-orange)',
                                         paddingLeft: '0 !important',
