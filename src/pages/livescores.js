@@ -1,4 +1,4 @@
-import { Typography, IconButton } from '@mui/material'
+import { Typography, IconButton, Avatar } from '@mui/material'
 import { Container } from '@mui/system'
 import React, { useState } from 'react'
 import { Footer } from '../components/authfoot'
@@ -204,7 +204,8 @@ export const LiveScores = () => {
                         >
                             <Typography
                                 sx={{
-                                    marginTop: '32px'
+                                    marginTop: '32px',
+                                    fontSize: '1.5em',
                                 }}
                             >
                                 {teamData}
@@ -231,6 +232,8 @@ export const LiveScores = () => {
 
                                 {/*Turn this the code below into a map of typography instead */}
                                 <Typography
+                                    align='center'
+                                    noWrap
                                     sx={{
                                         display: 'flex',
                                         justifyContent: 'center',
@@ -241,6 +244,8 @@ export const LiveScores = () => {
                                     Week 1
                                 </Typography>
                                 <Typography
+                                    align='center'
+                                    noWrap
                                     sx={{
                                         display: 'flex',
                                         justifyContent: 'center',
@@ -252,6 +257,8 @@ export const LiveScores = () => {
                                     Week 2
                                 </Typography>
                                 <Typography
+                                    align='center'
+                                    noWrap
                                     sx={{
                                         display: 'flex',
                                         justifyContent: 'center',
@@ -262,6 +269,8 @@ export const LiveScores = () => {
                                     Week 3
                                 </Typography>
                                 <Typography
+                                    align='center'
+                                    noWrap
                                     sx={{
                                         display: 'flex',
                                         justifyContent: 'center',
@@ -270,6 +279,18 @@ export const LiveScores = () => {
                                     className='links-hover-state'
                                 >
                                     Week 4
+                                </Typography>
+                                <Typography
+                                    align='center'
+                                    noWrap
+                                    sx={{
+                                        display: 'flex',
+                                        justifyContent: 'center',
+                                        alignItems: 'center',
+                                    }}
+                                    className='links-hover-state'
+                                >
+                                    Week 5
                                 </Typography>
                             </Container>
                             <Container
@@ -286,14 +307,117 @@ export const LiveScores = () => {
                                 <Container
                                     sx={{
                                         display: 'flex',
+                                        flexDirection: 'row',
                                         justifyContent: 'center',
-                                        alignItems: 'center',
+                                        alignItems: 'stretch',
+                                        alignContent: 'normal',
                                         height: '45%',
                                         width: '100%',
                                         border: '1px solid var(--theme-orange)',
+                                        paddingLeft: '0 !important',
+                                        paddingRight: '0 !important',
                                     }}
                                 >
-                                    1
+                                    <Container
+                                        sx={{
+                                            display: 'flex',
+                                            flexDirection: 'column',
+                                            justifyContent: 'space-evenly',
+                                            alignItems: 'center',
+                                            height: '100%',
+                                            border: '1px solid var(--theme-orange)',
+                                            paddingLeft: '0 !important',
+                                            paddingRight: '0 !important',
+                                        }}
+                                    >
+                                        <Avatar
+                                            variant='square'
+                                            alt='team logo'
+                                            src='https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png'
+                                            sx={{
+                                                height: '96px',
+                                                width: '96px',
+                                            }}
+                                        >
+                                        </Avatar>
+                                        <Typography
+
+                                            align='center'
+                                        >
+                                            {teamData}
+                                        </Typography>
+                                        <Typography
+                                            sx={{
+                                                fontSize: '1.3em',
+                                                color: 'var(--theme-orange)'
+                                            }}
+                                        >
+                                            23
+                                        </Typography>
+                                    </Container>
+                                    <Container
+                                        sx={{
+                                            display: 'flex',
+                                            flexDirection: 'column',
+                                            justifyContent: 'center',
+                                            flexGrow: '3',
+                                            height: '100%',
+                                            border: '1px solid var(--theme-orange)',
+                                            paddingLeft: '0 !important',
+                                            paddingRight: '0 !important',
+                                        }}
+                                    >
+                                        <Container></Container>
+                                    </Container>
+                                    <Container
+                                        sx={{
+                                            display: 'flex',
+                                            flexDirection: 'column',
+                                            justifyContent: 'center',
+                                            flexGrow: '1',
+                                            height: '100%',
+                                            border: '1px solid var(--theme-orange)',
+                                            paddingLeft: '0 !important',
+                                            paddingRight: '0 !important',
+                                        }}
+                                    >
+                                        <Container
+                                            sx={{
+                                                display: 'flex',
+                                                flexDirection: 'column',
+                                                justifyContent: 'space-evenly',
+                                                alignItems: 'center',
+                                                height: '100%',
+                                                border: '1px solid var(--theme-orange)',
+                                                paddingLeft: '0 !important',
+                                                paddingRight: '0 !important',
+                                            }}
+                                        >
+                                            <Avatar
+                                                variant='square'
+                                                alt='team logo'
+                                                src='https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png'
+                                                sx={{
+                                                    height: '96px',
+                                                    width: '96px',
+                                                }}
+                                            >
+                                            </Avatar>
+                                            <Typography
+
+                                                align='center'
+                                            >
+                                                Another Team
+                                            </Typography>
+                                            <Typography
+                                                sx={{
+                                                    fontSize: '1.3em',
+                                                }}
+                                            >
+                                                6
+                                            </Typography>
+                                        </Container>
+                                    </Container>
                                 </Container>
                                 <Container
                                     sx={{
@@ -303,7 +427,8 @@ export const LiveScores = () => {
                                         height: '45%',
                                         width: '100%',
                                         border: '1px solid var(--theme-orange)',
-
+                                        paddingLeft: '0 !important',
+                                        paddingRight: '0 !important',
                                     }}
                                 >
                                     2
