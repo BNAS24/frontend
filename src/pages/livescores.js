@@ -1,5 +1,5 @@
 import ArrowBackIosNewOutlinedIcon from '@mui/icons-material/ArrowBackIosNewOutlined';
-import { Avatar, Grid, IconButton, Typography } from '@mui/material';
+import { Avatar, IconButton, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from '@mui/material';
 import { Container } from '@mui/system';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
@@ -9,6 +9,8 @@ import { SideBarNav } from '../components/helpers/sidebarnav';
 import { useSidebar } from '../context/mobilenav';
 import leagues from '../datastore/leagues';
 import '../styles/livescores.css';
+import Paper from '@mui/material/Paper';
+
 
 
 export const LiveScores = () => {
@@ -21,12 +23,16 @@ export const LiveScores = () => {
 
     const { isSidebarOpen } = useSidebar();
 
+    const [data, setData] = useState([
+        { team: 'Home', scores: [0, 0, 6, 0], total: 6 },
+        { team: 'Away', scores: [20, 0, 3, 0], total: 23, totalColor: true },
+    ]);
+
     const handleTeamData = (index) => {
         if (index !== undefined) {
             setTeamSelected(true);
             setTeamData(leagues[sportSelected].teams[index]);
         } else {
-            // No team selected, reset state
             setTeamSelected(false);
             setTeamData(null);
         }
@@ -289,7 +295,7 @@ export const LiveScores = () => {
                                         justifyContent: 'center',
                                         alignItems: 'center',
                                     }}
-                                    className='links-hover-state'
+                                    className='sport-selected-active-state'
                                 >
                                     Week 5
                                 </Typography>
@@ -355,6 +361,9 @@ export const LiveScores = () => {
                                             23
                                         </Typography>
                                     </Container>
+
+                                    {/*Middle Container for the team live scores */}
+
                                     <Container
                                         sx={{
                                             display: 'flex',
@@ -363,203 +372,71 @@ export const LiveScores = () => {
                                             height: '100%',
                                             paddingLeft: '0 !important',
                                             paddingRight: '0 !important',
+                                            // border: '1px solid var(--theme-orange)',
                                         }}
                                     >
-                                        <Grid
-                                            container
+                                        <TableContainer
+                                            component={Paper}
                                             sx={{
-                                                flexGrow: '0',
-                                                display: 'grid',
-                                                gridTemplateColumns: 'repeat(5, 1fr)',
-                                                gridTemplateRows: 'repeat(5, 1fr)',
-                                                columnGap: '8px',
-                                                width: '100%',
-                                                paddingLeft: '0 !important',
-                                                paddingRight: '0 !important',
+                                                // backgroundColor: 'var(--theme-blue)',
                                             }}
                                         >
-                                            <Grid
-                                                item
-                                                align='center'
-                                                sx={{
-                                                    gridArea: '1/1/2/6',
-                                                }}
-                                            >
-                                                <Typography
-                                                    align='center'
-                                                >
-                                                    {/*Coditionally render the results of this text*/}
-                                                    Final
-                                                </Typography>
-                                            </Grid>
-                                            <Grid
-                                                item
-                                                align='center'
-                                                sx={{
-                                                    gridArea: '2/1/3/2',
-                                                    paddingTop: '4px',
-
-                                                }}
-                                            >
-                                                <Typography
-                                                    align='center'
-                                                    sx={{
-                                                        color: 'red',
-                                                    }}
-                                                >
-                                                    {/*Coditionally render the results of this text*/}
-                                                    Live
-                                                </Typography>
-                                            </Grid>
-                                            <Grid
-                                                item
-                                                sx={{
-                                                    gridArea: '2/2/3/5',
-                                                    display: 'flex',
-                                                    flexDirection: 'row',
-                                                    justifyContent: 'center',
-                                                    gap: '8px',
-                                                    paddingTop: '4px',
-                                                }}
-                                            >
-                                                <Typography
-                                                    align='center'
-                                                >
-                                                    1
-                                                </Typography>
-                                                <Typography
-                                                    align='center'
-                                                >
-                                                    2
-                                                </Typography>
-                                                <Typography
-                                                    align='center'
-                                                >
-                                                    3
-                                                </Typography>
-                                                <Typography
-                                                    align='center'
-                                                >
-                                                    4
-                                                </Typography>
-                                            </Grid>
-                                            <Typography
-                                                align='center'
-                                                sx={{
-                                                    gridArea: '2/5/3/6',
-                                                    paddingTop: '4px',
-                                                }}
-                                            >
-                                                T
-                                            </Typography>
-                                            <Typography
-                                                align='center'
-                                                sx={{
-                                                    gridArea: '3/1/4/6',
-                                                }}
-                                            >
-                                                <hr></hr>
-                                            </Typography>
-                                            <Grid
-                                                align='center'
-                                                sx={{
-                                                    gridArea: '4/1/5/2',
-                                                }}
-                                            >
-                                                <Typography>
-                                                    HOME
-                                                </Typography>
-                                            </Grid>
-                                            <Grid
-                                                item
-                                                sx={{
-                                                    gridArea: '4/2/5/5',
-                                                    display: 'flex',
-                                                    flexDirection: 'row',
-                                                    justifyContent: 'center',
-                                                    gap: '8px',
-                                                }}
-                                            >
-                                                <Typography
-                                                    align='center'
-                                                >
-                                                    0
-                                                </Typography>
-                                                <Typography
-                                                    align='center'
-                                                >
-                                                    0
-                                                </Typography>
-                                                <Typography
-                                                    align='center'
-                                                >
-                                                    23
-                                                </Typography>
-                                                <Typography
-                                                    align='center'
-                                                >
-                                                    0
-                                                </Typography>
-                                            </Grid>
-                                            <Typography
-                                                align='center'
-                                                sx={{
-                                                    gridArea: '4/5/5/6',
-                                                    color: 'var(--theme-orange)'
-                                                }}
-                                            >
-                                                23
-                                            </Typography>
-                                            <Grid
-                                                item
-                                                align='center'
-                                                sx={{
-                                                    gridArea: '5/1/6/2',
-                                                }}
-                                            >
-                                                AWAY
-                                            </Grid>
-                                            <Grid
-                                                item
-                                                align='center'
-                                                sx={{
-                                                    gridArea: '5/2/6/5',
-                                                    display: 'flex',
-                                                    flexDirection: 'row',
-                                                    justifyContent: 'center',
-                                                    gap: '8px',
-                                                }}
-                                            >
-                                                <Typography
-                                                    align='center'
-                                                >
-                                                    06
-                                                </Typography>
-                                                <Typography
-                                                    align='center'
-                                                >
-                                                    0
-                                                </Typography>
-                                                <Typography
-                                                    align='center'
-                                                >
-                                                    0
-                                                </Typography>
-                                                <Typography
-                                                    align='center'
-                                                >
-                                                    0
-                                                </Typography>
-                                            </Grid>
-                                            <Grid
-                                                align='center'
-                                                sx={{
-                                                    gridArea: '5/5/6/6',
-                                                }}
-                                            >
-                                                6
-                                            </Grid>
-                                        </Grid>
+                                            <Table>
+                                                <TableHead>
+                                                    <TableRow>
+                                                        <TableCell
+                                                            colSpan={6}
+                                                            align="center"
+                                                        >
+                                                            Final
+                                                        </TableCell>
+                                                    </TableRow>
+                                                    <TableRow>
+                                                        <TableCell
+                                                            style={{ color: 'red' }}>
+                                                            Live
+                                                        </TableCell>
+                                                        <TableCell>
+                                                            1
+                                                        </TableCell>
+                                                        <TableCell>
+                                                            2
+                                                        </TableCell>
+                                                        <TableCell>
+                                                            3
+                                                        </TableCell>
+                                                        <TableCell>
+                                                            4
+                                                        </TableCell>
+                                                        <TableCell>
+                                                            T
+                                                        </TableCell>
+                                                    </TableRow>
+                                                </TableHead>
+                                                <TableBody>
+                                                    {data.map((row, index) => (
+                                                        <TableRow
+                                                            key={index}
+                                                        >
+                                                            <TableCell>
+                                                                {row.team}
+                                                            </TableCell>
+                                                            {row.scores.map((score, i) => (
+                                                                <TableCell
+                                                                    key={i}
+                                                                    >
+                                                                    {score}
+                                                                </TableCell>
+                                                            ))}
+                                                            <TableCell
+                                                                style={row.totalColor ? { color: 'orange' } : {}}>
+                                                                {row.total}
+                                                            </TableCell>
+                                                        </TableRow>
+                                                    ))}
+                                                </TableBody>
+                                            </Table>
+                                        </TableContainer>
                                     </Container>
                                     <Container
                                         sx={{
