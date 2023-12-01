@@ -35,8 +35,8 @@ export const ContactUS = () => {
                     gap: '16px',
                     height: '100%',
                     width: '100%',
-                    paddingLeft: '0 !important',
-                    paddingRight: '16px !important'
+                    pl: '0 !important',
+                    pr: '16px !important'
                 }}
             >
                 <Container

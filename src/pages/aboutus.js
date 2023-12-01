@@ -47,7 +47,7 @@ export const AboutUs = () => {
                         gap: '8px',
                         width: '50%',
                         height: 'auto',
-                        padding: '24px 16px !important',
+                        p: '24px 16px !important',
                         color: 'white',
                     }}
                 >

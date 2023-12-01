@@ -38,7 +38,7 @@ export const Forums = () => {
                     sx={{
                         width: '100%',
                         maxWidth: '400px',
-                        marginTop: '32px',
+                        mt: '32px',
                         '& .MuiOutlinedInput-root': {
                             width: '100%',
                             maxWidth: '600px',

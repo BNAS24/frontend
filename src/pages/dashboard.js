@@ -104,7 +104,7 @@ export const Dashboard = () => {
                             md: '56px',
                             lg: '56px'
                         },
-                        padding: {
+                        p: {
                             xs: '16px 8px !important',
                             sm: '24px 24px !important',
                             md: '24px 24px !important',
@@ -156,7 +156,7 @@ export const Dashboard = () => {
                                         md: '80px',
                                         lg: '104px'
                                     },
-                                    padding: {
+                                    p: {
                                         xs: '0 0 !important',
                                         sm: 'false',
                                         md: 'false',
@@ -289,7 +289,7 @@ export const Dashboard = () => {
                                         flexWrap: 'wrap',
                                         height: '100%',
                                         width: '100%',
-                                        marginTop: '24px',
+                                        mt: '24px',
                                         overflowY: 'auto',
                                         border: 'solid 1px #F26101'
                                     }}>
@@ -306,8 +306,8 @@ export const Dashboard = () => {
                                                 justifyContent: 'flex-start',
                                                 width: '33%',
                                                 minWidth: '73px',
-                                                marginTop: '24px',
-                                                padding: '0 0 !important'
+                                                mt: '24px',
+                                                p: '0 0 !important'
 
                                             }}
                                         >
@@ -356,7 +356,7 @@ export const Dashboard = () => {
                                     gap: '24px',
                                     width: '100%',
                                     height: '136px',
-                                    padding: '0 16px',
+                                    p: '0 16px',
                                     border: 'solid 1px var(--theme-orange)'
                                 }}
                             >
@@ -368,7 +368,7 @@ export const Dashboard = () => {
                                     style={{
                                         width: '40px',
                                         height: 'auto',
-                                        marginTop: '8px',
+                                        mt: '8px',
                                     }}
                                 >
                                 </img>
@@ -428,7 +428,7 @@ export const Dashboard = () => {
                                         alignItems: 'center',
                                         height: '100%',
                                         width: '100%',
-                                        marginTop: '24px',
+                                        mt: '24px',
                                         pb: '24px',
                                         overflowY: 'auto',
                                         overflowX: 'hidden',
@@ -444,7 +444,7 @@ export const Dashboard = () => {
                                             align='center'
                                             className='links-hover-state'
                                             sx={{
-                                                marginTop: '24px',
+                                                mt: '24px',
                                                 flexShrink: '0',
                                                 flexGrow: '0',
                                                 fontSize: '1rem'
@@ -542,7 +542,7 @@ export const Dashboard = () => {
                                     gap: '16px',
                                     width: '100%',
                                     height: '100%',
-                                    marginTop: {
+                                    mt: {
                                         xs: '16px',
                                         sm: '32px',
                                         md: '32px',
@@ -564,7 +564,7 @@ export const Dashboard = () => {
                                                     md: '16px',
                                                     lg: '16px'
                                                 },
-                                                padding: {
+                                                p: {
                                                     xs: '0 8px',
                                                     sm: '0 8px',
                                                     md: '0 16px',
@@ -605,7 +605,7 @@ export const Dashboard = () => {
                                                         md: '168px',
                                                         lg: '168px'
                                                     },
-                                                    padding: '8px',
+                                                    p: '8px',
                                                     backgroundColor: 'var(--theme-blue)'
                                                 }}
 
@@ -652,7 +652,7 @@ export const Dashboard = () => {
                                                     sx={{
                                                         height: '100px',
                                                         width: '100%',
-                                                        padding: '8px 8px !important',
+                                                        p: '8px 8px !important',
                                                         border: 'solid 1px var(--theme-orange)',
                                                         overflowY: 'auto',
                                                         overflowX: {
@@ -813,9 +813,9 @@ export const Dashboard = () => {
                                         flexWrap: 'wrap',
                                         height: '88%',
                                         width: '100%',
-                                        marginTop: '56px',
-                                        paddingLeft: '16px !important',
-                                        paddingRight: '16px !important',
+                                        mt: '56px',
+                                        pl: '16px !important',
+                                        pr: '16px !important',
                                         overflowY: 'auto',
                                         border: 'solid 1px #F26101'
                                     }}>
@@ -832,8 +832,8 @@ export const Dashboard = () => {
                                                 justifyContent: 'flex-start',
                                                 width: '33%',
                                                 minWidth: '73px',
-                                                marginTop: '24px',
-                                                padding: '0 0 !important'
+                                                mt: '24px',
+                                                p: '0 0 !important'
 
                                             }}
                                         >
@@ -911,7 +911,7 @@ export const Dashboard = () => {
                                     alignItems: 'center',
                                     height: '88%',
                                     width: '100%',
-                                    marginTop: '56px',
+                                    mt: '56px',
                                     pb: '24px',
                                     overflowY: 'auto',
                                     border: 'solid 1px #F26101'
@@ -926,7 +926,7 @@ export const Dashboard = () => {
                                         align='center'
                                         className='links-hover-state'
                                         sx={{
-                                            marginTop: '24px',
+                                            mt: '24px',
                                             flexShrink: '0',
                                             flexGrow: '0',
                                             fontSize: '1rem'

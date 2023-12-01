@@ -81,7 +81,7 @@ export const Profile = () => {
                         md: '56px',
                         lg: '56px'
                     },
-                    padding: {
+                    p: {
                         xs: '16px 8px !important',
                         sm: '24px 24px !important',
                         md: '24px 24px !important',
@@ -130,7 +130,7 @@ export const Profile = () => {
                                     md: '80px',
                                     lg: '104px'
                                 },
-                                padding: {
+                                p: {
                                     xs: '0 0 !important',
                                     sm: 'false',
                                     md: 'false',
@@ -255,9 +255,9 @@ export const Profile = () => {
                                 flexWrap: 'wrap',
                                 height: '100%',
                                 width: '100%',
-                                marginTop: '24px',
-                                paddingLeft: '16px !important',
-                                paddingRight: '16px !important',
+                                mt: '24px',
+                                pl: '16px !important',
+                                pr: '16px !important',
                                 overflowY: 'auto',
                                 border: 'solid 1px #F26101'
                             }}>
@@ -272,7 +272,7 @@ export const Profile = () => {
                                             alignItems: 'center',
                                             justifyContent: 'flex-start',
                                             width: '33%',
-                                            marginTop: '24px',
+                                            mt: '24px',
 
                                         }}
                                     >
@@ -319,7 +319,7 @@ export const Profile = () => {
                                 gap: '24px',
                                 width: '100%',
                                 height: '64px',
-                                padding: '0 16px',
+                                p: '0 16px',
                                 border: 'solid 1px var(--theme-orange)'
                             }}
                         >
@@ -331,7 +331,7 @@ export const Profile = () => {
                                 style={{
                                     width: '40px',
                                     height: 'auto',
-                                    marginTop: '8px',
+                                    mt: '8px',
                                 }}
                             >
                             </img>
@@ -373,7 +373,7 @@ export const Profile = () => {
                             variant='h3'
                             align='center'
                             sx={{
-                                marginTop: '24px',
+                                mt: '24px',
                                 fontSize: {
                                     xs: '1.5rem',
                                     sm: '2rem',
@@ -469,9 +469,9 @@ export const Profile = () => {
                                     alignItems: 'center',
                                     height: '88%',
                                     width: '100%',
-                                    marginTop: '56px',
-                                    paddingLeft: '16px !important',
-                                    paddingRight: '16px !important',
+                                    mt: '56px',
+                                    pl: '16px !important',
+                                    pr: '16px !important',
                                     overflowY: 'auto',
                                     border: 'solid 1px #F26101'
                                 }}>
@@ -486,7 +486,7 @@ export const Profile = () => {
                                                 alignItems: 'center',
                                                 justifyContent: 'flex-start',
                                                 width: '33%',
-                                                marginTop: '24px',
+                                                mt: '24px',
 
                                             }}
                                         >

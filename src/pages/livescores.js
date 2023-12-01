@@ -95,14 +95,14 @@ export const LiveScores = () => {
                         variant='h3'
                         align='center'
                         sx={{
-                            marginTop: '24px',
+                            mt: '24px',
                             fontSize: {
                                 xs: '1.5rem',
                                 sm: '3rem',
                                 md: '3rem',
                                 lg: '3rem',
                             },
-                            paddingRight: {
+                            pr: {
                                 xs: '8px !important',
                                 sm: '0 ',
                                 md: '0 ',
@@ -159,7 +159,7 @@ export const LiveScores = () => {
                                 flexDirection: 'column',
                                 justifyContent: 'flex-start',
                                 alignItems: 'center',
-                                padding: '0',
+                                p: '0',
                                 margin: '0',
                                 height: '100%',
                                 maxHeight: '100%',
@@ -206,7 +206,7 @@ export const LiveScores = () => {
                         >
                             <Typography
                                 sx={{
-                                    marginTop: '32px',
+                                    mt: '32px',
                                     fontSize: '1.5em',
                                 }}
                             >
@@ -218,7 +218,7 @@ export const LiveScores = () => {
                                     flexDirection: 'row',
                                     alignContent: 'center',
                                     gap: '24px',
-                                    marginTop: '32px',
+                                    mt: '32px',
                                     border: '1px solid var(--theme-orange)',
                                     overflowX: 'auto',
                                     overflowY: 'hidden',
@@ -303,7 +303,7 @@ export const LiveScores = () => {
                                     justifyContent: 'space-around',
                                     height: '70%',
                                     width: '100%',
-                                    marginTop: '32px',
+                                    mt: '32px',
                                     border: '1px solid var(--theme-orange)',
                                 }}
                             >

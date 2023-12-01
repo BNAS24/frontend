@@ -67,7 +67,7 @@ export const Login = () => {
                     align='center'
                     noWrap
                     sx={{
-                        marginTop: '24px',
+                        mt: '24px',
                         fontSize: {
                             xs: '2rem',
                             sm: '2.5rem',
@@ -174,8 +174,8 @@ export const Login = () => {
                             sx={{
                                 minWidth: '104px',
                                 maxWidth: '400px',
-                                padding: '8px 8px',
-                                marginTop: '16px',
+                                p: '8px 8px',
+                                mt: '16px',
                                 color: 'white',
                                 backgroundColor: 'var(--theme-orange)',
                                 fontSize: '16px',
@@ -192,7 +192,7 @@ export const Login = () => {
                             align='center'
                             sx={{
                                 color: isError ? 'red' : 'green',
-                                marginTop: '16px',
+                                mt: '16px',
                             }}
                         >
                             {loginMessage}

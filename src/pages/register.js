@@ -82,7 +82,7 @@ export const Register = () => {
                     align='center'
                     noWrap
                     sx={{
-                        marginTop: '24px',
+                        mt: '24px',
                         fontSize: {
                             xs: '2rem',
                             sm: '2.5rem',
@@ -260,8 +260,8 @@ export const Register = () => {
                             width: '80%',
                             minWidth: '104px',
                             maxWidth: '400px',
-                            padding: '8px 8px',
-                            marginTop: '16px',
+                            p: '8px 8px',
+                            mt: '16px',
                             color: 'white',
                             backgroundColor: 'var(--theme-orange)',
                             fontSize: '16px',
@@ -277,7 +277,7 @@ export const Register = () => {
                             align='center'
                             sx={{
                                 color: isError ? 'red' : 'green',
-                                marginTop: '16px',
+                                mt: '16px',
                             }}
                         >
                             {regMessage}

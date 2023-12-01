@@ -49,7 +49,7 @@ export const SettingsModal = ({ open, onClose, onClick, settingSelected, setting
                         sx={{
                             display: 'flex',
                             alignSelf: 'flex-end',
-                            marginTop: '8px',
+                            mt: '8px',
                             marginRight: '8px',
                             color: 'var(--theme-orange)',
                             zIndex: 2,
@@ -76,7 +76,7 @@ export const SettingsModal = ({ open, onClose, onClick, settingSelected, setting
                                     noWrap
                                     variant="h5"
                                     sx={{
-                                        marginTop: '8px',
+                                        mt: '8px',
                                     }}
                                 >
                                     {selectedSetting.title !== 'Logout' && selectedSetting.title}
@@ -169,8 +169,8 @@ export const SettingsModal = ({ open, onClose, onClick, settingSelected, setting
                                             sx={{
                                                 minWidth: '104px',
                                                 maxWidth: '400px',
-                                                padding: '8px 8px',
-                                                marginTop: '16px',
+                                                p: '8px 8px',
+                                                mt: '16px',
                                                 color: 'white',
                                                 backgroundColor: 'var(--theme-orange)',
                                                 fontSize: '16px',
@@ -306,8 +306,8 @@ export const SettingsModal = ({ open, onClose, onClick, settingSelected, setting
                                                 sx={{
                                                     minWidth: '104px',
                                                     maxWidth: '400px',
-                                                    padding: '8px 8px',
-                                                    marginTop: '16px',
+                                                    p: '8px 8px',
+                                                    mt: '16px',
                                                     color: 'white',
                                                     backgroundColor: 'var(--theme-orange)',
                                                     fontSize: '16px',
@@ -351,8 +351,8 @@ export const SettingsModal = ({ open, onClose, onClick, settingSelected, setting
                                                     minWidth: '104px',
                                                     width: '152px',
                                                     maxWidth: '152px',
-                                                    padding: '8px 8px',
-                                                    marginTop: '16px',
+                                                    p: '8px 8px',
+                                                    mt: '16px',
                                                     color: 'white',
                                                     backgroundColor: 'var(--theme-orange)',
                                                     fontSize: '16px',
