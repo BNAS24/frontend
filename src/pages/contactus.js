@@ -13,14 +13,13 @@ export const ContactUS = () => {
 
     return (
         <Container
+            disableGutters={true}
             maxWidth='100%'
             sx={{
                 display: 'flex',
                 flexDirection: 'column',
                 minHeight: '100%',
                 width: '100%',
-                paddingLeft: '0 !important',
-                paddingRight: '0 !important',
                 overflow: 'hidden',
             }}
         >

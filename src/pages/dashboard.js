@@ -283,14 +283,13 @@ export const Dashboard = () => {
                                 </Typography>
 
                                 <Container
+                                    disableGutters={true}
                                     sx={{
                                         display: 'flex',
                                         flexWrap: 'wrap',
                                         height: '100%',
                                         width: '100%',
                                         marginTop: '24px',
-                                        paddingLeft: '16px !important',
-                                        paddingRight: '16px !important',
                                         overflowY: 'auto',
                                         border: 'solid 1px #F26101'
                                     }}>
@@ -430,7 +429,7 @@ export const Dashboard = () => {
                                         height: '100%',
                                         width: '100%',
                                         marginTop: '24px',
-                                        paddingBottom: '24px',
+                                        pb: '24px',
                                         overflowY: 'auto',
                                         overflowX: 'hidden',
                                         border: 'solid 1px #F26101'
@@ -478,7 +477,7 @@ export const Dashboard = () => {
                                 md: '278px',
                                 lg: '278px'
                             },
-                            paddingBottom: '24px !important',
+                            pb: '24px !important',
                             background: 'linear-gradient(to bottom, #0081D4, #000000)',
                             border: 'solid 1px var(--theme-orange)',
                             overflow: 'auto',
@@ -913,7 +912,7 @@ export const Dashboard = () => {
                                     height: '88%',
                                     width: '100%',
                                     marginTop: '56px',
-                                    paddingBottom: '24px',
+                                    pb: '24px',
                                     overflowY: 'auto',
                                     border: 'solid 1px #F26101'
                                 }}>

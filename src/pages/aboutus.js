@@ -13,18 +13,18 @@ export const AboutUs = () => {
 
     return (
         <Container
+            disableGutters={true}
             maxWidth='100%'
             sx={{
                 display: 'flex',
                 flexDirection: 'column',
                 height: '100%',
                 width: '100%',
-                paddingLeft: '0 !important',
-                paddingRight: '0 !important',
             }}
         >
             <NavBar />
             <Container
+                disableGutters={true}
                 maxWidth='100%'
                 sx={{
                     position: 'relative',
@@ -34,8 +34,6 @@ export const AboutUs = () => {
                     justifyContent: 'flex-start',
                     height: 'auto',
                     width: '100%',
-                    paddingLeft: '0 !important',
-                    paddingRight: '0 !important',
                     overflow: isSidebarOpen ? 'hidden' : 'none',
                 }}
             >

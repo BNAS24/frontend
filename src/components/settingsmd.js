@@ -37,7 +37,7 @@ export const SettingsModal = ({ open, onClose, onClick, settingSelected, setting
                         width: '50%',
                         minWidth: '300px',
                         height: 'auto',
-                        paddingBottom: '40px',
+                        pb: '40px',
                         top: '50%',
                         left: '50%',
                         transform: 'translate(-50%, -50%)',
@@ -90,7 +90,7 @@ export const SettingsModal = ({ open, onClose, onClick, settingSelected, setting
                                             justifyContent: 'center',
                                             width: '100%',
                                             height: '100%',
-                                            paddingTop: '16px'
+                                            pt: '16px'
                                         }}
                                     >
                                         <TextField
@@ -193,7 +193,7 @@ export const SettingsModal = ({ open, onClose, onClick, settingSelected, setting
                                                 justifyContent: 'center',
                                                 width: '100%',
                                                 height: '100%',
-                                                paddingTop: '16px'
+                                                pt: '16px'
                                             }}
                                         >
                                             <TextField
@@ -329,7 +329,7 @@ export const SettingsModal = ({ open, onClose, onClick, settingSelected, setting
                                             flexDirection: 'column',
                                             alignItems: 'center',
                                             justifyContent: 'space-evenly',
-                                            paddingTop: '16px'
+                                            pt: '16px'
                                         }}
                                     >
                                         <Avatar
@@ -374,6 +374,7 @@ export const SettingsModal = ({ open, onClose, onClick, settingSelected, setting
                                 )}
                                 {settingSelected === 'userStats' && (
                                     <Container
+                                        disableGutters={true}
                                         sx={{
                                             display: 'flex',
                                             flexDirection: 'row',
@@ -381,12 +382,11 @@ export const SettingsModal = ({ open, onClose, onClick, settingSelected, setting
                                             alignItems: 'center',
                                             minWidth: '100px',
                                             maxWidth: '400px !important',
-                                            paddingLeft: '0 !important',
-                                            paddingRight: '0 !important',
-                                            paddingTop: '16px'
+                                            pt: '16px'
                                         }}
                                     >
                                         <Container
+                                            disableGutters={true}
                                             sx={{
                                                 display: 'flex',
                                                 flexDirection: 'column',
@@ -394,8 +394,6 @@ export const SettingsModal = ({ open, onClose, onClick, settingSelected, setting
                                                 width: 'auto',
                                                 margin: '0',
                                                 gap: '48px',
-                                                paddingLeft: '0 !important',
-                                                paddingRight: '0 !important',
                                             }}
                                         >
                                             <Typography
@@ -440,6 +438,7 @@ export const SettingsModal = ({ open, onClose, onClick, settingSelected, setting
                                             </Typography>
                                         </Container>
                                         <Container
+                                            disableGutters={true}
                                             sx={{
                                                 display: 'flex',
                                                 flexDirection: 'column',
@@ -447,9 +446,6 @@ export const SettingsModal = ({ open, onClose, onClick, settingSelected, setting
                                                 width: 'auto',
                                                 margin: '0',
                                                 gap: '48px',
-                                                paddingLeft: '0 !important',
-                                                paddingRight: '0 !important'
-
                                             }}
                                         >
                                             <Typography

@@ -22,7 +22,7 @@ export const Profile = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        if(!user) {
+        if (!user) {
             navigate('/login');
         }
     }, [user, navigate]);
@@ -105,13 +105,12 @@ export const Profile = () => {
                         },
                     }}>
                     <Container
+                        disableGutters={true}
                         sx={{
                             display: 'flex',
                             flexDirection: 'row',
                             height: '100%',
                             alignItems: 'start',
-                            paddingLeft: '0 !important',
-                            paddingRight: '0 !important',
                             color: 'white'
                         }}>
                         <Avatar
@@ -211,14 +210,13 @@ export const Profile = () => {
                         minWidth: '40px',
                     }}>
                     <Container
+                        disableGutters={true}
                         sx={{
                             display: 'flex',
                             flexShrink: '0',
                             flexDirection: 'column',
                             alignItems: 'center',
                             maxHeight: '100%',
-                            paddingLeft: '0 !important',
-                            paddingRight: '0 !important'
                         }}>
 
                         <Typography

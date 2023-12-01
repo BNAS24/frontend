@@ -12,14 +12,13 @@ export const Forums = () => {
 
     return (
         <Container
+            disableGutters={true}
             maxWidth='xl'
             sx={{
                 display: 'flex',
                 flexDirection: 'column',
                 minHeight: '100%',
                 width: '100%',
-                paddingLeft: '0 !important',
-                paddingRight: '0 !important',
             }}
         >
             <NavBar />
