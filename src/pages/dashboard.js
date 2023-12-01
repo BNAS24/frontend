@@ -20,13 +20,13 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/auth/authSlice';
 
 export const Dashboard = () => {
-    
+
     const { user } = useAuth();
 
     const navigate = useNavigate();
 
     useEffect(() => {
-        if(!user) {
+        if (!user) {
             navigate('/login');
         }
     }, [user, navigate]);
@@ -128,14 +128,13 @@ export const Dashboard = () => {
                             },
                         }}>
                         <Container
+                            disableGutters={true}
                             sx={{
                                 display: 'flex',
                                 flexDirection: 'row',
                                 width: '100%',
                                 height: '100%',
                                 alignItems: 'start',
-                                paddingLeft: '0 !important',
-                                paddingRight: '0 !important',
                                 color: 'white',
 
                             }}
@@ -239,13 +238,12 @@ export const Dashboard = () => {
                     >
 
                         <Container
+                            disableGutters={true}
                             sx={{
                                 display: 'flex',
                                 flexDirection: 'row',
                                 justifyContent: 'stretch',
                                 height: '100%',
-                                paddingLeft: '0 !important',
-                                paddingRight: '0 !important',
                                 gap: '24px',
                                 color: 'white'
                             }}>
@@ -253,6 +251,7 @@ export const Dashboard = () => {
                             {/*First Box*/}
 
                             <Container
+                                disableGutters={true}
                                 sx={{
                                     display: {
                                         xs: 'none',
@@ -265,8 +264,6 @@ export const Dashboard = () => {
                                     alignItems: 'center',
                                     maxHeight: '100%',
                                     width: '50%',
-                                    paddingLeft: '0 !important',
-                                    paddingRight: '0 !important'
                                 }}>
 
                                 <Typography
@@ -392,6 +389,7 @@ export const Dashboard = () => {
                             {/*Second Box*/}
 
                             <Container
+                                disableGutters={true}
                                 sx={{
                                     display: {
                                         xs: 'none',
@@ -405,8 +403,6 @@ export const Dashboard = () => {
                                     alignItems: 'center',
                                     width: '50%',
                                     maxHeight: '100%',
-                                    paddingLeft: '0 !important',
-                                    paddingRight: '0 !important'
                                 }}>
 
                                 <Typography
@@ -488,13 +484,12 @@ export const Dashboard = () => {
                             overflow: 'auto',
                         }}>
                         <Container
+                            disableGutters={true}
                             sx={{
                                 display: 'flex',
                                 flexDirection: 'column',
                                 justifyContent: 'center',
                                 width: '100%',
-                                paddingLeft: '0 !important',
-                                paddingRight: '0 !important',
                             }}
                         >
                             <Container
@@ -538,6 +533,7 @@ export const Dashboard = () => {
                                 </Link>
                             </Container>
                             <Container
+                                disableGutters={true}
                                 sx={{
                                     display: 'flex',
                                     flexDirection: 'column',
@@ -553,8 +549,6 @@ export const Dashboard = () => {
                                         md: '32px',
                                         lg: '32px'
                                     },
-                                    paddingLeft: '0 !important',
-                                    paddingRight: '0 !important'
                                 }}
                             >
                                 {
