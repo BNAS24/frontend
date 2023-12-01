@@ -42,20 +42,19 @@ export const LiveScores = () => {
         <Container
             /* Wrapper */
             maxWidth='100%'
+            disableGutters={true}
             sx={{
                 display: 'flex',
                 flexDirection: 'column',
                 minHeight: '100%',
                 height: '100%',
                 width: '100%',
-                paddingLeft: '0 !important',
-                paddingRight: '0 !important',
             }}
         >
             <NavBar />
 
             <Container
-
+                disableGutters={true}
                 sx={{
                     flex: '1',
                     position: 'relative',
@@ -73,13 +72,12 @@ export const LiveScores = () => {
                     maxHeight: '100vh',
                     width: '100%',
                     minWidth: '286',
-                    paddingLeft: '0 !important',
-                    paddingRight: '0 !important',
+
                     overflowY: 'hidden',
                 }}
             >
                 <Container
-
+                    disableGutters={true}
                     sx={{
                         display: 'flex',
                         flexDirection: 'column',
@@ -90,8 +88,6 @@ export const LiveScores = () => {
                         minWidth: '142px',
                         borderLeft: 'solid 1px var(--theme-orange)',
                         borderRight: 'solid 1px var(--theme-orange)',
-                        paddingLeft: '0 !important',
-                        paddingRight: '0 !important',
                         overflow: 'auto',
                     }}
                 >
@@ -143,6 +139,7 @@ export const LiveScores = () => {
                     </Container>
                 </Container>
                 <Container
+                    disableGutters={true}
                     sx={{
                         display: 'flex',
                         position: 'relative',
@@ -150,8 +147,6 @@ export const LiveScores = () => {
                         width: '50%',
                         minWidth: '144px',
                         justifyContent: 'center',
-                        paddingLeft: '0 !important',
-                        paddingRight: '0 !important',
                         color: 'white',
 
                     }}
@@ -301,6 +296,7 @@ export const LiveScores = () => {
                                 </Typography>
                             </Container>
                             <Container
+                                disableGutters={true}
                                 sx={{
                                     display: 'flex',
                                     flexDirection: 'column',
@@ -309,22 +305,20 @@ export const LiveScores = () => {
                                     width: '100%',
                                     marginTop: '32px',
                                     border: '1px solid var(--theme-orange)',
-                                    paddingLeft: '0 !important',
-                                    paddingRight: '0 !important',
                                 }}
                             >
                                 <Container
+                                    disableGutters={true}
                                     sx={{
                                         display: 'flex',
                                         flexDirection: 'row',
                                         justifyContent: 'center',
                                         height: '50%',
                                         width: '100%',
-                                        paddingLeft: '0 !important',
-                                        paddingRight: '0 !important',
                                     }}
                                 >
                                     <Container
+                                        disableGutters={true}
                                         sx={{
                                             flexShrink: '1',
                                             display: 'flex',
@@ -332,8 +326,6 @@ export const LiveScores = () => {
                                             justifyContent: 'space-evenly',
                                             alignItems: 'center',
                                             height: '100%',
-                                            paddingLeft: '0 !important',
-                                            paddingRight: '0 !important',
                                         }}
                                     >
                                         <Avatar
@@ -365,13 +357,12 @@ export const LiveScores = () => {
                                     {/*Middle Container for the team live scores */}
 
                                     <Container
+                                        disableGutters={true}
                                         sx={{
                                             display: 'flex',
                                             flexDirection: 'column',
                                             justifyContent: 'center',
                                             height: '100%',
-                                            paddingLeft: '0 !important',
-                                            paddingRight: '0 !important',
                                             // border: '1px solid var(--theme-orange)',
                                         }}
                                     >
@@ -424,7 +415,7 @@ export const LiveScores = () => {
                                                             {row.scores.map((score, i) => (
                                                                 <TableCell
                                                                     key={i}
-                                                                    >
+                                                                >
                                                                     {score}
                                                                 </TableCell>
                                                             ))}
@@ -439,25 +430,23 @@ export const LiveScores = () => {
                                         </TableContainer>
                                     </Container>
                                     <Container
+                                        disableGutters={true}
                                         sx={{
                                             flexShrink: '1',
                                             display: 'flex',
                                             flexDirection: 'column',
                                             justifyContent: 'center',
                                             height: '100%',
-                                            paddingLeft: '0 !important',
-                                            paddingRight: '0 !important',
                                         }}
                                     >
                                         <Container
+                                            disableGutters={true}
                                             sx={{
                                                 display: 'flex',
                                                 flexDirection: 'column',
                                                 justifyContent: 'space-evenly',
                                                 alignItems: 'center',
                                                 height: '100%',
-                                                paddingLeft: '0 !important',
-                                                paddingRight: '0 !important',
                                             }}
                                         >
                                             <Avatar
@@ -487,6 +476,7 @@ export const LiveScores = () => {
                                     </Container>
                                 </Container>
                                 <Container
+                                    disableGutters={true}
                                     sx={{
                                         display: 'flex',
                                         flexDirection: 'column',
@@ -494,8 +484,6 @@ export const LiveScores = () => {
                                         alignItems: 'center',
                                         height: '50%',
                                         width: '100%',
-                                        paddingLeft: '0 !important',
-                                        paddingRight: '0 !important',
                                     }}
                                 >
                                     <Link
