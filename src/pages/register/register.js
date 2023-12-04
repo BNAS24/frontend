@@ -1,12 +1,13 @@
-import { FormGroup, Typography } from '@mui/material';
-import Button from '@mui/material/Button';
-import TextField from '@mui/material/TextField';
+import { Typography } from '@mui/material';
 import { ThemeProvider } from '@mui/material/styles';
 import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/auth/authSlice';
 import customTheme from '../../styles/context/customtheme';
 import '../../styles/register.css';
+import { RegButton, RegTF1, RegTF2, RegTF3, RegTF4, RegisterForm, RegisterTitle } from '../register/components';
+;
+
 
 export const Register = () => {
 
@@ -78,22 +79,13 @@ export const Register = () => {
                     alt="logo"
                     className="logo"
                 />
-                <Typography
+                <RegisterTitle
                     align='center'
                     noWrap
-                    sx={{
-                        mt: '24px',
-                        fontSize: {
-                            xs: '2rem',
-                            sm: '2.5rem',
-                            md: '3rem',
-                            lg: '3.2rem',
-                        }
-                    }}
                 >
                     Create an account
-                </Typography>
-                <FormGroup
+                </RegisterTitle>
+                <RegisterForm
                     sx={{
                         display: 'flex',
                         alignItems: 'center',
@@ -104,7 +96,7 @@ export const Register = () => {
                         pt: '16px'
                     }}
                 >
-                    <TextField
+                    <RegTF1
                         id="outlined-username-input"
                         label="Username"
                         type='text'
@@ -113,35 +105,8 @@ export const Register = () => {
                         onChange={onChange}
                         variant="outlined"
                         margin='dense'
-                        sx={{
-                            width: '80%',
-                            maxWidth: '400px',
-                            '& .MuiOutlinedInput-root': {
-                                width: '100%',
-                                maxWidth: '600px',
-                                '& fieldset': {
-
-                                    borderColor: 'var(--theme-orange)'
-                                },
-                                '&:hover fieldset': {
-                                    borderColor: '#fe6f10',
-                                },
-                                '&.Mui-focused fieldset': {
-                                    borderColor: 'var(--theme-orange)',
-                                },
-                                '& .MuiInputBase-input': {
-                                    color: 'white',
-                                },
-                                cursor: 'text',
-                            },
-                            '& .MuiInputLabel-root': {
-                                '&.Mui-focused': {
-                                    color: 'var(--theme-orange)',
-                                },
-                            },
-                        }}
                     />
-                    <TextField
+                    <RegTF2
                         id="outlined-email-input"
                         label="Email"
                         type='email'
@@ -150,35 +115,8 @@ export const Register = () => {
                         onChange={onChange}
                         variant="outlined"
                         margin='dense'
-                        sx={{
-                            width: '80%',
-                            maxWidth: '400px',
-                            '& .MuiOutlinedInput-root': {
-                                width: '100%',
-                                maxWidth: '600px',
-                                '& fieldset': {
-
-                                    borderColor: 'var(--theme-orange)'
-                                },
-                                '&:hover fieldset': {
-                                    borderColor: '#fe6f10',
-                                },
-                                '&.Mui-focused fieldset': {
-                                    borderColor: 'var(--theme-orange)',
-                                },
-                                '& .MuiInputBase-input': {
-                                    color: 'white',
-                                },
-                                cursor: 'text',
-                            },
-                            '& .MuiInputLabel-root': {
-                                '&.Mui-focused': {
-                                    color: 'var(--theme-orange)',
-                                },
-                            },
-                        }}
                     />
-                    <TextField
+                    <RegTF3
                         id="outlined-password-input"
                         label="Password"
                         type="password"
@@ -187,35 +125,8 @@ export const Register = () => {
                         onChange={onChange}
                         variant="outlined"
                         margin='dense'
-                        sx={{
-                            width: '80%',
-                            maxWidth: '400px',
-                            '& .MuiOutlinedInput-root': {
-                                width: '100%',
-                                maxWidth: '600px',
-                                '& fieldset': {
-
-                                    borderColor: 'var(--theme-orange)'
-                                },
-                                '&:hover fieldset': {
-                                    borderColor: '#fe6f10',
-                                },
-                                '&.Mui-focused fieldset': {
-                                    borderColor: 'var(--theme-orange)',
-                                },
-                                '& .MuiInputBase-input': {
-                                    color: 'white',
-                                },
-                                cursor: 'text',
-                            },
-                            '& .MuiInputLabel-root': {
-                                '&.Mui-focused': {
-                                    color: 'var(--theme-orange)',
-                                },
-                            },
-                        }}
                     />
-                    <TextField
+                    <RegTF4
                         id="outlined-confirm-password-input"
                         label="Confirm Password"
                         type="password"
@@ -224,54 +135,14 @@ export const Register = () => {
                         onChange={onChange}
                         variant="outlined"
                         margin='dense'
-                        sx={{
-                            width: '80%',
-                            maxWidth: '400px',
-                            '& .MuiOutlinedInput-root': {
-                                width: '100%',
-                                maxWidth: '600px',
-                                '& fieldset': {
-
-                                    borderColor: 'var(--theme-orange)'
-                                },
-                                '&:hover fieldset': {
-                                    borderColor: '#fe6f10',
-                                },
-                                '&.Mui-focused fieldset': {
-                                    borderColor: 'var(--theme-orange)',
-                                },
-                                '& .MuiInputBase-input': {
-                                    color: 'white',
-                                },
-                                cursor: 'text',
-                            },
-                            '& .MuiInputLabel-root': {
-                                '&.Mui-focused': {
-                                    color: 'var(--theme-orange)',
-                                },
-                            },
-                        }}
                     />
-                    <Button
+                    <RegButton
                         fullWidth
                         variant="contained"
                         onClick={onSubmit}
-                        sx={{
-                            width: '80%',
-                            minWidth: '104px',
-                            maxWidth: '400px',
-                            p: '8px 8px',
-                            mt: '16px',
-                            color: 'white',
-                            backgroundColor: 'var(--theme-orange)',
-                            fontSize: '16px',
-                            '&:hover': {
-                                backgroundColor: '#fe6f10'
-                            },
-                        }}
                     >
                         Create
-                    </Button>
+                    </RegButton>
                     {regMessage && (
                         <Typography
                             align='center'
@@ -283,7 +154,7 @@ export const Register = () => {
                             {regMessage}
                         </Typography>
                     )}
-                </FormGroup>
+                </RegisterForm>
             </div>
         </ThemeProvider>
 
