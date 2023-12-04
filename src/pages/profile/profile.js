@@ -2,16 +2,16 @@ import ArrowBackIosNewOutlinedIcon from '@mui/icons-material/ArrowBackIosNewOutl
 import { Avatar, Grid, IconButton, Typography } from '@mui/material';
 import { Box, Container } from '@mui/system';
 import { Fragment, useState } from 'react';
-import { Footer } from '../components/authfoot';
-import { NavBar } from "../components/authnav";
-import { SideBarNav } from '../components/helpers/sidebarnav';
-import { SettingsModal } from '../components/settingsmd';
-import { useSidebar } from '../context/mobilenav';
-import { badges, settings } from '../datastore/profile';
-import '../styles/profile.css';
+import { Footer } from '../../components/authfoot';
+import { NavBar } from "../../components/authnav";
+import { SideBarNav } from '../../components/helpers/sidebarnav';
+import { SettingsModal } from '../../components/settingsmd';
+import { useSidebar } from '../../context/mobilenav';
+import { badges, settings } from '../../datastore/profile';
+import '../../styles/profile.css';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../context/auth/authSlice';
+import { useAuth } from '../../context/auth/authSlice';
 
 
 

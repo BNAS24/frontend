@@ -1,11 +1,11 @@
 import { Typography } from '@mui/material'
 import { Container } from '@mui/system'
 import React from 'react'
-import { Footer } from '../components/authfoot'
-import { NavBar } from '../components/authnav'
-import { SideBarNav } from '../components/helpers/sidebarnav'
-import { useSidebar } from '../context/mobilenav'
-import contactUs from '../datastore/contactus'
+import { Footer } from '../../components/authfoot'
+import { NavBar } from '../../components/authnav'
+import { SideBarNav } from '../../components/helpers/sidebarnav'
+import { useSidebar } from '../../context/mobilenav'
+import contactUs from '../../datastore/contactus'
 
 export const ContactUS = () => {
 

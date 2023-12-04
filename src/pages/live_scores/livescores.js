@@ -3,12 +3,12 @@ import { Avatar, IconButton, Table, TableBody, TableCell, TableContainer, TableH
 import { Container } from '@mui/system';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Footer } from '../components/authfoot';
-import { NavBar } from '../components/authnav';
-import { SideBarNav } from '../components/helpers/sidebarnav';
-import { useSidebar } from '../context/mobilenav';
-import leagues from '../datastore/leagues';
-import '../styles/livescores.css';
+import { Footer } from '../../components/authfoot';
+import { NavBar } from '../../components/authnav';
+import { SideBarNav } from '../../components/helpers/sidebarnav';
+import { useSidebar } from '../../context/mobilenav';
+import leagues from '../../datastore/leagues';
+import '../../styles/livescores.css';
 import Paper from '@mui/material/Paper';
 
 

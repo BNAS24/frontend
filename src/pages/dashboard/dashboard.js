@@ -7,17 +7,17 @@ import { Avatar, Container, Grid, IconButton, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import { Fragment, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Footer } from '../components/authfoot';
-import { NavBar } from '../components/authnav';
-import { CommentsModal } from '../components/commentmd';
-import { SideBarNav } from '../components/helpers/sidebarnav';
-import { useSidebar } from '../context/mobilenav';
-import { fakeNotifications, fakeTeams, postContent } from '../datastore/dashboard';
-import customTheme from '../styles/context/customtheme';
-import '../styles/dashboard.css';
+import { Footer } from '../../components/authfoot';
+import { NavBar } from '../../components/authnav';
+import { CommentsModal } from '../../components/commentmd';
+import { SideBarNav } from '../../components/helpers/sidebarnav';
+import { useSidebar } from '../../context/mobilenav';
+import { fakeNotifications, fakeTeams, postContent } from '../../datastore/dashboard';
+import customTheme from '../../styles/context/customtheme';
+import '../../styles/dashboard.css';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../context/auth/authSlice';
+import { useAuth } from '../../context/auth/authSlice';
 
 export const Dashboard = () => {
 
