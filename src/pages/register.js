@@ -289,5 +289,3 @@ export const Register = () => {
 
     );
 }
-
-// First commit
