@@ -18,6 +18,7 @@ import '../../styles/dashboard.css';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/auth/authSlice';
+import { MainLayoutGrid, DashboardHeadGrid, Greeting, GreetingXS, DashboardHeadXS, UserAvatar, DashboardContainer, FavoriteTeamsBox, FavoriteTeamsBoxXS, UserData } from '../dashboard/components'
 
 export const Dashboard = () => {
 
@@ -80,54 +81,14 @@ export const Dashboard = () => {
 
                 {/*Content goes below this line*/}
 
-                <Grid
+                <MainLayoutGrid
                     container
-                    sx={{
-                        position: 'relative',
-                        display: 'grid',
-                        gridTemplateColumns: {
-                            xs: '1fr 5fr',
-                            sm: 'repeat(2, 1fr)',
-                            md: 'repeat(2, 1fr)',
-                            lg: 'repeat(2, 1fr)'
-                        },
-                        gridTemplateRows: {
-                            xs: '1fr 8fr',
-                            sm: '1fr 5fr',
-                            md: '1fr 5fr',
-                            lg: '1fr 5fr'
-                        },
-                        gridGap: '8px',
-                        columnGap: {
-                            xs: '8px',
-                            sm: '24px',
-                            md: '56px',
-                            lg: '56px'
-                        },
-                        p: {
-                            xs: '16px 8px !important',
-                            sm: '24px 24px !important',
-                            md: '24px 24px !important',
-                            lg: '24px 24px !important'
-                        },
-                        flex: '1',
-                        maxHeight: '100vh',
-                        overflow: 'hidden',
-                    }}
                 >
                     {/*1st Grid Item*/}
 
-                    <Grid
-                        item xs={12} sm={12} md={12} lg={12}
-                        sx={{
-                            gridArea: {
-                                xs: '1 / 1 / 2 / 2',
-                                sm: '1 / 1 / 2 / 2',
-                                md: '1 / 1 / 2 / 2',
-                                lg: '1 / 1 / 2 / 2'
-                            },
-                        }}>
-                        <Container
+                    <DashboardHeadGrid
+                        item xs={12} sm={12} md={12} lg={12}>
+                        <DashboardContainer
                             disableGutters={true}
                             sx={{
                                 display: 'flex',
@@ -139,7 +100,7 @@ export const Dashboard = () => {
 
                             }}
                         >
-                            <Avatar
+                            <UserAvatar
                                 variant='square'
                                 alt='profile picture'
                                 src='https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png'
@@ -164,77 +125,29 @@ export const Dashboard = () => {
                                     }
                                 }}
                             />
-                            <Typography
-                                variant='h3'
-                                noWrap
-                                sx={{
-                                    display: {
-                                        xs: 'none',
-                                        sm: 'flex',
-                                        md: 'flex',
-                                        lg: 'flex',
-
-                                    },
-                                    fontSize: {
-                                        xs: 'false',
-                                        sm: '2.5rem',
-                                        md: 'false',
-                                        lg: '3rem',
-                                    },
-                                    marginLeft: '24px'
-                                }}
-
-                            >
+                            <Greeting>
                                 Hello {user && user.username}!
-                            </Typography>
-                        </Container>
-                    </Grid>
+                            </Greeting>
+                        </DashboardContainer>
+                    </DashboardHeadGrid>
 
                     {/*Displays only on xs sreens only*/}
-                    <Grid
+                    <DashboardHeadXS
                         item
                         maxWidth="xs"
-                        sx={{
-                            display: {
-                                xs: 'flex',
-                                sm: 'none',
-                                md: 'none',
-                                lg: 'none',
-                            },
-                            gridArea: '1 / 2 / 2 / 3',
-                            color: 'white',
-                            justifyContent: 'center',
-                        }}
                     >
-                        <Typography
-                            sx={{
-                                fontSize: '2rem'
-                            }}
+                        <GreetingXS
+
                         >
                             Hello {user && user.username}!
-                        </Typography>
-                    </Grid>
+                        </GreetingXS>
+                    </DashboardHeadXS>
 
                     {/*2nd Grid Item*/}
 
-                    <Grid
+                    <UserData
                         item
                         xs={12} sm={12} md={12} lg={12}
-                        sx={{
-                            gridArea: {
-                                xs: '2 / 1 / 3 / 2',
-                                sm: '2 / 1 / 3 / 2',
-                                md: '2 / 1 / 3 / 2',
-                                lg: '2 / 1 / 3 / 2'
-                            },
-                            overflow: {
-                                xs: 'hidden',
-                                sm: 'auto',
-                                md: 'auto',
-                                lg: 'auto'
-                            },
-                            minWidth: '40px',
-                        }}
                     >
 
                         <Container
@@ -246,25 +159,14 @@ export const Dashboard = () => {
                                 height: '100%',
                                 gap: '24px',
                                 color: 'white'
-                            }}>
+                            }}
+                        >
 
                             {/*First Box*/}
 
-                            <Container
+                            <FavoriteTeamsBox
                                 disableGutters={true}
-                                sx={{
-                                    display: {
-                                        xs: 'none',
-                                        sm: 'flex',
-                                        md: 'flex',
-                                        lg: 'flex'
-                                    },
-                                    flexShrink: '1',
-                                    flexDirection: 'column',
-                                    alignItems: 'center',
-                                    maxHeight: '100%',
-                                    width: '50%',
-                                }}>
+                            >
 
                                 <Typography
                                     noWrap={true}
@@ -278,7 +180,8 @@ export const Dashboard = () => {
                                             lg: '2.5rem',
                                             xl: ''
                                         }
-                                    }}>
+                                    }}
+                                >
                                     Favorite Teams
                                 </Typography>
 
@@ -338,27 +241,11 @@ export const Dashboard = () => {
                                     )}
 
                                 </Container>
-                            </Container>
+                            </FavoriteTeamsBox>
 
                             {/*Displays on extra small screens only*/}
 
-                            <Container
-                                sx={{
-                                    display: {
-                                        xs: 'flex',
-                                        sm: 'none',
-                                        md: 'none',
-                                        ld: 'none',
-                                    },
-                                    flexDirection: 'column',
-                                    alignItems: 'center',
-                                    justifyContent: 'start',
-                                    gap: '24px',
-                                    width: '100%',
-                                    height: '136px',
-                                    p: '0 16px',
-                                    border: 'solid 1px var(--theme-orange)'
-                                }}
+                            <FavoriteTeamsBoxXS
                             >
                                 <img
                                     className='side-controls'
@@ -383,7 +270,7 @@ export const Dashboard = () => {
                                     }}
                                 >
                                 </img>
-                            </Container>
+                            </FavoriteTeamsBoxXS>
 
                             {/*Second Box*/}
 
@@ -456,7 +343,7 @@ export const Dashboard = () => {
                             </Container>
                         </Container>
 
-                    </Grid>
+                    </UserData>
                     {/*3rd Grid Item*/}
                     <Grid
                         container
@@ -937,7 +824,7 @@ export const Dashboard = () => {
                             </Container>
                         </Container>
                     )}
-                </Grid>
+                </MainLayoutGrid>
 
                 {/*Footer Component*/}
                 <Footer />
