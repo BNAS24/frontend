@@ -19,7 +19,6 @@ export const ForumContent = styled(Container)(({ theme }) =>
     })
 )
 
-
 export const ForumSeachBar = styled(TextField)(({ theme }) =>
     theme.unstable_sx({
         width: '100%',

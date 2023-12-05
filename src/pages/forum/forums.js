@@ -24,7 +24,9 @@ export const Forums = () => {
                     type='search'
                     InputProps={{
                         endAdornment: (
-                            <InputAdornment position="end">
+                            <InputAdornment 
+                            position="end"
+                            >
                                 <SearchOutlinedIcon
                                     sx={{
                                         color: 'white'
