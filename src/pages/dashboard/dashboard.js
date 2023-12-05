@@ -110,9 +110,7 @@ export const Dashboard = () => {
                         item
                         maxWidth="xs"
                     >
-                        <GreetingXS
-
-                        >
+                        <GreetingXS>
                             Hello {user && user.username}!
                         </GreetingXS>
                     </DashboardHeadXS>
@@ -132,7 +130,6 @@ export const Dashboard = () => {
                             <FavoriteTeamsContainer
                                 disableGutters={true}
                             >
-
                                 <Typography
                                     noWrap={true}
                                     align='center'
