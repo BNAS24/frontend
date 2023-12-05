@@ -330,3 +330,27 @@ export const FYFContent = styled(Container)(({ theme }) =>
         },
     })
 )
+
+export const FTMobileDisplayContainer = styled(Container)(({ theme }) =>
+    theme.unstable_sx({
+        position: 'absolute',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        height: '100%',
+        backgroundColor: 'var(--theme-blue)',
+        zIndex: 100
+    })
+)
+
+export const NtfMobileDisplayContainer = styled(Container)(({ theme }) =>
+    theme.unstable_sx({
+        position: 'absolute',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        height: '100%',
+        backgroundColor: 'var(--theme-blue)',
+        zIndex: 100
+    })
+)

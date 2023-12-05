@@ -5,20 +5,42 @@ import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlin
 import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
 import { Avatar, Container, IconButton, Typography } from '@mui/material';
 import { Box } from '@mui/system';
-import { Fragment, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Fragment, useEffect, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { Footer } from '../../components/authfoot';
 import { NavBar } from '../../components/authnav';
 import { CommentsModal } from '../../components/commentmd';
 import { SideBarNav } from '../../components/helpers/sidebarnav';
+import { useAuth } from '../../context/auth/authSlice';
 import { useSidebar } from '../../context/mobilenav';
 import { fakeNotifications, fakeTeams, postContent } from '../../datastore/dashboard';
 import customTheme from '../../styles/context/customtheme';
 import '../../styles/dashboard.css';
-import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../../context/auth/authSlice';
-import { MainLayoutGrid, DashboardHeadGrid, Greeting, GreetingXS, DashboardHeadXS, UserAvatar, DashboardContainer, FavoriteTeamsMainContainer, FTContainerXS, UserData, UserDataContainer, ForumsYouFollow, FYFNavBar, FTTitle, FTInnerContainer, NotificationsContainer, NtfTitle, NtfInnerContainer, FYFMainContainer, FYFTitle, FYFContent } from '../dashboard/components'
+import {
+    DashboardContainer,
+    DashboardHeadGrid,
+    DashboardHeadXS,
+    FTContainerXS,
+    FTInnerContainer,
+    FTMobileDisplayContainer,
+    FTTitle,
+    FYFContent,
+    FYFMainContainer,
+    FYFNavBar,
+    FYFTitle,
+    FavoriteTeamsMainContainer,
+    ForumsYouFollow,
+    Greeting,
+    GreetingXS,
+    MainLayoutGrid,
+    NotificationsContainer,
+    NtfInnerContainer,
+    NtfMobileDisplayContainer,
+    NtfTitle,
+    UserAvatar,
+    UserData,
+    UserDataContainer
+} from '../dashboard/components';
 
 export const Dashboard = () => {
 
@@ -190,31 +212,30 @@ export const Dashboard = () => {
 
                             {/*Displays on extra small screens only*/}
 
-                            <FTContainerXS
-                            >
-                                <img
+                            <FTContainerXS>
+                                <Box
+                                    component='img'
                                     className='side-controls'
                                     onClick={handleNotificaitions}
                                     src='https://i.postimg.cc/d0s4fX3v/Notifications.png'
                                     alt='notifications'
-                                    style={{
+                                    sx={{
                                         width: '40px',
                                         height: 'auto',
                                         marginTop: '8px',
                                     }}
-                                >
-                                </img>
-                                <img
+                                />
+                                <Box
+                                    component='img'
                                     className='side-controls'
                                     onClick={handleTeamsDisplayed}
                                     src='https://i.postimg.cc/0QvrZCrT/Favorite-Teams.png'
                                     alt='badges icon'
-                                    style={{
+                                    sx={{
                                         width: '48px',
                                         height: 'auto'
                                     }}
-                                >
-                                </img>
+                                />
                             </FTContainerXS>
 
                             {/*Second Container*/}
@@ -232,7 +253,10 @@ export const Dashboard = () => {
                                 </NtfTitle>
 
                                 <NtfInnerContainer>
-                                    {/*The Typography element will actually get changed into a NavLink component for demonstration purposes of clicking on a notification and it takes you to someone's profile page, you have to build a mock profile page first*/}
+                                    {/*The Typography element will actually get changed into a NavLink 
+                                    component for demonstration purposes of clicking on a notification 
+                                    and it takes you to someone's profile page, you have to build a mock
+                                     profile page first*/}
 
                                     {fakeNotifications.map((notification) =>
                                         <Typography
@@ -506,19 +530,12 @@ export const Dashboard = () => {
                     {isSidebarOpen && (
                         <SideBarNav />
                     )}
+
+                    {/*Displayed on smaller screens */}
+
                     {isTeamsDisplayed && (
                         <Fragment>
-                            <Container
-                                sx={{
-                                    position: 'absolute',
-                                    display: 'flex',
-                                    flexDirection: 'column',
-                                    alignItems: 'center',
-                                    height: '100%',
-                                    backgroundColor: 'var(--theme-blue)',
-                                    zIndex: 100
-                                }}
-                            >
+                            <FTMobileDisplayContainer>
                                 <IconButton
                                     onClick={handleTeamsDisplayed}
                                     sx={{
@@ -602,21 +619,11 @@ export const Dashboard = () => {
                                     )}
 
                                 </Container>
-                            </Container>
+                            </FTMobileDisplayContainer>
                         </Fragment>
                     )}
                     {isNotificationsDisplayed && (
-                        <Container
-                            sx={{
-                                position: 'absolute',
-                                display: 'flex',
-                                flexDirection: 'column',
-                                alignItems: 'center',
-                                height: '100%',
-                                backgroundColor: 'var(--theme-blue)',
-                                zIndex: 100
-                            }}
-                        >
+                        <NtfMobileDisplayContainer>
                             <IconButton
                                 onClick={handleNotificaitions}
                                 sx={{
@@ -655,7 +662,11 @@ export const Dashboard = () => {
                                     border: 'solid 1px #F26101'
                                 }}>
 
-                                {/*The Typography element will actually get changed into a NavLink component for demonstration purposes of clicking on a notification and it takes you to someone's profile page, you have to build a mock profile page first*/}
+                                {/*The Typography element will actually get changed
+                                 into a NavLink component for demonstration purposes
+                                  of clicking on a notification and it takes you to 
+                                  someone's profile page, you have to build a mock 
+                                  profile page first*/}
 
                                 {fakeNotifications.map((notification) =>
                                     <Typography
@@ -673,7 +684,7 @@ export const Dashboard = () => {
                                     </Typography>
                                 )}
                             </Container>
-                        </Container>
+                        </NtfMobileDisplayContainer>
                     )}
                 </MainLayoutGrid>
 
