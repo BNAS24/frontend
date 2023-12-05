@@ -116,7 +116,7 @@ export const Greeting = styled(Typography)(({ theme }) =>
 
 export const GreetingXS = styled(Typography)(({ theme }) =>
     theme.unstable_sx({
-            fontSize: '2rem'
+        fontSize: '2rem'
     })
 )
 
@@ -135,6 +135,17 @@ export const UserData = styled(Grid)(({ theme }) =>
             lg: 'auto'
         },
         minWidth: '40px',
+    })
+)
+
+export const UserDataContainer = styled(Grid)(({ theme }) =>
+    theme.unstable_sx({
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'stretch',
+        height: '100%',
+        gap: '24px',
+        color: 'white'
     })
 )
 
@@ -190,7 +201,7 @@ export const NotificationsBox = styled(Container)(({ theme }) =>
     })
 )
 
-export const ForumsYouFollow = styled(Container)(({ theme }) =>
+export const ForumsYouFollow = styled(Grid)(({ theme }) =>
     theme.unstable_sx({
         gridArea: {
             xs: '2 / 2 / 3 / 3',

@@ -3,7 +3,7 @@ import AddCommentOutlinedIcon from '@mui/icons-material/AddCommentOutlined';
 import ArrowBackIosNewOutlinedIcon from '@mui/icons-material/ArrowBackIosNewOutlined';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
-import { Avatar, Container, Grid, IconButton, Typography } from '@mui/material';
+import { Avatar, Container, IconButton, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import { Fragment, useState } from 'react';
 import { Link } from 'react-router-dom';
@@ -18,7 +18,7 @@ import '../../styles/dashboard.css';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/auth/authSlice';
-import { MainLayoutGrid, DashboardHeadGrid, Greeting, GreetingXS, DashboardHeadXS, UserAvatar, DashboardContainer, FavoriteTeamsBox, FavoriteTeamsBoxXS, UserData } from '../dashboard/components'
+import { MainLayoutGrid, DashboardHeadGrid, Greeting, GreetingXS, DashboardHeadXS, UserAvatar, DashboardContainer, FavoriteTeamsBox, FavoriteTeamsBoxXS, UserData, UserDataContainer, ForumsYouFollow } from '../dashboard/components'
 
 export const Dashboard = () => {
 
@@ -84,10 +84,12 @@ export const Dashboard = () => {
                 <MainLayoutGrid
                     container
                 >
+
                     {/*1st Grid Item*/}
 
                     <DashboardHeadGrid
-                        item xs={12} sm={12} md={12} lg={12}>
+                        item
+                        xs={12} sm={12} md={12} lg={12}>
                         <DashboardContainer
                             disableGutters={true}
                             sx={{
@@ -104,26 +106,6 @@ export const Dashboard = () => {
                                 variant='square'
                                 alt='profile picture'
                                 src='https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png'
-                                sx={{
-                                    height: {
-                                        xs: 'auto',
-                                        sm: '70px',
-                                        md: '80px',
-                                        lg: '104px'
-                                    },
-                                    width: {
-                                        xs: '100%',
-                                        sm: '70px',
-                                        md: '80px',
-                                        lg: '104px'
-                                    },
-                                    p: {
-                                        xs: '0 0 !important',
-                                        sm: 'false',
-                                        md: 'false',
-                                        lg: 'false',
-                                    }
-                                }}
                             />
                             <Greeting>
                                 Hello {user && user.username}!
@@ -132,6 +114,7 @@ export const Dashboard = () => {
                     </DashboardHeadGrid>
 
                     {/*Displays only on xs sreens only*/}
+
                     <DashboardHeadXS
                         item
                         maxWidth="xs"
@@ -149,17 +132,8 @@ export const Dashboard = () => {
                         item
                         xs={12} sm={12} md={12} lg={12}
                     >
-
-                        <Container
+                        <UserDataContainer
                             disableGutters={true}
-                            sx={{
-                                display: 'flex',
-                                flexDirection: 'row',
-                                justifyContent: 'stretch',
-                                height: '100%',
-                                gap: '24px',
-                                color: 'white'
-                            }}
                         >
 
                             {/*First Box*/}
@@ -341,34 +315,15 @@ export const Dashboard = () => {
                                     )}
                                 </Container>
                             </Container>
-                        </Container>
+                        </UserDataContainer>
 
                     </UserData>
                     {/*3rd Grid Item*/}
-                    <Grid
+                    <ForumsYouFollow
                         container
                         item
                         xs={12} sm={12} md={12} lg={12}
-                        sx={{
-                            gridArea: {
-                                xs: '2 / 2 / 3 / 3',
-                                sm: '1 / 2 / 3 / 3',
-                                md: '1 / 2 / 3 / 3',
-                                lg: '1 / 2 / 3 / 3'
-                            },
-                            width: '100%',
-
-                            minWidth: {
-                                xs: '201px',
-                                sm: '278px',
-                                md: '278px',
-                                lg: '278px'
-                            },
-                            pb: '24px !important',
-                            background: 'linear-gradient(to bottom, #0081D4, #000000)',
-                            border: 'solid 1px var(--theme-orange)',
-                            overflow: 'auto',
-                        }}>
+                    >
                         <Container
                             disableGutters={true}
                             sx={{
@@ -652,7 +607,7 @@ export const Dashboard = () => {
                                 />
                             </Container>
                         </Container>
-                    </Grid>
+                    </ForumsYouFollow>
                     {isSidebarOpen && (
                         <SideBarNav />
                     )}
