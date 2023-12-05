@@ -223,7 +223,7 @@ export const ForumsYouFollow = styled(Grid)(({ theme }) =>
     })
 )
 
-export const FYFNavBar = styled(Grid)(({ theme }) =>
+export const FYFNavBar = styled(Container)(({ theme }) =>
     theme.unstable_sx({
         display: 'flex',
         justifyContent: 'space-between',

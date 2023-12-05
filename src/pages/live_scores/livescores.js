@@ -66,13 +66,11 @@ export const LiveScores = () => {
                         sm: '40px',
                         md: '40px',
                         lg: '40px',
-
                     },
                     height: '100%',
                     maxHeight: '100vh',
                     width: '100%',
                     minWidth: '286',
-
                     overflowY: 'hidden',
                 }}
             >
@@ -154,12 +152,11 @@ export const LiveScores = () => {
                     {leagues[sportSelected] ? (
                         <ul
                             style={{
-
                                 display: 'flex',
                                 flexDirection: 'column',
                                 justifyContent: 'flex-start',
                                 alignItems: 'center',
-                                p: '0',
+                                padding: '0',
                                 margin: '0',
                                 height: '100%',
                                 maxHeight: '100%',

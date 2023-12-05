@@ -208,7 +208,8 @@ export const Profile = () => {
                             lg: 'auto'
                         },
                         minWidth: '40px',
-                    }}>
+                    }}
+                    >
                     <Container
                         disableGutters={true}
                         sx={{
@@ -217,7 +218,8 @@ export const Profile = () => {
                             flexDirection: 'column',
                             alignItems: 'center',
                             maxHeight: '100%',
-                        }}>
+                        }}
+                        >
 
                         <Typography
                             noWrap
@@ -239,7 +241,8 @@ export const Profile = () => {
                                     lg: '2.5rem',
                                     xl: ''
                                 }
-                            }}>
+                            }}
+                            >
                             Badges
                         </Typography>
 
@@ -331,7 +334,7 @@ export const Profile = () => {
                                 style={{
                                     width: '40px',
                                     height: 'auto',
-                                    mt: '8px',
+                                    marginTop: '8px',
                                 }}
                             >
                             </img>

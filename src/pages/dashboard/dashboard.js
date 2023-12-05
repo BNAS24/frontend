@@ -92,15 +92,6 @@ export const Dashboard = () => {
                         xs={12} sm={12} md={12} lg={12}>
                         <DashboardContainer
                             disableGutters={true}
-                            sx={{
-                                display: 'flex',
-                                flexDirection: 'row',
-                                width: '100%',
-                                height: '100%',
-                                alignItems: 'start',
-                                color: 'white',
-
-                            }}
                         >
                             <UserAvatar
                                 variant='square'
@@ -229,7 +220,7 @@ export const Dashboard = () => {
                                     style={{
                                         width: '40px',
                                         height: 'auto',
-                                        mt: '8px',
+                                        marginTop: '8px',
                                     }}
                                 >
                                 </img>
@@ -263,7 +254,8 @@ export const Dashboard = () => {
                                     alignItems: 'center',
                                     width: '50%',
                                     maxHeight: '100%',
-                                }}>
+                                }}
+                            >
 
                                 <Typography
                                     noWrap={true}
