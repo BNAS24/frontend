@@ -149,7 +149,7 @@ export const UserDataContainer = styled(Grid)(({ theme }) =>
     })
 )
 
-export const FavoriteTeamsBox = styled(Container)(({ theme }) =>
+export const FavoriteTeamsContainer = styled(Container)(({ theme }) =>
     theme.unstable_sx({
         display: {
             xs: 'none',
@@ -165,7 +165,7 @@ export const FavoriteTeamsBox = styled(Container)(({ theme }) =>
     })
 )
 
-export const FavoriteTeamsBoxXS = styled(Container)(({ theme }) =>
+export const FavoriteTeamsContainerXS = styled(Container)(({ theme }) =>
     theme.unstable_sx({
         display: {
             xs: 'flex',
@@ -184,7 +184,7 @@ export const FavoriteTeamsBoxXS = styled(Container)(({ theme }) =>
     })
 )
 
-export const NotificationsBox = styled(Container)(({ theme }) =>
+export const NotificationsContainer = styled(Container)(({ theme }) =>
     theme.unstable_sx({
         display: {
             xs: 'none',
@@ -210,7 +210,6 @@ export const ForumsYouFollow = styled(Grid)(({ theme }) =>
             lg: '1 / 2 / 3 / 3'
         },
         width: '100%',
-
         minWidth: {
             xs: '201px',
             sm: '278px',
@@ -221,5 +220,22 @@ export const ForumsYouFollow = styled(Grid)(({ theme }) =>
         background: 'linear-gradient(to bottom, #0081D4, #000000)',
         border: 'solid 1px var(--theme-orange)',
         overflow: 'auto',
+    })
+)
+
+export const FYFNavBar = styled(Grid)(({ theme }) =>
+    theme.unstable_sx({
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        flexGrow: '0',
+        flexShrink: '0',
+        color: 'white',
+        position: 'sticky',
+        WebkitPosition: 'sticky',
+        top: '0',
+        background: 'linear-gradient(to bottom, #0081D4, #229cff)',
+        boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.85)',
+        zIndex: '1',
     })
 )

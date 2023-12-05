@@ -18,7 +18,7 @@ import '../../styles/dashboard.css';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/auth/authSlice';
-import { MainLayoutGrid, DashboardHeadGrid, Greeting, GreetingXS, DashboardHeadXS, UserAvatar, DashboardContainer, FavoriteTeamsBox, FavoriteTeamsBoxXS, UserData, UserDataContainer, ForumsYouFollow } from '../dashboard/components'
+import { MainLayoutGrid, DashboardHeadGrid, Greeting, GreetingXS, DashboardHeadXS, UserAvatar, DashboardContainer, FavoriteTeamsContainer, FavoriteTeamsContainerXS, UserData, UserDataContainer, ForumsYouFollow, FYFNavBar } from '../dashboard/components'
 
 export const Dashboard = () => {
 
@@ -136,9 +136,9 @@ export const Dashboard = () => {
                             disableGutters={true}
                         >
 
-                            {/*First Box*/}
+                            {/*First Container*/}
 
-                            <FavoriteTeamsBox
+                            <FavoriteTeamsContainer
                                 disableGutters={true}
                             >
 
@@ -215,11 +215,11 @@ export const Dashboard = () => {
                                     )}
 
                                 </Container>
-                            </FavoriteTeamsBox>
+                            </FavoriteTeamsContainer>
 
                             {/*Displays on extra small screens only*/}
 
-                            <FavoriteTeamsBoxXS
+                            <FavoriteTeamsContainerXS
                             >
                                 <img
                                     className='side-controls'
@@ -244,9 +244,9 @@ export const Dashboard = () => {
                                     }}
                                 >
                                 </img>
-                            </FavoriteTeamsBoxXS>
+                            </FavoriteTeamsContainerXS>
 
-                            {/*Second Box*/}
+                            {/*Second Container*/}
 
                             <Container
                                 disableGutters={true}
@@ -318,7 +318,9 @@ export const Dashboard = () => {
                         </UserDataContainer>
 
                     </UserData>
+
                     {/*3rd Grid Item*/}
+
                     <ForumsYouFollow
                         container
                         item
@@ -333,23 +335,9 @@ export const Dashboard = () => {
                                 width: '100%',
                             }}
                         >
-                            <Container
+                            <FYFNavBar
                                 className='dashboard-forum-navbar'
                                 id='dashboard-forum-navbar'
-                                sx={{
-                                    display: 'flex',
-                                    justifyContent: 'space-between',
-                                    alignItems: 'center',
-                                    flexGrow: '0',
-                                    flexShrink: '0',
-                                    color: 'white',
-                                    position: 'sticky',
-                                    WebkitPosition: 'sticky',
-                                    top: '0',
-                                    background: 'linear-gradient(to bottom, #0081D4, #229cff)',
-                                    boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.85)',
-                                    zIndex: '1',
-                                }}
                             >
                                 <Typography
                                     noWrap
@@ -372,7 +360,7 @@ export const Dashboard = () => {
                                 >
                                     Explore
                                 </Link>
-                            </Container>
+                            </FYFNavBar>
                             <Container
                                 disableGutters={true}
                                 sx={{
