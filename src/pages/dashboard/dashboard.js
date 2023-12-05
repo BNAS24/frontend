@@ -18,7 +18,7 @@ import '../../styles/dashboard.css';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/auth/authSlice';
-import { MainLayoutGrid, DashboardHeadGrid, Greeting, GreetingXS, DashboardHeadXS, UserAvatar, DashboardContainer, FavoriteTeamsContainer, FavoriteTeamsContainerXS, UserData, UserDataContainer, ForumsYouFollow, FYFNavBar } from '../dashboard/components'
+import { MainLayoutGrid, DashboardHeadGrid, Greeting, GreetingXS, DashboardHeadXS, UserAvatar, DashboardContainer, FavoriteTeamsMainContainer, FTContainerXS, UserData, UserDataContainer, ForumsYouFollow, FYFNavBar, FTTitle, FTInnerContainer, NotificationsContainer, NtfTitle, NtfInnerContainer, FYFMainContainer, FYFTitle, FYFContent } from '../dashboard/components'
 
 export const Dashboard = () => {
 
@@ -127,37 +127,20 @@ export const Dashboard = () => {
 
                             {/*First Container*/}
 
-                            <FavoriteTeamsContainer
+                            <FavoriteTeamsMainContainer
                                 disableGutters={true}
                             >
-                                <Typography
+                                <FTTitle
                                     noWrap={true}
                                     align='center'
                                     variant='h4'
-                                    sx={{
-                                        fontSize: {
-                                            xs: '1.5rem',
-                                            sm: '1.3rem',
-                                            md: '1.7rem',
-                                            lg: '2.5rem',
-                                            xl: ''
-                                        }
-                                    }}
                                 >
                                     Favorite Teams
-                                </Typography>
+                                </FTTitle>
 
-                                <Container
+                                <FTInnerContainer
                                     disableGutters={true}
-                                    sx={{
-                                        display: 'flex',
-                                        flexWrap: 'wrap',
-                                        height: '100%',
-                                        width: '100%',
-                                        mt: '24px',
-                                        overflowY: 'auto',
-                                        border: 'solid 1px #F26101'
-                                    }}>
+                                >
 
                                     {fakeTeams.map((team) =>
                                         <Container
@@ -202,12 +185,12 @@ export const Dashboard = () => {
                                         </Container>
                                     )}
 
-                                </Container>
-                            </FavoriteTeamsContainer>
+                                </FTInnerContainer>
+                            </FavoriteTeamsMainContainer>
 
                             {/*Displays on extra small screens only*/}
 
-                            <FavoriteTeamsContainerXS
+                            <FTContainerXS
                             >
                                 <img
                                     className='side-controls'
@@ -232,59 +215,23 @@ export const Dashboard = () => {
                                     }}
                                 >
                                 </img>
-                            </FavoriteTeamsContainerXS>
+                            </FTContainerXS>
 
                             {/*Second Container*/}
 
-                            <Container
+                            <NotificationsContainer
                                 disableGutters={true}
-                                sx={{
-                                    display: {
-                                        xs: 'none',
-                                        sm: 'flex',
-                                        md: 'flex',
-                                        lg: 'flex'
-                                    },
-                                    flexShrink: '1',
-                                    flexGrow: '1',
-                                    flexDirection: 'column',
-                                    alignItems: 'center',
-                                    width: '50%',
-                                    maxHeight: '100%',
-                                }}
                             >
 
-                                <Typography
+                                <NtfTitle
                                     noWrap={true}
                                     align='center'
                                     variant='h4'
-                                    sx={{
-                                        fontSize: {
-                                            xs: '1.5rem',
-                                            sm: '1.3rem',
-                                            md: '1.7rem',
-                                            lg: '2.5rem',
-                                            xl: ''
-                                        }
-                                    }}
                                 >
                                     Notifications
-                                </Typography>
+                                </NtfTitle>
 
-                                <Container
-                                    sx={{
-                                        display: 'flex',
-                                        flexDirection: 'column',
-                                        alignItems: 'center',
-                                        height: '100%',
-                                        width: '100%',
-                                        mt: '24px',
-                                        pb: '24px',
-                                        overflowY: 'auto',
-                                        overflowX: 'hidden',
-                                        border: 'solid 1px #F26101'
-                                    }}>
-
+                                <NtfInnerContainer>
                                     {/*The Typography element will actually get changed into a NavLink component for demonstration purposes of clicking on a notification and it takes you to someone's profile page, you have to build a mock profile page first*/}
 
                                     {fakeNotifications.map((notification) =>
@@ -298,12 +245,13 @@ export const Dashboard = () => {
                                                 flexShrink: '0',
                                                 flexGrow: '0',
                                                 fontSize: '1rem'
-                                            }}>
+                                            }}
+                                        >
                                             {notification} liked your post
                                         </Typography>
                                     )}
-                                </Container>
-                            </Container>
+                                </NtfInnerContainer>
+                            </NotificationsContainer>
                         </UserDataContainer>
 
                     </UserData>
@@ -315,34 +263,20 @@ export const Dashboard = () => {
                         item
                         xs={12} sm={12} md={12} lg={12}
                     >
-                        <Container
+                        <FYFMainContainer
                             disableGutters={true}
-                            sx={{
-                                display: 'flex',
-                                flexDirection: 'column',
-                                justifyContent: 'center',
-                                width: '100%',
-                            }}
                         >
                             <FYFNavBar
                                 className='dashboard-forum-navbar'
                                 id='dashboard-forum-navbar'
                             >
-                                <Typography
+                                <FYFTitle
                                     noWrap
-                                    sx={{
-                                        fontSize: {
-                                            xs: '0.6rem',
-                                            sm: '1rem',
-                                            md: '1rem',
-                                            lg: '1rem',
-                                        }
-                                    }}
                                 >
                                     <strong>
                                         Forums you follow
                                     </strong>
-                                </Typography>
+                                </FYFTitle>
                                 <Link
                                     to='/forums'
                                     className='explore-button'
@@ -350,24 +284,8 @@ export const Dashboard = () => {
                                     Explore
                                 </Link>
                             </FYFNavBar>
-                            <Container
+                            <FYFContent
                                 disableGutters={true}
-                                sx={{
-                                    display: 'flex',
-                                    flexDirection: 'column',
-                                    justifyContent: 'center',
-                                    flexGrow: 1,
-                                    flexShrink: 0,
-                                    gap: '16px',
-                                    width: '100%',
-                                    height: '100%',
-                                    mt: {
-                                        xs: '16px',
-                                        sm: '32px',
-                                        md: '32px',
-                                        lg: '32px'
-                                    },
-                                }}
                             >
                                 {
                                     Object.keys(postContent).map((key) =>
@@ -582,8 +500,8 @@ export const Dashboard = () => {
                                     username={postContent[isModalOpen]?.username}
                                     comment={postContent[isModalOpen]?.postText}
                                 />
-                            </Container>
-                        </Container>
+                            </FYFContent>
+                        </FYFMainContainer>
                     </ForumsYouFollow>
                     {isSidebarOpen && (
                         <SideBarNav />
@@ -637,7 +555,8 @@ export const Dashboard = () => {
                                         pr: '16px !important',
                                         overflowY: 'auto',
                                         border: 'solid 1px #F26101'
-                                    }}>
+                                    }}
+                                >
 
                                     {fakeTeams.map((team) =>
                                         <Container

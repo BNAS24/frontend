@@ -149,7 +149,7 @@ export const UserDataContainer = styled(Grid)(({ theme }) =>
     })
 )
 
-export const FavoriteTeamsContainer = styled(Container)(({ theme }) =>
+export const FavoriteTeamsMainContainer = styled(Container)(({ theme }) =>
     theme.unstable_sx({
         display: {
             xs: 'none',
@@ -165,7 +165,32 @@ export const FavoriteTeamsContainer = styled(Container)(({ theme }) =>
     })
 )
 
-export const FavoriteTeamsContainerXS = styled(Container)(({ theme }) =>
+export const FTTitle = styled(Typography)(({ theme }) =>
+    theme.unstable_sx({
+        fontSize: {
+            xs: '1.5rem',
+            sm: '1.3rem',
+            md: '1.7rem',
+            lg: '2.5rem',
+            xl: ''
+        }
+    })
+)
+
+export const FTInnerContainer = styled(Typography)(({ theme }) =>
+    theme.unstable_sx({
+        display: 'flex',
+        flexWrap: 'wrap',
+        height: '100%',
+        width: '100%',
+        mt: '24px',
+        overflowY: 'auto',
+        border: 'solid 1px #F26101'
+    })
+)
+
+
+export const FTContainerXS = styled(Container)(({ theme }) =>
     theme.unstable_sx({
         display: {
             xs: 'flex',
@@ -201,6 +226,33 @@ export const NotificationsContainer = styled(Container)(({ theme }) =>
     })
 )
 
+export const NtfTitle = styled(Typography)(({ theme }) =>
+    theme.unstable_sx({
+        fontSize: {
+            xs: '1.5rem',
+            sm: '1.3rem',
+            md: '1.7rem',
+            lg: '2.5rem',
+            xl: ''
+        }
+    })
+)
+
+export const NtfInnerContainer = styled(Container)(({ theme }) =>
+    theme.unstable_sx({
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        height: '100%',
+        width: '100%',
+        mt: '24px',
+        pb: '24px',
+        overflowY: 'auto',
+        overflowX: 'hidden',
+        border: 'solid 1px #F26101'
+    })
+)
+
 export const ForumsYouFollow = styled(Grid)(({ theme }) =>
     theme.unstable_sx({
         gridArea: {
@@ -223,6 +275,15 @@ export const ForumsYouFollow = styled(Grid)(({ theme }) =>
     })
 )
 
+export const FYFMainContainer = styled(Container)(({ theme }) =>
+    theme.unstable_sx({
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        width: '100%',
+    })
+)
+
 export const FYFNavBar = styled(Container)(({ theme }) =>
     theme.unstable_sx({
         display: 'flex',
@@ -237,5 +298,35 @@ export const FYFNavBar = styled(Container)(({ theme }) =>
         background: 'linear-gradient(to bottom, #0081D4, #229cff)',
         boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.85)',
         zIndex: '1',
+    })
+)
+
+export const FYFTitle = styled(Typography)(({ theme }) =>
+    theme.unstable_sx({
+        fontSize: {
+            xs: '0.6rem',
+            sm: '1rem',
+            md: '1rem',
+            lg: '1rem',
+        }
+    })
+)
+
+export const FYFContent = styled(Container)(({ theme }) =>
+    theme.unstable_sx({
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        flexGrow: 1,
+        flexShrink: 0,
+        gap: '16px',
+        width: '100%',
+        height: '100%',
+        mt: {
+            xs: '16px',
+            sm: '32px',
+            md: '32px',
+            lg: '32px'
+        },
     })
 )
