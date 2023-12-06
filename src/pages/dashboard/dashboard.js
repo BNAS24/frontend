@@ -41,6 +41,7 @@ import {
     UserData,
     UserDataContainer
 } from '../dashboard/components';
+import { styles } from './dbstyles';
 
 export const Dashboard = () => {
 
@@ -167,40 +168,20 @@ export const Dashboard = () => {
                                     {fakeTeams.map((team) =>
                                         <Container
                                             key={team}
-                                            sx={{
-                                                display: 'flex',
-                                                flexShrink: 1,
-                                                flexGrow: 0,
-                                                flexDirection: 'column',
-                                                alignItems: 'center',
-                                                justifyContent: 'flex-start',
-                                                width: '33%',
-                                                minWidth: '73px',
-                                                mt: '24px',
-                                                p: '0 0 !important'
-
-                                            }}
+                                            sx={styles.fakeTeamsContainer}
                                         >
-                                            <Avatar
+                                            <Box
+                                                component='img'
                                                 variant='square'
                                                 alt='team logo'
                                                 src='https://cdn-icons-png.flaticon.com/512/2553/2553695.png'
-                                                sx={{
-                                                    height: '62px',
-                                                    width: '62px',
-                                                }}
-                                            >
-
-                                            </Avatar>
+                                                sx={styles.fakeTeamsLogoPlaceHolder}
+                                            />
                                             <Typography
                                                 variant='body1'
                                                 align='center'
                                                 className='links-hover-state'
-
-                                                sx={{
-                                                    flexShrink: 2,
-                                                    fontSize: '1rem',
-                                                }}
+                                                sx={styles.fakeTeamsTitle}
                                             >
                                                 {team}
                                             </Typography>
@@ -218,12 +199,8 @@ export const Dashboard = () => {
                                     className='side-controls'
                                     onClick={handleNotificaitions}
                                     src='https://i.postimg.cc/d0s4fX3v/Notifications.png'
-                                    alt='notifications'
-                                    sx={{
-                                        width: '40px',
-                                        height: 'auto',
-                                        marginTop: '8px',
-                                    }}
+                                    alt='notifications icon'
+                                    sx={styles.notificationsButtonIcon}
                                 />
                                 <Box
                                     component='img'
@@ -231,10 +208,7 @@ export const Dashboard = () => {
                                     onClick={handleTeamsDisplayed}
                                     src='https://i.postimg.cc/0QvrZCrT/Favorite-Teams.png'
                                     alt='badges icon'
-                                    sx={{
-                                        width: '48px',
-                                        height: 'auto'
-                                    }}
+                                    sx={styles.badgesButtonIcon}
                                 />
                             </FTContainerXS>
 
