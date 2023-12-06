@@ -27,5 +27,11 @@ export const styles = {
     badgesButtonIcon: {
         width: '48px',
         height: 'auto'
+    },
+    notificationLink: {
+        mt: '24px',
+        flexShrink: '0',
+        flexGrow: '0',
+        fontSize: '1rem'
     }
 }

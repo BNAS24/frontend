@@ -238,12 +238,7 @@ export const Dashboard = () => {
                                             variant='body1'
                                             align='center'
                                             className='links-hover-state'
-                                            sx={{
-                                                mt: '24px',
-                                                flexShrink: '0',
-                                                flexGrow: '0',
-                                                fontSize: '1rem'
-                                            }}
+                                            sx={styles.notificationLink}
                                         >
                                             {notification} liked your post
                                         </Typography>
