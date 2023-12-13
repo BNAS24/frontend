@@ -180,6 +180,10 @@ export const mobileDisplay = {
             left: '8px',
             top: '8px',
         },
+        buttonColor: {
+            color: 'var(--theme-orange)'
+
+        },
         title: {
             position: 'absolute',
             top: '8px',

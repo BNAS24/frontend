@@ -382,12 +382,10 @@ export const Dashboard = () => {
                             <FavoriteTeamsMobileDisplayContainer>
                                 <IconButton
                                     onClick={handleTeamsDisplayed}
-                                    sx={mobileDisplay.favoriteTeamsButton}
+                                    sx={mobileDisplay.favoriteTeams.button}
                                 >
                                     <ArrowBackIosNewOutlinedIcon
-                                        sx={{
-                                            color: 'var(--theme-orange)'
-                                        }}
+                                        sx={mobileDisplay.favoriteTeams.buttonColor}
                                     />
                                 </IconButton>
                                 <Typography
