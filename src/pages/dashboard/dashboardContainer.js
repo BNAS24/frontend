@@ -20,28 +20,28 @@ import {
     DashboardContainer,
     DashboardHeadGrid,
     DashboardHeadXS,
-    FTContainerXS,
-    FTInnerContainer,
-    FTMobileDisplayContainer,
-    FTTitle,
-    FYFContent,
-    FYFMainContainer,
-    FYFNavBar,
-    FYFTitle,
+    FavoriteTeamsContainerXS,
+    FavoriteTeamInnerContainer,
+    FavoriteTeamsMobileDisplayContainer,
+    FavoriteTeamsTitle,
+    ForumsYouFollowContent,
+    ForumsYouFollowMainContainer,
+    ForumsYouFollowNavBar,
+    ForumsYouFollowTitle,
     FavoriteTeamsMainContainer,
     ForumsYouFollow,
     Greeting,
     GreetingXS,
     MainLayoutGrid,
     NotificationsContainer,
-    NtfInnerContainer,
-    NtfMobileDisplayContainer,
-    NtfTitle,
+    NotificationsInnerContainer,
+    NotificationsMobileDisplayContainer,
+    NotificationsfTitle,
     UserAvatar,
     UserData,
     UserDataContainer
-} from '../dashboard/components';
-import { styles } from './dbstyles';
+} from './subcomponents/dashboardStyledComponents';
+import { styles } from './styles';
 
 export const Dashboard = () => {
 
@@ -153,15 +153,15 @@ export const Dashboard = () => {
                             <FavoriteTeamsMainContainer
                                 disableGutters={true}
                             >
-                                <FTTitle
+                                <FavoriteTeamsTitle
                                     noWrap={true}
                                     align='center'
                                     variant='h4'
                                 >
                                     Favorite Teams
-                                </FTTitle>
+                                </FavoriteTeamsTitle>
 
-                                <FTInnerContainer
+                                <FavoriteTeamInnerContainer
                                     disableGutters={true}
                                 >
 
@@ -188,12 +188,12 @@ export const Dashboard = () => {
                                         </Container>
                                     )}
 
-                                </FTInnerContainer>
+                                </FavoriteTeamInnerContainer>
                             </FavoriteTeamsMainContainer>
 
                             {/*Displays on extra small screens only*/}
 
-                            <FTContainerXS>
+                            <FavoriteTeamsContainerXS>
                                 <Box
                                     component='img'
                                     className='side-controls'
@@ -210,7 +210,7 @@ export const Dashboard = () => {
                                     alt='badges icon'
                                     sx={styles.badgesButtonIcon}
                                 />
-                            </FTContainerXS>
+                            </FavoriteTeamsContainerXS>
 
                             {/*Second Container*/}
 
@@ -218,15 +218,15 @@ export const Dashboard = () => {
                                 disableGutters={true}
                             >
 
-                                <NtfTitle
+                                <NotificationsfTitle
                                     noWrap={true}
                                     align='center'
                                     variant='h4'
                                 >
                                     Notifications
-                                </NtfTitle>
+                                </NotificationsfTitle>
 
-                                <NtfInnerContainer>
+                                <NotificationsInnerContainer>
                                     {/*The Typography element will actually get changed into a NavLink 
                                     component for demonstration purposes of clicking on a notification 
                                     and it takes you to someone's profile page, you have to build a mock
@@ -243,7 +243,7 @@ export const Dashboard = () => {
                                             {notification} liked your post
                                         </Typography>
                                     )}
-                                </NtfInnerContainer>
+                                </NotificationsInnerContainer>
                             </NotificationsContainer>
                         </UserDataContainer>
 
@@ -256,28 +256,28 @@ export const Dashboard = () => {
                         item
                         xs={12} sm={12} md={12} lg={12}
                     >
-                        <FYFMainContainer
+                        <ForumsYouFollowMainContainer
                             disableGutters={true}
                         >
-                            <FYFNavBar
+                            <ForumsYouFollowNavBar
                                 className='dashboard-forum-navbar'
                                 id='dashboard-forum-navbar'
                             >
-                                <FYFTitle
+                                <ForumsYouFollowTitle
                                     noWrap
                                 >
                                     <strong>
                                         Forums you follow
                                     </strong>
-                                </FYFTitle>
+                                </ForumsYouFollowTitle>
                                 <Link
                                     to='/forums'
                                     className='explore-button'
                                 >
                                     Explore
                                 </Link>
-                            </FYFNavBar>
-                            <FYFContent
+                            </ForumsYouFollowNavBar>
+                            <ForumsYouFollowContent
                                 disableGutters={true}
                             >
                                 {
@@ -493,8 +493,8 @@ export const Dashboard = () => {
                                     username={postContent[isModalOpen]?.username}
                                     comment={postContent[isModalOpen]?.postText}
                                 />
-                            </FYFContent>
-                        </FYFMainContainer>
+                            </ForumsYouFollowContent>
+                        </ForumsYouFollowMainContainer>
                     </ForumsYouFollow>
                     {isSidebarOpen && (
                         <SideBarNav />
@@ -504,7 +504,7 @@ export const Dashboard = () => {
 
                     {isTeamsDisplayed && (
                         <Fragment>
-                            <FTMobileDisplayContainer>
+                            <FavoriteTeamsMobileDisplayContainer>
                                 <IconButton
                                     onClick={handleTeamsDisplayed}
                                     sx={{
@@ -588,11 +588,11 @@ export const Dashboard = () => {
                                     )}
 
                                 </Container>
-                            </FTMobileDisplayContainer>
+                            </FavoriteTeamsMobileDisplayContainer>
                         </Fragment>
                     )}
                     {isNotificationsDisplayed && (
-                        <NtfMobileDisplayContainer>
+                        <NotificationsMobileDisplayContainer>
                             <IconButton
                                 onClick={handleNotificaitions}
                                 sx={{
@@ -653,7 +653,7 @@ export const Dashboard = () => {
                                     </Typography>
                                 )}
                             </Container>
-                        </NtfMobileDisplayContainer>
+                        </NotificationsMobileDisplayContainer>
                     )}
                 </MainLayoutGrid>
 

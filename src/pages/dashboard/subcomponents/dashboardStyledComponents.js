@@ -165,7 +165,7 @@ export const FavoriteTeamsMainContainer = styled(Container)(({ theme }) =>
     })
 )
 
-export const FTTitle = styled(Typography)(({ theme }) =>
+export const FavoriteTeamsTitle = styled(Typography)(({ theme }) =>
     theme.unstable_sx({
         fontSize: {
             xs: '1.5rem',
@@ -177,7 +177,7 @@ export const FTTitle = styled(Typography)(({ theme }) =>
     })
 )
 
-export const FTInnerContainer = styled(Typography)(({ theme }) =>
+export const FavoriteTeamInnerContainer = styled(Typography)(({ theme }) =>
     theme.unstable_sx({
         display: 'flex',
         flexWrap: 'wrap',
@@ -190,7 +190,7 @@ export const FTInnerContainer = styled(Typography)(({ theme }) =>
 )
 
 
-export const FTContainerXS = styled(Container)(({ theme }) =>
+export const FavoriteTeamsContainerXS = styled(Container)(({ theme }) =>
     theme.unstable_sx({
         display: {
             xs: 'flex',
@@ -226,7 +226,7 @@ export const NotificationsContainer = styled(Container)(({ theme }) =>
     })
 )
 
-export const NtfTitle = styled(Typography)(({ theme }) =>
+export const NotificationsfTitle = styled(Typography)(({ theme }) =>
     theme.unstable_sx({
         fontSize: {
             xs: '1.5rem',
@@ -238,7 +238,7 @@ export const NtfTitle = styled(Typography)(({ theme }) =>
     })
 )
 
-export const NtfInnerContainer = styled(Container)(({ theme }) =>
+export const NotificationsInnerContainer = styled(Container)(({ theme }) =>
     theme.unstable_sx({
         display: 'flex',
         flexDirection: 'column',
@@ -275,7 +275,7 @@ export const ForumsYouFollow = styled(Grid)(({ theme }) =>
     })
 )
 
-export const FYFMainContainer = styled(Container)(({ theme }) =>
+export const ForumsYouFollowMainContainer = styled(Container)(({ theme }) =>
     theme.unstable_sx({
         display: 'flex',
         flexDirection: 'column',
@@ -284,7 +284,7 @@ export const FYFMainContainer = styled(Container)(({ theme }) =>
     })
 )
 
-export const FYFNavBar = styled(Container)(({ theme }) =>
+export const ForumsYouFollowNavBar = styled(Container)(({ theme }) =>
     theme.unstable_sx({
         display: 'flex',
         justifyContent: 'space-between',
@@ -301,7 +301,7 @@ export const FYFNavBar = styled(Container)(({ theme }) =>
     })
 )
 
-export const FYFTitle = styled(Typography)(({ theme }) =>
+export const ForumsYouFollowTitle = styled(Typography)(({ theme }) =>
     theme.unstable_sx({
         fontSize: {
             xs: '0.6rem',
@@ -312,7 +312,7 @@ export const FYFTitle = styled(Typography)(({ theme }) =>
     })
 )
 
-export const FYFContent = styled(Container)(({ theme }) =>
+export const ForumsYouFollowContent = styled(Container)(({ theme }) =>
     theme.unstable_sx({
         display: 'flex',
         flexDirection: 'column',
@@ -331,7 +331,7 @@ export const FYFContent = styled(Container)(({ theme }) =>
     })
 )
 
-export const FTMobileDisplayContainer = styled(Container)(({ theme }) =>
+export const FavoriteTeamsMobileDisplayContainer = styled(Container)(({ theme }) =>
     theme.unstable_sx({
         position: 'absolute',
         display: 'flex',
@@ -343,7 +343,7 @@ export const FTMobileDisplayContainer = styled(Container)(({ theme }) =>
     })
 )
 
-export const NtfMobileDisplayContainer = styled(Container)(({ theme }) =>
+export const NotificationsMobileDisplayContainer = styled(Container)(({ theme }) =>
     theme.unstable_sx({
         position: 'absolute',
         display: 'flex',
