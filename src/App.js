@@ -3,7 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import { Homepage } from './pages/homepage/homepage';
 import { Login } from './pages/login/login';
 import { Register } from './pages/register/register';
-import { Dashboard } from './pages/dashboard/dashboard';
+import { Dashboard } from './pages/dashboard/dashboardContainer';
 import { Profile } from './pages/profile/profile';
 import { Forums } from './pages/forum/forums';
 import { LiveScores } from './pages/live_scores/livescores';

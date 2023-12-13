@@ -41,7 +41,7 @@ import {
     UserData,
     UserDataContainer
 } from './subcomponents/dashboardStyledComponents';
-import { styles } from './styles';
+import { styles, mobileDisplay } from './styles';
 
 export const Dashboard = () => {
 
@@ -284,60 +284,17 @@ export const Dashboard = () => {
                                     Object.keys(postContent).map((key) =>
                                         <Container
                                             key={key}
-                                            sx={{
-                                                display: 'flex',
-                                                flexDirection: 'row',
-                                                justifyContent: 'space-around',
-                                                gap: {
-                                                    xs: '8px',
-                                                    sm: '8px',
-                                                    md: '16px',
-                                                    lg: '16px'
-                                                },
-                                                p: {
-                                                    xs: '0 8px',
-                                                    sm: '0 8px',
-                                                    md: '0 16px',
-                                                    lg: '0 16px'
-                                                },
-                                            }}
+                                            sx={styles.forumsYouFollowContentContainer}
                                         >
                                             <Avatar
                                                 key={key}
                                                 alt='profile picture'
                                                 variant='square'
-                                                sx={{
-                                                    height: {
-                                                        xs: '16px',
-                                                        sm: '64px',
-                                                        md: '64px',
-                                                        lg: '64px',
-                                                    },
-                                                    width: {
-                                                        xs: '16px',
-                                                        sm: '64px',
-                                                        md: '64px',
-                                                        lg: '64px',
-                                                    }
-                                                }}
+                                                sx={styles.forumsYouFollowUserAvatar}
                                             >
                                             </Avatar>
                                             <Container
-                                                sx={{
-                                                    display: 'flex',
-                                                    flexDirection: 'column',
-                                                    justifyContent: 'space-between',
-                                                    alignItems: 'start',
-                                                    gap: '8px',
-                                                    height: {
-                                                        xs: '140px',
-                                                        sm: '168px',
-                                                        md: '168px',
-                                                        lg: '168px'
-                                                    },
-                                                    p: '8px',
-                                                    backgroundColor: 'var(--theme-blue)'
-                                                }}
+                                                sx={styles.forumsYouFollowPostContainer}
 
                                             >
                                                 <div
@@ -346,63 +303,24 @@ export const Dashboard = () => {
                                                     <Typography
                                                         align='center'
                                                         noWrap
-                                                        sx={{
-                                                            fontSize: {
-                                                                xs: '0.68rem',
-                                                                sm: '0.7rem',
-                                                                md: '1rem',
-                                                                lg: '1.2rem',
-                                                                xl: 'false'
-                                                            },
-                                                            color: 'var(--theme-white)'
-                                                        }}
+                                                        sx={styles.postUsernameTypography}
                                                     >
                                                         {postContent[key].username}
                                                     </Typography>
                                                     <Typography
                                                         align='center'
                                                         noWrap
-                                                        sx={{
-                                                            fontSize: {
-                                                                xs: '0.68rem',
-                                                                sm: '0.7rem',
-                                                                md: '1rem',
-                                                                lg: '1.2rem',
-                                                                xl: ''
-                                                            },
-                                                            color: 'var(--theme-white)'
-
-                                                        }}
+                                                        sx={styles.postTimeCreatedTypography}
 
                                                     >
                                                         {postContent[key].timeCreated}
                                                     </Typography>
                                                 </div>
                                                 <Container
-                                                    sx={{
-                                                        height: '100px',
-                                                        width: '100%',
-                                                        p: '8px 8px !important',
-                                                        border: 'solid 1px var(--theme-orange)',
-                                                        overflowY: 'auto',
-                                                        overflowX: {
-                                                            xs: 'hidden',
-                                                            sm: 'auto',
-                                                            md: 'auto',
-                                                            lg: 'auto'
-                                                        }
-                                                    }}
+                                                    sx={styles.postContentContainer}
                                                 >
                                                     <Typography
-                                                        sx={{
-                                                            fontSize: {
-                                                                xs: '0.68rem',
-                                                                sm: '0.7rem',
-                                                                md: '0.9rem',
-                                                                lg: '1rem'
-                                                            },
-                                                            color: 'var(--theme-white)'
-                                                        }}
+                                                        sx={styles.postContentText}
                                                     >
                                                         {postContent[key].postText}
                                                     </Typography>
@@ -417,16 +335,7 @@ export const Dashboard = () => {
                                                             noWrap
                                                             align='center'
                                                             className='links-hover-state'
-                                                            sx={{
-                                                                fontSize: {
-                                                                    xs: '0.68rem',
-                                                                    sm: '0.7rem',
-                                                                    md: '1rem',
-                                                                    lg: '1.2rem',
-                                                                    xl: ''
-                                                                },
-                                                                color: 'var(--theme-white)'
-                                                            }}
+                                                            sx={styles.forumLinkText}
                                                         >
                                                             Forum Name
                                                         </Typography>
@@ -436,51 +345,17 @@ export const Dashboard = () => {
                                                     >
                                                         <AddCommentOutlinedIcon
                                                             key={key}
-                                                            sx={{
-                                                                height: {
-                                                                    xs: '16px',
-                                                                    sm: '16px',
-                                                                    md: '32px',
-                                                                    lg: 'false'
-                                                                },
-                                                                color: 'var(--theme-orange)',
-                                                                '&:hover': {
-                                                                    cursor: 'pointer',
-                                                                    color: '#ff8c33',
-                                                                }
-                                                            }}
+                                                            sx={styles.commentIcon}
                                                             onClick={() => handleOpenModal(key)}
                                                         />
                                                         {likeButton[key] ? (
                                                             <FavoriteOutlinedIcon
                                                                 onClick={() => toggleLike(key)}
-                                                                sx={{
-                                                                    height: {
-                                                                        xs: '16px',
-                                                                        sm: '16px',
-                                                                        md: '32px',
-                                                                        lg: 'false'
-                                                                    },
-                                                                    color: 'red',
-                                                                    '&:hover': {
-                                                                        cursor: 'pointer',
-                                                                    }
-                                                                }}
+                                                                sx={styles.favoriteIconNormal}
                                                             />) : (<FavoriteBorderOutlinedIcon
                                                                 onClick={() => toggleLike(key)}
-                                                                sx={{
-                                                                    height: {
-                                                                        xs: '16px',
-                                                                        sm: '16px',
-                                                                        md: '32px',
-                                                                        lg: 'false'
-                                                                    },
-                                                                    color: 'red',
-                                                                    '&:hover': {
-                                                                        cursor: 'pointer',
-                                                                        color: '#f95149',
-                                                                    }
-                                                                }} />
+                                                                sx={styles.favoriteIconClickedState}
+                                                            />
                                                         )}
                                                     </div>
                                                 </div>
@@ -507,12 +382,7 @@ export const Dashboard = () => {
                             <FavoriteTeamsMobileDisplayContainer>
                                 <IconButton
                                     onClick={handleTeamsDisplayed}
-                                    sx={{
-                                        position: 'absolute',
-                                        display: 'flex',
-                                        left: '8px',
-                                        top: '8px',
-                                    }}
+                                    sx={mobileDisplay.favoriteTeamsButton}
                                 >
                                     <ArrowBackIosNewOutlinedIcon
                                         sx={{
@@ -522,65 +392,30 @@ export const Dashboard = () => {
                                 </IconButton>
                                 <Typography
                                     align='center'
-                                    sx={{
-                                        position: 'absolute',
-                                        top: '8px',
-                                        fontSize: '1.5rem',
-                                    }}
+                                    sx={mobileDisplay.favoriteTeams.title}
                                 >
                                     Favorite Teams
                                 </Typography>
                                 <Container
-                                    sx={{
-                                        display: 'flex',
-                                        flexWrap: 'wrap',
-                                        height: '88%',
-                                        width: '100%',
-                                        mt: '56px',
-                                        pl: '16px !important',
-                                        pr: '16px !important',
-                                        overflowY: 'auto',
-                                        border: 'solid 1px #F26101'
-                                    }}
+                                    sx={mobileDisplay.favoriteTeams.container}
                                 >
-
                                     {fakeTeams.map((team) =>
                                         <Container
                                             key={team}
-                                            sx={{
-                                                display: 'flex',
-                                                flexShrink: 1,
-                                                flexGrow: 0,
-                                                flexDirection: 'column',
-                                                alignItems: 'center',
-                                                justifyContent: 'flex-start',
-                                                width: '33%',
-                                                minWidth: '73px',
-                                                mt: '24px',
-                                                p: '0 0 !important'
-
-                                            }}
+                                            sx={mobileDisplay.favoriteTeams.innerContainer}
                                         >
                                             <Avatar
                                                 variant='square'
                                                 alt='team logo'
                                                 src='https://cdn-icons-png.flaticon.com/512/2553/2553695.png'
-                                                sx={{
-                                                    height: '62px',
-                                                    width: '62px',
-                                                }}
+                                                sx={mobileDisplay.favoriteTeams.image}
                                             >
-
                                             </Avatar>
                                             <Typography
                                                 variant='body1'
                                                 align='center'
                                                 className='links-hover-state'
-
-                                                sx={{
-                                                    flexShrink: 2,
-                                                    fontSize: '1rem',
-                                                }}
+                                                sx={mobileDisplay.favoriteTeams.name}
                                             >
                                                 {team}
                                             </Typography>
@@ -595,41 +430,21 @@ export const Dashboard = () => {
                         <NotificationsMobileDisplayContainer>
                             <IconButton
                                 onClick={handleNotificaitions}
-                                sx={{
-                                    position: 'absolute',
-                                    display: 'flex',
-                                    left: '8px',
-                                    top: '8px',
-                                }}
+                                sx={mobileDisplay.notifications.button}
                             >
                                 <ArrowBackIosNewOutlinedIcon
-                                    sx={{
-                                        color: 'var(--theme-orange)'
-                                    }}
+                                    sx={mobileDisplay.notifications.buttonColor}
                                 />
                             </IconButton>
                             <Typography
                                 align='center'
-                                sx={{
-                                    position: 'absolute',
-                                    top: '8px',
-                                    fontSize: '1.5rem',
-                                }}
+                                sx={mobileDisplay.notifications.title}
                             >
                                 Notifications
                             </Typography>
                             <Container
-                                sx={{
-                                    display: 'flex',
-                                    flexDirection: 'column',
-                                    alignItems: 'center',
-                                    height: '88%',
-                                    width: '100%',
-                                    mt: '56px',
-                                    pb: '24px',
-                                    overflowY: 'auto',
-                                    border: 'solid 1px #F26101'
-                                }}>
+                                sx={mobileDisplay.notifications.container}
+                            >
 
                                 {/*The Typography element will actually get changed
                                  into a NavLink component for demonstration purposes
@@ -643,12 +458,8 @@ export const Dashboard = () => {
                                         variant='body1'
                                         align='center'
                                         className='links-hover-state'
-                                        sx={{
-                                            mt: '24px',
-                                            flexShrink: '0',
-                                            flexGrow: '0',
-                                            fontSize: '1rem'
-                                        }}>
+                                        sx={mobileDisplay.notifications.link}
+                                    >
                                         {notification} liked your post
                                     </Typography>
                                 )}
