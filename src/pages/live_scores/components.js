@@ -65,7 +65,7 @@ export const LeagueTitle = styled(Typography)(({ theme }) =>
     })
 )
 
-export const LeaguesList = styled(Typography)(({ theme }) =>
+export const LeaguesList = styled(Container)(({ theme }) =>
     theme.unstable_sx({
         display: 'flex',
         flexDirection: 'column',
@@ -76,7 +76,7 @@ export const LeaguesList = styled(Typography)(({ theme }) =>
     })
 )
 
-export const TeamsData = styled(Typography)(({ theme }) =>
+export const TeamsData = styled(Container)(({ theme }) =>
     theme.unstable_sx({
         display: 'flex',
         position: 'relative',

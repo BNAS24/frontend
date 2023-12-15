@@ -138,7 +138,7 @@ export const UserData = styled(Grid)(({ theme }) =>
     })
 )
 
-export const UserDataContainer = styled(Grid)(({ theme }) =>
+export const UserDataContainer = styled(Container)(({ theme }) =>
     theme.unstable_sx({
         display: 'flex',
         flexDirection: 'row',
