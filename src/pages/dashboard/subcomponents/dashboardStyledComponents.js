@@ -177,7 +177,7 @@ export const FavoriteTeamsTitle = styled(Typography)(({ theme }) =>
     })
 )
 
-export const FavoriteTeamInnerContainer = styled(Typography)(({ theme }) =>
+export const FavoriteTeamInnerContainer = styled(Container)(({ theme }) =>
     theme.unstable_sx({
         display: 'flex',
         flexWrap: 'wrap',
