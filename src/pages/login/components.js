@@ -28,7 +28,7 @@ export const LoginForm = styled(FormGroup)(({ theme }) =>
     })
 )
 
-export const TF1 = styled(TextField)(({ theme }) =>
+export const EmailTextField = styled(TextField)(({ theme }) =>
     theme.unstable_sx({
         width: '80%',
         maxWidth: '400px',
@@ -58,7 +58,7 @@ export const TF1 = styled(TextField)(({ theme }) =>
     })
 )
 
-export const TF2 = styled(TextField)(({ theme }) =>
+export const PasswordTextField = styled(TextField)(({ theme }) =>
     theme.unstable_sx({
         width: '80%',
         maxWidth: '400px',

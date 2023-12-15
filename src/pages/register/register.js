@@ -5,7 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/auth/authSlice';
 import customTheme from '../../styles/context/customtheme';
 import '../../styles/register.css';
-import { RegButton, RegTF1, RegTF2, RegTF3, RegTF4, RegisterForm, RegisterTitle } from '../register/components';
+import { RegisterButton, RegisterUsername, RegisterEmail, RegisterPassword, ConfirmPasswordRegistry, RegisterForm, RegisterTitle } from '../register/components';
 ;
 
 
@@ -96,8 +96,8 @@ export const Register = () => {
                         pt: '16px'
                     }}
                 >
-                    <RegTF1
-                        id="outlined-username-input"
+                    <RegisterUsername
+                        id="register_username"
                         label="Username"
                         type='text'
                         name='username'
@@ -106,8 +106,8 @@ export const Register = () => {
                         variant="outlined"
                         margin='dense'
                     />
-                    <RegTF2
-                        id="outlined-email-input"
+                    <RegisterEmail
+                        id="register_email"
                         label="Email"
                         type='email'
                         name='email'
@@ -116,8 +116,8 @@ export const Register = () => {
                         variant="outlined"
                         margin='dense'
                     />
-                    <RegTF3
-                        id="outlined-password-input"
+                    <RegisterPassword
+                        id="register_password"
                         label="Password"
                         type="password"
                         name='password'
@@ -126,8 +126,8 @@ export const Register = () => {
                         variant="outlined"
                         margin='dense'
                     />
-                    <RegTF4
-                        id="outlined-confirm-password-input"
+                    <ConfirmPasswordRegistry
+                        id="comfirm_password_registry"
                         label="Confirm Password"
                         type="password"
                         name='confirmPassword'
@@ -136,13 +136,13 @@ export const Register = () => {
                         variant="outlined"
                         margin='dense'
                     />
-                    <RegButton
+                    <RegisterButton
                         fullWidth
                         variant="contained"
                         onClick={onSubmit}
                     >
                         Create
-                    </RegButton>
+                    </RegisterButton>
                     {regMessage && (
                         <Typography
                             align='center'

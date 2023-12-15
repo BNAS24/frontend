@@ -6,7 +6,7 @@ import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/auth/authSlice';
 import customTheme from '../../styles/context/customtheme';
 import '../../styles/login.css';
-import { LoginButton, LoginForm, LoginTitle, TF1, TF2, } from '../login/components';
+import { LoginButton, LoginForm, LoginTitle, EmailTextField, PasswordTextField, } from '../login/components';
 
 
 export const Login = () => {
@@ -73,17 +73,18 @@ export const Login = () => {
                 <LoginForm
                     onSubmit={onSubmit}
                 >
-                    <TF1
-                        id="login-email"
+                    <EmailTextField
+                        id="login_email"
                         label="Email"
                         type='email'
                         name='email'
                         onChange={onChange}
+                        autoComplete="current-email"
                         variant="outlined"
                         margin='dense'
                     />
-                    <TF2
-                        id="login-password"
+                    <PasswordTextField
+                        id="login_password"
                         label="Password"
                         type="password"
                         name='password'

@@ -231,6 +231,7 @@ export const LiveScores = () => {
                                     width: '100%',
                                     mt: '32px',
                                     border: '1px solid var(--theme-orange)',
+                                    overflow: 'hidden',
                                 }}
                             >
                                 <Container
@@ -296,9 +297,10 @@ export const LiveScores = () => {
                                             component={Paper}
                                             sx={{
                                                 // backgroundColor: 'var(--theme-blue)',
+                                                overflow: 'hidden',
                                             }}
                                         >
-                                            <Table>
+                                            <Table> 
                                                 <TableHead>
                                                     <TableRow>
                                                         <TableCell

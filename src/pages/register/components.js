@@ -27,7 +27,7 @@ export const RegisterForm = styled(FormGroup)(({ theme }) =>
     })
 )
 
-export const RegTF1 = styled(TextField)(({ theme }) =>
+export const RegisterUsername = styled(TextField)(({ theme }) =>
     theme.unstable_sx({
         width: '80%',
         maxWidth: '400px',
@@ -57,7 +57,7 @@ export const RegTF1 = styled(TextField)(({ theme }) =>
     })
 )
 
-export const RegTF2 = styled(TextField)(({ theme }) =>
+export const RegisterEmail = styled(TextField)(({ theme }) =>
     theme.unstable_sx({
         width: '80%',
         maxWidth: '400px',
@@ -87,7 +87,7 @@ export const RegTF2 = styled(TextField)(({ theme }) =>
     })
 )
 
-export const RegTF3 = styled(TextField)(({ theme }) =>
+export const RegisterPassword = styled(TextField)(({ theme }) =>
     theme.unstable_sx({
         width: '80%',
         maxWidth: '400px',
@@ -117,7 +117,7 @@ export const RegTF3 = styled(TextField)(({ theme }) =>
     })
 )
 
-export const RegTF4 = styled(TextField)(({ theme }) =>
+export const ConfirmPasswordRegistry = styled(TextField)(({ theme }) =>
     theme.unstable_sx({
         width: '80%',
         maxWidth: '400px',
@@ -147,7 +147,7 @@ export const RegTF4 = styled(TextField)(({ theme }) =>
     })
 )
 
-export const RegButton = styled(Button)(({ theme }) =>
+export const RegisterButton = styled(Button)(({ theme }) =>
     theme.unstable_sx({
         width: '80%',
         minWidth: '104px',
