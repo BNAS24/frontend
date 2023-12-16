@@ -3,12 +3,10 @@ import InputAdornment from '@mui/material/InputAdornment';
 import { Footer } from '../../components/authfoot';
 import { NavBar } from '../../components/authnav';
 import { SideBarNav } from '../../components/helpers/sidebarnav';
-import { useSidebar } from '../../context/mobilenav';
-import { ForumContent, ForumSeachBar, ForumPageWrap } from './components';
+import { ForumContent, ForumPageWrap, ForumSeachBar } from './subcomponents/forumsStyledComponents';
 
-export const Forums = () => {
 
-    const { isSidebarOpen } = useSidebar();
+export const ForumPres = ({ isSidebarOpen }) => {
 
     return (
         <ForumPageWrap
@@ -24,8 +22,8 @@ export const Forums = () => {
                     type='search'
                     InputProps={{
                         endAdornment: (
-                            <InputAdornment 
-                            position="end"
+                            <InputAdornment
+                                position="end"
                             >
                                 <SearchOutlinedIcon
                                     sx={{
