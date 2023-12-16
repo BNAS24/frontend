@@ -1,149 +1,119 @@
-import { Typography } from '@mui/material'
 import { Container } from '@mui/system'
 import React from 'react'
 import { Footer } from '../../components/authfoot'
 import { NavBar } from '../../components/authnav'
 import { SideBarNav } from '../../components/helpers/sidebarnav'
 import aboutUs from '../../datastore/aboutus'
+import { Title, Paragraph, EndingQuote, BackgroundImageContainer, ContentContainer } from './subcomponents/aboutUsStyledComponents'
 
-export const AboutUsPres = ({isSidebarOpen}) => {
+export const AboutUsPres = ({ isSidebarOpen }) => {
 
     return (
-        <Container
-        disableGutters={true}
-        maxWidth='100%'
-        sx={{
-            display: 'flex',
-            flexDirection: 'column',
-            height: '100%',
-            width: '100%',
-        }}
-    >
-        <NavBar />
         <Container
             disableGutters={true}
             maxWidth='100%'
             sx={{
-                position: 'relative',
-                flex: '1',
                 display: 'flex',
-                flexDirection: 'row',
-                justifyContent: 'flex-start',
-                height: 'auto',
+                flexDirection: 'column',
+                height: '100%',
                 width: '100%',
-                overflow: isSidebarOpen ? 'hidden' : 'none',
             }}
         >
+            <NavBar />
             <Container
+                disableGutters={true}
                 maxWidth='100%'
                 sx={{
+                    position: 'relative',
+                    flex: '1',
                     display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                    justifyContent: 'space-around',
-                    gap: '8px',
-                    width: '50%',
+                    flexDirection: 'row',
+                    justifyContent: 'flex-start',
                     height: 'auto',
-                    p: '24px 16px !important',
-                    color: 'white',
+                    width: '100%',
+                    overflow: isSidebarOpen ? 'hidden' : 'none',
                 }}
             >
-                <Typography
-                    variant='h4'
-                    align='center'
+                <ContentContainer
+                    maxWidth='100%'
                 >
-                    {aboutUs.aboutUs.title}
-                </Typography>
-                <Typography
-                    variant='body2'
-                    align='center'
-                >
-                    {aboutUs.aboutUs.body}
-                </Typography>
-                <Typography
-                    variant='h4'
-                    align='center'
-                >
-                    {aboutUs.ourMission.title}
-                </Typography>
-                <Typography
-                    variant='body2'
-                    align='center'
-                >
-                    {aboutUs.ourMission.body}
-                </Typography>
-                <Typography
-                    variant='h4'
-                    align='center'
-                >
-                    {aboutUs.setsUsApart.title}
-                </Typography>
-                <Typography
-                    variant='body2'
-                    align='center'
-                >
-                    {aboutUs.setsUsApart.body}
-                </Typography>
-                <Typography
-                    variant='h4'
-                    align='center'
-                >
-                    {aboutUs.communityDriven.title}
-                </Typography>
-                <Typography
-                    variant='body2'
-                    align='center'
-                >
-                    {aboutUs.communityDriven.body}
-                </Typography>
-                <Typography
-                    variant='h4'
-                    align='center'
-                >
-                    {aboutUs.joinUsToday.title}
-                </Typography>
-                <Typography
-                    variant='body2'
-                    align='center'
-                >
-                    {aboutUs.joinUsToday.body}
-                </Typography>
+                    <Title
+                        variant='h4'
+                        align='center'
+                    >
+                        {aboutUs.aboutUs.title}
+                    </Title>
+                    <Paragraph
+                        variant='body2'
+                        align='center'
+                    >
+                        {aboutUs.aboutUs.body}
+                    </Paragraph>
+                    <Title
+                        variant='h4'
+                        align='center'
+                    >
+                        {aboutUs.ourMission.title}
+                    </Title>
+                    <Paragraph
+                        variant='body2'
+                        align='center'
+                    >
+                        {aboutUs.ourMission.body}
+                    </Paragraph>
+                    <Title
+                        variant='h4'
+                        align='center'
+                    >
+                        {aboutUs.setsUsApart.title}
+                    </Title>
+                    <Paragraph
+                        variant='body2'
+                        align='center'
+                    >
+                        {aboutUs.setsUsApart.body}
+                    </Paragraph>
+                    <Title
+                        variant='h4'
+                        align='center'
+                    >
+                        {aboutUs.communityDriven.title}
+                    </Title>
+                    <Paragraph
+                        variant='body2'
+                        align='center'
+                    >
+                        {aboutUs.communityDriven.body}
+                    </Paragraph>
+                    <Title
+                        variant='h4'
+                        align='center'
+                    >
+                        {aboutUs.joinUsToday.title}
+                    </Title>
+                    <Paragraph
+                        variant='body2'
+                        align='center'
+                    >
+                        {aboutUs.joinUsToday.body}
+                    </Paragraph>
 
-                <Typography
-                    variant='body2'
-                    align='center'
-                    sx={{
-                        color: 'var(--theme-orange)',
-                        fontWeight: 700
-                    }}
+                    <EndingQuote
+                        variant='body2'
+                        align='center'
+                    >
+                        {aboutUs.endingQuote.body}
+                    </EndingQuote>
+                </ContentContainer>
+                <BackgroundImageContainer
+                    maxWidth='100%'
                 >
-                    {aboutUs.endingQuote.body}
-                </Typography>
+                </BackgroundImageContainer>
+                {isSidebarOpen && (
+                    <SideBarNav />
+                )}
             </Container>
-            <Container
-                maxWidth='100%'
-                sx={{
-
-                    display: 'flex',
-                    height: 'auto',
-                    width: '50%',
-                    backgroundImage: 'url(https://i.postimg.cc/wvjXZ8Tg/Basketball-Action-Shot.jpg)',
-                    backgroundRepeat: 'no-repeat',
-                    backgroundSize: {
-                        xs: 'auto 100%',
-                        sm: 'auto 100%',
-                        md: 'cover',
-                        lg: 'cover'
-                    },
-                    backgroundPosition: 'center',
-                }}
-            >
-            </Container>
-            {isSidebarOpen && (
-                <SideBarNav />
-            )}
+            <Footer />
         </Container>
-        <Footer />
-    </Container>
     )
 }
