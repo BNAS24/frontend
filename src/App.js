@@ -8,7 +8,7 @@ import { ContactUS } from './pages/contact_us/contactus';
 import { Dashboard } from './pages/dashboard/dashboardContainer';
 import { Forums } from './pages/forum/forumsContainer';
 import { Homepage } from './pages/homepage/homepage';
-import { LiveScores } from './pages/live_scores/livescores';
+import { LiveScores } from './pages/live_scores/livescoresContainer';
 import { Login } from './pages/login/login';
 import { Profile } from './pages/profile/profile';
 import { Register } from './pages/register/register';
