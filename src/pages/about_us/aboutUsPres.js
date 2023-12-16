@@ -4,7 +4,13 @@ import { Footer } from '../../components/authfoot'
 import { NavBar } from '../../components/authnav'
 import { SideBarNav } from '../../components/helpers/sidebarnav'
 import aboutUs from '../../datastore/aboutus'
-import { Title, Paragraph, EndingQuote, BackgroundImageContainer, ContentContainer } from './subcomponents/aboutUsStyledComponents'
+import {
+    Title,
+    Paragraph,
+    EndingQuote,
+    BackgroundImageContainer,
+    ContentContainer
+} from './subcomponents/aboutUsStyledComponents'
 
 export const AboutUsPres = ({ isSidebarOpen }) => {
 
