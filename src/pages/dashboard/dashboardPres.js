@@ -70,7 +70,7 @@ export const DashboardPres = ({
                 >
                     <NavBar />
 
-                    {/*Content goes below this line*/}
+                    {/*Main content is below this line*/}
 
                     <MainLayoutGrid
                         container
@@ -132,7 +132,6 @@ export const DashboardPres = ({
                                     <FavoriteTeamInnerContainer
                                         disableGutters={true}
                                     >
-
                                         {fakeTeams.map((team) =>
                                             <Container
                                                 key={team}
@@ -185,7 +184,6 @@ export const DashboardPres = ({
                                 <NotificationsContainer
                                     disableGutters={true}
                                 >
-
                                     <NotificationsfTitle
                                         noWrap={true}
                                         align='center'
@@ -193,12 +191,18 @@ export const DashboardPres = ({
                                     >
                                         Notifications
                                     </NotificationsfTitle>
-
                                     <NotificationsInnerContainer>
-                                        {/*The Typography element will actually get changed into a NavLink 
-                                    component for demonstration purposes of clicking on a notification 
-                                    and it takes you to someone's profile page, you have to build a mock
-                                     profile page first*/}
+
+                                        {/*
+                                    The Typography element 
+                                    will actually get changed 
+                                    into a NavLink component 
+                                    for demonstration purposes
+                                    of clicking on a notification 
+                                    and it takes you to someone's 
+                                    profile page, you have to build 
+                                    a mock profile page first
+                                    */}
 
                                         {fakeNotifications.map((notification) =>
                                             <Typography
@@ -214,7 +218,6 @@ export const DashboardPres = ({
                                     </NotificationsInnerContainer>
                                 </NotificationsContainer>
                             </UserDataContainer>
-
                         </UserData>
 
                         {/*3rd Grid Item*/}
@@ -263,7 +266,6 @@ export const DashboardPres = ({
                                                 </Avatar>
                                                 <Container
                                                     sx={styles.forumsYouFollowPostContainer}
-
                                                 >
                                                     <div
                                                         className='post-header'
@@ -410,11 +412,13 @@ export const DashboardPres = ({
                                     sx={mobileDisplay.notifications.container}
                                 >
 
-                                    {/*The Typography element will actually get changed
-                                 into a NavLink component for demonstration purposes
-                                  of clicking on a notification and it takes you to 
-                                  someone's profile page, you have to build a mock 
-                                  profile page first*/}
+                                    {/*
+                                The Typography element will actually get changed
+                                into a NavLink component for demonstration purposes
+                                of clicking on a notification and it takes you to 
+                                someone's profile page, you have to build a mock 
+                                profile page first
+                                */}
 
                                     {fakeNotifications.map((notification) =>
                                         <Typography
