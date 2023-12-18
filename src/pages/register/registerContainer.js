@@ -65,7 +65,7 @@ export const Register = () => {
             username={username} 
             email={email} 
             password={password} 
-            confirmPassword={confirmPassword }
+            confirmPassword={confirmPassword } // I think this might be an unnecessary prop to send.
             regMessage={regMessage}
             isError={isError}
             onChange={onChange}

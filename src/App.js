@@ -9,7 +9,7 @@ import { Dashboard } from './pages/dashboard/dashboardContainer';
 import { Forums } from './pages/forum/forumsContainer';
 import { Homepage } from './pages/homepage/homepage';
 import { LiveScores } from './pages/live_scores/liveScoresContainer';
-import { Login } from './pages/login/login';
+import { Login } from './pages/login/loginContainer';
 import { Profile } from './pages/profile/profile';
 import { Register } from './pages/register/registerContainer';
 

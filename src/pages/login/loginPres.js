@@ -1,131 +1,99 @@
 import { Typography } from '@mui/material';
 import { ThemeProvider } from '@mui/material/styles';
-import * as React from 'react';
-import { useEffect, useState } from 'react';
-import { Link, NavLink, useNavigate } from 'react-router-dom';
-import { useAuth } from '../../context/auth/authSlice';
+import { Link, NavLink } from 'react-router-dom';
 import customTheme from '../../styles/context/customtheme';
-import '../../styles/login.css';
-import { LoginButton, LoginForm, LoginTitle, EmailTextField, PasswordTextField, } from '../login/components';
+import '../../styles/login.css'
+import {
+    LoginButton,
+    LoginForm,
+    LoginTitle,
+    EmailTextField,
+    PasswordTextField
+} from './subcomponents/loginStyledComponents';
 
 
-export const Login = () => {
-
-    const { login, user, isError, isSuccess, messageTwo } = useAuth();
-
-    const navigate = useNavigate();
-
-    useEffect(() => {
-        if (isError) {
-            console.error(messageTwo)
-            setLoginMessage(messageTwo);
-        }
-
-        if (isSuccess || user) {
-            navigate('/dashboard')
-        }
-    }, [user, navigate, messageTwo, isError, isSuccess, login]);
-
-    const [formData, setFormData] = useState({
-        email: '',
-        password: '',
-    })
-
-    const [loginMessage, setLoginMessage] = useState('')
-
-    const { email, password } = formData
-
-    const onChange = (e) => {
-        setFormData((prevState) => ({
-            ...prevState,
-            [e.target.name]: e.target.value
-        }))
-    }
-
-    const onSubmit = (e) => {
-        e.preventDefault()
-
-        const userData = {
-            email,
-            password,
-        }
-
-        login(userData)
-    }
+export const LoginPres = ({
+    loginMessage,
+    isError,
+    onChange,
+    onSubmit,
+}) => {
 
     return (
-        <ThemeProvider
-            theme={customTheme}>
-            <div
-                className='main-container'
-            >
-                <img
-                    src="https://i.postimg.cc/wjkpvXx7/fans.png?"
-                    alt="logo"
-                    className="login-logo"
-                />
-                <LoginTitle
-                    align='center'
-                    noWrap
+        <>
+            <ThemeProvider
+                theme={customTheme}>
+                <div
+                    className='main-container'
                 >
-                    Login to continue
-                </LoginTitle>
-                <LoginForm
-                    onSubmit={onSubmit}
-                >
-                    <EmailTextField
-                        id="login_email"
-                        label="Email"
-                        type='email'
-                        name='email'
-                        onChange={onChange}
-                        autoComplete="current-email"
-                        variant="outlined"
-                        margin='dense'
+                    <img
+                        src="https://i.postimg.cc/wjkpvXx7/fans.png?"
+                        alt="logo"
+                        className="login-logo"
                     />
-                    <PasswordTextField
-                        id="login_password"
-                        label="Password"
-                        type="password"
-                        name='password'
-                        onChange={onChange}
-                        autoComplete="current-password"
-                        variant="outlined"
-                        margin='dense'
-                    />
-                    <NavLink
-                        onClick={onSubmit}
-                        className='link-wrapper'
+                    <LoginTitle
+                        align='center'
+                        noWrap
                     >
-                        <LoginButton
-                            fullWidth
-                            variant="contained"
-                            type='button'
-                        >
-                            Login
-                        </LoginButton>
-                    </NavLink>
-                    {loginMessage && (
-                        <Typography
-                            align='center'
-                            sx={{
-                                color: isError ? 'red' : 'green',
-                                mt: '16px',
-                            }}
-                        >
-                            {loginMessage}
-                        </Typography>
-                    )}
-                </LoginForm>
-                <p
-                    className='create-account-text'>
-                    <Link
-                        to='/register'
+                        Login to continue
+                    </LoginTitle>
+                    <LoginForm
+                        onSubmit={onSubmit}
                     >
-                        Create an account
-                    </Link>
-                </p>
-            </div>
-        </ThemeProvider>
-    );
-};
+                        <EmailTextField
+                            id="login_email"
+                            label="Email"
+                            type='email'
+                            name='email'
+                            onChange={onChange}
+                            autoComplete="current-email"
+                            variant="outlined"
+                            margin='dense'
+                        />
+                        <PasswordTextField
+                            id="login_password"
+                            label="Password"
+                            type="password"
+                            name='password'
+                            onChange={onChange}
+                            autoComplete="current-password"
+                            variant="outlined"
+                            margin='dense'
+                        />
+                        <NavLink
+                            onClick={onSubmit}
+                            className='link-wrapper'
+                        >
+                            <LoginButton
+                                fullWidth
+                                variant="contained"
+                                type='button'
+                            >
+                                Login
+                            </LoginButton>
+                        </NavLink>
+                        {loginMessage && (
+                            <Typography
+                                align='center'
+                                sx={{
+                                    color: isError ? 'red' : 'green',
+                                    mt: '16px',
+                                }}
+                            >
+                                {loginMessage}
+                            </Typography>
+                        )}
+                    </LoginForm>
+                    <p
+                        className='create-account-text'>
+                        <Link
+                            to='/register'
+                        >
+                            Create an account
+                        </Link>
+                    </p>
+                </div>
+            </ThemeProvider>
+        </>
+    )
+}
