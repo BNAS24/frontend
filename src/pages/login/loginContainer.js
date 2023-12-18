@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/auth/authSlice';
-import '../../styles/login.css';
+import '../../styleSheets/login.css';
 import { LoginPres } from './loginPres';
 
 

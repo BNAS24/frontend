@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/auth/authSlice';
 import { RegisterPres } from './registerPres'
-import '../../styles/register.css';
+import '../../styleSheets/register.css';
 
 
 export const Register = () => {

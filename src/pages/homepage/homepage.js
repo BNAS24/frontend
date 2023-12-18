@@ -1,7 +1,7 @@
 import Button from '@mui/material/Button';
 import * as React from 'react';
 import { Link } from 'react-router-dom';
-import '../../styles/homepage.css';
+import '../../styleSheets/homepage.css';
 // import { useSidebar } from "../context/mobilenav";
 import MenuIcon from '@mui/icons-material/Menu';
 import { IconButton } from "@mui/material";

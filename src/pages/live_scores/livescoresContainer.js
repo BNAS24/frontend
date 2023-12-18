@@ -8,7 +8,7 @@ import { NavBar } from '../../components/authnav';
 import { SideBarNav } from '../../components/helpers/sidebarnav';
 import { useSidebar } from '../../context/mobilenav';
 import leagues from '../../datastore/leagues';
-import '../../styles/livescores.css';
+import '../../styleSheets/livescores.css';
 import Paper from '@mui/material/Paper';
 import { LeaguesList, LeagueTitle, LeagueSelect, LiveScoreContent, LiveScorePageWrap, TeamsData } from './subcomponents.js/liveScoresStyledComponents';
 
