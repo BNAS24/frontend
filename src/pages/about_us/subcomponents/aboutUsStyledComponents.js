@@ -1,7 +1,21 @@
 import { Typography } from '@mui/material';
 import { Container, styled } from '@mui/system';
 
-export const ContentContainer = styled(Container)(({ theme }) =>
+
+
+export const MainContentContainer = styled(Container)(({ theme }) =>
+  theme.unstable_sx({
+    position: 'relative',
+    flex: '1',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    height: 'auto',
+    width: '100%',
+  })
+)
+
+export const TextContentContainer = styled(Container)(({ theme }) =>
   theme.unstable_sx({
     display: 'flex',
     flexDirection: 'column',

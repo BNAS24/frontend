@@ -9,7 +9,8 @@ import {
     Paragraph,
     EndingQuote,
     BackgroundImageContainer,
-    ContentContainer
+    TextContentContainer,
+    MainContentContainer,
 } from './subcomponents/aboutUsStyledComponents'
 
 export const AboutUsPres = ({ isSidebarOpen }) => {
@@ -26,21 +27,15 @@ export const AboutUsPres = ({ isSidebarOpen }) => {
             }}
         >
             <NavBar />
-            <Container
+
+            <MainContentContainer
                 disableGutters={true}
                 maxWidth='100%'
                 sx={{
-                    position: 'relative',
-                    flex: '1',
-                    display: 'flex',
-                    flexDirection: 'row',
-                    justifyContent: 'flex-start',
-                    height: 'auto',
-                    width: '100%',
                     overflow: isSidebarOpen ? 'hidden' : 'none',
                 }}
             >
-                <ContentContainer
+                <TextContentContainer
                     maxWidth='100%'
                 >
                     <Title
@@ -110,7 +105,7 @@ export const AboutUsPres = ({ isSidebarOpen }) => {
                     >
                         {aboutUs.endingQuote.body}
                     </EndingQuote>
-                </ContentContainer>
+                </TextContentContainer>
                 <BackgroundImageContainer
                     maxWidth='100%'
                 >
@@ -118,8 +113,10 @@ export const AboutUsPres = ({ isSidebarOpen }) => {
                 {isSidebarOpen && (
                     <SideBarNav />
                 )}
-            </Container>
+            </MainContentContainer>
+
             <Footer />
+
         </Container>
     )
 }
