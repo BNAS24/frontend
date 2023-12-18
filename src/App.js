@@ -4,14 +4,14 @@ import './App.css';
 import { AuthProvider } from './context/auth/authSlice';
 import { SidebarProvider } from './context/mobilenav';
 import { AboutUs } from './pages/about_us/aboutUsContainer';
-import { ContactUS } from './pages/contact_us/contactUs';
+import { ContactUs } from './pages/contact_us/contactUsContainer';
 import { Dashboard } from './pages/dashboard/dashboardContainer';
 import { Forums } from './pages/forum/forumsContainer';
 import { Homepage } from './pages/homepage/homepage';
 import { LiveScores } from './pages/live_scores/liveScoresContainer';
 import { Login } from './pages/login/login';
 import { Profile } from './pages/profile/profile';
-import { Register } from './pages/register/register';
+import { Register } from './pages/register/registerContainer';
 
 function App() {
   return (
@@ -26,7 +26,7 @@ function App() {
           <Route path='/forums' element={<Forums />} />
           <Route path='/live-scores' element={<LiveScores />} />
           <Route path='/about-us' element={<AboutUs />} />
-          <Route path='/contact-us' element={<ContactUS />} />
+          <Route path='/contact-us' element={<ContactUs />} />
         </Routes>
       </SidebarProvider>
     </AuthProvider>

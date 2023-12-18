@@ -1,8 +1,6 @@
 import { Typography } from '@mui/material';
 import { Container, styled } from '@mui/system';
 
-
-
 export const MainContentContainer = styled(Container)(({ theme }) =>
   theme.unstable_sx({
     position: 'relative',
