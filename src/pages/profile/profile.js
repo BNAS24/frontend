@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/auth/authSlice';
 import { useSidebar } from '../../context/mobilenav';
-import '../../styles/profile.css';
 import { ProfilePres } from './profilePres';
 
 

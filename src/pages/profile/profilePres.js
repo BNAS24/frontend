@@ -7,7 +7,6 @@ import { NavBar } from "../../components/authnav";
 import { SideBarNav } from '../../components/helpers/sidebarnav';
 import { SettingsModal } from '../../components/settingsmd';
 import { badges, settings } from '../../datastore/profile';
-import '../../styles/profile.css';
 import { MainLayoutGrid } from './subcomponents/profileStyledComponents';
 
 
