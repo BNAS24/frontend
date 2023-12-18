@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom"
-import customTheme from "../styles/context/customtheme"
+import customTheme from "../context/muiTheme/customtheme"
 import './styles/authfoot.css'
 
 export const Footer = () => {

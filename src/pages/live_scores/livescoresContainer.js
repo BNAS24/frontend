@@ -67,7 +67,9 @@ export const LiveScores = () => {
                                         setSportSelected(key)
                                         handleTeamData()
                                     }}
-                                    className={sportSelected === key ? 'links-hover-state sport-selected-active-state' : 'links-hover-state'}
+                                    className={
+                                        sportSelected === key ? 'links-hover-state sport-selected-active-state' : 'links-hover-state'
+                                        }
                                 >
                                     {leagues[key].title}
                                 </Typography>

@@ -1,7 +1,7 @@
 import { Typography } from '@mui/material';
 import { ThemeProvider } from '@mui/material/styles';
 import { Link } from 'react-router-dom';
-import customTheme from '../../styles/context/customtheme';
+import customTheme from '../../context/muiTheme/customtheme';
 import '../../styles/register.css';
 import {
     RegisterButton,

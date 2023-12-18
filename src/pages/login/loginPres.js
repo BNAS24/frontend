@@ -1,7 +1,7 @@
 import { Typography } from '@mui/material';
 import { ThemeProvider } from '@mui/material/styles';
 import { Link, NavLink } from 'react-router-dom';
-import customTheme from '../../styles/context/customtheme';
+import customTheme from '../../context/muiTheme/customtheme';
 import '../../styles/login.css'
 import {
     LoginButton,

@@ -12,7 +12,7 @@ import { CommentsModal } from '../../components/commentmd';
 import { SideBarNav } from '../../components/helpers/sidebarnav';
 import { useSidebar } from '../../context/mobilenav';
 import { fakeNotifications, fakeTeams, postContent } from '../../datastore/dashboard';
-import customTheme from '../../styles/context/customtheme';
+import customTheme from '../../context/muiTheme/customtheme';
 import '../../styles/dashboard.css';
 import { mobileDisplay, styles } from './styles';
 import {

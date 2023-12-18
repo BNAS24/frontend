@@ -1,7 +1,7 @@
 import { Fragment } from "react"
 import { NavLink } from "react-router-dom"
 import { useSidebar } from "../../context/mobilenav"
-import customTheme from '../../styles/context/customtheme'
+import customTheme from '../../context/muiTheme/customtheme'
 import '../styles/authnav.css'
 
 export const SideBarNav = () => {

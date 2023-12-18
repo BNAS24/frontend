@@ -6,7 +6,7 @@ import { Container } from '@mui/system';
 import { Fragment } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/auth/authSlice';
-import customTheme from '../styles/context/customtheme';
+import customTheme from '../context/muiTheme/customtheme';
 
 export const SettingsModal = ({ open, onClose, onClick, settingSelected, settings }) => {
 
