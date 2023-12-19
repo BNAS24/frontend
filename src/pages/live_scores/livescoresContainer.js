@@ -10,7 +10,14 @@ import { useSidebar } from '../../context/mobilenav';
 import leagues from '../../datastore/leagues';
 import '../../styleSheets/livescores.css';
 import Paper from '@mui/material/Paper';
-import { LeaguesList, LeagueTitle, LeagueSelect, LiveScoreContent, LiveScorePageWrap, TeamsData } from './subcomponents.js/liveScoresStyledComponents';
+import {
+    LeaguesList,
+    LeagueTitle,
+    LeagueSelect,
+    LiveScoreContent,
+    LiveScorePageWrap,
+    TeamsData
+} from './subcomponents.js/liveScoresStyledComponents';
 
 
 
@@ -61,19 +68,19 @@ export const LiveScores = () => {
                     </LeagueTitle>
                     <LeaguesList>
                         {Object.keys(leagues).map((key) => (
-                                <Typography
-                                    key={key}
-                                    onClick={() => {
-                                        setSportSelected(key)
-                                        handleTeamData()
-                                    }}
-                                    className={
-                                        sportSelected === key ? 'links-hover-state sport-selected-active-state' : 'links-hover-state'
-                                        }
-                                >
-                                    {leagues[key].title}
-                                </Typography>
-                            ))
+                            <Typography
+                                key={key}
+                                onClick={() => {
+                                    setSportSelected(key)
+                                    handleTeamData()
+                                }}
+                                className={
+                                    sportSelected === key ? 'links-hover-state sport-selected-active-state' : 'links-hover-state'
+                                }
+                            >
+                                {leagues[key].title}
+                            </Typography>
+                        ))
                         }
                     </LeaguesList>
                 </LeagueSelect>
@@ -302,7 +309,7 @@ export const LiveScores = () => {
                                                 overflow: 'hidden',
                                             }}
                                         >
-                                            <Table> 
+                                            <Table>
                                                 <TableHead>
                                                     <TableRow>
                                                         <TableCell
