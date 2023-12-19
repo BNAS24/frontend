@@ -36,7 +36,7 @@ export const MainLayoutGrid = styled(Grid)(({ theme }) =>
     })
 )
 
-export const DashboardHeadGrid = styled(Grid)(({ theme }) =>
+export const DashboardHead = styled(Grid)(({ theme }) =>
     theme.unstable_sx({
         gridArea: {
             xs: '1 / 1 / 2 / 2',
@@ -61,7 +61,7 @@ export const DashboardHeadXS = styled(Grid)(({ theme }) =>
     })
 )
 
-export const DashboardContainer = styled(Container)(({ theme }) =>
+export const DashboardHeadContainer = styled(Container)(({ theme }) =>
     theme.unstable_sx({
         display: 'flex',
         flexDirection: 'row',
