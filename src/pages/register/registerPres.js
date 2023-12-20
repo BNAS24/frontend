@@ -21,7 +21,7 @@ export const RegisterPres = ({
     regMessage,
     isError,
     onChange,
-    onSubmit
+    onSubmit,
 }) => {
 
 
