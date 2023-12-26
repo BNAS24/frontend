@@ -1,7 +1,7 @@
 import ArrowBackIosNewOutlinedIcon from '@mui/icons-material/ArrowBackIosNewOutlined';
 import { Avatar, IconButton, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from '@mui/material';
 import { Container } from '@mui/system';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Footer } from '../../components/authfoot';
 import { NavBar } from '../../components/authnav';
@@ -10,6 +10,7 @@ import { useSidebar } from '../../context/mobilenav';
 import leagues from '../../datastore/leagues';
 import '../../styleSheets/livescores.css';
 import Paper from '@mui/material/Paper';
+import { fetchTeamData } from '../../context/sportsData/sportDataFetch';
 import {
     LeaguesList,
     LeagueTitle,
@@ -19,32 +20,70 @@ import {
     TeamsData
 } from './subcomponents.js/liveScoresStyledComponents';
 
-
-
 export const LiveScores = () => {
 
     const [sportSelected, setSportSelected] = useState(null)
 
     const [teamSelected, setTeamSelected] = useState(false)
 
-    const [teamData, setTeamData] = useState(null)
+    const [teamData, setTeamData] = useState('')
 
-    const { isSidebarOpen } = useSidebar();
+    const [teamImage, setTeamImage] = useState('')
 
-    const [data, setData] = useState([
-        { team: 'Home', scores: [0, 0, 6, 0], total: 6 },
-        { team: 'Away', scores: [20, 0, 3, 0], total: 23, totalColor: true },
-    ]);
+    const { isSidebarOpen } = useSidebar()
 
-    const handleTeamData = (index) => {
+    useEffect(() => {
+
+        if (teamData !== null) {
+
+            try {
+
+                const fetchData = async () => {
+
+                    const data = await fetchTeamData(teamData);
+
+                    if (data && data.IMAGE_PATH) {
+
+                        setTeamImage(data.IMAGE_PATH);
+
+                    } else {
+
+                        console.error('Data or IMAGE_PATH is undefined');
+
+                    }
+                };
+
+                fetchData();
+
+            } catch (error) {
+
+                console.error('Error fetching team data:', error);
+
+            }
+        }
+    }, [teamData, teamImage]);
+
+    const handleTeamData = async (index) => {
+
         if (index !== undefined) {
+
             setTeamSelected(true);
-            setTeamData(leagues[sportSelected].teams[index]);
+            const selectedTeam = leagues[sportSelected].teams[index];
+            setTeamData(selectedTeam);
+
         } else {
+
             setTeamSelected(false);
             setTeamData(null);
+            
         }
     }
+
+    const data1 = [
+        { team: 'Home', scores: [0, 0, 6, 0], total: 6 },
+        { team: 'Away', scores: [20, 0, 3, 0], total: 23, totalColor: true },
+    ]
+
 
     return (
         <LiveScorePageWrap
@@ -267,7 +306,7 @@ export const LiveScores = () => {
                                         <Avatar
                                             variant='square'
                                             alt='team logo'
-                                            src='https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png'
+                                            src={teamImage}
                                             sx={{
                                                 height: '96px',
                                                 width: '96px',
@@ -342,7 +381,7 @@ export const LiveScores = () => {
                                                     </TableRow>
                                                 </TableHead>
                                                 <TableBody>
-                                                    {data.map((row, index) => (
+                                                    {data1.map((row, index) => (
                                                         <TableRow
                                                             key={index}
                                                         >
