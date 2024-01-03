@@ -1,18 +1,21 @@
 import ArrowBackIosNewOutlinedIcon from '@mui/icons-material/ArrowBackIosNewOutlined';
-import { Avatar, IconButton, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from '@mui/material';
+import { IconButton, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from '@mui/material';
 import Paper from '@mui/material/Paper';
 import { Container } from '@mui/system';
 import { Link } from 'react-router-dom';
 import { Footer } from '../../components/authfoot';
 import { NavBar } from '../../components/authnav';
 import { SideBarNav } from '../../components/helpers/sidebarnav';
+import { styles } from './styles'
 import {
     LeagueSelect,
     LeagueTitle,
     LeaguesList,
     LiveScoreContent,
     LiveScorePageWrap,
-    TeamsData
+    TeamLogo,
+    TeamsData,
+    TeamsDataContentDisplay
 } from './subcomponents.js/liveScoresStyledComponents';
 
 export const LiveScorePres = ({
@@ -25,6 +28,7 @@ export const LiveScorePres = ({
     teamData,
     teamImage,
     leagues,
+    weeks,
 }) => {
 
     return (
@@ -70,33 +74,13 @@ export const LiveScorePres = ({
                     >
                         {leagues[sportSelected] ? (
                             <ul
-                                style={{
-                                    display: 'flex',
-                                    flexDirection: 'column',
-                                    justifyContent: 'flex-start',
-                                    alignItems: 'center',
-                                    padding: '0',
-                                    margin: '0',
-                                    height: '100%',
-                                    maxHeight: '100%',
-                                    width: '100%',
-                                    listStyleType: 'none',
-                                    WebkitColumnCount: 2,
-                                    MozColumnCount: 2,
-                                    columnCount: 2,
-                                    borderLeft: 'solid 1px var(--theme-orange)',
-                                    borderRight: 'solid 1px var(--theme-orange)',
-                                    overflow: 'auto'
-                                }}
+                                style={styles.teamDataUnorderedList}
                             >
                                 {Object.keys(leagues[sportSelected].teams).map((key, index) => (
                                     <li
                                         key={key}
                                         align='center'
-                                        style={{
-                                            margin: '8px',
-                                            height: '100%',
-                                        }}
+                                        style={styles.teamDataUnorderedListsItems}
                                         className={sportSelected === key ? 'links-hover-state sport-selected-active-state' : 'links-hover-state'}
                                         onClick={() => handleTeamData(index)}
                                     >
@@ -107,122 +91,48 @@ export const LiveScorePres = ({
                         ) : null}
                         {teamSelected ? (
                             <Container
-                                sx={{
-                                    display: 'flex',
-                                    flexDirection: 'column',
-                                    alignItems: 'center',
-                                    height: '100%',
-                                    width: '100%',
-                                    position: 'absolute',
-                                    backgroundColor: 'var(--theme-blue)',
-                                    borderLeft: 'solid 1px var(--theme-orange)',
-                                    borderRight: 'solid 1px var(--theme-orange)',
-                                    zIndex: '100',
-                                }}
+                                sx={styles.teamSelectedContainer}
                             >
                                 <Typography
-                                    sx={{
-                                        mt: '32px',
-                                        fontSize: '1.5em',
-                                    }}
+                                    sx={styles.teamSelectedTypography}
                                 >
                                     {teamData}
                                 </Typography>
                                 <Container
-                                    sx={{
-                                        display: 'flex',
-                                        flexDirection: 'row',
-                                        alignContent: 'center',
-                                        gap: '24px',
-                                        mt: '32px',
-                                        border: '1px solid var(--theme-orange)',
-                                        overflowX: 'auto',
-                                        overflowY: 'hidden',
-                                    }}
-                                >
-                                    <IconButton>
-                                        <ArrowBackIosNewOutlinedIcon
-                                            sx={{
-                                                color: 'var(--theme-orange)'
-                                            }}
-                                        />
-                                    </IconButton>
-
-                                    {/*Turn this the code below into a map of typography instead */}
-                                    <Typography
-                                        align='center'
-                                        noWrap
-                                        sx={{
-                                            display: 'flex',
-                                            justifyContent: 'center',
-                                            alignItems: 'center',
-                                        }}
-                                        className='links-hover-state'
-                                    >
-                                        Week 1
-                                    </Typography>
-                                    <Typography
-                                        align='center'
-                                        noWrap
-                                        sx={{
-                                            display: 'flex',
-                                            justifyContent: 'center',
-                                            alignItems: 'center',
-                                        }}
-                                        className='links-hover-state'
-
-                                    >
-                                        Week 2
-                                    </Typography>
-                                    <Typography
-                                        align='center'
-                                        noWrap
-                                        sx={{
-                                            display: 'flex',
-                                            justifyContent: 'center',
-                                            alignItems: 'center',
-                                        }}
-                                        className='links-hover-state'
-                                    >
-                                        Week 3
-                                    </Typography>
-                                    <Typography
-                                        align='center'
-                                        noWrap
-                                        sx={{
-                                            display: 'flex',
-                                            justifyContent: 'center',
-                                            alignItems: 'center',
-                                        }}
-                                        className='links-hover-state'
-                                    >
-                                        Week 4
-                                    </Typography>
-                                    <Typography
-                                        align='center'
-                                        noWrap
-                                        sx={{
-                                            display: 'flex',
-                                            justifyContent: 'center',
-                                            alignItems: 'center',
-                                        }}
-                                        className='sport-selected-active-state'
-                                    >
-                                        Week 5
-                                    </Typography>
-                                </Container>
-                                <Container
                                     disableGutters={true}
-                                    sx={{
-                                        display: 'flex',
-                                        flexDirection: 'column',
-                                        justifyContent: 'space-around',
-                                        height: '70%',
-                                        width: '100%',
-                                        mt: '32px',
-                                        border: '1px solid var(--theme-orange)',
-                                        overflow: 'hidden',
-                                    }}
+                                    sx={styles.teamSelectedInnerContainer}
+                                >
+                                        <IconButton
+                                            sx={{
+                                                // position: 'absolute',
+                                                height: '32px',
+                                                // backgroundColor: 'var(L--theme-blue)',
+                                                ml: '0',
+                                            }}
+                                        >
+                                            <ArrowBackIosNewOutlinedIcon
+                                                sx={styles.weeklyScheduleNavigationButton}
+                                            />
+                                        </IconButton>
+                                    {weeks.map((numberOfTheWeek) => (
+                                        <Typography
+                                            key={numberOfTheWeek}
+                                            align='center'
+                                            noWrap
+                                            sx={{
+                                                display: 'flex',
+                                                flexShrink: '0',
+                                                flexGrow: '0',
+                                                paddingX: '8px',
+                                            }}
+                                            className='links-hover-state'
+                                        >
+                                            Week {numberOfTheWeek}
+                                        </Typography>
+                                    ))}
+                                </Container>
+                                <TeamsDataContentDisplay
+                                    disableGutters={true}
                                 >
                                     <Container
                                         disableGutters={true}
@@ -245,16 +155,12 @@ export const LiveScorePres = ({
                                                 height: '100%',
                                             }}
                                         >
-                                            <Avatar
+                                            <TeamLogo
                                                 variant='square'
                                                 alt='team logo'
                                                 src={teamImage}
-                                                sx={{
-                                                    height: '96px',
-                                                    width: '96px',
-                                                }}
                                             >
-                                            </Avatar>
+                                            </TeamLogo>
                                             <Typography
 
                                                 align='center'
@@ -367,16 +273,12 @@ export const LiveScorePres = ({
                                                     height: '100%',
                                                 }}
                                             >
-                                                <Avatar
+                                                <TeamLogo
                                                     variant='square'
                                                     alt='team logo'
                                                     src='https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png'
-                                                    sx={{
-                                                        height: '96px',
-                                                        width: '96px',
-                                                    }}
                                                 >
-                                                </Avatar>
+                                                </TeamLogo>
                                                 <Typography
 
                                                     align='center'
@@ -425,7 +327,7 @@ export const LiveScorePres = ({
                                             League Standings
                                         </Link>
                                     </Container>
-                                </Container>
+                                </TeamsDataContentDisplay>
                             </Container>
                         ) : null}
                     </TeamsData>

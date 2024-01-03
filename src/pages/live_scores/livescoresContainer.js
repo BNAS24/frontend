@@ -5,6 +5,7 @@ import leagues from '../../datastore/leagues';
 import '../../styleSheets/livescores.css';
 import { LiveScorePres } from './liveScoresPres';
 
+
 export const LiveScores = () => {
 
     const [sportSelected, setSportSelected] = useState(null)
@@ -18,6 +19,8 @@ export const LiveScores = () => {
     const [score, setScore] = useState([])
 
     const { isSidebarOpen } = useSidebar()
+
+    const weeks = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
     useEffect(() => {
 
@@ -111,6 +114,7 @@ export const LiveScores = () => {
             teamData={teamData}
             teamImage={teamImage}
             leagues={leagues}
+            weeks={weeks}
         />
     )
 }

@@ -87,3 +87,23 @@ export const TeamsData = styled(Container)(({ theme }) =>
         color: 'white',
     })
 )
+
+export const TeamsDataContentDisplay = styled(Container)(({ theme }) =>
+    theme.unstable_sx({
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-around',
+        height: '70%',
+        width: '100%',
+        mt: '32px',
+        border: '1px solid var(--theme-orange)',
+        overflow: 'hidden',
+    })
+)
+
+export const TeamLogo = styled(Container)(({ theme }) =>
+    theme.unstable_sx({
+        height: '96px',
+        width: '96px',
+    })
+)
