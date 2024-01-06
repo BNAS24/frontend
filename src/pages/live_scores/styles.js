@@ -34,29 +34,35 @@ export const styles = {
         zIndex: '100',
     },
     teamSelectedTypography: {
-        mt: '32px',
+        marginTop: '32px',
         fontSize: '1.5em',
     },
     teamSelectedInnerContainer: {
+        position: 'relative',
         display: 'flex',
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'flex-start',
         height: '64px',
-        mt: '32px',
-        pl: '16px',
+        marginTop: '32px',
+        paddingLeft: '16px',
         border: '1px solid var(--theme-orange)',
         overflow: 'auto',
         padding: '0',
         overflowX: 'auto',
         overflowY: 'hidden',
+        '& #firstWeek': {
+            marginLeft: '8px !important',
+        },
     },
-    // backgroundCover: {
-    //     position: 'absolute',
-    //     height: '64px',
-    //     backgroundColor: 'var(--theme-white)',
-    // },
-    weeklyScheduleNavigationButton: {
+    weeklyScheduleNavigationIcon: {
         color: 'var(--theme-orange)',
+        zIndex: '999',
     },
+    numberOfTheWeek: {
+        display: 'flex',
+        flexShrink: '0',
+        flexGrow: '0',
+        paddingX: '8px',
+    }
 }

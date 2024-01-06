@@ -104,28 +104,26 @@ export const LiveScorePres = ({
                                 >
                                         <IconButton
                                             sx={{
-                                                // position: 'absolute',
-                                                height: '32px',
-                                                // backgroundColor: 'var(L--theme-blue)',
-                                                ml: '0',
+                                                position: 'sticky',
+                                                left: '0',
+                                                height: '100%',
+                                                backgroundColor: 'var(--theme-blue)',
+                                                borderRadius: '0 !important',
+                                                zIndex: '999',
                                             }}
                                         >
                                             <ArrowBackIosNewOutlinedIcon
-                                                sx={styles.weeklyScheduleNavigationButton}
+                                                sx={styles.weeklyScheduleNavigationIcon}
                                             />
                                         </IconButton>
-                                    {weeks.map((numberOfTheWeek) => (
+                                    {weeks.map((numberOfTheWeek, index) => (
                                         <Typography
                                             key={numberOfTheWeek}
                                             align='center'
                                             noWrap
-                                            sx={{
-                                                display: 'flex',
-                                                flexShrink: '0',
-                                                flexGrow: '0',
-                                                paddingX: '8px',
-                                            }}
+                                            sx={styles.numberOfTheWeek}
                                             className='links-hover-state'
+                                            id={index === 0 ? 'firstWeek' : null}
                                         >
                                             Week {numberOfTheWeek}
                                         </Typography>

@@ -10,7 +10,7 @@ import { Forums } from './pages/forum/forumsContainer';
 import { Homepage } from './pages/homepage/homepage';
 import { LiveScores } from './pages/live_scores/liveScoresContainer';
 import { Login } from './pages/login/loginContainer';
-import { Profile } from './pages/profile/profile';
+import { Profile } from './pages/profile/profileContainer';
 import { Register } from './pages/register/registerContainer';
 
 function App() {
