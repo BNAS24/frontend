@@ -1,6 +1,6 @@
 // AuthContext.js
-import { createContext, useContext, useState } from 'react';
-import authService from '../auth/authServices'
+import { createContext, useContext, useState, useEffect } from 'react';
+import authService from '../auth/authServices';
 
 const AuthContext = createContext();
 
@@ -15,6 +15,15 @@ export function AuthProvider({ children }) {
     const [isError, setIsError] = useState(false);
     const [messageOne, setMessageOne] = useState('');
     const [messageTwo, setMessageTwo] = useState('');
+
+    useEffect(() => {
+        // Check local storage for user information on application startup
+        const storedUser = localStorage.getItem('user');
+        if (storedUser) {
+            setUser(JSON.parse(storedUser));
+        }
+        setIsLoading(false);
+    }, []); // Empty dependency array ensures this effect runs only once on mount
 
     const register = async (userData) => {
         setIsLoading(true);

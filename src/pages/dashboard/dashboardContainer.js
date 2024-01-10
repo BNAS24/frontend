@@ -10,9 +10,11 @@ export const Dashboard = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
+
         if (!user) {
             navigate('/login');
         }
+
     }, [user, navigate]);
 
     // Initialize an object to store like button states for each post
@@ -28,7 +30,7 @@ export const Dashboard = () => {
     const toggleLike = (postKey) => {
         setLikeButtons((prevLikeButtons) => ({
             ...prevLikeButtons,
-            [postKey]: !prevLikeButtons[postKey], 
+            [postKey]: !prevLikeButtons[postKey],
             // Toggle the state for the specified post
         }));
     };
