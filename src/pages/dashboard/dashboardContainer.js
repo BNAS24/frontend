@@ -2,13 +2,15 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/auth/authSlice';
 import { DashboardPres } from './dashboardPres';
+import io from 'socket.io-client';
 
 export const Dashboard = () => {
-    // console.log('Dashboard component is rendering...');
-    
+
     const { user, isLoading } = useAuth();
-    
+
     const navigate = useNavigate();
+
+    const [socket, setSocket] = useState(null);
 
     const [checkedUserStatus, setCheckedUserStatus] = useState(false);
 
@@ -19,7 +21,7 @@ export const Dashboard = () => {
         }
 
         if (!user) {
-            
+
             if (!checkedUserStatus) {
                 setCheckedUserStatus(true);
                 return;
@@ -27,6 +29,20 @@ export const Dashboard = () => {
 
             navigate('/login');
         }
+
+        const newSocket = io('http://localhost:5000');
+
+        newSocket.on('connectionEstablished', (data) => {
+            console.log('Socket connection established:', data);
+            // You can perform additional actions upon connection
+        });
+        
+        setSocket(newSocket);
+
+        // Disconnect the socket when the component unmounts
+        return () => {
+            newSocket.disconnect();
+        };
 
     }, [user, isLoading, checkedUserStatus, navigate]);
 
@@ -67,6 +83,7 @@ export const Dashboard = () => {
         <>
             <DashboardPres
                 user={user}
+                socket={socket}
                 likeButton={likeButton}
                 toggleLike={toggleLike}
                 isModalOpen={isModalOpen}
