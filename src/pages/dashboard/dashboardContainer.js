@@ -4,18 +4,31 @@ import { useAuth } from '../../context/auth/authSlice';
 import { DashboardPres } from './dashboardPres';
 
 export const Dashboard = () => {
-
-    const { user } = useAuth();
-
+    // console.log('Dashboard component is rendering...');
+    
+    const { user, isLoading } = useAuth();
+    
     const navigate = useNavigate();
+
+    const [checkedUserStatus, setCheckedUserStatus] = useState(false);
 
     useEffect(() => {
 
+        if (isLoading) {
+            return;
+        }
+
         if (!user) {
+            
+            if (!checkedUserStatus) {
+                setCheckedUserStatus(true);
+                return;
+            }
+
             navigate('/login');
         }
 
-    }, [user, navigate]);
+    }, [user, isLoading, checkedUserStatus, navigate]);
 
     // Initialize an object to store like button states for each post
     const [likeButton, setLikeButtons] = useState({});
@@ -31,7 +44,6 @@ export const Dashboard = () => {
         setLikeButtons((prevLikeButtons) => ({
             ...prevLikeButtons,
             [postKey]: !prevLikeButtons[postKey],
-            // Toggle the state for the specified post
         }));
     };
 

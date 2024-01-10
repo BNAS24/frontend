@@ -7,15 +7,31 @@ import { ProfilePres } from './profilePres';
 
 export const Profile = () => {
 
-    const { user } = useAuth();
+    const { user, isLoading } = useAuth();
 
     const navigate = useNavigate();
 
+    const [checkedUserStatus, setCheckedUserStatus] = useState(false);
+
+
     useEffect(() => {
+
+        if (isLoading) {
+            return;
+        }
+
         if (!user) {
+
+            if (!checkedUserStatus) {
+
+                setCheckedUserStatus(true);
+
+                return;
+            }
             navigate('/login');
         }
-    }, [user, navigate]);
+
+    }, [user, isLoading, checkedUserStatus, navigate]);
 
     const { isSidebarOpen } = useSidebar();
 

@@ -17,13 +17,12 @@ export function AuthProvider({ children }) {
     const [messageTwo, setMessageTwo] = useState('');
 
     useEffect(() => {
-        // Check local storage for user information on application startup
-        const storedUser = localStorage.getItem('user');
-        if (storedUser) {
-            setUser(JSON.parse(storedUser));
+        const user = localStorage.getItem('user');
+        if (user) {
+            setUser(JSON.parse(user));
         }
         setIsLoading(false);
-    }, []); // Empty dependency array ensures this effect runs only once on mount
+    }, []); 
 
     const register = async (userData) => {
         setIsLoading(true);
@@ -48,6 +47,7 @@ export function AuthProvider({ children }) {
 
             const response = await authService.login(userData);
             setUser(response);
+            console.log(response);
             setIsLoading(false);
 
         } catch (error) {
