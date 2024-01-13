@@ -19,7 +19,7 @@ export const FirstGridItem = ({ user }) => {
                     <UserAvatar
                         variant='square'
                         alt='profile picture'
-                        src='https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png'
+                        src='https://i.postimg.cc/Vs24qSZJ/avatar-1577909-1280.webp'
                     />
                     <Greeting>
                         Hello {user && user.username}!

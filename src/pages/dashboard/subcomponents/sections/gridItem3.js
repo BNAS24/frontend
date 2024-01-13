@@ -1,7 +1,7 @@
 import AddCommentOutlinedIcon from '@mui/icons-material/AddCommentOutlined';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
-import { Avatar, Container, Typography } from "@mui/material";
+import { Avatar, Container, Typography, Button } from "@mui/material";
 import { Link } from 'react-router-dom';
 import { CommentsModal } from '../../../../components/commentmd';
 import { postContent } from '../../../../datastore/dashboard';
@@ -16,6 +16,7 @@ import {
 } from "../dashboardStyledComponents";
 
 export const ThirdGridItem = ({
+    socket,
     likeButton,
     isModalOpen,
     handleOpenModal,

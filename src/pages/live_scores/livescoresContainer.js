@@ -12,7 +12,7 @@ export const LiveScores = () => {
 
     const [teamSelected, setTeamSelected] = useState(false)
 
-    const [teamData, setTeamData] = useState('')
+    const [teamData, setTeamData] = useState(null)
 
     const [teamImage, setTeamImage] = useState('')
 
@@ -43,35 +43,35 @@ export const LiveScores = () => {
                     }
                 };
 
-                const fetchEventResults = async () => {
+                // const fetchEventResults = async () => {
 
-                    const eventResults = await fetchTeamEvents(teamData);
+                //     const eventResults = await fetchTeamEvents(teamData);
 
-                    if (eventResults.length > 0) {
-                        const firstMatch = eventResults[0];
+                //     if (eventResults.length > 0) {
+                //         const firstMatch = eventResults[0];
 
-                        const extractedScores = {
-                            homeTeam: {
-                                name: firstMatch.HOME_NAME,
-                                score: firstMatch.HOME_SCORE_CURRENT,
-                                images: firstMatch.HOME_IMAGES,
-                            },
-                            awayTeam: {
-                                name: firstMatch.AWAY_NAME,
-                                score: firstMatch.AWAY_SCORE_CURRENT,
-                                images: firstMatch.AWAY_IMAGES,
-                            },
-                        };
+                //         const extractedScores = {
+                //             homeTeam: {
+                //                 name: firstMatch.HOME_NAME,
+                //                 score: firstMatch.HOME_SCORE_CURRENT,
+                //                 images: firstMatch.HOME_IMAGES,
+                //             },
+                //             awayTeam: {
+                //                 name: firstMatch.AWAY_NAME,
+                //                 score: firstMatch.AWAY_SCORE_CURRENT,
+                //                 images: firstMatch.AWAY_IMAGES,
+                //             },
+                //         };
 
-                        // Update the state with the extracted scores for the first match
-                        setScore([extractedScores]);
-                        console.log(score)
-                    }
+                //         // Update the state with the extracted scores for the first match
+                //         setScore([extractedScores]);
+                //         console.log(score)
+                //     }
 
-                }
+                // }
 
                 fetchBasicData();
-                fetchEventResults();
+                // fetchEventResults();
 
             } catch (error) {
 

@@ -19,6 +19,7 @@ import { ThirdGridItem } from './subcomponents/sections/gridItem3';
 
 export const DashboardPres = ({
     user,
+    socket,
     likeButton,
     toggleLike,
     isModalOpen,
@@ -53,7 +54,7 @@ export const DashboardPres = ({
                     >
 
                         {/*1st Grid Item*/}
-                        
+
                         <FirstGridItem
                             user={user}
                         >
@@ -83,6 +84,7 @@ export const DashboardPres = ({
                         {/*3rd Grid Item*/}
 
                         <ThirdGridItem
+                            socket={socket}
                             likeButton={likeButton}
                             isModalOpen={isModalOpen}
                             handleOpenModal={handleOpenModal}

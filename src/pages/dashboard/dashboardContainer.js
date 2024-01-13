@@ -30,16 +30,34 @@ export const Dashboard = () => {
             navigate('/login');
         }
 
-        const newSocket = io('http://localhost:5000');
+        const newSocket = io('http://localhost:5000', {
+            auth: (cb) => {
+                cb({ token: localStorage.token })
+            },
+            withCredentials: true
+        });
 
         newSocket.on('connectionEstablished', (data) => {
-            console.log('Socket connection established:', data);
-            // You can perform additional actions upon connection
+
+            console.log('Dashboard socket connection established:', data);
+
         });
-        
+
+        newSocket.on('recieved', (data) => {
+
+            alert(data.message);
+
+        });
+
+        // Listen for new follower notifications
+        newSocket.on('newFollower', (data) => {
+
+            console.log(`${data.followerUsername} is now following you!`);
+
+        });
+
         setSocket(newSocket);
 
-        // Disconnect the socket when the component unmounts
         return () => {
             newSocket.disconnect();
         };
@@ -61,6 +79,7 @@ export const Dashboard = () => {
             ...prevLikeButtons,
             [postKey]: !prevLikeButtons[postKey],
         }));
+        socket.emit('liked', { message: 'Your post was liked!' })
     };
 
     const handleOpenModal = (postKey) => {
