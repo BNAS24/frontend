@@ -16,6 +16,7 @@ export function AuthProvider({ children }) {
     const [messageOne, setMessageOne] = useState('');
     const [messageTwo, setMessageTwo] = useState('');
 
+    // Checks if the user is already stored in the browser memory
     useEffect(() => {
         const user = localStorage.getItem('user');
         if (user) {

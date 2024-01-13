@@ -16,6 +16,7 @@ import { NotificationsMobileDisplay } from './subcomponents/notificationsMobile'
 import { FirstGridItem } from './subcomponents/sections/gridItem1';
 import { SecondGridItem } from './subcomponents/sections/gridItem2';
 import { ThirdGridItem } from './subcomponents/sections/gridItem3';
+import { formatPostTime } from '../../helpers/formatTime';
 
 export const DashboardPres = ({
     user,
@@ -29,6 +30,7 @@ export const DashboardPres = ({
     handleTeamsDisplayed,
     isNotificationsDisplayed,
     handleNotifications,
+    forumContent,
 }) => {
 
     const { isSidebarOpen } = useSidebar();
@@ -90,6 +92,7 @@ export const DashboardPres = ({
                             handleOpenModal={handleOpenModal}
                             handleCloseModal={handleCloseModal}
                             toggleLike={toggleLike}
+                            forumContent={forumContent}
                         >
 
                         </ThirdGridItem>

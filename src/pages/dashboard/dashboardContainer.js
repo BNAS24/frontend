@@ -14,11 +14,15 @@ export const Dashboard = () => {
 
     const [checkedUserStatus, setCheckedUserStatus] = useState(false);
 
+    const [forumContent, setForumContent] = useState([]);
+
     useEffect(() => {
 
         if (isLoading) {
             return;
         }
+
+        // Check if user is logged in. If not the user gets redirected to the home page
 
         if (!user) {
 
@@ -30,11 +34,13 @@ export const Dashboard = () => {
             navigate('/login');
         }
 
+        // Creates a socket.io session and adds events and listeners
+
         const newSocket = io('http://localhost:5000', {
             auth: (cb) => {
                 cb({ token: localStorage.token })
             },
-            withCredentials: true
+            withCredentials: true,
         });
 
         newSocket.on('connectionEstablished', (data) => {
@@ -49,7 +55,6 @@ export const Dashboard = () => {
 
         });
 
-        // Listen for new follower notifications
         newSocket.on('newFollower', (data) => {
 
             console.log(`${data.followerUsername} is now following you!`);
@@ -58,11 +63,42 @@ export const Dashboard = () => {
 
         setSocket(newSocket);
 
+
+        // Close the sockey connection
         return () => {
             newSocket.disconnect();
         };
 
+
+
     }, [user, isLoading, checkedUserStatus, navigate]);
+
+    // Fetches the user data from the server
+    useEffect(() => {
+
+        const forumsYouFollow = async () => {
+            try {
+
+                const response = await fetch(`http://localhost:5000/api/forums/thread/allPosts/659c7073bac7087b77ed4471`);
+
+                if (!response.ok) {
+                    console.error('Error fetching data:', response.statusText);
+                }
+
+                const data = await response.json();
+
+                setForumContent(data);
+
+            } catch (error) {
+                console.error(error)
+            }
+        }
+
+        if (!forumContent.length) {
+            forumsYouFollow()
+        }
+
+    }, [forumContent])
 
     // Initialize an object to store like button states for each post
     const [likeButton, setLikeButtons] = useState({});
@@ -112,6 +148,7 @@ export const Dashboard = () => {
                 handleTeamsDisplayed={handleTeamsDisplayed}
                 isNotificationsDisplayed={isNotificationsDisplayed}
                 handleNotifications={handleNotifications}
+                forumContent={forumContent}
             />
         </>
     );
