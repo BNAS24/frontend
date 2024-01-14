@@ -12,6 +12,7 @@ import { LiveScores } from './pages/live_scores/liveScoresContainer';
 import { Login } from './pages/login/loginContainer';
 import { Profile } from './pages/profile/profileContainer';
 import { Register } from './pages/register/registerContainer';
+import { SubForumPage } from './pages/forum/subcomponents/forumsSubRoute.js/forumsSubPageContainer';
 
 function App() {
   return (
@@ -23,7 +24,10 @@ function App() {
           <Route path='/register' element={<Register />} />
           <Route path='/dashboard' element={<Dashboard />} />
           <Route path='/profile' element={<Profile />} />
-          <Route path='/forums' element={<Forums />} />
+          <Route path='/forums'>
+            <Route index element={<Forums />} />
+            <Route path=':id' element={<SubForumPage />} />
+          </Route>
           <Route path='/live-scores' element={<LiveScores />} />
           <Route path='/about-us' element={<AboutUs />} />
           <Route path='/contact-us' element={<ContactUs />} />

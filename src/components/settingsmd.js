@@ -8,7 +8,15 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/auth/authSlice';
 import customTheme from '../context/muiTheme/customtheme';
 
-export const SettingsModal = ({ open, onClose, onClick, settingSelected, settings }) => {
+export const SettingsModal = ({
+    open,
+    onClose,
+    onClick,
+    settingSelected,
+    settings,
+    user,
+}) => {
+
 
     const selectedSetting = settings[settingSelected];
 

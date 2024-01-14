@@ -53,3 +53,11 @@ export const ForumSeachBar = styled(TextField)(({ theme }) =>
     })
 )
 
+export const ForumDataDisplay = styled(Container)(({ theme }) =>
+    theme.unstable_sx({
+        minHeight: '100%',
+        width: '100%',
+        background: 'linear-gradient(to bottom, #0081D4, #000000)',
+        border: 'solid 1px var(--theme-orange)',
+    })
+)

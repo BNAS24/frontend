@@ -363,6 +363,7 @@ export const ProfilePres = ({
                                     onClick={handleCloseModal}
                                     title={settings[isModalOpen]?.title}
                                     settings={settings}
+                                    user={user}
                                 />
                             </Container>
                         </Container>
