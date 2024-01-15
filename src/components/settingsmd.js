@@ -1,5 +1,13 @@
 import CloseIcon from '@mui/icons-material/Close';
-import { Avatar, Box, FormGroup, Input, Modal, TextField, Typography } from '@mui/material';
+import {
+    Avatar,
+    Box,
+    FormGroup,
+    Input,
+    Modal,
+    TextField,
+    Typography
+} from '@mui/material';
 import Button from '@mui/material/Button';
 import { ThemeProvider } from '@mui/material/styles';
 import { Container } from '@mui/system';
@@ -14,9 +22,7 @@ export const SettingsModal = ({
     onClick,
     settingSelected,
     settings,
-    user,
 }) => {
-
 
     const selectedSetting = settings[settingSelected];
 
@@ -30,6 +36,7 @@ export const SettingsModal = ({
     }
 
     return (
+
         <ThemeProvider theme={customTheme}>
             <Modal
                 open={open}
@@ -543,6 +550,6 @@ export const SettingsModal = ({
                     )}
                 </Box>
             </Modal>
-        </ThemeProvider >
+        </ThemeProvider>
     )
 }

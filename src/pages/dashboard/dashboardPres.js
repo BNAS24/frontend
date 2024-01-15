@@ -16,7 +16,6 @@ import { NotificationsMobileDisplay } from './subcomponents/notificationsMobile'
 import { FirstGridItem } from './subcomponents/sections/gridItem1';
 import { SecondGridItem } from './subcomponents/sections/gridItem2';
 import { ThirdGridItem } from './subcomponents/sections/gridItem3';
-import { formatPostTime } from '../../helpers/formatTime';
 
 export const DashboardPres = ({
     user,

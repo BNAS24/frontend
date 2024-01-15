@@ -14,16 +14,22 @@ import {
 import { Avatar, Button, Typography, Container } from "@mui/material";
 import { formatPostTime } from '../../../../helpers/formatTime';
 import { CommentsModal } from '../../../../components/commentmd';
+import { CreatePostModal } from '../../../../components/createpostmd';
 
 
 export const SubForumPageContainer = ({
     forumData,
+    postModalState,
+    openPostModal,
+    closePostModal,
+    createPost,
     isModalOpen,
     handleOpenModal,
     handleCloseModal,
     toggleLike,
     likeButton,
 }) => {
+
 
     return (
         <ForumPageWrap
@@ -79,20 +85,35 @@ export const SubForumPageContainer = ({
                                 Follow
                             </Button>
                         </Container>
+
                         {/*Forums Name*/}
+
                         <Typography
                             align='center'
                             variant='h3'
                             sx={{
                                 flex: '1',
+                                fontSize: {
+                                    xs: '0.6rem',
+                                    sm: '1rem',
+                                    md: '1rem',
+                                    lg: '1rem',
+                                }
                             }}
                         >
-                            {/* {forumData.author._id} */}
+                            {forumData ? (
+                                <Typography>
+                                    {forumData[0].thread.title}
+                                </Typography>
+                            ) : null}
                         </Typography>
                         {/*Button To Create a Post*/}
                         <Button
                             variant='text'
-                            sx={{ color: 'var(--theme-orange)' }}
+                            onClick={openPostModal}
+                            sx={{
+                                color: 'var(--theme-orange)'
+                            }}
                         >
                             Create Post
                         </Button>
@@ -239,6 +260,10 @@ export const SubForumPageContainer = ({
                     </Container>
                 </ForumDataDisplay>
             </ForumContent>
+                    <CreatePostModal
+                        open={postModalState}
+                        closePostModal={() => closePostModal()}
+                    />
             <Footer />
         </ForumPageWrap>
     )

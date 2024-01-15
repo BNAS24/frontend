@@ -1,7 +1,16 @@
-import { Box, Button, Modal, Typography } from '@mui/material';
+import {
+    Box,
+    Button,
+    Modal,
+    Typography
+} from '@mui/material';
 
-export const CommentsModal = ({ open, onClose, username, comment }) => {
-
+export const CommentsModal = ({
+    open,
+    onClose,
+    username,
+    comment,
+}) => {
 
     return (
         <Modal
