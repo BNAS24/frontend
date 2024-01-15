@@ -23,63 +23,52 @@ export const LiveScores = () => {
     const weeks = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
     useEffect(() => {
-
-        if (teamData !== null) {
-
-            try {
-
-                const fetchBasicData = async () => {
-
+        const fetchBasicData = async () => {
+            if (teamData !== null) {
+                try {
                     const data = await fetchTeamData(teamData);
-
                     if (data && data.IMAGE_PATH) {
-
                         setTeamImage(data.IMAGE_PATH);
-
                     } else {
-
                         console.error('Data or IMAGE_PATH is undefined');
-
                     }
-                };
-
-                // const fetchEventResults = async () => {
-
-                //     const eventResults = await fetchTeamEvents(teamData);
-
-                //     if (eventResults.length > 0) {
-                //         const firstMatch = eventResults[0];
-
-                //         const extractedScores = {
-                //             homeTeam: {
-                //                 name: firstMatch.HOME_NAME,
-                //                 score: firstMatch.HOME_SCORE_CURRENT,
-                //                 images: firstMatch.HOME_IMAGES,
-                //             },
-                //             awayTeam: {
-                //                 name: firstMatch.AWAY_NAME,
-                //                 score: firstMatch.AWAY_SCORE_CURRENT,
-                //                 images: firstMatch.AWAY_IMAGES,
-                //             },
-                //         };
-
-                //         // Update the state with the extracted scores for the first match
-                //         setScore([extractedScores]);
-                //         console.log(score)
-                //     }
-
-                // }
-
-                fetchBasicData();
-                // fetchEventResults();
-
-            } catch (error) {
-
-                console.error('Error fetching team data:', error);
-
+                } catch (error) {
+                    console.error('Error fetching team data:', error);
+                }
             }
-        }
-    }, [teamData, teamImage, score]);
+        };
+
+        const fetchEventResults = async () => {
+            if (teamData !== null) {
+                try {
+                    const eventResults = await fetchTeamEvents(teamData);
+                    if (eventResults.length > 0) {
+                        const firstMatch = eventResults[0];
+                        const extractedScores = {
+                            homeTeam: {
+                                name: firstMatch.HOME_NAME,
+                                score: firstMatch.HOME_SCORE_CURRENT,
+                                images: firstMatch.HOME_IMAGES,
+                            },
+                            awayTeam: {
+                                name: firstMatch.AWAY_NAME,
+                                score: firstMatch.AWAY_SCORE_CURRENT,
+                                images: firstMatch.AWAY_IMAGES,
+                            },
+                        };
+                        setScore([extractedScores]);
+                    }
+                } catch (error) {
+                    console.error('Error fetching team events:', error);
+                }
+            }
+        };
+
+        fetchBasicData();
+        fetchEventResults();
+    }, [teamData, teamImage]);
+
+    console.log(score)
 
     const handleTeamData = async (index) => {
 

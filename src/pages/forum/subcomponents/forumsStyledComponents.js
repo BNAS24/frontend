@@ -5,6 +5,7 @@ export const ForumPageWrap = styled(Container)(({ theme }) =>
     theme.unstable_sx({
         display: 'flex',
         flexDirection: 'column',
+        height: '100%',
         minHeight: '100%',
         width: '100%',
     })
@@ -15,7 +16,8 @@ export const ForumContent = styled(Container)(({ theme }) =>
         position: 'relative',
         display: 'flex',
         flex: '1',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        overflow: 'hidden',
     })
 )
 
@@ -59,5 +61,23 @@ export const ForumDataDisplay = styled(Container)(({ theme }) =>
         width: '100%',
         background: 'linear-gradient(to bottom, #0081D4, #000000)',
         border: 'solid 1px var(--theme-orange)',
+        overflow: 'auto',
+    })
+)
+
+export const TopContainer = styled(Container)(({ theme }) =>
+    theme.unstable_sx({
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexDirection: 'row',
+        flexGrow: '0',
+        flexShrink: '0',
+        position: 'sticky',
+        WebkitPosition: 'sticky',
+        top: '0',
+        background: 'linear-gradient(to bottom, #0081D4, #229cff)',
+        boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.85)',
+        zIndex: '999',
     })
 )
