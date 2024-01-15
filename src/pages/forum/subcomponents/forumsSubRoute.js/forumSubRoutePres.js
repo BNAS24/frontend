@@ -240,6 +240,6 @@ export const SubForumPageContainer = ({
                 </ForumDataDisplay>
             </ForumContent>
             <Footer />
-        </ForumPageWrap >
+        </ForumPageWrap>
     )
 }
