@@ -3,22 +3,18 @@ import { ThemeProvider } from '@mui/material/styles';
 import customTheme from '../../context/muiTheme/customtheme';
 import {
     Box,
+    Button,
     Container,
     Grid,
     Modal,
     Typography,
 } from '@mui/material';
-import { useEffect } from 'react';
 
 export const ProfileModal = ({
     open,
     closeProfileModal,
     userProfileStats,
 }) => {
-
-    useEffect(() => {
-
-    }, [])
 
     return (
         <ThemeProvider theme={customTheme}>
@@ -56,11 +52,9 @@ export const ProfileModal = ({
                             '&:hover': {
                                 cursor: 'pointer',
                                 color: '#f95149'
-                            }
+                            },
                         }}
                     />
-
-
                     <Grid
                         sx={{
                             flex: '1',
@@ -110,6 +104,7 @@ export const ProfileModal = ({
                                     md: '1 / 1 / 2 / 2',
                                     lg: '1 / 1 / 2 / 2'
                                 },
+                                flexDirection: 'row',
                                 justifyContent: 'center',
                                 alignItems: 'center',
                             }}
@@ -127,6 +122,17 @@ export const ProfileModal = ({
                             >
                                 {userProfileStats?.username}
                             </Typography>
+                            <Button
+                                sx={{
+                                    color: 'var(--theme-orange)',
+                                    '&:hover': {
+                                        border: '1px solid var(--theme-orange)',
+                                        color: 'var(--theme-orange)',
+                                    },
+                                }}
+                            >
+                                Follow
+                            </Button>
                         </Grid>
 
                         {/*Second Grid Item */}

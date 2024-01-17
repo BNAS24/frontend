@@ -6,7 +6,7 @@ import {
     Input,
     Modal,
     TextField,
-    Typography
+    Typography,
 } from '@mui/material';
 import Button from '@mui/material/Button';
 import { ThemeProvider } from '@mui/material/styles';

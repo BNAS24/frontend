@@ -184,7 +184,7 @@ export const SubForumPageContainer = ({
                                             sm: '64px',
                                             md: '64px',
                                             lg: '64px',
-                                        }
+                                        },
                                     }}
                                 />
                                 <Container
@@ -198,10 +198,10 @@ export const SubForumPageContainer = ({
                                             xs: '140px',
                                             sm: '168px',
                                             md: '168px',
-                                            lg: '168px'
+                                            lg: '168px',
                                         },
                                         p: '8px',
-                                        backgroundColor: 'var(--theme-blue)'
+                                        backgroundColor: 'var(--theme-blue)',
                                     }}
                                 >
                                     <div

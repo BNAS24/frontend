@@ -149,6 +149,24 @@ export const SubForumPage = () => {
         }
     };
 
+    const followUser = async () => {
+        try {
+
+            
+
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
+    const unfollowUser = async () => {
+        try {
+
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
     return (
 
         <SubForumPageContainer
