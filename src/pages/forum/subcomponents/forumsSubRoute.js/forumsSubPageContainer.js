@@ -20,28 +20,14 @@ export const SubForumPage = () => {
 
     const [postModalState, setPostModalState] = useState(false);
 
-    // const [checkedUserStatus, setCheckedUserStatus] = useState(false);
+    const [profileModalState, setProfileModalState] = useState(false);
+
+    const [userProfileStats, setUserProfileStats] = useState(null);
 
     const [postData, setPostData] = useState({
         author: user ? user._id : null,
         content: '',
     });
-
-    // useEffect(() => {
-    //     if (isLoading) {
-    //         return;
-    //     }
-
-    //     if (!user) {
-
-    //         if (!checkedUserStatus) {
-    //             setCheckedUserStatus(true);
-    //             return;
-    //         }
-
-    //         navigate('/login');
-    //     }
-    // }, [checkedUserStatus, navigate])
 
     useEffect(() => {
 
@@ -107,7 +93,6 @@ export const SubForumPage = () => {
             ...prevLikeButtons,
             [postKey]: !prevLikeButtons[postKey],
         }));
-        // socket.emit('liked', { message: 'Your post was liked!' })
     };
 
     const handleOpenModal = (postKey) => {
@@ -134,10 +119,47 @@ export const SubForumPage = () => {
         }))
     }
 
+    const openProfileModal = () => {
+        setProfileModalState(true);
+    };
+
+    const closeProfileModal = () => {
+        setProfileModalState(false);
+    };
+
+    const fetchUserProfile = async (userClickedOn) => {
+        try {
+
+            const response = await fetch(`http://localhost:5000/api/users/userStats/${userClickedOn}`);
+
+            if (!response.ok) {
+
+                console.log(`Error fetching user profile for ${userClickedOn}:`, response.statusText);
+
+            } else {
+
+                const userStats = await response.json();
+                setUserProfileStats(userStats);
+                console.log(userStats);
+
+            }
+
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
     return (
 
         <SubForumPageContainer
             forumData={forumData}
+            fetchUserProfile={fetchUserProfile}
+            userProfileStats={userProfileStats}
+
+            // Profile Modal
+            profileModalState={profileModalState}
+            openProfileModal={openProfileModal}
+            closeProfileModal={closeProfileModal}
 
             // Create Post Modal
             postModalState={postModalState}
@@ -154,4 +176,4 @@ export const SubForumPage = () => {
             toggleLike={toggleLike}
         />
     )
-}
+};

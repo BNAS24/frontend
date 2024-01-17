@@ -1,24 +1,30 @@
 import AddCommentOutlinedIcon from '@mui/icons-material/AddCommentOutlined';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
-import { Footer } from "../../../../components/authfoot"
-import { NavBar } from "../../../../components/authnav"
+import { Avatar, Button, Container, Typography } from "@mui/material";
+import { Footer } from "../../../../components/authfoot";
+import { NavBar } from "../../../../components/authnav";
+import { CommentsModal } from '../../../../components/commentmd';
+import { CreatePostModal } from '../../../../components/createpostmd';
+import { formatPostTime } from '../../../../helpers/formatTime';
+import { styles } from '../../../../pages/dashboard/styles';
 import '../../../../styleSheets/dashboard.css';
-import { styles } from '../../../../pages/dashboard/styles'
 import {
     ForumContent,
     ForumDataDisplay,
     ForumPageWrap,
     TopContainer,
-} from "../forumsStyledComponents"
-import { Avatar, Button, Typography, Container } from "@mui/material";
-import { formatPostTime } from '../../../../helpers/formatTime';
-import { CommentsModal } from '../../../../components/commentmd';
-import { CreatePostModal } from '../../../../components/createpostmd';
+} from "../forumsStyledComponents";
+import { ProfileModal } from '../../../../components/modals/profileModal';
 
 
 export const SubForumPageContainer = ({
     forumData,
+    fetchUserProfile,
+    userProfileStats,
+    profileModalState,
+    openProfileModal,
+    closeProfileModal,
     postModalState,
     openPostModal,
     closePostModal,
@@ -31,6 +37,10 @@ export const SubForumPageContainer = ({
     likeButton,
 }) => {
 
+    const handleUserProfileAndModal = (e) => {
+        fetchUserProfile(e);
+        openProfileModal();
+    };
 
     return (
         <ForumPageWrap
@@ -141,7 +151,6 @@ export const SubForumPageContainer = ({
                         {forumData?.slice().reverse().map((post) => (
                             <Container
                                 key={post._id}
-                                // sx={styles.forumsYouFollowContentContainer}
                                 sx={{
                                     display: 'flex',
                                     flexDirection: 'row',
@@ -163,7 +172,6 @@ export const SubForumPageContainer = ({
                                 <Avatar
                                     alt='profile picture'
                                     variant='square'
-                                    // sx={styles.forumsYouFollowUserAvatar}
                                     sx={{
                                         height: {
                                             xs: '16px',
@@ -180,7 +188,6 @@ export const SubForumPageContainer = ({
                                     }}
                                 />
                                 <Container
-                                    // sx={styles.forumsYouFollowPostContainer}
                                     sx={{
                                         display: 'flex',
                                         flexDirection: 'column',
@@ -197,11 +204,14 @@ export const SubForumPageContainer = ({
                                         backgroundColor: 'var(--theme-blue)'
                                     }}
                                 >
-                                    <div className='post-header'>
+                                    <div
+                                        className='post-header'
+                                    >
                                         <Typography
                                             align='center'
                                             noWrap
-                                        // sx={styles.postUsernameTypography}
+                                            className='links-hover-state'
+                                            onClick={() => { handleUserProfileAndModal(post.author.username) }}
                                         >
                                             {post.author.username}
                                         </Typography>
@@ -217,13 +227,11 @@ export const SubForumPageContainer = ({
                                         sx={styles.postContentContainer}
                                     >
                                         <Typography
-                                        // sx={styles.postContentText}
                                         >
                                             {post.content}
                                         </Typography>
                                     </Container>
                                     <div
-                                        // className='post-footer'
                                         style={{
                                             display: 'flex',
                                             justifyContent: 'flex-end',
@@ -261,6 +269,11 @@ export const SubForumPageContainer = ({
                     </Container>
                 </ForumDataDisplay>
             </ForumContent>
+            <ProfileModal
+                open={profileModalState}
+                closeProfileModal={(e) => closeProfileModal(e)}
+                userProfileStats={userProfileStats}
+            />
             <CreatePostModal
                 open={postModalState}
                 createPost={createPost}

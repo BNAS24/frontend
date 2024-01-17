@@ -47,7 +47,8 @@ export const ProfilePres = ({
                                 md: '1 / 1 / 2 / 2',
                                 lg: '1 / 1 / 2 / 2'
                             },
-                        }}>
+                        }}
+                        >
                         <Container
                             disableGutters={true}
                             sx={{
@@ -285,6 +286,7 @@ export const ProfilePres = ({
                             </Container>
                         </Container>
                     </Grid>
+                    
                     {/*Third Grid Item*/}
                     <Grid
                         item
