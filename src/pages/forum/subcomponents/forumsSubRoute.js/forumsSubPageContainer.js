@@ -67,10 +67,11 @@ export const SubForumPage = () => {
         }
     }, [forumData, getParams])
 
-    const createPost = async (threadId) => {
+    const createPost = async () => {
 
         try {
 
+            const threadId = getParams.id
             const response = await fetch(`http://localhost:5000/api/forums/thread/createPost/${threadId}`, {
 
                 method: 'POST',
@@ -117,8 +118,21 @@ export const SubForumPage = () => {
         setModalOpen(null)
     };
 
-    const openPostModal = () => setPostModalState(true);
-    const closePostModal = () => setPostModalState(false);  
+    const openPostModal = () => {
+        setPostModalState(true);
+    }
+
+    const closePostModal = (e) => {
+        e.preventDefault()
+        setPostModalState(false);
+    }
+
+    const onPostChange = (e) => {
+        setPostData((prevState) => ({
+            ...prevState,
+            content: e.target.value,
+        }))
+    }
 
     return (
 
@@ -130,7 +144,7 @@ export const SubForumPage = () => {
             openPostModal={openPostModal}
             closePostModal={closePostModal}
             createPost={createPost}
-            setPostData={setPostData}
+            onPostChange={onPostChange}
 
             // Comments Modal
             isModalOpen={isModalOpen}

@@ -22,7 +22,8 @@ export const LoginPres = ({
     return (
         <>
             <ThemeProvider
-                theme={customTheme}>
+                theme={customTheme}
+                >
                 <div
                     className='main-container'
                 >

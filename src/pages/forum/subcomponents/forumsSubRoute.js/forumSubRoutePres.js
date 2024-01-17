@@ -23,6 +23,7 @@ export const SubForumPageContainer = ({
     openPostModal,
     closePostModal,
     createPost,
+    onPostChange,
     isModalOpen,
     handleOpenModal,
     handleCloseModal,
@@ -137,7 +138,7 @@ export const SubForumPageContainer = ({
                             },
                         }}
                     >
-                        {forumData?.map((post) => (
+                        {forumData?.slice().reverse().map((post) => (
                             <Container
                                 key={post._id}
                                 // sx={styles.forumsYouFollowContentContainer}
@@ -260,10 +261,12 @@ export const SubForumPageContainer = ({
                     </Container>
                 </ForumDataDisplay>
             </ForumContent>
-                    <CreatePostModal
-                        open={postModalState}
-                        closePostModal={() => closePostModal()}
-                    />
+            <CreatePostModal
+                open={postModalState}
+                createPost={createPost}
+                closePostModal={(e) => closePostModal(e)}
+                onPostChange={onPostChange}
+            />
             <Footer />
         </ForumPageWrap>
     )

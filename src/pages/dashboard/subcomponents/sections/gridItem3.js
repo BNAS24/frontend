@@ -56,7 +56,7 @@ export const ThirdGridItem = ({
                     <ForumsYouFollowContent
                         disableGutters={true}
                     >
-                        {forumContent?.map((post) => (
+                        {forumContent?.slice().reverse().map((post) => (
                             <Container
                                 key={post._id} // Use a unique key for each item
                                 sx={styles.forumsYouFollowContentContainer}
