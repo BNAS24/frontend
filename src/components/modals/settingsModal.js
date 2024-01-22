@@ -13,8 +13,8 @@ import { ThemeProvider } from '@mui/material/styles';
 import { Container } from '@mui/system';
 import { Fragment } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../context/auth/authSlice';
-import customTheme from '../context/muiTheme/customtheme';
+import { useAuth } from '../../context/auth/authSlice';
+import customTheme from '../../context/muiTheme/customtheme';
 
 export const SettingsModal = ({
     open,

@@ -4,8 +4,8 @@ import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
 import { Avatar, Button, Container, Typography } from "@mui/material";
 import { Footer } from "../../../../components/authfoot";
 import { NavBar } from "../../../../components/authnav";
-import { CommentsModal } from '../../../../components/commentmd';
-import { CreatePostModal } from '../../../../components/createpostmd';
+import { CommentsModal } from '../../../../components/modals/commentsModal';
+import { CreatePostModal } from '../../../../components/modals/createPostModal';
 import { formatPostTime } from '../../../../helpers/formatTime';
 import { styles } from '../../../../pages/dashboard/styles';
 import '../../../../styleSheets/dashboard.css';
@@ -214,7 +214,6 @@ export const SubForumPageContainer = ({
                                     >
                                         <Typography
                                             align='center'
-                                            // noWrap
                                             className='links-hover-state'
                                             onClick={() => { handleUserProfileAndModal(post.author.username) }}
                                         >
@@ -277,7 +276,6 @@ export const SubForumPageContainer = ({
             <ProfileModal
                 user={user}
                 open={profileModalState}
-                // closeProfileModal={(e) => closeProfileModal(e)}
                 closeProfileModal={closeProfileModal}
                 userProfileStats={userProfileStats}
                 followUser={() => followUser(userProfileStats?.username)}

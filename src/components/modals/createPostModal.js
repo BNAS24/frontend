@@ -1,6 +1,6 @@
 import CloseIcon from '@mui/icons-material/Close';
 import { ThemeProvider } from '@mui/material/styles';
-import customTheme from '../context/muiTheme/customtheme';
+import customTheme from '../../context/muiTheme/customtheme';
 import {
     Box,
     Button,

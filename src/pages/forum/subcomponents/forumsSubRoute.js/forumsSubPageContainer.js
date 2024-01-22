@@ -1,6 +1,5 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-// import { useNavigate } from 'react-router-dom';
 import { SubForumPageContainer } from "./forumSubRoutePres";
 
 export const SubForumPage = () => {
@@ -9,8 +8,6 @@ export const SubForumPage = () => {
     const user = storedUserData ? JSON.parse(storedUserData) : null;
 
     const getParams = useParams();
-
-    // const navigate = useNavigate();
 
     const [forumData, setForumData] = useState();
 
@@ -171,8 +168,6 @@ export const SubForumPage = () => {
                 },
             });
 
-            console.log(user.token)
-
             if (!response.ok) {
 
                 console.log(`Error following user: ${username}`);
@@ -199,8 +194,6 @@ export const SubForumPage = () => {
                     'Authorization': `Bearer ${user?.token}`
                 },
             });
-
-            console.log(user.token)
 
             if (!response.ok) {
 

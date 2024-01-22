@@ -23,14 +23,14 @@ export const ProfileModal = ({
 }) => {
 
     useEffect(() => {
-        console.log('open:', open);
-        console.log('userProfileStats:', userProfileStats);
-
         if (userProfileStats && open) {
+
             const username = userProfileStats?.username;
 
             const fetchFollowerStatus = async () => {
+
                 try {
+
                     const response = await fetch(`http://localhost:5000/api/users/checkFollowStatus/${username}`,
                         {
                             method: 'GET',
@@ -38,12 +38,13 @@ export const ProfileModal = ({
                                 'Authorization': `Bearer ${user?.token}`
                             },
                         });
-                    console.log('Response:', response); // Log the entire response
 
                     if (response.ok) {
+
                         const result = await response.json();
-                        console.log('message', result);
+                        
                         setFollowState(result.isFollowing);
+
                     }
                 } catch (error) {
                     console.error('Error in useEffect:', error);
@@ -55,26 +56,25 @@ export const ProfileModal = ({
 
     }, [user, userProfileStats, setFollowState, open]);
 
-
-
-
-
     const handleFollowButtonClick = async () => {
         try {
-            console.log('Follow button clicked');
-            console.log('Follow state:', followState);
+
             if (followState) {
+
                 await unfollowUser(userProfileStats?.username);
+
             } else {
+
                 await followUser(userProfileStats?.username);
+
             }
-            // Update follow state after the API call
+
             setFollowState(!followState);
+
         } catch (error) {
             console.error('Error in handleFollowButtonClick:', error);
         }
     };
-
 
     return (
         <ThemeProvider theme={customTheme}>
@@ -192,7 +192,7 @@ export const ProfileModal = ({
                                         color: 'var(--theme-orange)',
                                     },
                                 }}
-                                // onClick={!followState ? followUser : unfollowUser}
+
                                 onClick={handleFollowButtonClick}
                             >
                                 {!followState ? 'Follow' : 'Unfollow'}
