@@ -19,6 +19,7 @@ import { ProfileModal } from '../../../../components/modals/profileModal';
 
 
 export const SubForumPageContainer = ({
+    user,
     forumData,
     fetchUserProfile,
     userProfileStats,
@@ -26,6 +27,10 @@ export const SubForumPageContainer = ({
     openProfileModal,
     closeProfileModal,
     postModalState,
+    followUser,
+    unfollowUser,
+    followState,
+    setFollowState,
     openPostModal,
     closePostModal,
     createPost,
@@ -209,7 +214,7 @@ export const SubForumPageContainer = ({
                                     >
                                         <Typography
                                             align='center'
-                                            noWrap
+                                            // noWrap
                                             className='links-hover-state'
                                             onClick={() => { handleUserProfileAndModal(post.author.username) }}
                                         >
@@ -270,14 +275,20 @@ export const SubForumPageContainer = ({
                 </ForumDataDisplay>
             </ForumContent>
             <ProfileModal
+                user={user}
                 open={profileModalState}
-                closeProfileModal={(e) => closeProfileModal(e)}
+                // closeProfileModal={(e) => closeProfileModal(e)}
+                closeProfileModal={closeProfileModal}
                 userProfileStats={userProfileStats}
+                followUser={() => followUser(userProfileStats?.username)}
+                unfollowUser={() => unfollowUser(userProfileStats?.username)}
+                followState={followState}
+                setFollowState={setFollowState}
             />
             <CreatePostModal
                 open={postModalState}
                 createPost={createPost}
-                closePostModal={(e) => closePostModal(e)}
+                closePostModal={closePostModal}
                 onPostChange={onPostChange}
             />
             <Footer />

@@ -24,34 +24,43 @@ export const SubForumPage = () => {
 
     const [userProfileStats, setUserProfileStats] = useState(null);
 
+    const [followState, setFollowState] = useState(false);
+
     const [postData, setPostData] = useState({
         author: user ? user._id : null,
         content: '',
     });
 
     useEffect(() => {
-
+        let isMounted = true;
+    
         const fetchForumsData = async () => {
             try {
-                const response = await fetch(`http://localhost:5000/api/forums/thread/allPosts/${getParams.id}`)
-
+                const response = await fetch(`http://localhost:5000/api/forums/thread/allPosts/${getParams.id}`);
+    
                 if (!response.ok) {
-                    console.log('Error fetching data:', response.statusText)
+                    console.log('Error fetching data:', response.statusText);
                 }
-
-                const data = await response.json()
-
-                setForumData(data)
-
+    
+                const data = await response.json();
+    
+                if (isMounted) {
+                    setForumData(data);
+                }
             } catch (error) {
-                console.error(error)
+                console.error(error);
             }
-        }
-
+        };
+    
         if (!forumData) {
             fetchForumsData();
         }
-    }, [forumData, getParams])
+    
+        return () => {
+            isMounted = false;
+        };
+    }, [forumData, getParams]);
+    
 
     const createPost = async () => {
 
@@ -123,7 +132,10 @@ export const SubForumPage = () => {
         setProfileModalState(true);
     };
 
-    const closeProfileModal = () => {
+    const closeProfileModal = (e) => {
+        if (e) {
+            e.preventDefault();
+        }
         setProfileModalState(false);
     };
 
@@ -140,7 +152,6 @@ export const SubForumPage = () => {
 
                 const userStats = await response.json();
                 setUserProfileStats(userStats);
-                console.log(userStats);
 
             }
 
@@ -149,18 +160,58 @@ export const SubForumPage = () => {
         }
     };
 
-    const followUser = async () => {
+    const followUser = async (username) => {
         try {
 
-            
+            const response = await fetch(`http://localhost:5000/api/users/follow/${username}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${user?.token}`
+                },
+            });
+
+            console.log(user.token)
+
+            if (!response.ok) {
+
+                console.log(`Error following user: ${username}`);
+
+            } else {
+
+                const result = await response.json();
+                console.log(result);
+                setFollowState(true);
+            }
 
         } catch (error) {
             console.log(error);
         }
     };
 
-    const unfollowUser = async () => {
+    const unfollowUser = async (username) => {
         try {
+
+            const response = await fetch(`http://localhost:5000/api/users/unfollow/${username}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${user?.token}`
+                },
+            });
+
+            console.log(user.token)
+
+            if (!response.ok) {
+
+                console.log(`Error unfollowing user: ${username}`);
+
+            } else {
+
+                const result = await response.json();
+                console.log(result);
+                setFollowState(false);
+            }
 
         } catch (error) {
             console.log(error);
@@ -170,6 +221,7 @@ export const SubForumPage = () => {
     return (
 
         <SubForumPageContainer
+            user={user}
             forumData={forumData}
             fetchUserProfile={fetchUserProfile}
             userProfileStats={userProfileStats}
@@ -178,6 +230,10 @@ export const SubForumPage = () => {
             profileModalState={profileModalState}
             openProfileModal={openProfileModal}
             closeProfileModal={closeProfileModal}
+            followUser={followUser}
+            unfollowUser={unfollowUser}
+            followState={followState}
+            setFollowState={setFollowState}
 
             // Create Post Modal
             postModalState={postModalState}

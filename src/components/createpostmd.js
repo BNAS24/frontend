@@ -51,7 +51,7 @@ export const CreatePostModal = ({
                     }}
                 >
                     <CloseIcon
-                        onClick={closePostModal}
+                        onClick={(e) => closePostModal(e)}
                         sx={{
                             display: 'flex',
                             alignSelf: 'flex-end',

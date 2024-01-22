@@ -1,5 +1,6 @@
 import CloseIcon from '@mui/icons-material/Close';
 import { ThemeProvider } from '@mui/material/styles';
+import { useEffect } from 'react';
 import customTheme from '../../context/muiTheme/customtheme';
 import {
     Box,
@@ -11,10 +12,69 @@ import {
 } from '@mui/material';
 
 export const ProfileModal = ({
+    user,
     open,
     closeProfileModal,
     userProfileStats,
+    followUser,
+    unfollowUser,
+    followState,
+    setFollowState,
 }) => {
+
+    useEffect(() => {
+        console.log('open:', open);
+        console.log('userProfileStats:', userProfileStats);
+
+        if (userProfileStats && open) {
+            const username = userProfileStats?.username;
+
+            const fetchFollowerStatus = async () => {
+                try {
+                    const response = await fetch(`http://localhost:5000/api/users/checkFollowStatus/${username}`,
+                        {
+                            method: 'GET',
+                            headers: {
+                                'Authorization': `Bearer ${user?.token}`
+                            },
+                        });
+                    console.log('Response:', response); // Log the entire response
+
+                    if (response.ok) {
+                        const result = await response.json();
+                        console.log('message', result);
+                        setFollowState(result.isFollowing);
+                    }
+                } catch (error) {
+                    console.error('Error in useEffect:', error);
+                }
+            };
+
+            fetchFollowerStatus();
+        }
+
+    }, [user, userProfileStats, setFollowState, open]);
+
+
+
+
+
+    const handleFollowButtonClick = async () => {
+        try {
+            console.log('Follow button clicked');
+            console.log('Follow state:', followState);
+            if (followState) {
+                await unfollowUser(userProfileStats?.username);
+            } else {
+                await followUser(userProfileStats?.username);
+            }
+            // Update follow state after the API call
+            setFollowState(!followState);
+        } catch (error) {
+            console.error('Error in handleFollowButtonClick:', error);
+        }
+    };
+
 
     return (
         <ThemeProvider theme={customTheme}>
@@ -41,7 +101,7 @@ export const ProfileModal = ({
                     }}
                 >
                     <CloseIcon
-                        onClick={closeProfileModal}
+                        onClick={(e) => closeProfileModal(e)}
                         sx={{
                             display: 'flex',
                             alignSelf: 'flex-end',
@@ -87,7 +147,7 @@ export const ProfileModal = ({
                             },
                             maxHeight: '100vh',
                             overflowX: 'auto',
-                            overflowY: 'hidden'
+                            overflowY: 'hidden',
                         }}
                     >
 
@@ -110,6 +170,7 @@ export const ProfileModal = ({
                             }}
                         >
                             <Typography
+                            align='center'
                                 sx={{
                                     fontSize: {
                                         xs: '',
@@ -123,6 +184,7 @@ export const ProfileModal = ({
                                 {userProfileStats?.username}
                             </Typography>
                             <Button
+                                type='submit'
                                 sx={{
                                     color: 'var(--theme-orange)',
                                     '&:hover': {
@@ -130,8 +192,10 @@ export const ProfileModal = ({
                                         color: 'var(--theme-orange)',
                                     },
                                 }}
+                                // onClick={!followState ? followUser : unfollowUser}
+                                onClick={handleFollowButtonClick}
                             >
-                                Follow
+                                {!followState ? 'Follow' : 'Unfollow'}
                             </Button>
                         </Grid>
 
