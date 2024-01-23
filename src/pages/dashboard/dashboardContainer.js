@@ -16,13 +16,13 @@ export const Dashboard = () => {
 
     const [forumContent, setForumContent] = useState([]);
 
+    const [extraUserData, setExtraUserData] = useState(null);
+
     useEffect(() => {
 
         if (isLoading) {
             return;
         }
-
-        // Check if user is logged in. If not the user gets redirected to the home page
 
         if (!user) {
 
@@ -100,6 +100,40 @@ export const Dashboard = () => {
 
     }, [forumContent])
 
+    useEffect(() => {
+
+        if (user?.token && user?._id) {
+            console.log(`user ${user} user token: ${user.token}`)
+            const getUserDetails = async () => {
+                try {
+                    const response = await fetch(`http://localhost:5000/api/users/me/${user._id}`, {
+                        method: 'GET',
+                        headers: {
+                            'Authorization': `Bearer ${user.token}`
+                        },
+                    });
+
+                    if (!response.ok) {
+                        console.error('Error fetching user details:', response.statusText);
+                    }
+
+                    const userData = await response.json();
+                    console.log('userData', userData);
+
+                    setExtraUserData(userData);
+
+
+                } catch (error) {
+                    console.error(error);
+                }
+            }
+
+            getUserDetails();
+        };
+
+    }, [user, setExtraUserData]);
+
+
     // Initialize an object to store like button states for each post
     const [likeButton, setLikeButtons] = useState({});
 
@@ -138,6 +172,7 @@ export const Dashboard = () => {
         <>
             <DashboardPres
                 user={user}
+                extraUserData={extraUserData}
                 socket={socket}
                 likeButton={likeButton}
                 toggleLike={toggleLike}

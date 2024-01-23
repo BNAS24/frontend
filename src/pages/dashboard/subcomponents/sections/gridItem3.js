@@ -3,7 +3,7 @@ import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlin
 import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
 import { Avatar, Container, Typography } from "@mui/material";
 import { Link } from 'react-router-dom';
-import { CommentsModal } from '../../../../components/commentmd';
+import { CommentsModal } from '../../../../components/modals/commentsModal';
 import '../../../../styleSheets/dashboard.css';
 import { styles } from '../../styles';
 import {
@@ -65,12 +65,14 @@ export const ThirdGridItem = ({
                                     alt='profile picture'
                                     variant='square'
                                     sx={styles.forumsYouFollowUserAvatar}
+                                    // src={`http://localhost:5000${post.author.profileImage}`}
+                                    src={post.author.profileImage ? `http://localhost:5000${post.author.profileImage}` : 'https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png'}
                                 />
                                 <Container
                                     sx={styles.forumsYouFollowPostContainer}
                                 >
-                                    <div 
-                                    className='post-header'
+                                    <div
+                                        className='post-header'
                                     >
                                         <Typography
                                             align='center'
@@ -87,10 +89,10 @@ export const ThirdGridItem = ({
                                             {formatPostTime(post.createdAt)} {/* Replace with the actual time */}
                                         </Typography>
                                     </div>
-                                    <Container 
-                                    sx={styles.postContentContainer}>
-                                        <Typography 
-                                        sx={styles.postContentText}>
+                                    <Container
+                                        sx={styles.postContentContainer}>
+                                        <Typography
+                                            sx={styles.postContentText}>
                                             {post.content}
                                         </Typography>
                                     </Container>

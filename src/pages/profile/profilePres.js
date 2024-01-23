@@ -5,7 +5,7 @@ import { Fragment } from 'react';
 import { Footer } from '../../components/authfoot';
 import { NavBar } from "../../components/authnav";
 import { SideBarNav } from '../../components/helpers/sidebarnav';
-import { SettingsModal } from '../../components/settingsmd';
+import { SettingsModal } from '../../components/modals/settingsModal';
 import { badges, settings } from '../../datastore/profile';
 import { MainLayoutGrid } from './subcomponents/profileStyledComponents';
 
@@ -359,13 +359,13 @@ export const ProfilePres = ({
                                     </Typography>
                                 )}
                                 <SettingsModal
-                                    settingSelected={isModalOpen}
+                                    user={user}
                                     open={isModalOpen !== null}
                                     onClose={() => handleCloseModal()}
                                     onClick={handleCloseModal}
-                                    title={settings[isModalOpen]?.title}
                                     settings={settings}
-                                    user={user}
+                                    settingSelected={isModalOpen}
+                                    title={settings[isModalOpen]?.title}
                                 />
                             </Container>
                         </Container>

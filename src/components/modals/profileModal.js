@@ -42,7 +42,7 @@ export const ProfileModal = ({
                     if (response.ok) {
 
                         const result = await response.json();
-                        
+
                         setFollowState(result.isFollowing);
 
                     }
@@ -165,7 +165,7 @@ export const ProfileModal = ({
                                     lg: '1 / 1 / 2 / 2'
                                 },
                                 flexDirection: 'row',
-                                justifyContent: 'center',
+                                justifyContent: 'space-around',
                                 alignItems: 'center',
                             }}
                         >

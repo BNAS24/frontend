@@ -19,6 +19,7 @@ import { ThirdGridItem } from './subcomponents/sections/gridItem3';
 
 export const DashboardPres = ({
     user,
+    extraUserData,
     socket,
     likeButton,
     toggleLike,
@@ -58,6 +59,7 @@ export const DashboardPres = ({
 
                         <FirstGridItem
                             user={user}
+                            extraUserData={extraUserData}
                         >
 
                         </FirstGridItem>

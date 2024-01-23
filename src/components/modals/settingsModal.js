@@ -1,4 +1,5 @@
 import CloseIcon from '@mui/icons-material/Close';
+import { useState } from 'react';
 import {
     Avatar,
     Box,
@@ -17,6 +18,7 @@ import { useAuth } from '../../context/auth/authSlice';
 import customTheme from '../../context/muiTheme/customtheme';
 
 export const SettingsModal = ({
+    user,
     open,
     onClose,
     onClick,
@@ -34,6 +36,57 @@ export const SettingsModal = ({
         logout()
         navigate('/login');
     }
+
+    const [selectedFile, setSelectedFile] = useState(null);
+
+    const handleFileChange = (event) => {
+        const file = event.target.files[0];
+        setSelectedFile(file);
+    };
+    
+    const handleUpdateProfilePicture = async () => {
+        try {
+            if (!selectedFile) {
+                // Handle case where no file is selected
+                return;
+            }
+    
+            const formData = new FormData();
+            formData.append('pfp', selectedFile); // Align with the expected field name on the server
+    
+            // Make a request to update the profile picture URL
+            const response = await fetch('http://localhost:5000/api/users/profileImage', {
+                method: 'PUT',
+                headers: {
+                    Authorization: `Bearer ${user.token}`, // Include the user's access token
+                },
+                body: formData,
+            });
+    
+            if (response.ok) {
+                // Handle success
+                console.log('Profile picture updated successfully');
+            } else {
+                // Handle error
+                console.error('Failed to update profile picture');
+            }
+        } catch (error) {
+            console.error('Error updating profile picture:', error);
+        }
+    };
+    
+
+    const handleSubmitProfilePicture = async () => {
+        try {
+            // Add any additional logic you want to execute before submitting
+            await handleUpdateProfilePicture();
+            
+            // Add logic for any additional steps after successful submission
+        } catch (error) {
+            // Handle error during submission
+            console.error('Error submitting profile picture:', error);
+        }
+    };
 
     return (
 
@@ -350,7 +403,7 @@ export const SettingsModal = ({
                                         <Avatar
                                             variant='square'
                                             alt='profile picture'
-                                            src={selectedSetting.currentProfilePicFile}
+                                            src={selectedFile ? URL.createObjectURL(selectedFile) : null}
                                             sx={{
                                                 height: '152px',
                                                 width: '152px'
@@ -359,6 +412,7 @@ export const SettingsModal = ({
                                             htmlFor="profilePicInput"
                                         >
                                             <Button
+                                                onClick={handleUpdateProfilePicture}
                                                 variant="contained"
                                                 type='button'
                                                 component='span' // This makes the button act as a file input trigger
@@ -375,15 +429,36 @@ export const SettingsModal = ({
                                                         backgroundColor: '#fe6f10',
                                                     },
                                                 }}
-
                                             >
                                                 {selectedSetting.buttonText}
+                                            </Button>
+                                            <Button
+                                                onClick={handleSubmitProfilePicture}
+                                                variant="contained"
+                                                type='submit'
+                                                sx={{
+                                                    minWidth: '104px',
+                                                    width: '152px',
+                                                    maxWidth: '152px',
+                                                    p: '8px 8px',
+                                                    mt: '16px',
+                                                    color: 'white',
+                                                    backgroundColor: 'var(--theme-orange)',
+                                                    fontSize: '16px',
+                                                    '&:hover': {
+                                                        backgroundColor: '#fe6f10',
+                                                    },
+                                                }}
+                                            >
+                                                Submit
                                             </Button>
                                         </label>
                                         <Input
                                             type='file'
+                                            name='pfp'
                                             id="profilePicInput"
                                             style={{ display: 'none' }}
+                                            onChange={handleFileChange}
                                         />
                                     </Container>
                                 )}
