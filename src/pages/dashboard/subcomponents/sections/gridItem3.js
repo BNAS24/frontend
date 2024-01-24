@@ -13,7 +13,7 @@ import {
     ForumsYouFollowNavBar,
     ForumsYouFollowTitle,
 } from "../dashboardStyledComponents";
-import { formatPostTime } from '../../../../helpers/formatTime';
+import { formatPostTime } from '../../../../util/formatTime';
 
 export const ThirdGridItem = ({
     socket,
@@ -65,7 +65,6 @@ export const ThirdGridItem = ({
                                     alt='profile picture'
                                     variant='square'
                                     sx={styles.forumsYouFollowUserAvatar}
-                                    // src={`http://localhost:5000${post.author.profileImage}`}
                                     src={post.author.profileImage ? `http://localhost:5000${post.author.profileImage}` : 'https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png'}
                                 />
                                 <Container

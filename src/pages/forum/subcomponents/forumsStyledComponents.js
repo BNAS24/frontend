@@ -16,7 +16,9 @@ export const ForumContent = styled(Container)(({ theme }) =>
         position: 'relative',
         display: 'flex',
         flex: '1',
-        justifyContent: 'center',
+        flexDirection: 'column',
+        justifyContent: 'space-around',
+        alignItems: 'center',
         overflow: 'hidden',
     })
 )

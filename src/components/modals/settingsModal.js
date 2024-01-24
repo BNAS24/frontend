@@ -413,7 +413,7 @@ export const SettingsModal = ({
                                         >
                                             <Button
                                                 onClick={handleUpdateProfilePicture}
-                                                variant="contained"
+                                                variant="text"
                                                 type='button'
                                                 component='span' // This makes the button act as a file input trigger
                                                 sx={{
@@ -434,7 +434,7 @@ export const SettingsModal = ({
                                             </Button>
                                             <Button
                                                 onClick={handleSubmitProfilePicture}
-                                                variant="contained"
+                                                variant="text"
                                                 type='submit'
                                                 sx={{
                                                     minWidth: '104px',

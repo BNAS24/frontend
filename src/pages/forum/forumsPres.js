@@ -4,6 +4,8 @@ import { Footer } from '../../components/authfoot';
 import { NavBar } from '../../components/authnav';
 import { SideBarNav } from '../../components/helpers/sidebarnav';
 import { ForumContent, ForumPageWrap, ForumSeachBar } from './subcomponents/forumsStyledComponents';
+import { Container } from '@mui/system';
+import { Typography } from '@mui/material';
 
 
 export const ForumPres = ({ isSidebarOpen }) => {
@@ -34,6 +36,103 @@ export const ForumPres = ({ isSidebarOpen }) => {
                         )
                     }}
                 />
+                <Container
+                    sx={{
+                        display: 'flex',
+                        flexDirection: 'row',
+                        flexWrap: 'wrap',
+                        justifyContent: 'space-around',
+                        alignItems: 'center',
+                        // border: '1px solid var(--theme-orange)',
+                        width: '100%',
+                        height: '80%',
+                    }}
+                >
+                    <Container
+                        sx={{
+                            display: 'flex',
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                            color: 'white',
+                            border: '1px solid var(--theme-orange)',
+                            borderRadius: '8px',
+                            width: '48%',
+                            height: '40%',
+                            '&: hover': {
+                                backgroundColor: 'rgba(242, 97, 1, 0.5)',
+                            }
+                        }}
+                    >
+                        <Typography
+                            align='center'
+                        >
+                            Top Forum Content 1
+                        </Typography>
+                    </Container>
+                    <Container
+                        sx={{
+                            display: 'flex',
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                            color: 'white',
+                            border: '1px solid var(--theme-orange)',
+                            borderRadius: '8px',
+                            width: '48%',
+                            height: '40%',
+                            '&: hover': {
+                                backgroundColor: 'rgba(242, 97, 1, 0.5)',
+                            }
+                        }}
+                    >
+                        <Typography
+                            align='center'
+                        >
+                            Top Forum Content 2
+                        </Typography>
+                    </Container>
+                    <Container
+                        sx={{
+                            display: 'flex',
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                            color: 'white',
+                            border: '1px solid var(--theme-orange)',
+                            borderRadius: '8px',
+                            width: '48%',
+                            height: '40%',
+                            '&: hover': {
+                                backgroundColor: 'rgba(242, 97, 1, 0.5)',
+                            }
+                        }}
+                    >
+                        <Typography
+                            align='center'
+                        >
+                            Top Forum Content 3
+                        </Typography>
+                    </Container>
+                    <Container
+                        sx={{
+                            display: 'flex',
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                            color: 'white',
+                            border: '1px solid var(--theme-orange)',
+                            borderRadius: '8px',
+                            width: '48%',
+                            height: '40%',
+                            '&: hover': {
+                                backgroundColor: 'rgba(242, 97, 1, 0.5)',
+                            }
+                        }}
+                    >
+                        <Typography
+                            align='center'
+                        >Top Forum Content 4
+                        </Typography>
+                    </Container>
+
+                </Container>
                 {isSidebarOpen && (
                     <SideBarNav />
                 )}

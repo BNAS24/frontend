@@ -6,7 +6,7 @@ import { Footer } from "../../../../components/authfoot";
 import { NavBar } from "../../../../components/authnav";
 import { CommentsModal } from '../../../../components/modals/commentsModal';
 import { CreatePostModal } from '../../../../components/modals/createPostModal';
-import { formatPostTime } from '../../../../helpers/formatTime';
+import { formatPostTime } from '../../../../util/formatTime';
 import { styles } from '../../../../pages/dashboard/styles';
 import '../../../../styleSheets/dashboard.css';
 import {
@@ -177,6 +177,7 @@ export const SubForumPageContainer = ({
                                 <Avatar
                                     alt='profile picture'
                                     variant='square'
+                                    src={post.author.profileImage ? `http://localhost:5000${post.author.profileImage}` : 'https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png'}
                                     sx={{
                                         height: {
                                             xs: '16px',

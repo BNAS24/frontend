@@ -68,7 +68,7 @@ export const LiveScores = () => {
         fetchEventResults();
     }, [teamData, teamImage]);
 
-    console.log(score)
+    console.log('score',score)
 
     const handleTeamData = async (index) => {
 

@@ -9,8 +9,6 @@ import { SettingsModal } from '../../components/modals/settingsModal';
 import { badges, settings } from '../../datastore/profile';
 import { MainLayoutGrid } from './subcomponents/profileStyledComponents';
 
-
-
 export const ProfilePres = ({
     user,
     isSidebarOpen,
@@ -48,7 +46,7 @@ export const ProfilePres = ({
                                 lg: '1 / 1 / 2 / 2'
                             },
                         }}
-                        >
+                    >
                         <Container
                             disableGutters={true}
                             sx={{
@@ -61,7 +59,10 @@ export const ProfilePres = ({
                             <Avatar
                                 variant='square'
                                 alt='profile picture'
-                                src='https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png'
+                                src={user?.profileImage
+                                    ? `http://localhost:5000${user.profileImage}`
+                                    : 'https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png'
+                                }
                                 sx={{
                                     height: {
                                         xs: 'auto',
@@ -286,7 +287,7 @@ export const ProfilePres = ({
                             </Container>
                         </Container>
                     </Grid>
-                    
+
                     {/*Third Grid Item*/}
                     <Grid
                         item
