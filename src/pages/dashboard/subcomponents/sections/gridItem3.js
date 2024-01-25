@@ -132,6 +132,7 @@ export const ThirdGridItem = ({
                             onClose={() => handleCloseModal()}
                             username={forumContent.find(post => post._id === isModalOpen)?.author.username}
                             comment={forumContent.find(post => post._id === isModalOpen)?.content}
+                            profileImage={forumContent.find(post => post._id === isModalOpen)?.author.profileImage}
                         />
                     </ForumsYouFollowContent>
                 </ForumsYouFollowMainContainer>

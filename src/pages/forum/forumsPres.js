@@ -60,6 +60,7 @@ export const ForumPres = ({ isSidebarOpen }) => {
                             height: '40%',
                             '&: hover': {
                                 backgroundColor: 'rgba(242, 97, 1, 0.5)',
+                                cursor: 'pointer',
                             }
                         }}
                     >
@@ -81,6 +82,7 @@ export const ForumPres = ({ isSidebarOpen }) => {
                             height: '40%',
                             '&: hover': {
                                 backgroundColor: 'rgba(242, 97, 1, 0.5)',
+                                cursor: 'pointer',
                             }
                         }}
                     >
@@ -102,6 +104,7 @@ export const ForumPres = ({ isSidebarOpen }) => {
                             height: '40%',
                             '&: hover': {
                                 backgroundColor: 'rgba(242, 97, 1, 0.5)',
+                                cursor: 'pointer',
                             }
                         }}
                     >
@@ -123,6 +126,7 @@ export const ForumPres = ({ isSidebarOpen }) => {
                             height: '40%',
                             '&: hover': {
                                 backgroundColor: 'rgba(242, 97, 1, 0.5)',
+                                cursor: 'pointer',
                             }
                         }}
                     >

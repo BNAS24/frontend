@@ -19,6 +19,7 @@ import customTheme from '../../context/muiTheme/customtheme';
 
 export const SettingsModal = ({
     user,
+    extraUserData,
     open,
     onClose,
     onClick,
@@ -46,6 +47,7 @@ export const SettingsModal = ({
     
     const handleUpdateProfilePicture = async () => {
         try {
+
             if (!selectedFile) {
                 // Handle case where no file is selected
                 return;
@@ -54,21 +56,22 @@ export const SettingsModal = ({
             const formData = new FormData();
             formData.append('pfp', selectedFile); // Align with the expected field name on the server
     
-            // Make a request to update the profile picture URL
             const response = await fetch('http://localhost:5000/api/users/profileImage', {
                 method: 'PUT',
                 headers: {
-                    Authorization: `Bearer ${user.token}`, // Include the user's access token
+                    Authorization: `Bearer ${user.token}`, 
                 },
                 body: formData,
             });
     
             if (response.ok) {
-                // Handle success
+
                 console.log('Profile picture updated successfully');
+
             } else {
-                // Handle error
+
                 console.error('Failed to update profile picture');
+
             }
         } catch (error) {
             console.error('Error updating profile picture:', error);
@@ -78,12 +81,10 @@ export const SettingsModal = ({
 
     const handleSubmitProfilePicture = async () => {
         try {
-            // Add any additional logic you want to execute before submitting
+
             await handleUpdateProfilePicture();
-            
-            // Add logic for any additional steps after successful submission
+                        
         } catch (error) {
-            // Handle error during submission
             console.error('Error submitting profile picture:', error);
         }
     };
@@ -550,7 +551,7 @@ export const SettingsModal = ({
                                                     }
                                                 }}
                                             >
-                                                {selectedSetting.followers.count}
+                                                {extraUserData?.userStats.followerCount}
                                             </Typography>
                                             <Typography
                                                 sx={{
@@ -564,7 +565,7 @@ export const SettingsModal = ({
                                                     }
                                                 }}
                                             >
-                                                {selectedSetting.following.count}
+                                                {extraUserData?.userStats.followingCount}
                                             </Typography>
                                             <Typography
                                                 sx={{
@@ -578,7 +579,8 @@ export const SettingsModal = ({
                                                     }
                                                 }}
                                             >
-                                                {selectedSetting.numberOfPosts.count}
+                                                {/* {selectedSetting.numberOfPosts.count} */}
+                                                n/a
                                             </Typography>
                                         </Container>
                                     </Container>

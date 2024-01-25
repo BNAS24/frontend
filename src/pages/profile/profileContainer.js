@@ -13,6 +13,13 @@ export const Profile = () => {
 
     const [checkedUserStatus, setCheckedUserStatus] = useState(false);
 
+    const { isSidebarOpen } = useSidebar();
+
+    const [isModalOpen, setModalOpen] = useState(null);
+
+    const [isBadgesOpen, setBadgesOpen] = useState(false);
+
+    const [extraUserData, setExtraUserData] = useState(null);
 
     useEffect(() => {
 
@@ -33,11 +40,38 @@ export const Profile = () => {
 
     }, [user, isLoading, checkedUserStatus, navigate]);
 
-    const { isSidebarOpen } = useSidebar();
+    useEffect(() => {
 
-    const [isModalOpen, setModalOpen] = useState(null);
+        if (user?.token && user?._id) {
 
-    const [isBadgesOpen, setBadgesOpen] = useState(false);
+            const getUserDetails = async () => {
+
+                try {
+
+                    const response = await fetch(`http://localhost:5000/api/users/me/${user._id}`, {
+                        method: 'GET',
+                        headers: {
+                            'Authorization': `Bearer ${user.token}`
+                        },
+                    });
+
+                    if (!response.ok) {
+                        console.error('Error fetching user details:', response.statusText);
+                    };
+
+                    const userData = await response.json();
+
+                    setExtraUserData(userData);
+
+                } catch (error) {
+                    console.error(error);
+                };
+            };
+
+            getUserDetails();
+        };
+
+    }, [user, setExtraUserData]);
 
     const handleOpenModal = (postKey) => {
         setModalOpen(postKey)
@@ -55,6 +89,7 @@ export const Profile = () => {
         <>
             <ProfilePres
                 user={user}
+                extraUserData={extraUserData}
                 isSidebarOpen={isSidebarOpen}
                 isModalOpen={isModalOpen}
                 isBadgesOpen={isBadgesOpen}

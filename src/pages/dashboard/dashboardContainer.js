@@ -22,17 +22,19 @@ export const Dashboard = () => {
 
         if (isLoading) {
             return;
-        }
+        };
 
         if (!user) {
 
             if (!checkedUserStatus) {
+
                 setCheckedUserStatus(true);
+
                 return;
             }
 
             navigate('/login');
-        }
+        };
 
 
     }, [user, isLoading, checkedUserStatus, navigate]);
@@ -58,13 +60,13 @@ export const Dashboard = () => {
             } catch (error) {
                 console.error(error);
             }
-        }
+        };
 
         if (!forumContent.length) {
 
             forumsYouFollow();
 
-        }
+        };
 
     }, [forumContent]);
 
@@ -73,7 +75,9 @@ export const Dashboard = () => {
         if (user?.token && user?._id) {
 
             const getUserDetails = async () => {
+
                 try {
+
                     const response = await fetch(`http://localhost:5000/api/users/me/${user._id}`, {
                         method: 'GET',
                         headers: {
@@ -83,7 +87,7 @@ export const Dashboard = () => {
 
                     if (!response.ok) {
                         console.error('Error fetching user details:', response.statusText);
-                    }
+                    };
 
                     const userData = await response.json();
 
@@ -92,16 +96,16 @@ export const Dashboard = () => {
 
                 } catch (error) {
                     console.error(error);
-                }
-            }
+                };
+            };
 
             getUserDetails();
         };
 
     }, [user, setExtraUserData]);
 
-
     // Initialize an object to store like button states for each post
+
     const [likeButton, setLikeButtons] = useState({});
 
     const [isModalOpen, setModalOpen] = useState(null);
@@ -111,12 +115,19 @@ export const Dashboard = () => {
     const [isNotificationsDisplayed, setNotificationsDisplayed] = useState(false);
 
     // Function to toggle the like button state for a specific post
+
     const toggleLike = (postKey) => {
+
         setLikeButtons((prevLikeButtons) => ({
+
             ...prevLikeButtons,
+
             [postKey]: !prevLikeButtons[postKey],
+
         }));
-        socket.emit('liked', { message: 'Your post was liked!' })
+
+        socket.emit('liked', { message: 'Your post was liked!' });
+
     };
 
     const handleOpenModal = (postKey) => {

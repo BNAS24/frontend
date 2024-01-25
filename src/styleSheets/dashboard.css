@@ -22,7 +22,7 @@
 }
 
 .side-controls:hover {
- cursor: pointer;
+    cursor: pointer;
 }
 
 .post-controls {
@@ -39,6 +39,7 @@
 
 
 @media (max-width: 600px) {
+
     /* Styles for extra-small screens (xs) only */
     .dashboard-forum-navbar {
         height: 32px;
@@ -50,20 +51,23 @@
         /* Update styles for extra-small screens only */
         font-size: 0.6rem;
     }
+
     .post-controls {
         gap: 0px;
     }
 }
 
 @media (min-width: 600px) {
+
     /*Small Devices*/
     .explore-button {
         font-size: 1rem;
     }
+
     .post-controls {
         gap: 0px;
     }
-    
+
 }
 
 @media (min-width: 900px) {
@@ -72,6 +76,7 @@
     .explore-button {
         font-size: 1rem;
     }
+
     .post-controls {
         gap: 8px;
     }
@@ -84,6 +89,7 @@
     .explore-button {
         font-size: 1rem;
     }
+
     .post-controls {
         gap: 16px;
     }

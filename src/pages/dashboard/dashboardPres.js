@@ -55,8 +55,6 @@ export const DashboardPres = ({
                         container
                     >
 
-                        {/*1st Grid Item*/}
-
                         <FirstGridItem
                             user={user}
                             extraUserData={extraUserData}
@@ -75,16 +73,12 @@ export const DashboardPres = ({
                             </GreetingXS>
                         </DashboardHeadXS>
 
-                        {/*2nd Grid Item*/}
-
                         <SecondGridItem
                             handleNotifications={handleNotifications}
                             handleTeamsDisplayed={handleTeamsDisplayed}
                         >
 
                         </SecondGridItem>
-
-                        {/*3rd Grid Item*/}
 
                         <ThirdGridItem
                             socket={socket}

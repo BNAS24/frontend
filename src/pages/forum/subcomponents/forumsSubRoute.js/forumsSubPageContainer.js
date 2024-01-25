@@ -5,6 +5,7 @@ import { SubForumPageContainer } from "./forumSubRoutePres";
 export const SubForumPage = () => {
 
     const storedUserData = localStorage.getItem('user');
+    
     const user = storedUserData ? JSON.parse(storedUserData) : null;
 
     const getParams = useParams();
@@ -32,7 +33,9 @@ export const SubForumPage = () => {
         let isMounted = true;
     
         const fetchForumsData = async () => {
+
             try {
+
                 const response = await fetch(`http://localhost:5000/api/forums/thread/allPosts/${getParams.id}`);
     
                 if (!response.ok) {
@@ -44,6 +47,7 @@ export const SubForumPage = () => {
                 if (isMounted) {
                     setForumData(data);
                 }
+
             } catch (error) {
                 console.error(error);
             }
@@ -63,7 +67,8 @@ export const SubForumPage = () => {
 
         try {
 
-            const threadId = getParams.id
+            const threadId = getParams.id;
+
             const response = await fetch(`http://localhost:5000/api/forums/thread/createPost/${threadId}`, {
 
                 method: 'POST',

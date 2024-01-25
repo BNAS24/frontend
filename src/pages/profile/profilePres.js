@@ -11,6 +11,7 @@ import { MainLayoutGrid } from './subcomponents/profileStyledComponents';
 
 export const ProfilePres = ({
     user,
+    extraUserData,
     isSidebarOpen,
     isModalOpen,
     isBadgesOpen,
@@ -30,11 +31,15 @@ export const ProfilePres = ({
                     width: '100%',
                     overflow: 'hidden',
                 }}>
+
                 <NavBar />
+
                 <MainLayoutGrid
                     container
                 >
+
                     {/*First Grid Item*/}
+                    
                     <Grid
                         item
                         xs={12} sm={12} md={12} lg={12}
@@ -110,6 +115,7 @@ export const ProfilePres = ({
                     </Grid>
 
                     {/*Displays only on xs sreens only*/}
+
                     <Grid
                         item
                         maxWidth="xs"
@@ -361,6 +367,7 @@ export const ProfilePres = ({
                                 )}
                                 <SettingsModal
                                     user={user}
+                                    extraUserData={extraUserData}
                                     open={isModalOpen !== null}
                                     onClose={() => handleCloseModal()}
                                     onClick={handleCloseModal}
@@ -471,7 +478,9 @@ export const ProfilePres = ({
                         </Fragment>
                     )}
                 </MainLayoutGrid>
+
                 <Footer />
+
             </Box>
         </>
     )
