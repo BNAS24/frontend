@@ -8,7 +8,13 @@ import { Container } from '@mui/system';
 import { Typography } from '@mui/material';
 
 
-export const ForumPres = ({ isSidebarOpen }) => {
+export const ForumPres = ({
+    isSidebarOpen,
+    searchState,
+    setSearchState,
+    searchResults,
+    loading,
+}) => {
 
     return (
         <ForumPageWrap
@@ -22,6 +28,8 @@ export const ForumPres = ({ isSidebarOpen }) => {
                     label='Search Forums'
                     variant="outlined"
                     type='search'
+                    value={searchState}
+                    onChange={(e) => setSearchState(e.target.value)}
                     InputProps={{
                         endAdornment: (
                             <InputAdornment
@@ -36,6 +44,13 @@ export const ForumPres = ({ isSidebarOpen }) => {
                         )
                     }}
                 />
+                {loading && <p>Loading...</p>}
+
+                <ul>
+                    {searchResults?.map(result => (
+                        <li key={result._id}>{result.name}</li> // Adjust the properties based on your data structure
+                    ))}
+                </ul>
                 <Container
                     sx={{
                         display: 'flex',
