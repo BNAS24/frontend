@@ -5,6 +5,8 @@ import { Avatar, Container, Typography } from "@mui/material";
 import { Link } from 'react-router-dom';
 import { CommentsModal } from '../../../../components/modals/commentsModal';
 import '../../../../styleSheets/dashboard.css';
+import { formatPostTime } from '../../../../util/formatTime';
+import { ProfileModal } from '../../../../components/modals/profileModal';
 import { styles } from '../../styles';
 import {
     ForumsYouFollow,
@@ -13,17 +15,30 @@ import {
     ForumsYouFollowNavBar,
     ForumsYouFollowTitle,
 } from "../dashboardStyledComponents";
-import { formatPostTime } from '../../../../util/formatTime';
 
 export const ThirdGridItem = ({
-    socket,
-    likeButton,
+    user,
     isModalOpen,
+    likeButton,
     handleOpenModal,
     handleCloseModal,
     toggleLike,
     forumContent,
+    fetchUserProfile,
+    profileModalState,
+    openProfileModal,
+    closeProfileModal,
+    userProfileStats,
+    followUser,
+    unfollowUser,
+    followState,
+    setFollowState
 }) => {
+
+    const handleUserProfileAndModal = (e) => {
+        fetchUserProfile(e);
+        openProfileModal();
+    };
 
     return (
         <>
@@ -77,6 +92,8 @@ export const ThirdGridItem = ({
                                             align='center'
                                             noWrap
                                             sx={styles.postUsernameTypography}
+                                            className='links-hover-state'
+                                            onClick={() => { handleUserProfileAndModal(post.author.username) }}
                                         >
                                             {post.author.username}
                                         </Typography>
@@ -128,11 +145,26 @@ export const ThirdGridItem = ({
                             </Container>
                         ))}
                         <CommentsModal
+                            user={user}
                             open={isModalOpen !== null}
                             onClose={() => handleCloseModal()}
                             username={forumContent.find(post => post._id === isModalOpen)?.author.username}
                             comment={forumContent.find(post => post._id === isModalOpen)?.content}
                             profileImage={forumContent.find(post => post._id === isModalOpen)?.author.profileImage}
+                            followUser={() => followUser(forumContent.find(post => post._id === isModalOpen)?.author.username)}
+                            unfollowUser={() => unfollowUser(forumContent.find(post => post._id === isModalOpen)?.author.username)}
+                            followState={followState}
+                            setFollowState={setFollowState}
+                        />
+                        <ProfileModal
+                            user={user}
+                            open={profileModalState}
+                            closeProfileModal={closeProfileModal}
+                            userProfileStats={userProfileStats}
+                            followUser={() => followUser(userProfileStats?.username)}
+                            unfollowUser={() => unfollowUser(userProfileStats?.username)}
+                            followState={followState}
+                            setFollowState={setFollowState}
                         />
                     </ForumsYouFollowContent>
                 </ForumsYouFollowMainContainer>

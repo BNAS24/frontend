@@ -20,7 +20,6 @@ import { ThirdGridItem } from './subcomponents/sections/gridItem3';
 export const DashboardPres = ({
     user,
     extraUserData,
-    socket,
     likeButton,
     toggleLike,
     isModalOpen,
@@ -31,6 +30,15 @@ export const DashboardPres = ({
     isNotificationsDisplayed,
     handleNotifications,
     forumContent,
+    fetchUserProfile,
+    profileModalState,
+    openProfileModal,
+    closeProfileModal,
+    followState,
+    setFollowState,
+    followUser,
+    unfollowUser,
+    userProfileStats,
 }) => {
 
     const { isSidebarOpen } = useSidebar();
@@ -81,13 +89,27 @@ export const DashboardPres = ({
                         </SecondGridItem>
 
                         <ThirdGridItem
-                            socket={socket}
-                            likeButton={likeButton}
+                            user={user}
+                            followUser={followUser}
+                            unfollowUser={unfollowUser}
+
                             isModalOpen={isModalOpen}
                             handleOpenModal={handleOpenModal}
                             handleCloseModal={handleCloseModal}
+
+                            fetchUserProfile={fetchUserProfile}
+                            userProfileStats={userProfileStats}
+                            profileModalState={profileModalState}
+                            openProfileModal={openProfileModal}
+                            closeProfileModal={closeProfileModal}
+
                             toggleLike={toggleLike}
+                            likeButton={likeButton}
+
                             forumContent={forumContent}
+
+                            followState={followState}
+                            setFollowState={setFollowState}
                         >
 
                         </ThirdGridItem>
@@ -107,7 +129,7 @@ export const DashboardPres = ({
                     <Footer />
 
                 </Box>
-            </ThemeProvider>
+            </ThemeProvider >
         </>
     )
 }

@@ -223,13 +223,13 @@ export const SubForumPage = () => {
             forumData={forumData}
             fetchUserProfile={fetchUserProfile}
             userProfileStats={userProfileStats}
+            followUser={followUser}
+            unfollowUser={unfollowUser}
 
             // Profile Modal
             profileModalState={profileModalState}
             openProfileModal={openProfileModal}
             closeProfileModal={closeProfileModal}
-            followUser={followUser}
-            unfollowUser={unfollowUser}
             followState={followState}
             setFollowState={setFollowState}
 

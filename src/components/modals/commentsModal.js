@@ -7,16 +7,75 @@ import {
     // TextField,
     Typography
 } from '@mui/material';
+import { useEffect } from 'react';
 
 import CloseIcon from '@mui/icons-material/Close';
 
 export const CommentsModal = ({
+    user,
     open,
     onClose,
     username,
     comment,
-    profileImage
+    profileImage,
+    followUser,
+    unfollowUser,
+    followState,
+    setFollowState,
 }) => {
+
+    useEffect(() => {
+
+        if (open) {
+
+            const fetchFollowerStatus = async () => {
+
+                try {
+
+                    const response = await fetch(`http://localhost:5000/api/users/checkFollowStatus/${username}`,
+                        {
+                            method: 'GET',
+                            headers: {
+                                'Authorization': `Bearer ${user?.token}`
+                            },
+                        });
+
+                    if (response.ok) {
+
+                        const result = await response.json();
+
+                        setFollowState(result.isFollowing);
+
+                    }
+                } catch (error) {
+                    console.error('Error in useEffect:', error);
+                }
+            };
+
+            fetchFollowerStatus();
+        }
+
+    }, [user, username, setFollowState, open]);
+
+    const handleFollowButtonClick = async () => {
+        try {
+
+            if (followState) {
+
+                await unfollowUser(username);
+
+            } else {
+
+                await followUser(username);
+
+            }
+
+            setFollowState(!followState);
+
+        } catch (error) {
+            console.error('Error in handleFollowButtonClick:', error);
+        }
+    };
 
     return (
 
@@ -32,7 +91,6 @@ export const CommentsModal = ({
                     width: '50%',
                     minWidth: '300px',
                     height: '50vh',
-                    // padding: '24px 24px 8px 16px',
                     padding: '16px',
                     position: 'absolute',
                     top: '50%',
@@ -65,7 +123,6 @@ export const CommentsModal = ({
                         gap: '32px',
                         height: '90%',
                         mt: '8px',
-                        // border: 'dashed 2px var(--theme-orange)',
                         pl: '16px',
                     }}
                 >
@@ -121,6 +178,7 @@ export const CommentsModal = ({
                             <Button
                                 variant='text'
                                 size='small'
+                                onClick={handleFollowButtonClick}
                                 sx={{
                                     // marginTop: '16px',
                                     color: 'var(--theme-orange)',
@@ -129,7 +187,7 @@ export const CommentsModal = ({
                                     },
                                 }}
                             >
-                                Follow
+                                {!followState ? 'Follow' : 'Unfollow'}
                             </Button>
                         </Container>
                     </Container>
@@ -142,16 +200,8 @@ export const CommentsModal = ({
                             flexShrink: 1,
                             flexDirection: 'column',
                             justifyContent: 'flex-start',
-                            // might delete this maxHeight property below because it's faulty
-                            // maxHeight: {
-                            //     xs: '248px',
-                            //     sm: '272px',
-                            //     md: '313px', 
-                            //     lg: '313px'
-                            // },
                             height: '100%',
                             width: '84%',
-                            // pl: '16px',
                             pb: '16px',
                             border: '1px solid var(--theme-orange)',
                             overflowY: 'auto',
@@ -169,64 +219,9 @@ export const CommentsModal = ({
                         >
                             {comment}
                         </Typography>
-                        {/* 
-                        <TextField
-                            fullWidth={true}
-                            sx={{
-                                width: '100%',
-                                // maxWidth: '400px',
-                                '& .MuiOutlinedInput-root': {
-                                    width: '100%',
-                                    maxWidth: '600px',
-                                    '& fieldset': {
-                                        borderColor: 'var(--theme-orange)',
-                                    },
-                                    '&:hover fieldset': {
-                                        borderColor: '#fe6f10',
-                                    },
-                                    '&.Mui-focused fieldset': {
-                                        borderColor: 'var(--theme-orange)',
-                                    },
-                                    '& .MuiInputBase-input': {
-                                        color: 'white',
-                                    },
-                                    cursor: 'text',
-                                },
-                                '& .MuiInputLabel-root': {
-                                    '&.Mui-focused': {
-                                        color: 'var(--theme-orange)',
-                                    },
-                                },
-                            }}
-                        /> */}
 
                     </Container>
                 </Container>
-                {/* <Container
-                    disableGutters
-                    sx={{
-                        flexGrow: 1,
-                        display: 'flex',
-                        justifyContent: 'flex-end',
-                        pt: '8px',
-                    }}
-                >
-                    <Button
-                        variant='outlined'
-                        onClick={onClose}
-                        sx={{
-                            color: 'var(--theme-orange)',
-                            flexGrow: '0',
-                            maxWidth: '64px',
-                            alignSelf: 'flex-end',
-                            '&:hover': {
-                                border: '1px solid var(--theme-orange)',
-                            },
-                        }}
-                    >
-                        Close
-                    </Button>
-                </Container> */}
             </Box>
         </Modal>
     )

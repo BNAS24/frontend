@@ -278,19 +278,24 @@ export const SubForumPageContainer = ({
                                 </Container>
                             ))}
                             <CommentsModal
+                                user={user}
                                 open={isModalOpen !== null}
                                 onClose={() => handleCloseModal()}
                                 username={forumData?.find(post => post._id === isModalOpen)?.author.username}
                                 comment={forumData?.find(post => post._id === isModalOpen)?.content}
+                                followUser={() => followUser(forumData?.find(post => post._id === isModalOpen)?.author.username)}
+                                unfollowUser={() => unfollowUser(forumData?.find(post => post._id === isModalOpen)?.author.username)}
+                                followState={followState}
+                                setFollowState={setFollowState}
                             />
                         </Container>
                     </ForumDataDisplay>
-                <CreatePostModal
-                    open={postModalState}
-                    createPost={createPost}
-                    closePostModal={closePostModal}
-                    onPostChange={onPostChange}
-                />
+                    <CreatePostModal
+                        open={postModalState}
+                        createPost={createPost}
+                        closePostModal={closePostModal}
+                        onPostChange={onPostChange}
+                    />
                 </ForumContent>
                 <ProfileModal
                     user={user}

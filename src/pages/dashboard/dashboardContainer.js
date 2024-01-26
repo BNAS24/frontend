@@ -16,7 +16,23 @@ export const Dashboard = () => {
 
     const [forumContent, setForumContent] = useState([]);
 
+    // Initialize an object to store like button states for each post
+
+    const [likeButton, setLikeButtons] = useState({});
+
+    const [isModalOpen, setModalOpen] = useState(null);
+
+    const [isTeamsDisplayed, setTeamsDisplayed] = useState(false);
+
+    const [isNotificationsDisplayed, setNotificationsDisplayed] = useState(false);
+
     const [extraUserData, setExtraUserData] = useState(null);
+
+    const [profileModalState, setProfileModalState] = useState(false);
+
+    const [userProfileStats, setUserProfileStats] = useState(null);
+
+    const [followState, setFollowState] = useState(false);
 
     useEffect(() => {
 
@@ -104,16 +120,6 @@ export const Dashboard = () => {
 
     }, [user, setExtraUserData]);
 
-    // Initialize an object to store like button states for each post
-
-    const [likeButton, setLikeButtons] = useState({});
-
-    const [isModalOpen, setModalOpen] = useState(null);
-
-    const [isTeamsDisplayed, setTeamsDisplayed] = useState(false);
-
-    const [isNotificationsDisplayed, setNotificationsDisplayed] = useState(false);
-
     // Function to toggle the like button state for a specific post
 
     const toggleLike = (postKey) => {
@@ -146,6 +152,92 @@ export const Dashboard = () => {
         setNotificationsDisplayed(!isNotificationsDisplayed)
     };
 
+    const openProfileModal = () => {
+        setProfileModalState(true);
+    };
+
+    const closeProfileModal = (e) => {
+        if (e) {
+            e.preventDefault();
+        }
+        setProfileModalState(false);
+    };
+
+    const fetchUserProfile = async (userClickedOn) => {
+        try {
+
+            const response = await fetch(`http://localhost:5000/api/users/userStats/${userClickedOn}`);
+
+            if (!response.ok) {
+
+                console.log(`Error fetching user profile for ${userClickedOn}:`, response.statusText);
+
+            } else {
+
+                const userStats = await response.json();
+                setUserProfileStats(userStats);
+
+            }
+
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
+    const followUser = async (username) => {
+        try {
+
+            const response = await fetch(`http://localhost:5000/api/users/follow/${username}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${user?.token}`
+                },
+            });
+
+            if (!response.ok) {
+
+                console.log(`Error following user: ${username}`);
+
+            } else {
+
+                const result = await response.json();
+                console.log(result);
+                setFollowState(true);
+            }
+
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
+    const unfollowUser = async (username) => {
+        try {
+
+            const response = await fetch(`http://localhost:5000/api/users/unfollow/${username}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${user?.token}`
+                },
+            });
+
+            if (!response.ok) {
+
+                console.log(`Error unfollowing user: ${username}`);
+
+            } else {
+
+                const result = await response.json();
+                console.log(result);
+                setFollowState(false);
+            }
+
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
     return (
         <>
             <DashboardPres
@@ -153,14 +245,30 @@ export const Dashboard = () => {
                 extraUserData={extraUserData}
                 likeButton={likeButton}
                 toggleLike={toggleLike}
+                
+                // Comment Modal
                 isModalOpen={isModalOpen}
                 handleOpenModal={handleOpenModal}
                 handleCloseModal={handleCloseModal}
+                followUser={followUser}
+                unfollowUser={unfollowUser}
+
                 isTeamsDisplayed={isTeamsDisplayed}
                 handleTeamsDisplayed={handleTeamsDisplayed}
                 isNotificationsDisplayed={isNotificationsDisplayed}
                 handleNotifications={handleNotifications}
                 forumContent={forumContent}
+
+
+                fetchUserProfile={fetchUserProfile}
+                userProfileStats={userProfileStats}
+
+                // Profile Modal
+                profileModalState={profileModalState}
+                openProfileModal={openProfileModal}
+                closeProfileModal={closeProfileModal}
+                followState={followState}
+                setFollowState={setFollowState}
             />
         </>
     );
