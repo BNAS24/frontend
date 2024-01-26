@@ -13,7 +13,7 @@ export const Forums = () => {
     useEffect(() => {
 
         const fetchData = async () => {
-            
+
             try {
                 console.log('Fetching data for search term:', searchState);
 
@@ -38,7 +38,7 @@ export const Forums = () => {
                 console.log('Data received:', data);
 
                 setSearchResults(data);
-                
+
             } catch (error) {
                 console.error('Error fetching data:', error);
             } finally {
@@ -46,15 +46,16 @@ export const Forums = () => {
             }
         };
 
-        // Implement a delay to avoid firing too many requests while the user is typing
         const delayTimer = setTimeout(() => {
             if (searchState.trim() !== '') {
                 fetchData();
             }
-        }, 500); // Adjust the delay time as needed
+        }, 500);
 
-        // Cleanup previous timer when the component re-renders due to new user input
-        return () => clearTimeout(delayTimer);
+        return () => {
+            clearTimeout(delayTimer);
+            setSearchResults(null);
+        }
 
     }, [user, searchState]);
 

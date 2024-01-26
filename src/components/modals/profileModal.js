@@ -23,6 +23,7 @@ export const ProfileModal = ({
 }) => {
 
     useEffect(() => {
+        
         if (userProfileStats && open) {
 
             const username = userProfileStats?.username;
