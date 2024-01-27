@@ -113,7 +113,7 @@ export const ThirdGridItem = ({
                                         </Typography>
                                     </Container>
                                     <div className='post-footer'>
-                                        <Link to={`/forums/${post.thread._id}`}>
+                                        <Link to={`/forums/659c6ad9a19d13750e26a5ec/thread/${post.thread._id}`}>
                                             <Typography
                                                 noWrap
                                                 align='center'

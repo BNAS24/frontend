@@ -7,7 +7,7 @@ import { NavBar } from "../../../../components/authnav";
 import { CommentsModal } from '../../../../components/modals/commentsModal';
 import { CreatePostModal } from '../../../../components/modals/createPostModal';
 import { formatPostTime } from '../../../../util/formatTime';
-import { styles } from '../../../../pages/dashboard/styles';
+import { styles } from '../../../dashboard/styles';
 import '../../../../styleSheets/dashboard.css';
 import {
     ForumContent,

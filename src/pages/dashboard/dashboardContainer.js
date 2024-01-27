@@ -245,13 +245,7 @@ export const Dashboard = () => {
                 extraUserData={extraUserData}
                 likeButton={likeButton}
                 toggleLike={toggleLike}
-                
-                // Comment Modal
-                isModalOpen={isModalOpen}
-                handleOpenModal={handleOpenModal}
-                handleCloseModal={handleCloseModal}
-                followUser={followUser}
-                unfollowUser={unfollowUser}
+
 
                 isTeamsDisplayed={isTeamsDisplayed}
                 handleTeamsDisplayed={handleTeamsDisplayed}
@@ -262,6 +256,13 @@ export const Dashboard = () => {
 
                 fetchUserProfile={fetchUserProfile}
                 userProfileStats={userProfileStats}
+
+                // Comment Modal
+                isModalOpen={isModalOpen}
+                handleOpenModal={handleOpenModal}
+                handleCloseModal={handleCloseModal}
+                followUser={followUser}
+                unfollowUser={unfollowUser}
 
                 // Profile Modal
                 profileModalState={profileModalState}

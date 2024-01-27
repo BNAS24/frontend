@@ -8,7 +8,9 @@ export const SubForumPage = () => {
     
     const user = storedUserData ? JSON.parse(storedUserData) : null;
 
-    const getParams = useParams();
+    // const getParams = useParams();
+
+    const { threadId } = useParams();
 
     const [forumData, setForumData] = useState();
 
@@ -36,7 +38,7 @@ export const SubForumPage = () => {
 
             try {
 
-                const response = await fetch(`http://localhost:5000/api/forums/thread/allPosts/${getParams.id}`);
+                const response = await fetch(`http://localhost:5000/api/forums/thread/allPosts/${threadId}`);
     
                 if (!response.ok) {
                     console.log('Error fetching data:', response.statusText);
@@ -60,14 +62,14 @@ export const SubForumPage = () => {
         return () => {
             isMounted = false;
         };
-    }, [forumData, getParams]);
+    }, [forumData, threadId]);
     
 
     const createPost = async () => {
 
         try {
 
-            const threadId = getParams.id;
+            // const threadId = getParams.threadId;
 
             const response = await fetch(`http://localhost:5000/api/forums/thread/createPost/${threadId}`, {
 

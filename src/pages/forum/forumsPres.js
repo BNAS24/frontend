@@ -1,5 +1,8 @@
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
+import { Typography } from '@mui/material';
 import InputAdornment from '@mui/material/InputAdornment';
+import { Container } from '@mui/system';
+// import { Link } from 'react-router-dom';
 import { Footer } from '../../components/authfoot';
 import { NavBar } from '../../components/authnav';
 import { SideBarNav } from '../../components/helpers/sidebarnav';
@@ -8,8 +11,6 @@ import {
     ForumPageWrap,
     ForumSeachBar
 } from './subcomponents/forumsStyledComponents';
-import { Container } from '@mui/system';
-import { Typography } from '@mui/material';
 
 
 export const ForumPres = ({
@@ -55,17 +56,21 @@ export const ForumPres = ({
 
                 {loading && <p>Loading...</p>}
 
-                {searchResults?.map(result => (
+                {searchResults?.map(forum => (
 
                     <Typography
                         className='links-hover-state'
-                        key={result._id}
+                        key={forum._id}
                         variant="h4"
                         align="center"
                     >
-                        {result.name}
+                        {forum.name}
                     </Typography>
+
                 ))}
+
+                {/* <Link to={`/forums/${forum._id}`}>
+                    </Link> */}
 
                 {!searchResults ? (
                     <Container
