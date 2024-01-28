@@ -283,6 +283,7 @@ export const SubForumPageContainer = ({
                                 onClose={() => handleCloseModal()}
                                 username={forumData?.find(post => post._id === isModalOpen)?.author.username}
                                 comment={forumData?.find(post => post._id === isModalOpen)?.content}
+                                profileImage={forumData?.find(post => post._id === isModalOpen)?.author.profileImage}
                                 followUser={() => followUser(forumData?.find(post => post._id === isModalOpen)?.author.username)}
                                 unfollowUser={() => unfollowUser(forumData?.find(post => post._id === isModalOpen)?.author.username)}
                                 followState={followState}

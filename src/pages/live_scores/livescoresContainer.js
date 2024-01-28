@@ -8,17 +8,20 @@ import { LiveScorePres } from './liveScoresPres';
 
 export const LiveScores = () => {
 
-    const [sportSelected, setSportSelected] = useState(null)
+    const { isSidebarOpen } = useSidebar();
 
-    const [teamSelected, setTeamSelected] = useState(false)
+    const [sportSelected, setSportSelected] = useState(null);
 
-    const [teamData, setTeamData] = useState(null)
+    const [teamSelected, setTeamSelected] = useState(false);
 
-    const [teamImage, setTeamImage] = useState('')
+    const [teamData, setTeamData] = useState(null);
 
-    const [score, setScore] = useState([])
+    const [teamImage, setTeamImage] = useState('');
 
-    const { isSidebarOpen } = useSidebar()
+    const [isTeamFavorited, setTeamFavorited] = useState(false);
+
+    const [score, setScore] = useState([]);
+
 
     const weeks = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
@@ -91,6 +94,10 @@ export const LiveScores = () => {
         { team: 'Away', scores: [20, 0, 3, 0], total: 23, totalColor: true },
     ]
 
+    const favoriteTeamSelected = () => {
+        setTeamFavorited(!isTeamFavorited)
+    }
+
 
     return (
         <LiveScorePres
@@ -102,6 +109,8 @@ export const LiveScores = () => {
             teamSelected={teamSelected}
             teamData={teamData}
             teamImage={teamImage}
+            isTeamFavorited={isTeamFavorited}
+            favoriteTeamSelected={favoriteTeamSelected}
             leagues={leagues}
             weeks={weeks}
         />

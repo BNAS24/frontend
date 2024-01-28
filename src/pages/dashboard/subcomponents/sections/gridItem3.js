@@ -4,9 +4,9 @@ import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
 import { Avatar, Container, Typography } from "@mui/material";
 import { Link } from 'react-router-dom';
 import { CommentsModal } from '../../../../components/modals/commentsModal';
+import { ProfileModal } from '../../../../components/modals/profileModal';
 import '../../../../styleSheets/dashboard.css';
 import { formatPostTime } from '../../../../util/formatTime';
-import { ProfileModal } from '../../../../components/modals/profileModal';
 import { styles } from '../../styles';
 import {
     ForumsYouFollow,
@@ -32,7 +32,7 @@ export const ThirdGridItem = ({
     followUser,
     unfollowUser,
     followState,
-    setFollowState
+    setFollowState,
 }) => {
 
     const handleUserProfileAndModal = (e) => {
@@ -102,7 +102,7 @@ export const ThirdGridItem = ({
                                             noWrap
                                             sx={styles.postTimeCreatedTypography}
                                         >
-                                            {formatPostTime(post.createdAt)} {/* Replace with the actual time */}
+                                            {formatPostTime(post.createdAt)}
                                         </Typography>
                                     </div>
                                     <Container

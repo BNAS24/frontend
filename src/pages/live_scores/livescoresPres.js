@@ -1,5 +1,4 @@
 import ArrowBackIosNewOutlinedIcon from '@mui/icons-material/ArrowBackIosNewOutlined';
-import { IconButton, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from '@mui/material';
 import Paper from '@mui/material/Paper';
 import { Container } from '@mui/system';
 import { Link } from 'react-router-dom';
@@ -7,6 +6,18 @@ import { Footer } from '../../components/authfoot';
 import { NavBar } from '../../components/authnav';
 import { SideBarNav } from '../../components/helpers/sidebarnav';
 import { styles } from './styles'
+import StarOutlineIcon from '@mui/icons-material/StarOutline';
+import StarIcon from '@mui/icons-material/Star';
+import {
+    IconButton,
+    Table,
+    TableBody,
+    TableCell,
+    TableContainer,
+    TableHead,
+    TableRow,
+    Typography,
+} from '@mui/material';
 import {
     LeagueSelect,
     LeagueTitle,
@@ -27,6 +38,8 @@ export const LiveScorePres = ({
     teamSelected,
     teamData,
     teamImage,
+    isTeamFavorited,
+    favoriteTeamSelected,
     leagues,
     weeks,
 }) => {
@@ -89,33 +102,57 @@ export const LiveScorePres = ({
                                 ))}
                             </ul>
                         ) : null}
+
                         {teamSelected ? (
                             <Container
                                 sx={styles.teamSelectedContainer}
                             >
                                 <Typography
+                                    align='center'
                                     sx={styles.teamSelectedTypography}
                                 >
                                     {teamData}
                                 </Typography>
+
+                                {isTeamFavorited ?
+                                    <StarOutlineIcon
+                                        onClick={() => favoriteTeamSelected()}
+                                        sx={{
+                                            color: 'orange',
+                                            '&:hover': {
+                                                cursor: 'pointer'
+                                            },
+                                        }}
+                                    />
+                                    :
+                                    <StarIcon
+                                        onClick={() => favoriteTeamSelected()}
+                                        sx={{
+                                            color: 'orange',
+                                            '&:hover': {
+                                                cursor: 'pointer'
+                                            },
+                                        }}
+                                    />}
+
                                 <Container
                                     disableGutters={true}
                                     sx={styles.teamSelectedInnerContainer}
                                 >
-                                        <IconButton
-                                            sx={{
-                                                position: 'sticky',
-                                                left: '0',
-                                                height: '100%',
-                                                backgroundColor: 'var(--theme-blue)',
-                                                borderRadius: '0 !important',
-                                                zIndex: '999',
-                                            }}
-                                        >
-                                            <ArrowBackIosNewOutlinedIcon
-                                                sx={styles.weeklyScheduleNavigationIcon}
-                                            />
-                                        </IconButton>
+                                    <IconButton
+                                        sx={{
+                                            position: 'sticky',
+                                            left: '0',
+                                            height: '100%',
+                                            backgroundColor: 'var(--theme-blue)',
+                                            borderRadius: '0 !important',
+                                            zIndex: '999',
+                                        }}
+                                    >
+                                        <ArrowBackIosNewOutlinedIcon
+                                            sx={styles.weeklyScheduleNavigationIcon}
+                                        />
+                                    </IconButton>
                                     {weeks.map((numberOfTheWeek, index) => (
                                         <Typography
                                             key={numberOfTheWeek}
@@ -184,13 +221,11 @@ export const LiveScorePres = ({
                                                 flexDirection: 'column',
                                                 justifyContent: 'center',
                                                 height: '100%',
-                                                // border: '1px solid var(--theme-orange)',
                                             }}
                                         >
                                             <TableContainer
                                                 component={Paper}
                                                 sx={{
-                                                    // backgroundColor: 'var(--theme-blue)',
                                                     overflow: 'hidden',
                                                 }}
                                             >
