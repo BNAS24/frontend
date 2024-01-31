@@ -15,6 +15,7 @@ export const FavoriteTeamsMobileDisplay = ({ handleTeamsDisplayed }) => {
                 <IconButton
                     onClick={handleTeamsDisplayed}
                     sx={mobileDisplay.favoriteTeams.button}
+                    // aria-label='Back Button'
                 >
                     <ArrowBackIosNewOutlinedIcon
                         sx={mobileDisplay.favoriteTeams.buttonColor}

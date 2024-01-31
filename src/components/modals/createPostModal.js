@@ -102,7 +102,8 @@ export const CreatePostModal = ({
                                 }}
                             >
                                 <TextField
-                                    id="post-content"
+                                    id='post-content'
+                                    name='post-content'
                                     label='Type away'
                                     variant="outlined"
                                     margin='dense'
@@ -152,6 +153,7 @@ export const CreatePostModal = ({
                                     mt: '8px',
                                     color: 'var(--theme-white)',
                                     backgroundColor: 'var(--theme-orange)',
+                                    label: 'some label',
                                 }}
                                 onClick={handleCreatePost}
                             >

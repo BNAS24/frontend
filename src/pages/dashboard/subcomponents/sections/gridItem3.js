@@ -78,9 +78,10 @@ export const ThirdGridItem = ({
                             >
                                 <Avatar
                                     alt='profile picture'
+                                    loading='lazy'
                                     variant='square'
                                     sx={styles.forumsYouFollowUserAvatar}
-                                    src={post.author.profileImage ? `http://localhost:5000${post.author.profileImage}` : 'https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png'}
+                                    src={post.author.profileImage ? `http://localhost:5000${post.author.profileImage}` : `http://localhost:3000/public/placeholder-avatar.webp`}
                                 />
                                 <Container
                                     sx={styles.forumsYouFollowPostContainer}
@@ -122,6 +123,7 @@ export const ThirdGridItem = ({
                                             >
                                                 {post.thread.title}
                                             </Typography>
+
                                         </Link>
                                         <div className='post-controls'>
                                             <AddCommentOutlinedIcon

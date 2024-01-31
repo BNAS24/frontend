@@ -23,8 +23,9 @@ export const FirstGridItem = ({
                         alt='profile picture'
                         src={extraUserData?.profileImage
                             ? `http://localhost:5000${extraUserData.profileImage}`
-                            : 'https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png'
+                            : `/placeholder-avatar.webp`
                         }
+                        // src='/placeholder-avatar.webp'
                     />
                     <Greeting>
                         Hello {user && user.username}!

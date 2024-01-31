@@ -26,7 +26,7 @@ export const SocketProvider = ({ children }) => {
             setSocket(newSocket);
 
             newSocket.on('connectionEstablished', (data) => {
-                console.log('Dashboard socket connection established:', data);
+                console.log('Socket connection established:', data);
             });
 
             newSocket.on('recieved', (data) => {

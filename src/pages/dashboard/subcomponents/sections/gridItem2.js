@@ -106,7 +106,7 @@ export const SecondGridItem = ({
                             className='side-controls'
                             onClick={handleTeamsDisplayed}
                             src='https://i.postimg.cc/0QvrZCrT/Favorite-Teams.png'
-                            alt='badges icon'
+                            alt='favorite teams icon'
                             sx={styles.badgesButtonIcon}
                         />
                     </FavoriteTeamsContainerXS>

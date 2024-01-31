@@ -1,4 +1,4 @@
-import { memo, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/auth/authSlice';
 import { DashboardPres } from './dashboardPres';
@@ -71,32 +71,38 @@ export const Dashboard = () => {
                             'Authorization': `Bearer ${user.token}`
                         },
                     });
+    
+                    if (response.status === 200) {
 
-                    if (!response.ok) {
+                        const favoriteTeamsList = await response.json();
+
+                        if (favoriteTeamsList.length > 0) {
+
+                            setFavoriteTeams(favoriteTeamsList);
+
+                        }
+
+                    } else if (response.status === 204) {
+
+                        console.log('No favorited teams found in list.');
+
+                        setFavoriteTeams([]); 
+
+                    } else {
 
                         console.error('Error fetching data:', response.statusText);
 
                     }
-
-                    const favoriteTeamsList = await response.json();
-
-
-                    if (favoriteTeamsList.length > 0) {
-
-                        setFavoriteTeams(favoriteTeamsList);
-
-                    }
-
+                    
                 } catch (error) {
                     console.error(error);
                 }
             };
-
+    
             fetchFavoriteTeamsList();
         }
-
-
     }, [user]);
+    
 
 
     useEffect(() => {
@@ -282,39 +288,37 @@ export const Dashboard = () => {
     };
 
     return (
-        <>
-            <DashboardPres
-                user={user}
-                favoriteTeams={favoriteTeams}
-                extraUserData={extraUserData}
-                likeButton={likeButton}
-                toggleLike={toggleLike}
+        <DashboardPres
+            user={user}
+            favoriteTeams={favoriteTeams}
+            extraUserData={extraUserData}
+            likeButton={likeButton}
+            toggleLike={toggleLike}
 
 
-                isTeamsDisplayed={isTeamsDisplayed}
-                handleTeamsDisplayed={handleTeamsDisplayed}
-                isNotificationsDisplayed={isNotificationsDisplayed}
-                handleNotifications={handleNotifications}
-                forumContent={forumContent}
+            isTeamsDisplayed={isTeamsDisplayed}
+            handleTeamsDisplayed={handleTeamsDisplayed}
+            isNotificationsDisplayed={isNotificationsDisplayed}
+            handleNotifications={handleNotifications}
+            forumContent={forumContent}
 
 
-                fetchUserProfile={fetchUserProfile}
-                userProfileStats={userProfileStats}
+            fetchUserProfile={fetchUserProfile}
+            userProfileStats={userProfileStats}
 
-                // Comment Modal
-                isModalOpen={isModalOpen}
-                handleOpenModal={handleOpenModal}
-                handleCloseModal={handleCloseModal}
-                followUser={followUser}
-                unfollowUser={unfollowUser}
+            // Comment Modal
+            isModalOpen={isModalOpen}
+            handleOpenModal={handleOpenModal}
+            handleCloseModal={handleCloseModal}
+            followUser={followUser}
+            unfollowUser={unfollowUser}
 
-                // Profile Modal
-                profileModalState={profileModalState}
-                openProfileModal={openProfileModal}
-                closeProfileModal={closeProfileModal}
-                followState={followState}
-                setFollowState={setFollowState}
-            />
-        </>
+            // Profile Modal
+            profileModalState={profileModalState}
+            openProfileModal={openProfileModal}
+            closeProfileModal={closeProfileModal}
+            followState={followState}
+            setFollowState={setFollowState}
+        />
     );
 };

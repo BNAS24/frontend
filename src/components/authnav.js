@@ -22,6 +22,7 @@ export const NavBar = () => {
                         src='https://i.postimg.cc/wjkpvXx7/fans.png'
                         className='sports-fanatic-logo'
                         alt='logo'
+                        loading='lazy'
                     />
                     <div
                         className='title'
@@ -66,6 +67,7 @@ export const NavBar = () => {
                     </p>
                 </div>
                 <IconButton
+                    aria-label='Hamburger Menu'
                     onClick={handleNav}
                     sx={{
                         position: 'absolute',

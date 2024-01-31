@@ -41,6 +41,7 @@ export const RegisterPres = ({
                         src="https://i.postimg.cc/wjkpvXx7/fans.png"
                         alt="logo"
                         className="logo"
+                        loading='lazy'
                     />
                     <RegisterTitle
                         align='center'

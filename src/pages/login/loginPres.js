@@ -31,6 +31,7 @@ export const LoginPres = ({
                         src="https://i.postimg.cc/wjkpvXx7/fans.png?"
                         alt="logo"
                         className="login-logo"
+                        loading='lazy'
                     />
                     <LoginTitle
                         align='center'

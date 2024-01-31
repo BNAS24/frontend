@@ -13,6 +13,7 @@ export const NotificationsMobileDisplay = ({ handleNotifications }) => {
                 <IconButton
                     onClick={handleNotifications}
                     sx={mobileDisplay.notifications.button}
+                    aria-label='Notification Icon Button'
                 >
                     <ArrowBackIosNewOutlinedIcon
                         sx={mobileDisplay.notifications.buttonColor}

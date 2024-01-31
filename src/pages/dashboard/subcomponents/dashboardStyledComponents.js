@@ -78,13 +78,13 @@ export const UserAvatar = styled(Avatar)(({ theme }) =>
             xs: 'auto',
             sm: '70px',
             md: '80px',
-            lg: '104px'
+            lg: '104px',
         },
         width: {
             xs: '100%',
             sm: '70px',
             md: '80px',
-            lg: '104px'
+            lg: '104px',
         },
         p: {
             xs: '0 0 !important',

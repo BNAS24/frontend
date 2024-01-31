@@ -147,7 +147,6 @@ export const CommentsModal = ({
                                 alignItems: 'center',
                                 justifyContent: 'stretch',
                                 width: '100%',
-                                // marginTop: '16px',
                             }}
                         >
                             <Avatar
