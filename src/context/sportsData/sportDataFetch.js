@@ -40,6 +40,7 @@ export const fetchTeamEvents = async (teamName) => {
         if (response.ok) {
 
             const data = await response.json();
+
             return data;
 
         } else {
@@ -68,6 +69,7 @@ export const fetchFixtureEvents = async (teamName) => {
         if (response.ok) {
 
             const data = await response.json();
+            
             return data;
 
         } else {

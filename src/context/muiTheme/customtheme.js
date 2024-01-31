@@ -124,7 +124,14 @@ const theme = createTheme({
           color: "white"
         }
       }
-    }
+    },
+    MuiTableCell: {
+      styleOverrides: {
+        root: {
+          color: 'white', // Set the text color to white
+        },
+      },
+    },
   }
 });
 

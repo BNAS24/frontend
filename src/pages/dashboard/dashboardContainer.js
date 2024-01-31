@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { memo, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/auth/authSlice';
 import { DashboardPres } from './dashboardPres';
@@ -13,6 +13,8 @@ export const Dashboard = () => {
     const navigate = useNavigate();
 
     const [checkedUserStatus, setCheckedUserStatus] = useState(false);
+
+    const [favoriteTeams, setFavoriteTeams] = useState([]);
 
     const [forumContent, setForumContent] = useState([]);
 
@@ -55,10 +57,52 @@ export const Dashboard = () => {
 
     }, [user, isLoading, checkedUserStatus, navigate]);
 
+    useEffect(() => {
+
+        if (user) {
+
+            const fetchFavoriteTeamsList = async () => {
+
+                try {
+
+                    const response = await fetch(`http://localhost:5000/api/users/favorites-teams/${user._id}`, {
+                        method: 'GET',
+                        headers: {
+                            'Authorization': `Bearer ${user.token}`
+                        },
+                    });
+
+                    if (!response.ok) {
+
+                        console.error('Error fetching data:', response.statusText);
+
+                    }
+
+                    const favoriteTeamsList = await response.json();
+
+
+                    if (favoriteTeamsList.length > 0) {
+
+                        setFavoriteTeams(favoriteTeamsList);
+
+                    }
+
+                } catch (error) {
+                    console.error(error);
+                }
+            };
+
+            fetchFavoriteTeamsList();
+        }
+
+
+    }, [user]);
+
 
     useEffect(() => {
 
         const forumsYouFollow = async () => {
+
             try {
 
                 const response = await fetch(`http://localhost:5000/api/forums/thread/allPosts/659c7073bac7087b77ed4471`);
@@ -84,7 +128,7 @@ export const Dashboard = () => {
 
         };
 
-    }, [forumContent]);
+    }, [forumContent.length]);
 
     useEffect(() => {
 
@@ -108,7 +152,6 @@ export const Dashboard = () => {
                     const userData = await response.json();
 
                     setExtraUserData(userData);
-
 
                 } catch (error) {
                     console.error(error);
@@ -242,6 +285,7 @@ export const Dashboard = () => {
         <>
             <DashboardPres
                 user={user}
+                favoriteTeams={favoriteTeams}
                 extraUserData={extraUserData}
                 likeButton={likeButton}
                 toggleLike={toggleLike}

@@ -1,4 +1,3 @@
-import { fakeTeams } from "../../../../datastore/dashboard"
 import { fakeNotifications } from "../../../../datastore/dashboard"
 import { Container, Typography } from "@mui/material"
 import { Box } from "@mui/system"
@@ -18,6 +17,7 @@ import {
 } from "../dashboardStyledComponents"
 
 export const SecondGridItem = ({
+    favoriteTeams,
     handleNotifications,
     handleTeamsDisplayed }) => {
 
@@ -47,7 +47,7 @@ export const SecondGridItem = ({
                         <FavoriteTeamInnerContainer
                             disableGutters={true}
                         >
-                            {fakeTeams.map((team) =>
+                            {favoriteTeams.length > 0 ? favoriteTeams.map((team) =>
                                 <Container
                                     key={team}
                                     sx={styles.fakeTeamsContainer}
@@ -68,7 +68,24 @@ export const SecondGridItem = ({
                                         {team}
                                     </Typography>
                                 </Container>
-                            )}
+                            ) :
+                                <Container
+                                sx={{
+                                    display: 'flex',
+                                    height: '100%',
+                                    width: '100%',
+                                    justifyContent: 'center',
+                                    alignItems: 'center',
+                                }}
+                                >
+                                    <Typography
+                                    align='center'
+                                    variant='h5'
+                                    >
+                                        No Teams Favorited
+                                    </Typography>
+                                </Container>
+                            }
 
                         </FavoriteTeamInnerContainer>
                     </FavoriteTeamsMainContainer>

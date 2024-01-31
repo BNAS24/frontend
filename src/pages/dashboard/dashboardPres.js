@@ -16,9 +16,11 @@ import { NotificationsMobileDisplay } from './subcomponents/notificationsMobile'
 import { FirstGridItem } from './subcomponents/sections/gridItem1';
 import { SecondGridItem } from './subcomponents/sections/gridItem2';
 import { ThirdGridItem } from './subcomponents/sections/gridItem3';
+import { styles } from './styles'
 
 export const DashboardPres = ({
     user,
+    favoriteTeams,
     extraUserData,
     likeButton,
     toggleLike,
@@ -47,13 +49,7 @@ export const DashboardPres = ({
         <>
             <ThemeProvider theme={customTheme}>
                 <Box
-                    sx={{
-                        display: 'flex',
-                        flexDirection: 'column',
-                        height: '100%',
-                        minHeight: '100%',
-                        width: '100%'
-                    }}
+                    sx={styles.pageWrapper}
                 >
                     <NavBar />
 
@@ -82,6 +78,7 @@ export const DashboardPres = ({
                         </DashboardHeadXS>
 
                         <SecondGridItem
+                            favoriteTeams={favoriteTeams}
                             handleNotifications={handleNotifications}
                             handleTeamsDisplayed={handleTeamsDisplayed}
                         >
@@ -129,7 +126,7 @@ export const DashboardPres = ({
                     <Footer />
 
                 </Box>
-            </ThemeProvider >
+            </ThemeProvider>
         </>
     )
 }

@@ -1,5 +1,7 @@
 import ArrowBackIosNewOutlinedIcon from '@mui/icons-material/ArrowBackIosNewOutlined';
-import Paper from '@mui/material/Paper';
+// import Paper from '@mui/material/Paper';
+import customTheme from '../../context/muiTheme/customtheme';
+import { ThemeProvider } from '@emotion/react';
 import { Container } from '@mui/system';
 import { Link } from 'react-router-dom';
 import { Footer } from '../../components/authfoot';
@@ -31,6 +33,7 @@ import {
 
 export const LiveScorePres = ({
     data1,
+    score,
     handleTeamData,
     isSidebarOpen,
     sportSelected,
@@ -45,7 +48,7 @@ export const LiveScorePres = ({
 }) => {
 
     return (
-        <>
+        <ThemeProvider theme={customTheme}>
             <LiveScorePageWrap
                 maxWidth='100%'
                 disableGutters={true}
@@ -64,7 +67,9 @@ export const LiveScorePres = ({
                         >
                             Sports Categories
                         </LeagueTitle>
+
                         <LeaguesList>
+
                             {Object.keys(leagues).map((key) => (
                                 <Typography
                                     key={key}
@@ -81,7 +86,9 @@ export const LiveScorePres = ({
                             ))
                             }
                         </LeaguesList>
+
                     </LeagueSelect>
+
                     <TeamsData
                         disableGutters={true}
                     >
@@ -98,6 +105,7 @@ export const LiveScorePres = ({
                                         onClick={() => handleTeamData(index)}
                                     >
                                         {leagues[sportSelected].teams[key]}
+
                                     </li>
                                 ))}
                             </ul>
@@ -116,7 +124,7 @@ export const LiveScorePres = ({
 
                                 {isTeamFavorited ?
                                     <StarOutlineIcon
-                                        onClick={() => favoriteTeamSelected()}
+                                        onClick={() => favoriteTeamSelected(teamData)}
                                         sx={{
                                             color: 'orange',
                                             '&:hover': {
@@ -126,7 +134,7 @@ export const LiveScorePres = ({
                                     />
                                     :
                                     <StarIcon
-                                        onClick={() => favoriteTeamSelected()}
+                                        onClick={() => favoriteTeamSelected(teamData)}
                                         sx={{
                                             color: 'orange',
                                             '&:hover': {
@@ -193,11 +201,10 @@ export const LiveScorePres = ({
                                             <TeamLogo
                                                 variant='square'
                                                 alt='team logo'
-                                                src={teamImage}
+                                                src={teamImage ? teamImage : null}
                                             >
                                             </TeamLogo>
                                             <Typography
-
                                                 align='center'
                                             >
                                                 {teamData}
@@ -221,15 +228,20 @@ export const LiveScorePres = ({
                                                 flexDirection: 'column',
                                                 justifyContent: 'center',
                                                 height: '100%',
+                                                width: '75%',
                                             }}
                                         >
                                             <TableContainer
-                                                component={Paper}
                                                 sx={{
-                                                    overflow: 'hidden',
+                                                    overflowX: 'auto',
+                                                    width: '100%',
                                                 }}
                                             >
-                                                <Table>
+                                                <Table
+                                                    sx={{
+                                                        tableLayout: 'auto',
+                                                    }}
+                                                >
                                                     <TableHead>
                                                         <TableRow>
                                                             <TableCell
@@ -241,7 +253,7 @@ export const LiveScorePres = ({
                                                         </TableRow>
                                                         <TableRow>
                                                             <TableCell
-                                                                style={{ color: 'red' }}>
+                                                                sx={{ color: 'red' }}>
                                                                 Live
                                                             </TableCell>
                                                             <TableCell>
@@ -261,7 +273,7 @@ export const LiveScorePres = ({
                                                             </TableCell>
                                                         </TableRow>
                                                     </TableHead>
-                                                    <TableBody>
+                                                    {/* <TableBody>
                                                         {data1.map((row, index) => (
                                                             <TableRow
                                                                 key={index}
@@ -282,7 +294,37 @@ export const LiveScorePres = ({
                                                                 </TableCell>
                                                             </TableRow>
                                                         ))}
+                                                    </TableBody> */}
+                                                    <TableBody>
+                                                        {score?.map((match, index) => [
+                                                            // Home Team Row
+                                                            <TableRow key={`home-${index}`}>
+                                                                <TableCell>{match.homeTeam.name}</TableCell>
+                                                                <TableCell>{match.homeTeam.firstQuarter}</TableCell>
+                                                                <TableCell>{match.homeTeam.secondQuarter}</TableCell>
+                                                                <TableCell>{match.homeTeam.thirdQuarter}</TableCell>
+                                                                <TableCell>{match.homeTeam.forthQuarter}</TableCell>
+                                                                <TableCell>{match.homeTeam.totalScore}</TableCell>
+                                                                <TableCell style={match.homeTeam.totalColor ? { color: 'orange' } : {}}>
+                                                                    {match.homeTeam.total}
+                                                                </TableCell>
+                                                            </TableRow>,
+
+                                                            // Away Team Row
+                                                            <TableRow key={`away-${index}`}>
+                                                                <TableCell>{match.awayTeam.name}</TableCell>
+                                                                <TableCell>{match.awayTeam.firstQuarter}</TableCell>
+                                                                <TableCell>{match.awayTeam.secondQuarter}</TableCell>
+                                                                <TableCell>{match.awayTeam.thirdQuarter}</TableCell>
+                                                                <TableCell>{match.awayTeam.forthQuarter}</TableCell>
+                                                                <TableCell>{match.awayTeam.totalScore}</TableCell>
+                                                                <TableCell style={match.awayTeam.totalColor ? { color: 'orange' } : {}}>
+                                                                    {match.awayTeam.total}
+                                                                </TableCell>
+                                                            </TableRow>
+                                                        ])}
                                                     </TableBody>
+
                                                 </Table>
                                             </TableContainer>
                                         </Container>
@@ -309,16 +351,17 @@ export const LiveScorePres = ({
                                                 <TeamLogo
                                                     variant='square'
                                                     alt='team logo'
-                                                    src='https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png'
+                                                    // src='https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png'
+                                                    src={teamImage ? teamImage : null}
                                                 >
                                                 </TeamLogo>
                                                 <Typography
-
                                                     align='center'
                                                 >
                                                     Other Team
                                                 </Typography>
                                                 <Typography
+
                                                     sx={{
                                                         fontSize: '1.3em',
                                                     }}
@@ -370,6 +413,6 @@ export const LiveScorePres = ({
                 </LiveScoreContent>
                 <Footer />
             </LiveScorePageWrap>
-        </>
+        </ThemeProvider>
     )
 }

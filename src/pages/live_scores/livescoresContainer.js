@@ -4,9 +4,11 @@ import { fetchTeamData, fetchTeamEvents } from '../../context/sportsData/sportDa
 import leagues from '../../datastore/leagues';
 import '../../styleSheets/livescores.css';
 import { LiveScorePres } from './liveScoresPres';
-
+import { useAuth } from '../../context/auth/authSlice';
 
 export const LiveScores = () => {
+
+    const { user } = useAuth();
 
     const { isSidebarOpen } = useSidebar();
 
@@ -25,53 +27,81 @@ export const LiveScores = () => {
 
     const weeks = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
+
     useEffect(() => {
-        const fetchBasicData = async () => {
-            if (teamData !== null) {
+
+        const fetchTeamsImage = async () => {
+
+            if (teamSelected) {
+
                 try {
+
                     const data = await fetchTeamData(teamData);
-                    if (data && data.IMAGE_PATH) {
-                        setTeamImage(data.IMAGE_PATH);
-                    } else {
-                        console.error('Data or IMAGE_PATH is undefined');
+
+                    if (data) {
+
+                        setTeamImage(data.IMAGE_PATH)
+
                     }
+
                 } catch (error) {
-                    console.error('Error fetching team data:', error);
+                    console.log(error);
                 }
             }
+
         };
 
+        fetchTeamsImage();
+
+    }, [teamSelected, teamData])
+
+    useEffect(() => {
+
         const fetchEventResults = async () => {
+
             if (teamData !== null) {
                 try {
+
                     const eventResults = await fetchTeamEvents(teamData);
+
                     if (eventResults.length > 0) {
+
                         const firstMatch = eventResults[0];
+
                         const extractedScores = {
                             homeTeam: {
                                 name: firstMatch.HOME_NAME,
-                                score: firstMatch.HOME_SCORE_CURRENT,
+                                firstQuarter: firstMatch.HOME_SCORE_PART_1,
+                                secondQuarter: firstMatch.HOME_SCORE_PART_2,
+                                thirdQuarter: firstMatch.HOME_SCORE_PART_3,
+                                forthQuarter: firstMatch.HOME_SCORE_PART_4,
+                                totalScore: firstMatch.HOME_SCORE_CURRENT,
                                 images: firstMatch.HOME_IMAGES,
                             },
                             awayTeam: {
                                 name: firstMatch.AWAY_NAME,
-                                score: firstMatch.AWAY_SCORE_CURRENT,
+                                firstQuarter: firstMatch.AWAY_SCORE_PART_1,
+                                secondQuarter: firstMatch.AWAY_SCORE_PART_2,
+                                thirdQuarter: firstMatch.AWAY_SCORE_PART_3,
+                                forthQuarter: firstMatch.AWAY_SCORE_PART_4,
+                                totalScore: firstMatch.AWAY_SCORE_CURRENT,
                                 images: firstMatch.AWAY_IMAGES,
                             },
                         };
+
                         setScore([extractedScores]);
+
                     }
+
                 } catch (error) {
-                    console.error('Error fetching team events:', error);
+                    console.log(error);
                 }
             }
         };
 
-        fetchBasicData();
         fetchEventResults();
-    }, [teamData, teamImage]);
 
-    console.log('score',score)
+    }, [teamData]);
 
     const handleTeamData = async (index) => {
 
@@ -86,22 +116,63 @@ export const LiveScores = () => {
             setTeamSelected(false);
             setTeamData(null);
 
-        }
-    }
+        };
+    };
 
     const data1 = [
         { team: 'Home', scores: [0, 0, 6, 0], total: 6 },
         { team: 'Away', scores: [20, 0, 3, 0], total: 23, totalColor: true },
-    ]
+    ];
 
-    const favoriteTeamSelected = () => {
+    const updateFavoritedTeamsList = async (name) => {
+
+        if (name) {
+
+            try {
+                const response = await fetch(`http://localhost:5000/api/users/favorited-team/${encodeURIComponent(name)}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${user?.token}`,
+                    },
+                })
+
+                if (!response.ok) {
+
+                    console.log(`Error updating favorited teams list:`, response.statusText);
+
+                }
+
+                console.log(response)
+
+            } catch (error) {
+
+                console.log(error);
+
+            }
+
+        } else {
+
+            console.log('Error: team name not found');
+
+        }
+
+    };
+
+    const favoriteTeamSelected = (teamData) => {
+
+        updateFavoritedTeamsList(teamData);
+
         setTeamFavorited(!isTeamFavorited)
-    }
+    };
+
+    console.log('score', score)
 
 
     return (
         <LiveScorePres
             data1={data1}
+            score={score}
             handleTeamData={handleTeamData}
             isSidebarOpen={isSidebarOpen}
             sportSelected={sportSelected}
@@ -115,4 +186,4 @@ export const LiveScores = () => {
             weeks={weeks}
         />
     )
-}
+};

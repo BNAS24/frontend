@@ -4,10 +4,15 @@ import { useState, useEffect } from 'react';
 import { useAuth } from '../../context/auth/authSlice';
 
 export const Forums = () => {
+
     const { user } = useAuth();
+
     const { isSidebarOpen } = useSidebar();
+
     const [searchState, setSearchState] = useState('');
+
     const [searchResults, setSearchResults] = useState([]);
+    
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
