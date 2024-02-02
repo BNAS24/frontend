@@ -33,6 +33,11 @@ Sports Fanatic Hub is a platform dedicated to sports enthusiasts, allowing them 
 - Express.js: Handle server routing and middleware.
 - React: Build a dynamic and responsive user interface.
 - Node.js: Power the backend server.
+- Socket.io: Enable real-time communication between the server and clients.
+- Jsonwebtoken: Implement secure user authentication and authorization.
+- Bcrypt: Hash and verify passwords for enhanced security.
+- Node-fetch: Make HTTP requests for external data or APIs.
+- Multer: Handle file uploads on the server.
 - Material UI: Create a modern and visually appealing design.
 - AWS: Consider AWS services for scalability and storage.
 
