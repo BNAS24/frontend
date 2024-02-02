@@ -5,10 +5,10 @@ import { SubForumPageContainer } from "./forumSubRoutePres";
 export const SubForumPage = () => {
 
     const storedUserData = localStorage.getItem('user');
-    
+
     const user = storedUserData ? JSON.parse(storedUserData) : null;
 
-    // const getParams = useParams();
+    const { forumId } = useParams();
 
     const { threadId } = useParams();
 
@@ -33,19 +33,19 @@ export const SubForumPage = () => {
 
     useEffect(() => {
         let isMounted = true;
-    
+
         const fetchForumsData = async () => {
 
             try {
 
                 const response = await fetch(`http://localhost:5000/api/forums/thread/allPosts/${threadId}`);
-    
+
                 if (!response.ok) {
                     console.log('Error fetching data:', response.statusText);
                 }
-    
+
                 const data = await response.json();
-    
+
                 if (isMounted) {
                     setForumData(data);
                 }
@@ -54,16 +54,16 @@ export const SubForumPage = () => {
                 console.error(error);
             }
         };
-    
+
         if (!forumData) {
             fetchForumsData();
         }
-    
+
         return () => {
             isMounted = false;
         };
     }, [forumData, threadId]);
-    
+
 
     const createPost = async () => {
 
@@ -222,6 +222,7 @@ export const SubForumPage = () => {
 
         <SubForumPageContainer
             user={user}
+            forumId={forumId}
             forumData={forumData}
             fetchUserProfile={fetchUserProfile}
             userProfileStats={userProfileStats}

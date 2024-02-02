@@ -17,7 +17,7 @@ export const Forums = () => {
 
     useEffect(() => {
 
-        const fetchData = async () => {
+        const fetchForumSearchList = async () => {
 
             try {
                 console.log('Fetching data for search term:', searchState);
@@ -45,16 +45,22 @@ export const Forums = () => {
                 setSearchResults(data);
 
             } catch (error) {
+
                 console.error('Error fetching data:', error);
+
             } finally {
+
                 setLoading(false);
+                
             }
         };
 
         const delayTimer = setTimeout(() => {
+
             if (searchState.trim() !== '') {
-                fetchData();
+                fetchForumSearchList();
             }
+
         }, 500);
 
         return () => {

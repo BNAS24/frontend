@@ -104,7 +104,6 @@ export const Dashboard = () => {
     }, [user]);
     
 
-
     useEffect(() => {
 
         const forumsYouFollow = async () => {
@@ -251,7 +250,9 @@ export const Dashboard = () => {
             } else {
 
                 const result = await response.json();
+
                 console.log(result);
+
                 setFollowState(true);
             }
 
@@ -278,7 +279,9 @@ export const Dashboard = () => {
             } else {
 
                 const result = await response.json();
+
                 console.log(result);
+                
                 setFollowState(false);
             }
 

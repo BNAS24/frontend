@@ -6,101 +6,136 @@ import {
 } from "@mui/material";
 import { Footer } from "../../../../components/authfoot";
 import { NavBar } from "../../../../components/authnav";
-import {
-    ForumDataDisplay,
-    TopContainer
-} from "../forumsStyledComponents";
+import { Link } from "react-router-dom";
+import { ThemeProvider } from '@emotion/react';
+import customTheme from '../../../../context/muiTheme/customtheme'
 
-export const ForumResultPres = () => {
+export const ForumResultPres = ({
+    forumId,
+    forumDataState,
+}) => {
     return (
-        <>
-            <NavBar />
 
-            <ForumDataDisplay
-                maxWidth='xl'
+        <ThemeProvider theme={customTheme}>
+            <Container
                 disableGutters={true}
+                maxWidth="xl"
+
+                sx={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    height: '100%',
+                    minHeight: '100%',
+                    width: '100%'
+                }}
             >
-                <TopContainer
-                    maxWidth='xl'
+                <NavBar />
+
+                <Container
+                    sx={{
+                        flex: 1,
+                        display: 'flex',
+                        flexDirection: 'column',
+                        justifyContent: 'center',
+                        maxHeight: '100vh',
+                        height: '100%',
+                        width: '100%',
+                        overflow: 'hidden',
+                    }}
                 >
                     <Container
+                        disableGutters={true}
                         sx={{
                             display: 'flex',
-                            flexDirection: 'row',
-                            gap: '8px',
-                            width: 'auto',
-                            alignItems: 'center'
+                            flexDirection: 'column',
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                            height: '90%',
+                            width: '85%',
+                            border: 'dashed 1px var(--theme-orange)',
                         }}
                     >
-                        <Avatar
-                            alt='Forum Image'
-                            variant='square'
+                        <Container
+                            disableGutters={true}
                             sx={{
-                                height: {
-                                    xs: '16px',
-                                    sm: '64px',
-                                    md: '64px',
-                                    lg: '64px',
-                                },
-                                width: {
-                                    xs: '16px',
-                                    sm: '64px',
-                                    md: '64px',
-                                    lg: '64px',
-                                }
-                            }}
-                        />
-                        <Button
-                            variant='text'
-                            sx={{
-                                color: 'var(--theme-orange)',
-                                '&:hover': {
-                                    backgroundColor: 'rgba(242, 97, 1, 0.2)',
-                                },
+                                flex: 1,
+                                display: 'flex',
+                                flexDirection: 'row',
+                                justifyContent: 'space-around',
+                                alignItems: 'center',
                             }}
                         >
-                            Follow
-                        </Button>
-                    </Container>
-                    <Typography
-                        align='center'
-                        variant='h3'
-                        sx={{
-                            flex: '1',
-                            fontSize: {
-                                xs: '0.6rem',
-                                sm: '1rem',
-                                md: '1rem',
-                                lg: '1rem',
-                            }
-                        }}
-                    >
-                        {/* {forumData ? (
-                            <Typography>
-                                {forumData[0].thread.title}
+                            <Avatar
+                                variant='square'
+                                alt='Forum image'
+                                src='/placeholder-avatar.webp'
+                                sx={{
+                                    height: '144px',
+                                    width: '144px',
+                                }}
+                            />
+
+                            <Typography
+                                align='center'
+                                variant='h4'
+                            >
+
+                                {forumDataState?.name}
+
                             </Typography>
-                        ) : null} */}
 
-                    </Typography>
+                            <Button
+                                variant='outline'
+                                sx={{
+                                    color: 'var(--theme-orange)',
+                                    '&:hover': {
+                                        border: '1px solid var(--theme-orange)',
+                                        color: 'var(--theme-orange)',
+                                    },
+                                }}
+                            >
+                                Follow
+                            </Button>
 
-                    {/*Button To Create a Post*/}
+                        </Container>
+                        <Container
+                            disableGutters={true}
+                            sx={{
+                                flex: 3,
+                                display: 'flex',
+                                flexDirection: 'column',
+                                justifyContent: 'space-between',
+                                alignItems: 'flex-start',
+                                padding: '48px',
+                            }}
+                        >
+                            {forumDataState?.threads ? forumDataState.threads.map(thread => (
+                                <Link
+                                    to={`/forums/${forumId}/thread/${thread._id}`}
+                                    key={thread._id}
+                                >
+                                    <Typography
+                                        align='center'
+                                        variant='h6'
+                                        key={thread._id}
+                                        className='links-hover-state'
+                                        sx={{
+                                            width: '100%',
+                                            textDecoration: 'underline',
+                                        }}
+                                    >
+                                        {thread.title}
 
-                    <Button
-                        variant='text'
-                        // onClick={openPostModal}
-                        sx={{
-                            color: 'var(--theme-orange)',
-                            '&:hover': {
-                                backgroundColor: 'rgba(242, 97, 1, 0.2)',
-                            },
-                        }}
-                    >
-                        Create Forum
-                    </Button>
-                </TopContainer>
-            </ForumDataDisplay>
+                                    </Typography>
+                                </Link>
+                            )) : null}
+                        </Container>
+                    </Container>
 
-            <Footer />
-        </>
+                </Container>
+
+                <Footer />
+            </Container>
+        </ThemeProvider>
     )
 };

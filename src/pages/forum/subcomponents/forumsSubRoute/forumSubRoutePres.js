@@ -18,10 +18,12 @@ import {
 import { ProfileModal } from '../../../../components/modals/profileModal';
 import customTheme from '../../../../context/muiTheme/customtheme'
 import { ThemeProvider } from '@emotion/react';
+import { Link } from 'react-router-dom';
 
 
 export const SubForumPageContainer = ({
     user,
+    forumId,
     forumData,
     fetchUserProfile,
     userProfileStats,
@@ -78,24 +80,28 @@ export const SubForumPageContainer = ({
                                     alignItems: 'center'
                                 }}
                             >
-                                <Avatar
-                                    alt='Forum Image'
-                                    variant='square'
-                                    sx={{
-                                        height: {
-                                            xs: '16px',
-                                            sm: '64px',
-                                            md: '64px',
-                                            lg: '64px',
-                                        },
-                                        width: {
-                                            xs: '16px',
-                                            sm: '64px',
-                                            md: '64px',
-                                            lg: '64px',
-                                        }
-                                    }}
-                                />
+                                <Link
+                                    to={`/forums/${forumId}`}
+                                >
+                                    <Avatar
+                                        alt='Forum Image'
+                                        variant='square'
+                                        sx={{
+                                            height: {
+                                                xs: '16px',
+                                                sm: '64px',
+                                                md: '64px',
+                                                lg: '64px',
+                                            },
+                                            width: {
+                                                xs: '16px',
+                                                sm: '64px',
+                                                md: '64px',
+                                                lg: '64px',
+                                            }
+                                        }}
+                                    />
+                                </Link>
                                 <Button
                                     variant='text'
                                     sx={{

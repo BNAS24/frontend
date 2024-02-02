@@ -2,7 +2,7 @@ import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import { Typography } from '@mui/material';
 import InputAdornment from '@mui/material/InputAdornment';
 import { Container } from '@mui/system';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Footer } from '../../components/authfoot';
 import { NavBar } from '../../components/authnav';
 import { SideBarNav } from '../../components/helpers/sidebarnav';
@@ -57,17 +57,17 @@ export const ForumPres = ({
                 {loading && <p>Loading...</p>}
 
                 {searchResults?.map(forum => (
-
-                    <Typography
-                        className='links-hover-state'
-                        key={forum._id}
-                        variant="h4"
-                        align="center"
-                    >
-                        {forum.name}
-                    </Typography>
-
+                    <Link to={`/forums/${forum._id}`} key={forum._id}>
+                        <Typography
+                            className='links-hover-state'
+                            variant="h4"
+                            align="center"
+                        >
+                            {forum.name}
+                        </Typography>
+                    </Link>
                 ))}
+
 
                 {/* <Link to={`/forums/${forum._id}`}>
                     </Link> */}
@@ -182,6 +182,6 @@ export const ForumPres = ({
 
             <Footer />
 
-        </ForumPageWrap>
+        </ForumPageWrap >
     )
 }

@@ -65,8 +65,8 @@ export const ProfilePres = ({
                                 variant='square'
                                 alt='profile picture'
                                 src={user?.profileImage
-                                    ? `http://localhost:5000${user.profileImage}`
-                                    : 'https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png'
+                                    ? `http://localhost:5000${user?.profileImage}`
+                                    : '/placeholder-avatar.webp'
                                 }
                                 sx={{
                                     height: {

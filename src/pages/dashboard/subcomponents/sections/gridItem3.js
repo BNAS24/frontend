@@ -73,7 +73,7 @@ export const ThirdGridItem = ({
                     >
                         {forumContent?.slice().reverse().map((post) => (
                             <Container
-                                key={post._id} // Use a unique key for each item
+                                key={post._id}
                                 sx={styles.forumsYouFollowContentContainer}
                             >
                                 <Avatar
@@ -114,7 +114,10 @@ export const ThirdGridItem = ({
                                         </Typography>
                                     </Container>
                                     <div className='post-footer'>
-                                        <Link to={`/forums/659c6ad9a19d13750e26a5ec/thread/${post.thread._id}`}>
+
+                                    {/*This hard coded id in the link has to be correct to be dynamic and pulled from the post objects thread parent forum */}
+                                    
+                                        <Link to={`/forums/659c69bda19d13750e26a5ea/thread/${post.thread._id}`}>
                                             <Typography
                                                 noWrap
                                                 align='center'
