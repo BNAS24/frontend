@@ -36,6 +36,8 @@ export const Dashboard = () => {
 
     const [followState, setFollowState] = useState(false);
 
+    // const [isNotificationsSnackBarOn, setNotificationsSnackBarOn] = useState(true);
+
     useEffect(() => {
 
         if (isLoading) {
@@ -71,7 +73,7 @@ export const Dashboard = () => {
                             'Authorization': `Bearer ${user.token}`
                         },
                     });
-    
+
                     if (response.status === 200) {
 
                         const favoriteTeamsList = await response.json();
@@ -86,23 +88,23 @@ export const Dashboard = () => {
 
                         console.log('No favorited teams found in list.');
 
-                        setFavoriteTeams([]); 
+                        setFavoriteTeams([]);
 
                     } else {
 
                         console.error('Error fetching data:', response.statusText);
 
                     }
-                    
+
                 } catch (error) {
                     console.error(error);
                 }
             };
-    
+
             fetchFavoriteTeamsList();
         }
     }, [user]);
-    
+
 
     useEffect(() => {
 
@@ -211,6 +213,10 @@ export const Dashboard = () => {
         setProfileModalState(false);
     };
 
+    // const handleClosingSnackBar = () => {
+    //     setNotificationsSnackBarOn(false);
+    // };
+
     const fetchUserProfile = async (userClickedOn) => {
         try {
 
@@ -281,7 +287,7 @@ export const Dashboard = () => {
                 const result = await response.json();
 
                 console.log(result);
-                
+
                 setFollowState(false);
             }
 
@@ -290,38 +296,39 @@ export const Dashboard = () => {
         }
     };
 
+    console.log('extra data', extraUserData);
+    
     return (
-        <DashboardPres
-            user={user}
-            favoriteTeams={favoriteTeams}
-            extraUserData={extraUserData}
-            likeButton={likeButton}
-            toggleLike={toggleLike}
+            <DashboardPres
+                user={user}
+                favoriteTeams={favoriteTeams}
+                extraUserData={extraUserData}
+                likeButton={likeButton}
+                toggleLike={toggleLike}
 
 
-            isTeamsDisplayed={isTeamsDisplayed}
-            handleTeamsDisplayed={handleTeamsDisplayed}
-            isNotificationsDisplayed={isNotificationsDisplayed}
-            handleNotifications={handleNotifications}
-            forumContent={forumContent}
+                isTeamsDisplayed={isTeamsDisplayed}
+                handleTeamsDisplayed={handleTeamsDisplayed}
+                isNotificationsDisplayed={isNotificationsDisplayed}
+                handleNotifications={handleNotifications}
+                forumContent={forumContent}
 
+                fetchUserProfile={fetchUserProfile}
+                userProfileStats={userProfileStats}
 
-            fetchUserProfile={fetchUserProfile}
-            userProfileStats={userProfileStats}
+                // Comment Modal
+                isModalOpen={isModalOpen}
+                handleOpenModal={handleOpenModal}
+                handleCloseModal={handleCloseModal}
+                followUser={followUser}
+                unfollowUser={unfollowUser}
 
-            // Comment Modal
-            isModalOpen={isModalOpen}
-            handleOpenModal={handleOpenModal}
-            handleCloseModal={handleCloseModal}
-            followUser={followUser}
-            unfollowUser={unfollowUser}
-
-            // Profile Modal
-            profileModalState={profileModalState}
-            openProfileModal={openProfileModal}
-            closeProfileModal={closeProfileModal}
-            followState={followState}
-            setFollowState={setFollowState}
-        />
+                // Profile Modal
+                profileModalState={profileModalState}
+                openProfileModal={openProfileModal}
+                closeProfileModal={closeProfileModal}
+                followState={followState}
+                setFollowState={setFollowState}
+            />
     );
 };

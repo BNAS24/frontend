@@ -115,8 +115,8 @@ export const ThirdGridItem = ({
                                     </Container>
                                     <div className='post-footer'>
 
-                                    {/*This hard coded id in the link has to be correct to be dynamic and pulled from the post objects thread parent forum */}
-                                    
+                                        {/*This hard coded id in the link has to be correct to be dynamic and pulled from the post objects thread parent forum */}
+
                                         <Link to={`/forums/659c69bda19d13750e26a5ea/thread/${post.thread._id}`}>
                                             <Typography
                                                 noWrap
@@ -171,6 +171,7 @@ export const ThirdGridItem = ({
                             followState={followState}
                             setFollowState={setFollowState}
                         />
+
                     </ForumsYouFollowContent>
                 </ForumsYouFollowMainContainer>
             </ForumsYouFollow>

@@ -81,6 +81,7 @@ export const DashboardPres = ({
                             favoriteTeams={favoriteTeams}
                             handleNotifications={handleNotifications}
                             handleTeamsDisplayed={handleTeamsDisplayed}
+                            extraUserData={extraUserData}
                         >
 
                         </SecondGridItem>
@@ -108,7 +109,6 @@ export const DashboardPres = ({
                             followState={followState}
                             setFollowState={setFollowState}
                         >
-
                         </ThirdGridItem>
 
                         {isSidebarOpen ? <SideBarNav /> : null}

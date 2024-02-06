@@ -1,8 +1,8 @@
-import { fakeNotifications } from "../../../../datastore/dashboard"
 import { Container, Typography } from "@mui/material"
 import { Box } from "@mui/system"
 import { styles } from '../../styles'
 import '../../../../styleSheets/dashboard.css'
+import { Link } from "react-router-dom"
 
 import {
     UserData,
@@ -19,7 +19,9 @@ import {
 export const SecondGridItem = ({
     favoriteTeams,
     handleNotifications,
-    handleTeamsDisplayed }) => {
+    handleTeamsDisplayed,
+    extraUserData,
+}) => {
 
     return (
         <>
@@ -70,17 +72,17 @@ export const SecondGridItem = ({
                                 </Container>
                             ) :
                                 <Container
-                                sx={{
-                                    display: 'flex',
-                                    height: '100%',
-                                    width: '100%',
-                                    justifyContent: 'center',
-                                    alignItems: 'center',
-                                }}
+                                    sx={{
+                                        display: 'flex',
+                                        height: '100%',
+                                        width: '100%',
+                                        justifyContent: 'center',
+                                        alignItems: 'center',
+                                    }}
                                 >
                                     <Typography
-                                    align='center'
-                                    variant='h5'
+                                        align='center'
+                                        variant='h5'
                                     >
                                         No Teams Favorited
                                     </Typography>
@@ -136,17 +138,23 @@ export const SecondGridItem = ({
                                     a mock profile page first
                                     */}
 
-                            {fakeNotifications.map((notification) =>
-                                <Typography
-                                    key={notification}
-                                    variant='body1'
-                                    align='center'
-                                    className='links-hover-state'
-                                    sx={styles.notificationLink}
-                                >
-                                    {notification} liked your post
-                                </Typography>
+                            {extraUserData?.notifications.slice().reverse().map((notification) =>
+                                <Link
+                                    key={notification._id}
+                                    to={`/forums/${notification.forumId}/thread/${notification.threadId}`}>
+                                    <Typography
+
+                                        variant='body1'
+                                        align='center'
+                                        className='links-hover-state'
+                                        sx={styles.notificationLink}
+                                    >
+                                        {notification.content}
+                                    </Typography>
+                                </Link>
                             )}
+
+
                         </NotificationsInnerContainer>
                     </NotificationsContainer>
                 </UserDataContainer>
